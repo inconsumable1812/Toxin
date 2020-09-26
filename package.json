@@ -1,0 +1,28 @@
+{
+  "name": "toxin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inconsumable1812/Toxin.git"
+  },
+  "keywords": [
+    "JS",
+    "javascript"
+  ],
+  "author": "Lanskikh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/inconsumable1812/Toxin/issues"
+  },
+  "homepage": "https://github.com/inconsumable1812/Toxin#readme"
+}
