@@ -1,0 +1,27 @@
+$width_content: 1440px;
+
+// colors
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+$color_dark: #1f2041;
+$color_dark75: tint($color_dark, 25%);
+$color_dark50: tint($color_dark, 50%);
+$color_dark25: tint($color_dark, 75%);
+$color_dark10: tint($color_dark, 90%);
+$color_dark5: tint($color_dark, 95%);
+$color_green: #6fcf97;
+$color_green2: #66d2ea;
+$color_green_gradient: linear-gradient(
+  0deg,
+  $color_green2 0%,
+  $color_green 100%
+);
+$color_purple: #bc9cff;
+$color_purple2: #8ba4f9;
+$color_purple_gradient: linear-gradient(
+  0deg,
+  $color_purple2 0%,
+  $color_purple 100%
+);

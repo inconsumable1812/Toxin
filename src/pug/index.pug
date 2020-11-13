@@ -1,13 +1,18 @@
+include ./components/colors.pug
+
 html(lang="ru")
   head
     meta(charset="utf-8")
     title= "Учимся работать с шаблонизатором Pug"
   body
       main
-        section.colorsAndType
-          .colors
-            section.color.color_dark100
-              .color-block
-              h2.color-title Dark Shade 100%
-              .color-subtitle #1F2041
+        section.colorsAndTypes
+          +color({title: "Dark Shade 100%", color: 'color_dark100', subtitle:'#1F2041',})
+          +color({title: "Dark Shade 75%", color: 'color_dark75', subtitle:'#1F2041'})
+          +color({title: "Dark Shade 100%", color: 'color_dark100', subtitle:'#1F2041'})
+          +color({title: "Dark Shade 100%", color: 'color_dark100', subtitle:'#1F2041'})
+          +color({title: "Dark Shade 100%", color: 'color_dark100', subtitle:'#1F2041'})
+          +color({title: "Dark Shade 100%", color: 'color_dark100', subtitle:'#1F2041'})
+
+  
           

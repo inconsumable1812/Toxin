@@ -1,10 +1,31 @@
-section.color_dark100 .color-block {
+@import 'font.css';
+
+.color_dark100 .color-block {
   background-color: #1f2041;
 }
-section.color .color-block {
-  grid-area: block;
+
+.colorsAndTypes {
+  width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 145px 150px;
   background-color: #fff;
-  width: 70px;
-  height: 70px;
-  border-radius: 6px;
+}
+
+.color {
+  font-family: 'Quicksand', sans-serif;
+  display: grid;
+  grid-template-areas:
+    'block title'
+    'block subtitle';
+  grid-column-gap: 40px;
+  align-items: center;
+  justify-content: start;
+  .color-block {
+    grid-area: block;
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+  }
 }
