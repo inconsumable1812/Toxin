@@ -99,7 +99,7 @@ module.exports = {
     rules: [
       {
         test: /\.pug$/,
-        loader: 'pug-loader',
+        loader: 'pug-loader?pretty=true',
       },
       {
         test: /\.css$/,
@@ -112,6 +112,20 @@ module.exports = {
             },*/
           },
           'css-loader',
+        ],
+      },
+      {
+        test: /\.(sass|scss)$$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            /*options: {
+              hmr: true,
+              reloadAll: true,
+            },*/
+          },
+          'css-loader',
+          'sass-loader',
         ],
       },
       {
