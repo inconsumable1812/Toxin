@@ -12,16 +12,19 @@ const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plug
 const PATHS = {
   // src must be src
   src: path.join(__dirname, 'src'),
-  // dist to public
-  // dist: path.join(__dirname, '../public'),
-  // assets to static
+  dist: path.join(__dirname, 'dist'),
   //assets: 'static/'
 }
 
-const PAGES_DIR = `${PATHS.src}/pug/`
+const PAGES_DIR = `${PATHS.src}/pages/`
 const PAGES = fs
   .readdirSync(PAGES_DIR)
   .filter((fileName) => fileName.endsWith('.pug'))
+
+const PAGES_DIR_JS = `${PATHS.src}/`
+const PAGES_JS = fs
+  .readdirSync(PAGES_DIR)
+  .filter((fileName) => fileName.endsWith('.js'))
 
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
@@ -43,15 +46,11 @@ const optimization = () => {
   return config
 }
 
-/*
-const PAGES_DIR = `${PATHS.src}/pug/`
-const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'))*/
-
 module.exports = {
-  context: path.resolve(__dirname, 'src'),
+  context: path.resolve(__dirname, './src/script/'),
   mode: 'development',
   entry: {
-    main: './index.js',
+    colorAndTypes: './colorAndTypes.js',
   },
   output: {
     filename: '[name].[contenthash].js',
