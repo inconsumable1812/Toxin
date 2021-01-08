@@ -16,7 +16,7 @@ const PATHS = {
   //assets: 'static/'
 }
 
-const PAGES_DIR = `${PATHS.src}/pages/`
+const PAGES_DIR = `${PATHS.src}/pages/pug`
 const PAGES = fs
   .readdirSync(PAGES_DIR)
   .filter((fileName) => fileName.endsWith('.pug'))
@@ -46,12 +46,71 @@ const optimization = () => {
   return config
 }
 
+function getEntires(pages) {
+  return Object.assign(
+    {},
+    /*...pages.map(({ template }) => {
+			if (!template) return {};
+
+			return {
+				[template]: [`./src/templates/${template}/${template}.js`],
+			};
+		}),*/
+    ...pages.map(({ name }) => {
+      if (!name) return {}
+
+      return {
+        [name]: [`./src/pages/entry/${name}.js`],
+      }
+    })
+  )
+}
+const pages = [
+  {
+    name: 'colorsAndTypes',
+    template: 'main',
+  } /*
+	{
+		name: 'formElements',
+		template: 'main',
+	},
+	{
+		name: 'cards',
+		template: 'main',
+	},
+	{
+		name: 'headersAndFooters',
+		template: 'main',
+	},
+	{
+		name: 'index',
+		template: 'main',
+	},
+	{
+		name: 'search',
+		template: 'main',
+	},
+	{
+		name: 'room',
+		template: 'main',
+	},
+	{
+		name: 'login',
+		template: 'main',
+	},
+	{
+		name: 'registration',
+		template: 'main',
+	},*/,
+]
+
 module.exports = {
-  context: path.resolve(__dirname, './src/script/'),
+  //context: path.resolve(__dirname, './src/script/'),
   mode: 'development',
-  entry: {
+  entry: getEntires(pages),
+  /*entry: {
     colorAndTypes: './colorAndTypes.js',
-  },
+  },*/
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
@@ -74,7 +133,7 @@ module.exports = {
     ...PAGES.map(
       (page) =>
         new HTMLWebpackPlugin({
-          template: `${PAGES_DIR}/${page}`,
+          template: `${PAGES_DIR}/${page}/`,
           filename: `./${page.replace(/\.pug/, '.html')}`,
           minify: {
             collapseWhitespace: isProd,

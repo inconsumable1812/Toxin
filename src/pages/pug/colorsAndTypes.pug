@@ -1,12 +1,12 @@
-include ../components/colors/colors.pug
-include ../components/type/type.pug
+extends /layout/main.pug
 
-html(lang="ru")
-  head
-    meta(charset="utf-8")
-    title= "colorAndTypes"
-  body
-      wrapper
+include ../../components/colors/colors.pug
+include ../../components/type/type.pug
+
+block variables
+  - var title = "colorAndTypes"
+
+block content
         .colorsAndTypes
           .colorsAndTypes-colors
             +color({title: "Dark Shade 100%", color: 'color_dark100', subtitle:'#1F2041',})
