@@ -1,0 +1,12 @@
+@import '../../styles/font';
+@import '../../styles/variables.scss';
+
+.fotmElements-input input {
+  width: 340px;
+  height: 44px;
+  padding: 0 15px;
+  border: 1px solid #c7c7d0;
+  border-radius: 4px;
+  outline: none;
+  font-size: 14px;
+}

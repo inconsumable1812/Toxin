@@ -1,176 +1,55 @@
 const path = require('path')
 const fs = require('fs')
-const HTMLWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-//const { ALL } = require('dns')
-const CopyWepbackPlugin = require('copy-webpack-plugin')
-const MiniCssWebpackPlugin = require('mini-css-extract-plugin')
+const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
-//const TerserWebpackPlugin = require('terser-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
-const PATHS = {
-  // src must be src
-  src: path.join(__dirname, 'src'),
-  dist: path.join(__dirname, 'dist'),
-  //assets: 'static/'
+const devMode = process.env.NODE_ENV === 'development'
+
+const pagesDir = './src/pages'
+
+const createEntriesFromPageList = (pages) => {
+  const webpackPageEntries = {}
+  const htmlWebpackPageInstances = []
+
+  pages.forEach((pageName) => {
+    webpackPageEntries[pageName] = `${pagesDir}/${pageName}/${pageName}.js`
+    htmlWebpackPageInstances.push(
+      new HtmlWebpackPlugin({
+        filename: `${pageName}.html`,
+        template: `${pagesDir}/${pageName}/${pageName}.pug`,
+        chunks: [pageName],
+      })
+    )
+  })
+
+  return [webpackPageEntries, htmlWebpackPageInstances]
 }
 
-const PAGES_DIR = `${PATHS.src}/pages/pug`
-const PAGES = fs
-  .readdirSync(PAGES_DIR)
-  .filter((fileName) => fileName.endsWith('.pug'))
+const [webpackPageEntries, htmlWebpackPageInstances] =
+  createEntriesFromPageList(fs.readdirSync(pagesDir))
 
-const PAGES_DIR_JS = `${PATHS.src}/`
-const PAGES_JS = fs
-  .readdirSync(PAGES_DIR)
-  .filter((fileName) => fileName.endsWith('.js'))
-
-const isDev = process.env.NODE_ENV === 'development'
-const isProd = !isDev
-
-const optimization = () => {
-  const config = {
-    splitChunks: {
-      chunks: 'all',
-    },
-  }
-
-  if (isProd) {
-    config.minimizer = [
-      new OptimizeCssAssetsWebpackPlugin(),
-      //new TerserWebpackPlugin(),
-    ]
-  }
-
-  return config
-}
-
-function getEntires(pages) {
-  return Object.assign(
-    {},
-    /*...pages.map(({ template }) => {
-			if (!template) return {};
-
-			return {
-				[template]: [`./src/templates/${template}/${template}.js`],
-			};
-		}),*/
-    ...pages.map(({ name }) => {
-      if (!name) return {}
-
-      return {
-        [name]: [`./src/pages/entry/${name}.js`],
-      }
-    })
-  )
-}
-const pages = [
-  {
-    name: 'colorsAndTypes',
-    template: 'main',
-  } /*
-	{
-		name: 'formElements',
-		template: 'main',
-	},
-	{
-		name: 'cards',
-		template: 'main',
-	},
-	{
-		name: 'headersAndFooters',
-		template: 'main',
-	},
-	{
-		name: 'index',
-		template: 'main',
-	},
-	{
-		name: 'search',
-		template: 'main',
-	},
-	{
-		name: 'room',
-		template: 'main',
-	},
-	{
-		name: 'login',
-		template: 'main',
-	},
-	{
-		name: 'registration',
-		template: 'main',
-	},*/,
-]
-
-module.exports = {
-  //context: path.resolve(__dirname, './src/script/'),
-  mode: 'development',
-  entry: getEntires(pages),
-  /*entry: {
-    colorAndTypes: './colorAndTypes.js',
-  },*/
-  output: {
-    filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, 'dist'),
+const config = {
+  entry: {
+    favicon: './src/favicons/favicons.js',
+    ...webpackPageEntries,
   },
-  /* resolve: {
-    extension: ['.js', '.json'],
-    alias: {
-      '@': path.resolve(__dirname, 'src'),
-    },
-  },*/
-  optimization: optimization(),
-
-  plugins: [
-    /* new HTMLWebpackPlugin({
-      template: './index.html',
-      minify: {
-        collapseWhitespace: isProd,
-      },
-    }),*/
-    ...PAGES.map(
-      (page) =>
-        new HTMLWebpackPlugin({
-          template: `${PAGES_DIR}/${page}/`,
-          filename: `./${page.replace(/\.pug/, '.html')}`,
-          minify: {
-            collapseWhitespace: isProd,
-          },
-        })
-    ),
-    new CleanWebpackPlugin(),
-    new CopyWepbackPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, 'src/assets/favicon.png'),
-          to: path.resolve(__dirname, 'dist'),
-        },
-      ],
-    }),
-    new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
-    }),
-  ],
+  output: {
+    filename: devMode ? '[name].js' : '[name].[hash].js',
+    path: path.resolve(__dirname, './docs'),
+  },
+  devServer: {
+    open: true,
+  },
   module: {
     rules: [
       {
         test: /\.pug$/,
-        loader: 'pug-loader?pretty=true',
-      },
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            /*options: {
-              hmr: true,
-              reloadAll: true,
-            },*/
-          },
-          'css-loader',
-        ],
+        loader: 'pug-loader',
+        options: {
+          pretty: true,
+        },
       },
       {
         test: /\.(sass|scss)$$/,
@@ -178,22 +57,73 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             /*options: {
-              hmr: true,
-              reloadAll: true,
+              hmr: process.env.NODE_ENV === 'development',
             },*/
           },
           'css-loader',
           'sass-loader',
+          /* {
+            loader: 'resolve-url-loader',
+            options: {
+              debug: true,
+              sourceMap: false,
+              removeCR: true,
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            },
+          },*/
         ],
       },
       {
-        test: /\.(png|jpg|svg)$/,
-        use: ['file-loader'],
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        exclude: [
+          path.resolve(__dirname, './src/img/'),
+          path.resolve(__dirname, './src/components/'),
+        ],
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/',
+            },
+          },
+        ],
       },
       {
-        test: /\.(ttf|woff|woff2|eot)$/,
-        use: ['file-loader'],
+        test: /\.(png|gif|svg|jpe?g)$/,
+        exclude: [
+          path.resolve(__dirname, './src/fonts/'),
+          path.resolve(__dirname, './src/favicons/'),
+        ],
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'img/',
+            },
+          },
+        ],
       },
     ],
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css',
+    }),
+    new CleanWebpackPlugin(),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+    }),
+    ...htmlWebpackPageInstances,
+  ],
 }
+
+module.exports = config

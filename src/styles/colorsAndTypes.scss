@@ -1,7 +1,10 @@
-//@import 'main.scss';
-@import 'variables.scss';
+@import './main.scss';
 @import '../components/colors/color.scss';
 @import '../components/type/type.scss';
+
+//@import '../../styles/main.scss';
+//@import '../../components/colors/color.scss';
+//@import '../../components/type/type.scss';
 
 * {
   font-family: Montserrat;

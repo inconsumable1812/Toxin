@@ -1,0 +1,18 @@
+extends ../../layout/main.pug
+
+include ../../components/input/input.pug
+
+block variables
+  - var title = "fotmElements"
+
+block content
+        .fotmElements
+          .fotmElements-input
+            +input({title: "Text Field", type:'email', name:'email',})
+            +input({title: "Text Field", type:'text', name:'This is pretty awesome',})
+            +input({title: "DROPDOWN", type:'text', name:'text',})
+            +input({title: "Text Field", type:'text', name:'text',})
+            +input({title: "Text Field", type:'text', name:'text',})
+            +input({title: "Text Field", type:'text', name:'text',})
+            +input({title: "Text Field", type:'text', name:'text',})
+
