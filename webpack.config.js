@@ -33,6 +33,7 @@ const [webpackPageEntries, htmlWebpackPageInstances] =
 const config = {
   entry: {
     favicon: './src/favicons/favicons.js',
+    logo: './src/components/logo/logo.js',
     ...webpackPageEntries,
   },
   output: {

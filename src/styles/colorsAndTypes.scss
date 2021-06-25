@@ -2,10 +2,6 @@
 @import '../components/colors/color.scss';
 @import '../components/type/type.scss';
 
-//@import '../../styles/main.scss';
-//@import '../../components/colors/color.scss';
-//@import '../../components/type/type.scss';
-
 * {
   font-family: Montserrat;
   letter-spacing: 0;
@@ -22,6 +18,9 @@
   justify-content: space-between;
   padding: 145px 150px;
   background-color: #fff;
+  &__nav {
+  }
+
   .colorsAndTypes-colors {
     display: grid;
     grid-auto-flow: row;

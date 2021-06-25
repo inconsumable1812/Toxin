@@ -1,0 +1,34 @@
+// Screen sizes
+$screen-xs-max: 767px;
+$screen-sm-min: 768px;
+$screen-filter-xs-max: 893px;
+$screen-filter-sm-min: 894px;
+$screen-sm-max: 991px;
+$screen-md-min: 992px;
+$screen-md-max: 1199px;
+$screen-lg-min: 1200px;
+// Colors and gradients
+$color-purple: rgb(188, 156, 255);
+$color-green: rgb(111, 207, 151);
+$color-gray: rgb(229, 229, 229);
+$color-primary-5: rgba(31, 32, 65, 0.05);
+$color-primary-10: rgba(31, 32, 65, 0.1);
+$color-primary-25: rgba(31, 32, 65, 0.25);
+$color-primary-50: rgba(31, 32, 65, 0.5);
+$color-primary-75: rgba(31, 32, 65, 0.75);
+$color-primary-100: rgb(31, 32, 65);
+$grad-purple: linear-gradient(
+  180deg,
+  $color-purple 0%,
+  rgb(139, 164, 249) 100%
+);
+$grad-purple-25: linear-gradient(
+  180deg,
+  rgba(188, 156, 255, 0.25) 0%,
+  rgba(139, 164, 249, 0.25) 100%
+);
+$grad-green: linear-gradient(
+  180deg,
+  rgb(111, 207, 151) 0%,
+  rgb(102, 210, 234) 100%
+);

@@ -2,26 +2,25 @@ extends ../../layout/main.pug
 
 include ../../components/colors/colors.pug
 include ../../components/type/type.pug
+include ../../components/logo/logo.pug
 
 block variables
   - var title = "colorAndTypes"
 
 block content
         .colorsAndTypes
-          .colorsAndTypes-colors
-            +color({title: "Dark Shade 100%", color: 'color_dark100', subtitle:'#1F2041',})
-            +color({title: "Dark Shade 75%", color: 'color_dark75', subtitle:'#1F2041'})
-            +color({title: "Dark Shade 50%", color: 'color_dark50', subtitle:'#1F2041'})
-            +color({title: "Dark Shade 25%", color: 'color_dark25', subtitle:'#1F2041'})
-            +color({title: "Dark Shade 5%", color: 'color_dark5', subtitle:'#1F2041'})
-            +color({title: "Purple", color: 'color_purple', subtitle:'#BC9CFF'})
-            +color({title: "Green", color: 'color_green', subtitle:'#6FCF97'})
-          .colorsAndTypes-types
-            +type({title: "H1", subtitle:'This one is the sub-section or widget title'})
-            +type({title: "H2", subtitle:'Next one is the item title inside widgets'})
-            +type({title: "H3", subtitle:'This is a label or CTA text'})
-            +body({title:'Body', subtitle:'This is the body text which is used for most of the design, like paragraphs, lists, etc.'})
-
-
-  
-          
+            nav.colorsAndTypes__nav
+              +logo
+            .colorsAndTypes-colors
+              +color({title: "Dark Shade 100%", color: 'color_dark100', subtitle:'#1F2041',})
+              +color({title: "Dark Shade 75%", color: 'color_dark75', subtitle:'#1F2041'})
+              +color({title: "Dark Shade 50%", color: 'color_dark50', subtitle:'#1F2041'})
+              +color({title: "Dark Shade 25%", color: 'color_dark25', subtitle:'#1F2041'})
+              +color({title: "Dark Shade 5%", color: 'color_dark5', subtitle:'#1F2041'})
+              +color({title: "Purple", color: 'color_purple', subtitle:'#BC9CFF'})
+              +color({title: "Green", color: 'color_green', subtitle:'#6FCF97'})
+            .colorsAndTypes-types
+              +type({title: "H1", subtitle:'This one is the sub-section or widget title'})
+              +type({title: "H2", subtitle:'Next one is the item title inside widgets'})
+              +type({title: "H3", subtitle:'This is a label or CTA text'})
+              +body({title:'Body', subtitle:'This is the body text which is used for most of the design, like paragraphs, lists, etc.'})
