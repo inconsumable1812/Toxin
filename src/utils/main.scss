@@ -1,5 +1,5 @@
-@import './variables.scss';
-@import './font.scss';
+@import './vars.scss';
+@import '../styles/font.scss';
 
 * {
   font-family: 'Montserrat';
@@ -12,13 +12,13 @@
 body {
   font-size: 14px;
   line-height: 24px;
-  color: $color_dark75;
+  color: $color-dark-75;
 }
 
 h1,
 h2,
 h3 {
-  color: $color_dark;
+  color: $color-dark-100;
 }
 
 h1,

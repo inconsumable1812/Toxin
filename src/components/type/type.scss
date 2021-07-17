@@ -1,14 +1,12 @@
 @import '../../styles/font';
-@import '../../styles/variables.scss';
+@import '../../utils/vars.scss';
 
 .type {
-  display: grid;
-  grid-template-columns: 60px 345px;
-  grid-gap: 30px;
+  display: flex;
 }
 .type-title {
   font-family: 'Montserrat';
   text-align: right;
   font-weight: normal;
-  color: $color_dark25;
+  color: $color-dark-25;
 }

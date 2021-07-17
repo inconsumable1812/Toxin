@@ -1,5 +1,5 @@
 //@import '../../styles/font.scss';
-@import '../../styles/variables.scss';
+@import '../../utils/vars.scss';
 
 .color {
   font-family: Quiсksand;
@@ -22,6 +22,7 @@
     font-size: 19px;
     text-transform: none;
     align-self: flex-end;
+    width: max-content;
   }
   .color-subtitle {
     grid-area: subtitle;
@@ -34,42 +35,42 @@
 
   &_dark100 {
     .color-block {
-      background-color: $color_dark;
+      background-color: $color-dark-100;
     }
   }
   &_dark75 {
     .color-block {
-      background-color: $color_dark75;
+      background-color: $color-dark-75;
     }
   }
   &_dark50 {
     .color-block {
-      background-color: $color_dark50;
+      background-color: $color-dark-50;
     }
   }
   &_dark25 {
     .color-block {
-      background-color: $color_dark25;
+      background-color: $color-dark-25;
     }
   }
   &_dark10 {
     .color-block {
-      background-color: $color_dark10;
+      background-color: $color-dark-10;
     }
   }
   &_dark5 {
     .color-block {
-      background-color: $color_dark5;
+      background-color: $color-dark-5;
     }
   }
   &_green {
     .color-block {
-      background-color: $color_green;
+      background-color: $color-green;
     }
   }
   &_purple {
     .color-block {
-      background-color: $color_purple;
+      background-color: $color-purple;
     }
   }
 }

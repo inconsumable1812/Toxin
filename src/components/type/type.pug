@@ -1,7 +1,7 @@
 mixin type(options)
   -
 
-  .type
+  div.type(class = `type_${options.title}`)
     #{options.title}.type-title #{options.title}
     #{options.title}.type-subtitle #{options.subtitle}
 
@@ -13,4 +13,3 @@ mixin body(options)
     p.type-subtitle #{options.subtitle}
 
 
-    
