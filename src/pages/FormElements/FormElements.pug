@@ -3,16 +3,14 @@ extends ../../layout/main.pug
 include ../../components/input/input.pug
 
 block variables
-  - var title = "fotmElements"
+  - var title = "formElements"
 
 block content
         .fotmElements
           .fotmElements-input
-            +input({title: "Text Field", type:'email', name:'email',})
-            +input({title: "Text Field", type:'text', name:'This is pretty awesome',})
-            +input({title: "DROPDOWN", type:'text', name:'text',})
-            +input({title: "Text Field", type:'text', name:'text',})
-            +input({title: "Text Field", type:'text', name:'text',})
-            +input({title: "Text Field", type:'text', name:'text',})
-            +input({title: "Text Field", type:'text', name:'text',})
+            +input({title: "Text Field", type:'email', name:'email', placeholder:'email', hint:'DEFAULT'})
+            +input({title: "Text Field", type:'text', name:'This is pretty awesome',placeholder:'This is pretty awesome', hint:'HOVER/FOCUS'})
+
+            +input({title: "MASKED TEXT FIELD",type:'data', name:'text', hint:'DEFAULT', isData:true})
+            +input({title: "SUBSCRIPTION TEXT FIELD", type:'email', name:'text', placeholder:'email', withButton :true})
 

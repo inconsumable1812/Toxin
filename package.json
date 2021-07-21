@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "imask": "^6.1.0",
     "jquery": "^3.5.1"
   },
   "devDependencies": {

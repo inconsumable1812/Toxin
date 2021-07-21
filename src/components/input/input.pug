@@ -1,6 +1,15 @@
 mixin input(options)
   -
+    var titleClassName = "title"
+    titleClassName += options.isData ? " title-data" : ""
+    var ClassName = "input"
+    ClassName += options.isData ? " input-data" : ""
+    var withButton = false
 
-  div.input(class = options.input)
-    h2.input-title(class = options.title) #{options.title}
-    input(type = options.type, name = options.name)
+  div.form-elements_input
+    h2.input-title(class = titleClassName)= options.title
+    .label-hint= options.hint
+    input(type = options.type, class= ClassName, name = options.name, placeholder = options.placeholder)
+    if withButton
+      button.text-input__submit-button(type='submit')
+
