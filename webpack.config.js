@@ -57,13 +57,10 @@ const config = {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            /*options: {
-              hmr: process.env.NODE_ENV === 'development',
-            },*/
           },
           'css-loader',
-          'sass-loader',
-          /* {
+          //'postcss-loader',
+          {
             loader: 'resolve-url-loader',
             options: {
               debug: true,
@@ -76,7 +73,7 @@ const config = {
             options: {
               sourceMap: true,
             },
-          },*/
+          },
         ],
       },
       {

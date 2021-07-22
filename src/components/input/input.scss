@@ -35,5 +35,15 @@
         border: 0.0625rem solid $color-dark-50;
       }
     }
+    .text-input__submit-button {
+      @include reset-button;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0.8125rem;
+      width: 1.125rem;
+      height: 1.125rem;
+      background: url('./img/arrow-forward.svg') no-repeat center center;
+    }
   }
 }
