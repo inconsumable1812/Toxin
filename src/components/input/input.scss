@@ -1,12 +1,39 @@
 @import '../../styles/font';
-@import '../../utils/vars.scss';
+@import '../../utils/vars';
+@import '../../utils/mixins';
 
-.formElements-input input {
-  width: 340px;
-  height: 44px;
-  padding: 0 15px;
-  border: 1px solid #c7c7d0;
-  border-radius: 4px;
-  outline: none;
-  font-size: 14px;
+.form-elements_input {
+  //display: inline;
+  .input-title,
+  .label-hint {
+    display: inline;
+  }
+  .label-hint {
+    float: right;
+  }
+  .input__box {
+    $lineHeight: 2.75rem;
+    $borderRadius: 0.25rem;
+    display: flex;
+    position: relative;
+    line-height: $lineHeight;
+    font-size: 0.75rem;
+    margin: 0.25rem auto 0.5rem;
+
+    .input {
+      width: 100%;
+      line-height: 2.625rem;
+      padding: 0 2.375rem 0 0.875rem;
+      border: 1px solid $color-dark-25;
+      border-radius: $borderRadius;
+      font-size: 0.875rem;
+      color: $color-dark-75;
+      transition: border 0.25s ease-in-out;
+      &:focus,
+      &:hover {
+        outline: none;
+        border: 0.0625rem solid $color-dark-50;
+      }
+    }
+  }
 }
