@@ -3,14 +3,14 @@ mixin input(options)
     var titleClassName = "title"
     titleClassName += options.isData ? " title-data" : ""
     var ClassName = "input"
-    ClassName += options.isData ? " input-data" : ""
+    ClassName += options.isData ? " input-data js-text-input_has-mask" : ""
 
   div.form-elements_input
     h2.input-title(class = titleClassName)= options.title
     if options.hint
       .label-hint= options.hint
     div.input__box
-      input(type = options.type, class= ClassName, name = options.name, placeholder = options.placeholder)
+      input(type = options.type, class= ClassName, id=ClassName, name = options.name, placeholder = options.placeholder)
       if options.withButton
         button.text-input__submit-button(type='submit')
 

@@ -110,6 +110,11 @@ const config = {
       },
     ],
   },
+  devServer: {
+    port: 4200,
+    open: true,
+  },
+
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
