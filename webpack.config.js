@@ -38,7 +38,7 @@ const config = {
   },
   output: {
     filename: devMode ? '[name].js' : '[name].[hash].js',
-    path: path.resolve(__dirname, './docs'),
+    path: path.resolve(__dirname, './dist'),
   },
   devServer: {
     open: true,
@@ -111,7 +111,10 @@ const config = {
     ],
   },
   devServer: {
+    contentBase: path.join(__dirname, 'dist'),
     port: 4200,
+    hot: true,
+    compress: true,
     open: true,
   },
 

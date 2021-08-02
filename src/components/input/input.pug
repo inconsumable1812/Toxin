@@ -3,7 +3,7 @@ mixin input(options)
     var titleClassName = "title"
     titleClassName += options.isData ? " title-data" : ""
     var ClassName = "input"
-    ClassName += options.isData ? " input-data js-text-input_has-mask" : ""
+    ClassName += options.isData ? " input-data" : ""
 
   div.form-elements_input
     h2.input-title(class = titleClassName)= options.title

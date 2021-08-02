@@ -1,0 +1,28 @@
+extends ../../layout/main.pug
+
+include ../../components/indexMenu/indexMenu
+
+
+block variables
+  - var title = "Меню выбор страниц"
+
+block content
+  +indexMenu({
+    theme: 'purple',
+    items: [
+      {text: 'Colors & Type', href: 'colorsAndTypes.html'},
+      {text: 'Form elements', href: 'FormElements.html'},
+      {text: 'Cards', href: 'cards.html'},
+      {text: 'Headers & Footers', href: 'headers-footers.html'},
+    ],
+  })
+  +indexMenu({
+    theme: 'green',
+    items: [
+      {text: 'Landing page', href: 'landing.html'},
+      {text: 'Search room', href: 'search.html'},
+      {text: 'Room details', href: 'room-details.html'},
+      {text: 'Registration', href: 'sign-up-page.html'},
+      {text: 'Sign in', href: 'sign-in-page.html'},
+    ],
+  })
