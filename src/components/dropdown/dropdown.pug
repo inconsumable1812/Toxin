@@ -1,0 +1,14 @@
+mixin dropdown(options)
+  - const {rows =[] } = options || {}
+
+  div.dropdown
+    span.dropdown__title= options.title
+    if options.hint
+      span.dropdown__hint= options.hint
+    div.dropdown__box
+      input.dropdown__input(name = options.name, placeholder = options.placeholder, readonly="readonly")
+      button.dropdown__button(type=button)
+      ul.dropdown__list
+        each row in rows
+          li.dropdown__item-name= row.text
+        

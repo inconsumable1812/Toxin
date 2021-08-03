@@ -3,9 +3,9 @@
 
 .indexMenu {
   $blockClass: &;
-  font-family: Quicksand, Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   list-style: none;
-  line-height: 3rem;
+  line-height: 2.7rem;
   padding: 1rem;
 
   &_theme {
@@ -27,7 +27,7 @@
     font-weight: bold;
 
     &:hover {
-      color: $color-dark-5;
+      color: $color-dark-75;
     }
   }
 }

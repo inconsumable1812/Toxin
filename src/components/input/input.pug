@@ -5,10 +5,10 @@ mixin input(options)
     var ClassName = "input"
     ClassName += options.isData ? " input-data" : ""
 
-  div.form-elements_input
-    h2.input-title(class = titleClassName)= options.title
+  div.input-text
+    span.input__title(class = titleClassName)= options.title
     if options.hint
-      .label-hint= options.hint
+      span.label__hint= options.hint
     div.input__box
       input(type = options.type, class= ClassName, id=ClassName, name = options.name, placeholder = options.placeholder)
       if options.withButton

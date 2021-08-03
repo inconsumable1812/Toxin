@@ -2,13 +2,17 @@
 @import '../../utils/vars';
 @import '../../utils/mixins';
 
-.form-elements_input {
+.input-text {
   //display: inline;
-  .input-title,
-  .label-hint {
-    display: inline;
+  .input__title {
+    font-family: 'Montserrat', Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: $color-dark-100;
+    font-weight: bold;
   }
-  .label-hint {
+  .label__hint {
+    font-family: 'Montserrat', Helvetica, sans-serif;
+    color: $color-dark-50;
     float: right;
   }
   .input__box {
