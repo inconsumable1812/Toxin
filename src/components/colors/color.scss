@@ -1,8 +1,8 @@
-//@import '../../styles/font.scss';
+@import '../../utils/font.scss';
 @import '../../utils/vars.scss';
 
 .color {
-  font-family: Quiсksand;
+  font-family: Montserrat, Helvetica, sans-serif;
   display: grid;
   grid-template-areas: 'block title' 'block subtitle';
   grid-column-gap: 40px;

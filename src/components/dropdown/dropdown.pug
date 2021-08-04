@@ -13,16 +13,18 @@ mixin dropdown(options)
           li.dropdown__list-item
             .dropdown__item-name= row.text
             .dropdown__counter-buttons
-              - const decButtonClass = row.count < 1 ? "dropdown__counter-buttons_type_dec_disabled" : "dropdown__counter-buttons_type_dec"
+              - var decButtonClass = "dropdown__counter-buttons_type_dec"
+              - decButtonClass += row.count < 1 ? " dropdown__counter-buttons_type_dec_disabled" : ""
+              - var clearButtonClass ="dropdown__clear-buttons"
+              - clearButtonClass += row.count < 1 ? " dropdown__clear-buttons_hidden" : ""
               button(class=decButtonClass, type="button")= "-"
               span.dropdown__counter= row.count
               button(class="dropdown__counter-buttons_type_inc", type="button")= "+"
-          if options.type === "guest"
-            li.dropdown__footer-buttons
-              - const clearButtonClass = row.count < 1 ? "dropdown__clear-buttons_hidden" : "dropdown__clear-buttons" 
-              span(class = clearButtonClass)
-                button.dropdown__button_theme_textual.dropdown__button_theme_textual_hovered(type="button")
-                  span.dropdown__button-caption= "Очистить"
-              span(class = "dropdown__apply-buttons")
-                button.dropdown__button_theme_textual(type="button")
-                  span.dropdown__button-caption= "Применить"
+        if options.type === "guest"
+          li.dropdown__footer-buttons           
+            span(class = "dropdown__clear-buttons")
+              button.dropdown__button_theme_textual.dropdown__button_theme_textual_hovered(type="button")
+                span.dropdown__button-caption= "ОЧИСТИТЬ"
+            span(class = "dropdown__apply-buttons")
+              button.dropdown__button_theme_textual(type="button")
+                span.dropdown__button-caption= "ПРИМЕНИТЬ"

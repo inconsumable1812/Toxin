@@ -1,52 +1,37 @@
 @import './vars.scss';
-@import '../styles/font.scss';
+@import './font.scss';
 
 * {
-  font-family: 'Montserrat';
-  letter-spacing: 0px;
+  font-family: Montserrat, Helvetica, sans-serif;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
+html {
+  font: 16px Montserrat, Helvetica, sans-serif;
+  height: 100%;
+}
 
 body {
-  font-size: 14px;
-  line-height: 24px;
-  color: $color-dark-75;
+  height: 100%;
 }
 
 h1,
 h2,
 h3 {
   color: $color-dark-100;
-}
-
-h1,
-h2 {
-  font-family: 'Quiсksand', 'Montserrat';
+  font-family: Montserrat, Helvetica, sans-serif;
+  font-weight: bold;
 }
 
 h1 {
-  font-size: 24px;
-  line-height: 30px;
-  letter-spacing: 0.4px;
+  font-size: 1.5rem;
 }
 h2 {
-  font-size: 19px;
-  line-height: 24px;
-  letter-spacing: 0.4px;
+  font-size: 1.1875rem;
 }
 
 h3 {
-  font-size: 12px;
-  line-height: 15px;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.2px;
-}
-
-button {
-  border: none;
-  outline: none;
-  background-color: transparent;
-  cursor: pointer;
 }

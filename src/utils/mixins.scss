@@ -51,7 +51,7 @@
 
   &:focus {
     outline: none;
-    #{$property}: 0 0.3125rem 0.3125rem $color-primary-25;
+    #{$property}: 0 0.3125rem 0.3125rem $color-dark-25;
   }
 }
 
@@ -65,19 +65,19 @@
 
 @mixin primary-text {
   font: normal normal 0.875rem/1.5rem Montserrat, Helvetica, sans-serif;
-  color: $color-primary-75;
+  color: $color-dark-75;
 }
 
 @mixin h1 {
   margin: 0;
   font: normal bold 1.5rem/1.875rem 'Open Sans', Impact, sans-serif;
-  color: $color-primary-100;
+  color: $color-dark-100;
 }
 
 @mixin h2 {
   margin: 0;
   font: normal bold 1.1875rem/1.5rem 'Open Sans', Impact, sans-serif;
-  color: $color-primary-100;
+  color: $color-dark-100;
 }
 
 @mixin h3 {

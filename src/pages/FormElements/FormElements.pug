@@ -2,25 +2,29 @@ extends ../../layout/main.pug
 
 include ../../components/input/input.pug
 include ../../components/dropdown/dropdown.pug
+include ../../components/logo/logo.pug
 
 block variables
   - var title = "formElements"
 
 block content
-        .formElements
-          .formElements-input
-            +input({title: "Text Field", type:'email', name:'email', placeholder:'Email', hint:'DEFAULT'})
-            +input({title: "Text Field", type:'text', name:'This is pretty awesome',placeholder:'This is pretty awesome', hint:'HOVER/FOCUS',})
-            +dropdown({title:"Dropdown", hint:"default", name:"Number", placeholder:"Количество комнат",rows: [
-                {count: 2, text: 'спальни',},
-                {count: 2, text: 'кровати',},
-                {count: 0, text: 'ванные комнаты',},
-              ]})
-            +input({title: "MASKED TEXT FIELD",type:'text', name:'text', hint:'DEFAULT', isData:true})
-            +input({title: "SUBSCRIPTION TEXT FIELD", type:'email', name:'text', placeholder:'Email', withButton :true})
-            +dropdown({title:"Dropdown", hint:"default", name:"guestNumber", placeholder:"Сколько гостей",type:"guest",rows: [
-                {count: 2, text: 'взрослые',},
-                {count: 2, text: 'дети',},
-                {count: 0, text: 'младенцы',},
-              ]})
+  .formElements
+    nav.formElements__logo 
+      +logo
+    .formElements__main
+      .formElements-input
+        +input({title: "Text Field", type:'email', name:'email', placeholder:'Email', hint:'DEFAULT'})
+        +input({title: "Text Field", type:'text', name:'This is pretty awesome',placeholder:'This is pretty awesome', hint:'HOVER/FOCUS',})
+        +dropdown({title:"Dropdown", hint:"default", name:"Number", placeholder:"Количество комнат",rows: [
+            {count: 2, text: 'спальни',},
+            {count: 2, text: 'кровати',},
+            {count: 0, text: 'ванные комнаты',},
+          ]})
+        +input({title: "MASKED TEXT FIELD",type:'text', name:'text', hint:'DEFAULT', isData:true})
+        +input({title: "SUBSCRIPTION TEXT FIELD", type:'email', name:'text', placeholder:'Email', withButton :true})
+        +dropdown({title:"Dropdown", hint:"default", name:"guestNumber", placeholder:"Сколько гостей",type:"guest",rows: [
+            {count: 0, text: 'взрослые',},
+            {count: 0, text: 'дети',},
+            {count: 0, text: 'младенцы',},
+          ]})
 
