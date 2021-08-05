@@ -100,16 +100,40 @@
     cursor: pointer;
     border: 0.0625rem solid $color-dark-25;
   }
+  &__counter-buttons_type_dec_disabled {
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+  }
   &__footer-buttons {
     list-style-type: none;
     display: flex;
     line-height: 2.5rem;
     justify-content: space-between;
+    margin: 0.8rem 0rem;
   }
 
-  &__clear-button {
+  &__clear-buttons {
     &_hidden {
       visibility: hidden;
+    }
+  }
+  &__button_theme_textual {
+    @include reset-button;
+    font: bold 0.85rem Montserrat, Helvetica, sans-serif;
+    border-radius: 1.375rem;
+    background: none;
+  }
+  &__button-caption_color_purple {
+    color: $color-purple;
+    &:hover {
+      color: $color-dark-50;
+    }
+  }
+  &__button-caption_color_dark {
+    color: $color-dark-50;
+    &:hover {
+      color: $color-dark-25;
     }
   }
 }
