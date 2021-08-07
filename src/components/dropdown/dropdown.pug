@@ -13,13 +13,13 @@ mixin dropdown(options)
           li.dropdown__list-item
             .dropdown__item-name= row.text
             .dropdown__counter-buttons
-              - var decButtonClass = "dropdown__counter-buttons_type_dec"
-              - decButtonClass += row.count < 1 ? " dropdown__counter-buttons_type_dec_disabled" : ""
+              - var minusButtonClass = "dropdown__counter-buttons_type_minus"
+              - minusButtonClass += row.count < 1 ? " dropdown__counter-buttons_type_minus_disabled" : ""
               - var clearButtonClass ="dropdown__clear-buttons"
               - clearButtonClass += row.count < 1 ? " dropdown__clear-buttons_hidden" : ""
-              button(class=decButtonClass, type="button")= "-"
+              button(class=minusButtonClass, type="button")= "-"
               span.dropdown__counter= row.count
-              button(class="dropdown__counter-buttons_type_inc", type="button")= "+"
+              button(class="dropdown__counter-buttons_type_plus", type="button")= "+"
         if options.type === "guest"
           li.dropdown__footer-buttons           
             span(class = "dropdown__clear-buttons")

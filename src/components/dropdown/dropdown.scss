@@ -85,10 +85,10 @@
     font-weight: bold;
     color: $color-dark-100;
   }
-  &__counter-buttons_type_dec,
-  &__counter-buttons_type_inc {
+  &__counter-buttons_type_minus,
+  &__counter-buttons_type_plus {
     @include reset-button;
-    @include reset-outline;
+    //@include reset-outline;
     $diam: 1.875rem;
     display: inline-block;
     font-size: 1rem;
@@ -100,7 +100,7 @@
     cursor: pointer;
     border: 0.0625rem solid $color-dark-25;
   }
-  &__counter-buttons_type_dec_disabled {
+  &__counter-buttons_type_minus_disabled {
     opacity: 0.5;
     cursor: default;
     pointer-events: none;
