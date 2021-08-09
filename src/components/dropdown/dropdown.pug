@@ -8,7 +8,7 @@ mixin dropdown(options)
     div.dropdown__box
       input.dropdown__input(name = options.name, placeholder = options.placeholder, readonly="readonly")
       button.dropdown__button(type="button")
-      ul.dropdown__list
+      ul.dropdown__list(class = options.dropdownExpanded)
         each row in rows
           li.dropdown__list-item
             .dropdown__item-name= row.text

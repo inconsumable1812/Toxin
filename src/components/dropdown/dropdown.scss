@@ -18,14 +18,8 @@
     position: relative;
     font-size: 0.875rem;
     color: $color-dark-75;
-    &:hover {
-      .dropdown__list {
-        display: block;
-      }
-    }
   }
   &__input {
-    @include reset-outline;
     font: 0.875rem Montserrat, Helvetica, sans-serif;
     color: $color-dark-75;
     width: 100%;
@@ -33,6 +27,15 @@
     padding: 0 2.375rem 0 0.875rem;
     border: 0.0625rem solid $color-dark-25;
     border-radius: 0.25rem;
+    transition: border 0.25s ease-in-out;
+    &:focus,
+    &:hover {
+      outline: none;
+      border: 0.0625rem solid $color-dark-50;
+    }
+    &_hover {
+      border: 0.0625rem solid $color-dark-50;
+    }
   }
   &__button {
     @include reset-button;
@@ -58,6 +61,10 @@
     box-shadow: 0 0.625rem 1.25rem $color-dark-5;
     background-color: white;
     z-index: 1;
+    opacity: 0;
+    &_expanded {
+      opacity: 1;
+    }
   }
   &__list-item {
     display: flex;
