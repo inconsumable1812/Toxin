@@ -1,6 +1,9 @@
 const counterButtons = document.querySelectorAll('.dropdown__counter-buttons')
 const dropdownButtons = document.querySelectorAll('.dropdown__button')
 const dropdownBoxes = document.querySelectorAll('.dropdown__box')
+const nameBedrooms = ['спальня', 'спальни', 'спален']
+const nameBeds = ['кровать', 'кровати', 'кроватей']
+const nameBathrooms = ['ванная комната', 'ванных комнаты', 'ванных комнат']
 
 for (const counterButton of counterButtons) {
   const buttonsMinus = counterButton.querySelector(
@@ -24,7 +27,9 @@ for (const counterButton of counterButtons) {
     }
   })
   buttonsPlus.addEventListener('click', () => {
-    counterInt = ++counterInt
+    if (counterInt < 20) {
+      counterInt = ++counterInt
+    }
     counter.innerHTML = `${counterInt}`
     if (counterInt > 0) {
       buttonsMinus.classList.remove(
@@ -38,6 +43,8 @@ for (const dropdownBox of dropdownBoxes) {
   const dropdownButton = dropdownBox.querySelector('.dropdown__button')
   const dropdownList = dropdownBox.querySelector('.dropdown__list')
   const dropdownInput = dropdownBox.querySelector('.dropdown__input')
+  const clearButton = dropdownBox.querySelector('.dropdown__clear-buttons')
+  const applyButton = dropdownBox.querySelector('.dropdown__apply-buttons')
 
   dropdownButton.addEventListener('click', () => {
     if (dropdownList.classList.contains('dropdown__list_expanded')) {
@@ -48,6 +55,12 @@ for (const dropdownBox of dropdownBoxes) {
       dropdownInput.classList.add('dropdown__input_hover')
     }
   })
+
+  // appleRooms(applyButton)
 }
 
-function solutionCount() {}
+/*function appleRooms(button) {
+  button.addEventListener('click', (event) => {
+    console.log('button')
+  })
+}*/

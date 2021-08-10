@@ -1,41 +1,32 @@
 @import './vars';
 
-@mixin inner-wrapper($lgWidth: 80.6%, $mdWidth: 95.5%, $maxWidth: 72.5rem) {
-  margin: 0 auto;
-  width: $mdWidth;
-
-  @media (min-width: $screen-lg-min) {
-    width: $lgWidth;
-    max-width: $maxWidth;
+@mixin _1200 {
+  @media (max-width: 1200px) {
+    @content;
   }
 }
 
-@mixin ui-kit-navigation($marginBottom) {
-  @include inner-wrapper($lgWidth: 95.8%, $mdWidth: 95.8%, $maxWidth: 86.25rem);
-  display: flex;
-  padding: 1.875rem 0;
-  margin-bottom: $marginBottom;
+@mixin _992 {
+  @media (max-width: 992px) {
+    @content;
+  }
 }
 
-@mixin auth-page($innerWrapperMinHeight) {
-  width: 100%;
-
-  background-image: url('../img/auth.jpg');
-  background-color: $color-purple;
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  &__inner-wrapper {
-    @include inner-wrapper;
-    min-height: $innerWrapperMinHeight;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@mixin _768 {
+  @media (max-width: 768px) {
+    @content;
   }
+}
 
-  &__form {
-    width: 23.75rem;
+@mixin _480 {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin _320 {
+  @media (max-width: 320px) {
+    @content;
   }
 }
 
@@ -61,28 +52,4 @@
   user-select: none;
   background: transparent;
   cursor: pointer;
-}
-
-@mixin primary-text {
-  font: normal normal 0.875rem/1.5rem Montserrat, Helvetica, sans-serif;
-  color: $color-dark-75;
-}
-
-@mixin h1 {
-  margin: 0;
-  font: normal bold 1.5rem/1.875rem 'Open Sans', Impact, sans-serif;
-  color: $color-dark-100;
-}
-
-@mixin h2 {
-  margin: 0;
-  font: normal bold 1.1875rem/1.5rem 'Open Sans', Impact, sans-serif;
-  color: $color-dark-100;
-}
-
-@mixin h3 {
-  margin: 0;
-  font: normal bold 0.75rem/0.9375rem Montserrat, Helvetica, sans-serif;
-  color: $color-primary-100;
-  text-transform: uppercase;
 }

@@ -4,13 +4,14 @@
 .color {
   font-family: Montserrat, Helvetica, sans-serif;
   display: grid;
-  grid-template-areas: 'block title' 'block subtitle';
-  grid-column-gap: 40px;
+  grid-template-areas:
+    'block title'
+    'block subtitle';
+  grid-column-gap: 2.5rem;
   align-items: center;
   justify-content: start;
   .color-block {
     grid-area: block;
-    background-color: #fff;
     width: 70px;
     height: 70px;
     border-radius: 6px;
@@ -18,8 +19,8 @@
   .color-title {
     grid-area: title;
     display: flex;
-    line-height: 29px;
-    font-size: 19px;
+    line-height: 1.8125rem;
+    font-size: 1.1875rem;
     text-transform: none;
     align-self: flex-end;
     width: max-content;
@@ -27,10 +28,9 @@
   .color-subtitle {
     grid-area: subtitle;
     display: flex;
-    line-height: 29px;
-    font-size: 19px;
+    line-height: 1.8125rem;
+    font-size: 1.1875rem;
     align-self: flex-start;
-    letter-spacing: -1px;
   }
 
   &_dark100 {

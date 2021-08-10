@@ -2,11 +2,17 @@
 @import '../../utils/vars.scss';
 
 .type {
-  display: flex;
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  column-gap: 1.9rem;
 }
 .type-title {
   font-family: 'Montserrat';
   text-align: right;
   font-weight: normal;
   color: $color-dark-25;
+}
+.type-subtitle__text {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
 }

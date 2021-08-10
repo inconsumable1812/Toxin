@@ -2,13 +2,13 @@
 @import './font.scss';
 
 * {
-  font-family: Montserrat, Helvetica, sans-serif;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 html {
-  font: 16px Montserrat, Helvetica, sans-serif;
+  font-size: 16px;
+  font-family: Montserrat, Helvetica, sans-serif;
   height: 100%;
 }
 
@@ -26,12 +26,15 @@ h3 {
 
 h1 {
   font-size: 1.5rem;
+  line-height: 1.875rem;
 }
 h2 {
   font-size: 1.1875rem;
+  line-height: 1.5rem;
 }
 
 h3 {
   font-size: 0.75rem;
   text-transform: uppercase;
+  line-height: 0.9375rem;
 }
