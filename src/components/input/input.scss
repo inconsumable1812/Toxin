@@ -25,18 +25,27 @@
     margin: 0.25rem auto 0.5rem;
 
     .input {
+      font-family: 'Montserrat', Helvetica, sans-serif;
       width: 100%;
       line-height: 2.625rem;
       padding: 0 2.375rem 0 0.875rem;
       border: 1px solid $color-dark-25;
       border-radius: $borderRadius;
       font-size: 0.875rem;
-      color: $color-dark-75;
-      transition: border 0.25s ease-in-out;
+      color: $color-dark-25;
+      &::-webkit-input-placeholder {
+        color: $color-dark-25;
+        transition: color 0.5s ease-in-out;
+      }
+      transition: border 0.5s, color 0.5s ease-in-out;
       &:focus,
       &:hover {
         outline: none;
         border: 0.0625rem solid $color-dark-50;
+        color: $color-dark-75;
+        &::-webkit-input-placeholder {
+          color: $color-dark-75;
+        }
       }
     }
     .text-input__submit-button {
@@ -50,4 +59,7 @@
       background: url('./img/arrow-forward.svg') no-repeat center center;
     }
   }
+}
+:focus::-webkit-input-placeholder {
+  color: transparent;
 }
