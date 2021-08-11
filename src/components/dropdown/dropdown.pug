@@ -18,7 +18,7 @@ mixin dropdown(options)
               - var clearButtonClass ="dropdown__clear-buttons"
               - clearButtonClass += row.count < 1 ? " dropdown__clear-buttons_hidden" : ""
               button(class=minusButtonClass, type="button")= "-"
-              span.dropdown__counter= row.count
+              span.dropdown__counter(class = 'dropdown__counter_'+ options.type)= row.count
               button(class="dropdown__counter-buttons_type_plus", type="button")= "+"
         if options.type === "guest"
           li.dropdown__footer-buttons           
