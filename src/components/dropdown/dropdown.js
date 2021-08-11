@@ -12,6 +12,10 @@ for (const dropdownBox of dropdownBoxes) {
   const clearButton = dropdownBox.querySelector('.dropdown__clear-buttons')
   const applyButton = dropdownBox.querySelector('.dropdown__apply-buttons')
   const counterButtons = dropdownBox.querySelectorAll('.dropdown__counter-buttons')
+  let numberOfBedrooms = dropdownBox.querySelector('.dropdown__list-item_bedroom') ? +dropdownBox.querySelector('.dropdown__list-item_bedroom .dropdown__counter').innerHTML : ''
+  let numberOfBeds = dropdownBox.querySelector('.dropdown__list-item_bed') ? +dropdownBox.querySelector('.dropdown__list-item_bed .dropdown__counter').innerHTML : ''
+  let numberOfBathrooms = dropdownBox.querySelector('.dropdown__list-item_bathroom') ? +dropdownBox.querySelector('.dropdown__list-item_bathroom .dropdown__counter').innerHTML : ''
+  console.log(numberOfBedrooms, numberOfBathrooms)
 
   dropdownButton.addEventListener('click', () => {
     if (dropdownList.classList.contains('dropdown__list_expanded')) {
@@ -29,11 +33,6 @@ for (const dropdownBox of dropdownBoxes) {
     const counter = counterButton.querySelector('.dropdown__counter')
     let counterInt = parseInt(counter.innerHTML)
     const countName = counterButton.parentElement.querySelector('.dropdown__item-name').innerHTML
-    console.log(countName)
-    console.log(counterInt)
-    let numberOfBedrooms = counterInt
-    let numberOfBeds = counterInt
-    let numberOfBathrooms = counterInt
 
     buttonsMinus.addEventListener('click', () => {
       if (counterInt > 0) {
@@ -43,8 +42,20 @@ for (const dropdownBox of dropdownBoxes) {
       if (counterInt === 0) {
         buttonsMinus.classList.add('dropdown__counter-buttons_type_minus_disabled')
       }
-      if (counter.classList.contains('dropdown__counter_rooms')) {
+      switch (countName) {
+        case 'спальни':
+          numberOfBedrooms = counterInt
+          break
+        case 'кровати': {
+          numberOfBeds = counterInt
+          break
+        }
+        case 'ванные комнаты': {
+          numberOfBathrooms = counterInt
+          break
+        }
       }
+      dropdownInput.placeholder = `${numberOfBedrooms} ${nameBedrooms[index(numberOfBedrooms)]} ${numberOfBeds} ${nameBeds[index(numberOfBeds)]} ${numberOfBathrooms} ${nameBathrooms[index(numberOfBathrooms)]}`
     })
     buttonsPlus.addEventListener('click', () => {
       if (counterInt < 20) {
@@ -68,7 +79,17 @@ for (const dropdownBox of dropdownBoxes) {
         }
       }
 
-      dropdownInput.placeholder = `${numberOfBedrooms} ${numberOfBeds} ${numberOfBathrooms}`
+      dropdownInput.placeholder = `${numberOfBedrooms} ${nameBedrooms[index(numberOfBedrooms)]} ${numberOfBeds} ${nameBeds[index(numberOfBeds)]} ${numberOfBathrooms} ${nameBathrooms[index(numberOfBathrooms)]}`
     })
+  }
+}
+
+function index(number) {
+  if (number === 1) {
+    return 0
+  } else if (number === 2 || number === 3 || number === 4) {
+    return 1
+  } else {
+    return 2
   }
 }

@@ -16,9 +16,9 @@ block content
         +input({title: "Text Field", type:'email', name:'email', placeholder:'Email', hint:'DEFAULT'})
         +input({title: "Text Field", type:'text', name:'This is pretty awesome',placeholder:'This is pretty awesome', hint:'HOVER/FOCUS',})
         +dropdown({title:"Dropdown", hint:"default", name:"Number", placeholder:"Количество комнат",rows: [
-            {count: 2, text: 'спальни',},
-            {count: 2, text: 'кровати',},
-            {count: 0, text: 'ванные комнаты',},
+            {count: 2, text: 'спальни', room:'bedroom'},
+            {count: 2, text: 'кровати', room:'bed'},
+            {count: 0, text: 'ванные комнаты', room: 'bathroom'},
           ], dropdownExpanded:"dropdown__list_expanded!", type:"rooms",})
         +input({title: "MASKED TEXT FIELD",type:'text', name:'text', hint:'DEFAULT', isData:true})
         +input({title: "SUBSCRIPTION TEXT FIELD", type:'email', name:'text', placeholder:'Email', withButton :true})

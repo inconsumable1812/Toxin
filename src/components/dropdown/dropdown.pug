@@ -10,7 +10,7 @@ mixin dropdown(options)
       button.dropdown__button(type="button")
       ul.dropdown__list(class = options.dropdownExpanded)
         each row in rows
-          li.dropdown__list-item
+          li.dropdown__list-item(class = row.room?'dropdown__list-item_'+ row.room:'')
             .dropdown__item-name= row.text
             .dropdown__counter-buttons
               - var minusButtonClass = "dropdown__counter-buttons_type_minus"
