@@ -6,11 +6,11 @@ mixin dropdown(options)
     if options.hint
       span.dropdown__hint= options.hint
     div.dropdown__box
-      input.dropdown__input(name = options.name, placeholder = options.placeholder, readonly="readonly")
+      input.dropdown__input(name = options.name, placeholder = options.placeholder, readonly="readonly", class = 'dropdown__input_' + options.type)
       button.dropdown__button(type="button")
       ul.dropdown__list(class = options.dropdownExpanded)
         each row in rows
-          li.dropdown__list-item(class = row.room?'dropdown__list-item_'+ row.room:'')
+          li.dropdown__list-item(class = 'dropdown__list-item_'+ row.typeOfCount)
             .dropdown__item-name= row.text
             .dropdown__counter-buttons
               - var minusButtonClass = "dropdown__counter-buttons_type_minus"

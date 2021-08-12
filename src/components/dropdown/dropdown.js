@@ -4,6 +4,8 @@ const dropdownBoxes = document.querySelectorAll('.dropdown__box')
 const nameBedrooms = ['спальня', 'спальни', 'спален']
 const nameBeds = ['кровать', 'кровати', 'кроватей']
 const nameBathrooms = ['ванная комната', 'ванные комнаты', 'ванных комнат']
+const nameAdult = ['гость', 'гостя', 'гостей']
+const nameBaby = ['младенец', 'младенца', 'младенцев']
 
 for (const dropdownBox of dropdownBoxes) {
   const dropdownButton = dropdownBox.querySelector('.dropdown__button')
@@ -12,9 +14,24 @@ for (const dropdownBox of dropdownBoxes) {
   const clearButton = dropdownBox.querySelector('.dropdown__clear-buttons')
   const applyButton = dropdownBox.querySelector('.dropdown__apply-buttons')
   const counterButtons = dropdownBox.querySelectorAll('.dropdown__counter-buttons')
-  let numberOfBedrooms = dropdownBox.querySelector('.dropdown__list-item_bedroom') ? +dropdownBox.querySelector('.dropdown__list-item_bedroom .dropdown__counter').innerHTML : ''
-  let numberOfBeds = dropdownBox.querySelector('.dropdown__list-item_bed') ? +dropdownBox.querySelector('.dropdown__list-item_bed .dropdown__counter').innerHTML : ''
-  let numberOfBathrooms = dropdownBox.querySelector('.dropdown__list-item_bathroom') ? +dropdownBox.querySelector('.dropdown__list-item_bathroom .dropdown__counter').innerHTML : ''
+  let numberOfBedrooms = dropdownBox.querySelector('.dropdown__list-item_bedroom')
+    ? +dropdownBox.querySelector('.dropdown__list-item_bedroom .dropdown__counter').innerHTML
+    : ''
+  let numberOfBeds = dropdownBox.querySelector('.dropdown__list-item_bed')
+    ? +dropdownBox.querySelector('.dropdown__list-item_bed .dropdown__counter').innerHTML
+    : ''
+  let numberOfBathrooms = dropdownBox.querySelector('.dropdown__list-item_bathroom')
+    ? +dropdownBox.querySelector('.dropdown__list-item_bathroom .dropdown__counter').innerHTML
+    : ''
+  let numberOfAdult = dropdownBox.querySelector('.dropdown__list-item_adult')
+    ? +dropdownBox.querySelector('.dropdown__list-item_adult .dropdown__counter').innerHTML
+    : ''
+  let numberOfСhildren = dropdownBox.querySelector('.dropdown__list-item_children')
+    ? +dropdownBox.querySelector('.dropdown__list-item_children .dropdown__counter').innerHTML
+    : ''
+  let numberOfBaby = dropdownBox.querySelector('.dropdown__list-item_baby')
+    ? +dropdownBox.querySelector('.dropdown__list-item_baby .dropdown__counter').innerHTML
+    : ''
 
   let outBedrooms = `${numberOfBedrooms} ${nameBedrooms[index(numberOfBedrooms)]}`
   if (numberOfBedrooms === 0) {
@@ -28,9 +45,11 @@ for (const dropdownBox of dropdownBoxes) {
   if (numberOfBathrooms === 0) {
     outBathrooms = ''
   }
-  dropdownInput.placeholder = `${outBedrooms} ${outBed} ${outBathrooms}`
-  if (numberOfBedrooms === 0 && numberOfBeds === 0 && numberOfBathrooms === 0) {
-    dropdownInput.placeholder = 'Количество комнат'
+  if (dropdownInput.classList.contains('dropdown__input_rooms')) {
+    dropdownInput.placeholder = `${outBedrooms} ${outBed} ${outBathrooms}`
+    if (numberOfBedrooms === 0 && numberOfBeds === 0 && numberOfBathrooms === 0) {
+      dropdownInput.placeholder = 'Количество комнат'
+    }
   }
 
   dropdownButton.addEventListener('click', () => {
@@ -70,7 +89,20 @@ for (const dropdownBox of dropdownBoxes) {
           numberOfBathrooms = counterInt
           break
         }
+        case 'взрослые': {
+          numberOfAdult = counterInt
+          break
+        }
+        case 'дети': {
+          numberOfСhildren = counterInt
+          break
+        }
+        case 'младенцы': {
+          numberOfBaby = counterInt
+          break
+        }
       }
+
       let outBedrooms = `${numberOfBedrooms} ${nameBedrooms[index(numberOfBedrooms)]}`
       if (numberOfBedrooms === 0) {
         outBedrooms = ''
@@ -83,9 +115,11 @@ for (const dropdownBox of dropdownBoxes) {
       if (numberOfBathrooms === 0) {
         outBathrooms = ''
       }
-      dropdownInput.placeholder = `${outBedrooms} ${outBed} ${outBathrooms}`
-      if (numberOfBedrooms === 0 && numberOfBeds === 0 && numberOfBathrooms === 0) {
-        dropdownInput.placeholder = 'Количество комнат'
+      if (dropdownInput.classList.contains('dropdown__input_rooms')) {
+        dropdownInput.placeholder = `${outBedrooms} ${outBed} ${outBathrooms}`
+        if (numberOfBedrooms === 0 && numberOfBeds === 0 && numberOfBathrooms === 0) {
+          dropdownInput.placeholder = 'Количество комнат'
+        }
       }
     })
     buttonsPlus.addEventListener('click', () => {
@@ -108,6 +142,18 @@ for (const dropdownBox of dropdownBoxes) {
           numberOfBathrooms = counterInt
           break
         }
+        case 'взрослые': {
+          numberOfAdult = counterInt
+          break
+        }
+        case 'дети': {
+          numberOfСhildren = counterInt
+          break
+        }
+        case 'младенцы': {
+          numberOfBaby = counterInt
+          break
+        }
       }
 
       let outBedrooms = `${numberOfBedrooms} ${nameBedrooms[index(numberOfBedrooms)]}`
@@ -122,7 +168,44 @@ for (const dropdownBox of dropdownBoxes) {
       if (numberOfBathrooms === 0) {
         outBathrooms = ''
       }
-      dropdownInput.placeholder = `${outBedrooms} ${outBed} ${outBathrooms}`
+      if (dropdownInput.classList.contains('dropdown__input_rooms')) {
+        dropdownInput.placeholder = `${outBedrooms} ${outBed} ${outBathrooms}`
+      }
+    })
+    if (clearButton) {
+      clearButton.addEventListener('click', () => {
+        if (dropdownInput.classList.contains('dropdown__input_guest')) {
+          dropdownInput.placeholder = `Сколько гостей`
+          numberOfAdult = 0
+          numberOfСhildren = 0
+          numberOfBaby = 0
+          counter.innerHTML = `0`
+          counterInt = 0
+        }
+      })
+    }
+  }
+
+  if (applyButton) {
+    applyButton.addEventListener('click', () => {
+      let countGuests = numberOfAdult + numberOfСhildren
+      let outGuests = `${countGuests} ${nameAdult[index(countGuests)]}`
+      if (countGuests === 0) {
+        outGuests = ''
+      }
+      let outBaby = `${numberOfBaby} ${nameBaby[index(numberOfBaby)]}`
+      if (numberOfBaby === 0) {
+        outBaby = ''
+      }
+      if (dropdownInput.classList.contains('dropdown__input_guest')) {
+        if (countGuests === 0 && numberOfBaby === 0) {
+          dropdownInput.placeholder = `Сколько гостей`
+        } else {
+          dropdownInput.placeholder = `${outGuests} ${outBaby}`
+        }
+        dropdownList.classList.remove('dropdown__list_expanded')
+        dropdownInput.classList.remove('dropdown__input_hover')
+      }
     })
   }
 }

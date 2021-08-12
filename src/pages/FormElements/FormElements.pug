@@ -16,21 +16,17 @@ block content
         +input({title: "Text Field", type:'email', name:'email', placeholder:'Email', hint:'DEFAULT'})
         +input({title: "Text Field", type:'text', name:'This is pretty awesome',placeholder:'This is pretty awesome', hint:'HOVER/FOCUS',})
         +dropdown({title:"Dropdown", hint:"default", name:"Number", placeholder:"Количество комнат",rows: [
-            {count: 2, text: 'спальни', room:'bedroom'},
-            {count: 2, text: 'кровати', room:'bed'},
-            {count: 0, text: 'ванные комнаты', room: 'bathroom'},
+            {count: 2, text: 'спальни', typeOfCount:'bedroom'},
+            {count: 2, text: 'кровати', typeOfCount:'bed'},
+            {count: 0, text: 'ванные комнаты', typeOfCount: 'bathroom'},
           ], dropdownExpanded:"dropdown__list_expanded!", type:"rooms",})
         +input({title: "MASKED TEXT FIELD",type:'text', name:'text', hint:'DEFAULT', isData:true})
         +input({title: "SUBSCRIPTION TEXT FIELD", type:'email', name:'text', placeholder:'Email', withButton :true})
         +dropdown({title:"Dropdown", hint:"default", name:"guestNumber", placeholder:"Сколько гостей",type:"guest",rows: [
-            {count: 0, text: 'взрослые',},
-            {count: 0, text: 'дети',},
-            {count: 0, text: 'младенцы',},
+            {count: 0, text: 'взрослые', typeOfCount:'adult'},
+            {count: 0, text: 'дети', typeOfCount:'children'},
+            {count: 0, text: 'младенцы', typeOfCount:'baby'},
           ]})
-        +dropdown({title:"Dropdown", hint:"default", name:"Number", placeholder:"Количество комнат",rows: [
-            {count: 2, text: 'спальни', room:'bedroom'},
-            {count: 1, text: 'кровати', room:'bed'},
-            {count: 0, text: 'ванные комнаты', room: 'bathroom'},
-          ], dropdownExpanded:"dropdown__list_expanded", type:"rooms",})
+
 
 
