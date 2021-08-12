@@ -40,7 +40,8 @@
 @mixin reset-outline($property: box-shadow) {
   transition: #{$property} 0.25s ease-in-out;
 
-  &:focus {
+  &:focus,
+  &:hover {
     outline: none;
     #{$property}: 0 0.03125rem 0.03125rem $color-dark-25;
   }

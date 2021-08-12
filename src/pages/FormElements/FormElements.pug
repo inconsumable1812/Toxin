@@ -27,4 +27,10 @@ block content
             {count: 0, text: 'дети',},
             {count: 0, text: 'младенцы',},
           ]})
+        +dropdown({title:"Dropdown", hint:"default", name:"Number", placeholder:"Количество комнат",rows: [
+            {count: 2, text: 'спальни', room:'bedroom'},
+            {count: 1, text: 'кровати', room:'bed'},
+            {count: 0, text: 'ванные комнаты', room: 'bathroom'},
+          ], dropdownExpanded:"dropdown__list_expanded", type:"rooms",})
+
 
