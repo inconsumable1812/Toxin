@@ -2,6 +2,7 @@ extends ../../layout/main.pug
 
 include ../../components/input/input.pug
 include ../../components/dropdown/dropdown.pug
+include ../../components/dateDropdown/dateDropdown.pug
 include ../../components/logo/logo.pug
 
 block variables
@@ -27,6 +28,8 @@ block content
             {count: 0, text: 'дети', typeOfCount:'children'},
             {count: 0, text: 'младенцы', typeOfCount:'baby'},
           ]})
+        +dateDropdown({title:"Date Dropdown", type:'double'})
+        +dateDropdown({title:"Filter date dropdown", type:'single'})
 
 
 

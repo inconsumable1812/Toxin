@@ -61,6 +61,15 @@ for (const dropdownBox of dropdownBoxes) {
       dropdownInput.classList.add('dropdown__input_hover')
     }
   })
+  dropdownInput.addEventListener('click', () => {
+    if (dropdownList.classList.contains('dropdown__list_expanded')) {
+      dropdownList.classList.remove('dropdown__list_expanded')
+      dropdownInput.classList.remove('dropdown__input_hover')
+    } else {
+      dropdownList.classList.add('dropdown__list_expanded')
+      dropdownInput.classList.add('dropdown__input_hover')
+    }
+  })
 
   for (const counterButton of counterButtons) {
     const buttonsMinus = counterButton.querySelector('.dropdown__counter-buttons_type_minus')
@@ -121,6 +130,9 @@ for (const dropdownBox of dropdownBoxes) {
           dropdownInput.placeholder = 'Количество комнат'
         }
       }
+      if (clearButton && numberOfAdult === 0 && numberOfСhildren === 0 && numberOfBaby === 0) {
+        clearButton.classList.add('dropdown__clear-buttons_hidden')
+      }
     })
     buttonsPlus.addEventListener('click', () => {
       if (counterInt < 20) {
@@ -171,6 +183,9 @@ for (const dropdownBox of dropdownBoxes) {
       if (dropdownInput.classList.contains('dropdown__input_rooms')) {
         dropdownInput.placeholder = `${outBedrooms} ${outBed} ${outBathrooms}`
       }
+      if (clearButton && clearButton.classList.contains('dropdown__clear-buttons_hidden')) {
+        clearButton.classList.remove('dropdown__clear-buttons_hidden')
+      }
     })
     if (clearButton) {
       clearButton.addEventListener('click', () => {
@@ -181,6 +196,7 @@ for (const dropdownBox of dropdownBoxes) {
           numberOfBaby = 0
           counter.innerHTML = `0`
           counterInt = 0
+          clearButton.classList.add('dropdown__clear-buttons_hidden')
         }
       })
     }

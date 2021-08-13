@@ -2,24 +2,26 @@ mixin dropdown(options)
   - const {rows =[] } = options || {}
 
   div.dropdown
-    span.dropdown__title= options.title
+    if options.title
+      span.dropdown__title= options.title
     if options.hint
       span.dropdown__hint= options.hint
     div.dropdown__box
       input.dropdown__input(name = options.name, placeholder = options.placeholder, readonly="readonly", class = 'dropdown__input_' + options.type)
       button.dropdown__button(type="button")
       ul.dropdown__list(class = options.dropdownExpanded)
-        each row in rows
-          li.dropdown__list-item(class = 'dropdown__list-item_'+ row.typeOfCount)
-            .dropdown__item-name= row.text
-            .dropdown__counter-buttons
-              - var minusButtonClass = "dropdown__counter-buttons_type_minus"
-              - minusButtonClass += row.count < 1 ? " dropdown__counter-buttons_type_minus_disabled" : ""
-              - var clearButtonClass ="dropdown__clear-buttons"
-              - clearButtonClass += row.count < 1 ? " dropdown__clear-buttons_hidden" : ""
-              button(class=minusButtonClass, type="button")= "-"
-              span.dropdown__counter(class = 'dropdown__counter_'+ options.type)= row.count
-              button(class="dropdown__counter-buttons_type_plus", type="button")= "+"
+        if options.rows
+          each row in rows
+            li.dropdown__list-item(class = 'dropdown__list-item_'+ row.typeOfCount)
+              .dropdown__item-name= row.text
+              .dropdown__counter-buttons
+                - var minusButtonClass = "dropdown__counter-buttons_type_minus"
+                - minusButtonClass += row.count < 1 ? " dropdown__counter-buttons_type_minus_disabled" : ""
+                - var clearButtonClass ="dropdown__clear-buttons"
+                - clearButtonClass += row.count < 1 ? " dropdown__clear-buttons_hidden" : ""
+                button(class=minusButtonClass, type="button")= "-"
+                span.dropdown__counter(class = 'dropdown__counter_'+ options.type)= row.count
+                button(class="dropdown__counter-buttons_type_plus", type="button")= "+"
         if options.type === "guest"
           li.dropdown__footer-buttons           
             span(class = "dropdown__clear-buttons")

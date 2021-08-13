@@ -31,7 +31,10 @@
     &:focus,
     &:hover {
       outline: none;
-      border: 0.0625rem solid $color-dark-50;
+      border: 0.0625rem solid $color-dark-75;
+      &::-webkit-input-placeholder {
+        color: $color-dark-75;
+      }
     }
     &_hover {
       border: 0.0625rem solid $color-dark-50;
