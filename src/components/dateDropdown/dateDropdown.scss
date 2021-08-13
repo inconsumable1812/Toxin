@@ -1,5 +1,20 @@
+@import '../../components/dateDropdown/datepicker_styles/datepicker_styles.css';
+@import '../../utils/vars';
+@import '../../utils/mixins';
+
 .dateDropdown__group_double {
   display: grid;
   grid-template-columns: 9.375rem 9.375rem;
   column-gap: 1.25rem;
+}
+.js-calendar_content {
+  position: absolute;
+  left: 0;
+  display: none;
+  width: 100%;
+  z-index: 1;
+  display: none;
+  &_expanded {
+    display: block;
+  }
 }

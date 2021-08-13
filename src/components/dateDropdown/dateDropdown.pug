@@ -8,15 +8,16 @@ mixin dateDropdown(options)
       div.dateDropdown__group_double
         div.dateDropdown__item 
           span.dateDropdown__title= options.title
-          div.dateDropdown_dropdownBox
-            +dropdown({name:"field-date-from", placeholder:"ДД.ММ.ГГГГ", type: "date"})
+          div.dateDropdown__dropdownBox
+            +dropdown({name:"field-date-from", placeholder:"ДД.ММ.ГГГГ", type: "date", calendar:true})
         div.dateDropdown__item 
           span.dateDropdown__title= options.title
-          div.dateDropdown_dropdownBox
-            +dropdown({name:"field-date-from", placeholder:"ДД.ММ.ГГГГ", type: "date"})
+          div.dateDropdown__dropdownBox
+            +dropdown({name:"field-date-from", placeholder:"ДД.ММ.ГГГГ", type: "date", calendar:true})
     if (options.type === "single")
       div.dateDropdown__group_single
         div.dateDropdown__item
           span.dateDropdown__title= options.title
-          div.dateDropdown__box
-            +dropdown({name:"field-date-from", placeholder:"ДД.ММ.ГГГГ", type: "date"})
+          div.dateDropdown__dropdownBox
+            +dropdown({name:"field-date-from", placeholder:"ДД.ММ.ГГГГ", type: "date", calendar:true})
+    div.js-calendar_content(class= options.expanded)

@@ -14,6 +14,8 @@ for (const dropdownBox of dropdownBoxes) {
   const clearButton = dropdownBox.querySelector('.dropdown__clear-buttons')
   const applyButton = dropdownBox.querySelector('.dropdown__apply-buttons')
   const counterButtons = dropdownBox.querySelectorAll('.dropdown__counter-buttons')
+  const calendar = dropdownBox.parentElement.querySelector('.dropdown__box_date')
+
   let numberOfBedrooms = dropdownBox.querySelector('.dropdown__list-item_bedroom')
     ? +dropdownBox.querySelector('.dropdown__list-item_bedroom .dropdown__counter').innerHTML
     : ''
@@ -53,21 +55,25 @@ for (const dropdownBox of dropdownBoxes) {
   }
 
   dropdownButton.addEventListener('click', () => {
-    if (dropdownList.classList.contains('dropdown__list_expanded')) {
-      dropdownList.classList.remove('dropdown__list_expanded')
-      dropdownInput.classList.remove('dropdown__input_hover')
-    } else {
-      dropdownList.classList.add('dropdown__list_expanded')
-      dropdownInput.classList.add('dropdown__input_hover')
+    if (!calendar) {
+      if (dropdownList.classList.contains('dropdown__list_expanded')) {
+        dropdownList.classList.remove('dropdown__list_expanded')
+        dropdownInput.classList.remove('dropdown__input_hover')
+      } else {
+        dropdownList.classList.add('dropdown__list_expanded')
+        dropdownInput.classList.add('dropdown__input_hover')
+      }
     }
   })
   dropdownInput.addEventListener('click', () => {
-    if (dropdownList.classList.contains('dropdown__list_expanded')) {
-      dropdownList.classList.remove('dropdown__list_expanded')
-      dropdownInput.classList.remove('dropdown__input_hover')
-    } else {
-      dropdownList.classList.add('dropdown__list_expanded')
-      dropdownInput.classList.add('dropdown__input_hover')
+    if (!calendar) {
+      if (dropdownList.classList.contains('dropdown__list_expanded')) {
+        dropdownList.classList.remove('dropdown__list_expanded')
+        dropdownInput.classList.remove('dropdown__input_hover')
+      } else {
+        dropdownList.classList.add('dropdown__list_expanded')
+        dropdownInput.classList.add('dropdown__input_hover')
+      }
     }
   })
 
