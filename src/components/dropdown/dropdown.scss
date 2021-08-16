@@ -67,7 +67,6 @@
     box-shadow: 0 0.625rem 1.25rem $color-dark-5;
     background-color: white;
     z-index: 1;
-    transition: display 1s ease;
     &_expanded {
       display: block;
     }

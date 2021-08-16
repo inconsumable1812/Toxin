@@ -9,5 +9,7 @@ mixin expandableCheckboxList(options)
       if options.rows
         each row in rows
           li.expandableCheckboxList__item
-            input.expandableCheckboxList__item_input(type = "checkbox", name = row.name)
-            span.expandableCheckboxList__item_title= row.title
+            label.expandableCheckboxList__label
+              input.expandableCheckboxList__input(type = "checkbox", name = row.name)
+              span.expandableCheckboxList__checkbox
+              span.expandableCheckboxList__title= row.title

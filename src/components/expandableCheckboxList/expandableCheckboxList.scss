@@ -3,11 +3,13 @@
 
 .expandableCheckboxList {
   width: 16.625rem;
+  position: relative;
   .expandableCheckboxList__header {
     padding: 1rem 0.625rem 0.75rem 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
     .expandableCheckboxList__title {
       font: 'Montserrat', Helvetica, sans-serif;
       font-size: 0.75rem;
@@ -15,46 +17,52 @@
       text-transform: uppercase;
     }
     .expandableCheckboxList__toggle-button {
-      background: url('./img/expand_more_up.svg') no-repeat center center;
+      background: url('./img/expand_more_down.svg') no-repeat center center;
       border: none;
       appearance: none;
       user-select: none;
       cursor: pointer;
       height: 20px;
       padding-right: 20px;
+      transition: transform 0.2s ease-in-out;
+      &_expanded {
+        transform: rotate(180deg);
+        transition: transform 0.2s ease-in-out;
+      }
     }
   }
   .expandableCheckboxList__list {
     list-style-type: none;
-    //line-height: 1.125rem;
-    .expandableCheckboxList__item {
-      &_input {
-        //position: absolute;
-        opacity: 0;
-        &:checked {
-          &:after /*+ .expandableCheckboxList__item_title*/ {
-            margin: 0.375rem;
-            width: 0.5rem;
-            height: 0.375rem;
-            border: 0.125rem solid $color-purple;
-            border-top: none;
-            border-right: none;
-            transform: rotate(-45deg);
-          }
+    position: absolute;
+    display: none;
+    z-index: 1;
+    &_expanded {
+      display: block;
+    }
 
-          &:before {
-            border-color: $color-purple;
-          }
-        }
-        &:focus {
-          &:before {
-            transition: box-shadow 0.25s ease-in-out;
-            box-shadow: 0 0.3125rem 0.3125rem $color-dark-25;
-          }
+    .expandableCheckboxList__item {
+      padding-bottom: 0.625rem;
+      line-height: 1.125rem;
+      font-size: 0.875rem;
+      font: 'Montserrat', Helvetica, sans-serif;
+      color: $color-dark-50;
+      .expandableCheckboxList__input {
+        position: absolute;
+        appearance: none;
+        &:checked + .expandableCheckboxList__checkbox {
+          border: 0.0625rem solid $color-purple;
+          background: url('./img/Vector.svg') no-repeat center center;
         }
       }
-      &_title {
-        padding-left: 1rem;
+      .expandableCheckboxList__checkbox {
+        position: absolute;
+        width: 1.25rem;
+        height: 1.25rem;
+        border: 0.0625rem solid $color-dark-25;
+        border-radius: 0.25rem;
+      }
+      .expandableCheckboxList__title {
+        padding-left: 2rem;
       }
     }
   }
