@@ -123,7 +123,7 @@
           z-index: -1;
           width: 50%;
           content: '';
-          right: 0;
+          right: -0.5;
           height: 100%;
         }
       }
@@ -135,7 +135,7 @@
         &::before {
           position: absolute;
           background: $grad-purple-25;
-          z-index: -2;
+          z-index: -1;
           width: 50%;
           content: '';
           left: 0;
@@ -148,11 +148,33 @@
         &:hover {
           background: $grad-purple-25;
           border-radius: 0;
+          color: white;
         }
       }
-      /*.-focus- {
-        color: white;
-      }*/
+    }
+  }
+  .datepicker--buttons {
+    display: flex;
+    border: none;
+    .datepicker--button,
+    .datepicker--button_apply {
+      color: $color-purple;
+      font-size: 0.75rem;
+      font: 'Montserrat', Helvetica, sans-serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+      align-items: center;
+      height: 32px;
+      justify-content: center;
+      display: inline-flex;
+      flex: 1;
+      &:hover {
+        background: #f0f0f0;
+      }
+    }
+    [data-action='clear'] {
+      margin-right: 80px;
     }
   }
 }

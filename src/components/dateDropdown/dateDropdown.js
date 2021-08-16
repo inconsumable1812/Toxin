@@ -2,7 +2,7 @@ import $ from 'jquery'
 import 'air-datepicker'
 
 const dateDropdownItems = document.querySelectorAll('.dateDropdown__item')
-const dateDropdownsDouble = document.querySelectorAll('.dateDropdown__group_double')
+const dateDropdownsDouble = document.querySelectorAll('.dateDropdown_double')
 //const inputFrom = document.querySelectorAll('input[name="field-date-from"]')
 //const inputTo = document.querySelectorAll('input[name="field-date-to"]')
 
@@ -19,8 +19,20 @@ for (const dateDropdownItem of dateDropdownItems) {
   })
 }
 
+for (const dateDropdownDouble of dateDropdownsDouble) {
+  const inputFrom = dateDropdownDouble.querySelector('input[name="field-date-from"]')
+  const inputTo = dateDropdownDouble.querySelector('input[name="field-date-to"]')
+  if (dateDropdownDouble.id === 'first') {
+    inputFrom.id = 'firstFrom'
+    inputTo.id = 'firstTo'
+  } else {
+    inputFrom.id = 'secondFrom'
+    inputTo.id = 'secondTo'
+  }
+}
+
 $(function () {
-  $('.dateDropdown_double .js-calendar_content').datepicker({
+  $('#first .js-calendar_content').datepicker({
     minDate: new Date(),
     navTitles: {
       days: 'MM <i>yyyy</i>',
@@ -29,8 +41,21 @@ $(function () {
     multipleDatesSeparator: ' - ',
     clearButton: 'true',
     onSelect: function (fd, d, picker) {
-      $('input[name="field-date-from"]').val(fd.split('-')[0])
-      $('input[name="field-date-to"]').val(fd.split('-')[1])
+      $('#firstFrom').val(fd.split('-')[0])
+      $('#firstTo').val(fd.split('-')[1])
+    },
+  })
+  $('#second .js-calendar_content').datepicker({
+    minDate: new Date(),
+    navTitles: {
+      days: 'MM <i>yyyy</i>',
+    },
+    range: 'true',
+    multipleDatesSeparator: ' - ',
+    clearButton: 'true',
+    onSelect: function (fd, d, picker) {
+      $('#secondFrom').val(fd.split('-')[0])
+      $('#secondTo').val(fd.split('-')[1])
     },
   })
 
@@ -55,7 +80,7 @@ $(function () {
   function addApplyButton() {
     let $isPickerButtons = $('.datepicker--buttons')
     if ($isPickerButtons) {
-      $isPickerButtons.append('<span class="datepicker--button" data-action="apply">Применить</span>')
+      $isPickerButtons.append('<span class="datepicker--button_apply" data-action="apply">Применить</span>')
     }
   }
 

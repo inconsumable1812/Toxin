@@ -3,7 +3,7 @@ include ../dropdown/dropdown.pug
 mixin dateDropdown(options)
   -
 
-  div.dateDropdown(class= 'dateDropdown_' + options.type)
+  div.dateDropdown(class= 'dateDropdown_' + options.type, id=options.id )
     if (options.type === 'double')
       div.dateDropdown__group_double
         div.dateDropdown__item 
