@@ -9,11 +9,13 @@
     text-transform: uppercase;
     color: $color-dark-100;
     font-weight: bold;
+    font-size: 0.75rem;
   }
   .label__hint {
     font-family: 'Montserrat', Helvetica, sans-serif;
     color: $color-dark-50;
     float: right;
+    font-size: 0.75rem;
   }
   .input__box {
     $lineHeight: 2.75rem;

@@ -9,6 +9,12 @@
     grid-template-columns: 9.375rem 9.375rem;
     column-gap: 1.25rem;
   }
+  .dateDropdown__title {
+    font-family: 'Montserrat', Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
 }
 .dateDropdown_double {
   .js-calendar_content {

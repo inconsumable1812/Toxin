@@ -1,0 +1,61 @@
+@import '../../utils/vars';
+@import '../../utils/mixins';
+
+.expandableCheckboxList {
+  width: 16.625rem;
+  .expandableCheckboxList__header {
+    padding: 1rem 0.625rem 0.75rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .expandableCheckboxList__title {
+      font: 'Montserrat', Helvetica, sans-serif;
+      font-size: 0.75rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .expandableCheckboxList__toggle-button {
+      background: url('./img/expand_more_up.svg') no-repeat center center;
+      border: none;
+      appearance: none;
+      user-select: none;
+      cursor: pointer;
+      height: 20px;
+      padding-right: 20px;
+    }
+  }
+  .expandableCheckboxList__list {
+    list-style-type: none;
+    //line-height: 1.125rem;
+    .expandableCheckboxList__item {
+      &_input {
+        //position: absolute;
+        opacity: 0;
+        &:checked {
+          &:after /*+ .expandableCheckboxList__item_title*/ {
+            margin: 0.375rem;
+            width: 0.5rem;
+            height: 0.375rem;
+            border: 0.125rem solid $color-purple;
+            border-top: none;
+            border-right: none;
+            transform: rotate(-45deg);
+          }
+
+          &:before {
+            border-color: $color-purple;
+          }
+        }
+        &:focus {
+          &:before {
+            transition: box-shadow 0.25s ease-in-out;
+            box-shadow: 0 0.3125rem 0.3125rem $color-dark-25;
+          }
+        }
+      }
+      &_title {
+        padding-left: 1rem;
+      }
+    }
+  }
+}

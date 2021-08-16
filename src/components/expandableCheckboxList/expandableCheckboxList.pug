@@ -1,0 +1,13 @@
+mixin expandableCheckboxList(options)
+  - const {rows =[] } = options || {}
+
+  div.expandableCheckboxList
+    div.expandableCheckboxList__header
+      span.expandableCheckboxList__title=options.title
+      button.expandableCheckboxList__toggle-button
+    ul.expandableCheckboxList__list
+      if options.rows
+        each row in rows
+          li.expandableCheckboxList__item
+            input.expandableCheckboxList__item_input(type = "checkbox", name = row.name)
+            span.expandableCheckboxList__item_title= row.title

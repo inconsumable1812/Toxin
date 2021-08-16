@@ -8,11 +8,14 @@
     text-transform: uppercase;
     color: $color-dark-100;
     font-weight: bold;
+    font-size: 0.75rem;
   }
   &__hint {
     font-family: 'Montserrat', Helvetica, sans-serif;
     color: $color-dark-50;
     float: right;
+    font-size: 0.75rem;
+    text-transform: uppercase;
   }
   &__box {
     position: relative;
@@ -20,7 +23,7 @@
     color: $color-dark-75;
   }
   &__input {
-    font: 0.875rem Montserrat, Helvetica, sans-serif;
+    font: 0.875rem 'Montserrat', Helvetica, sans-serif;
     color: $color-dark-75;
     width: 100%;
     line-height: 2.625rem;

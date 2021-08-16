@@ -4,6 +4,7 @@ include ../../components/input/input.pug
 include ../../components/dropdown/dropdown.pug
 include ../../components/dateDropdown/dateDropdown.pug
 include ../../components/logo/logo.pug
+include ../../components/expandableCheckboxList/expandableCheckboxList.pug
 
 block variables
   - var title = "formElements"
@@ -21,16 +22,26 @@ block content
             {count: 2, text: 'кровати', typeOfCount:'bed'},
             {count: 0, text: 'ванные комнаты', typeOfCount: 'bathroom'},
           ], dropdownExpanded:"dropdown__list_expanded!", type:"rooms",})
-        +input({title: "MASKED TEXT FIELD",type:'text', name:'text', hint:'DEFAULT', isData:true})
+        +input({title: "MASKED TEXT FIELD",type:'text', name:'text', isData:true})
         +input({title: "SUBSCRIPTION TEXT FIELD", type:'email', name:'text', placeholder:'Email', withButton :true})
         +dropdown({title:"Dropdown", hint:"default", name:"guestNumber", placeholder:"Сколько гостей",type:"guest",rows: [
             {count: 0, text: 'взрослые', typeOfCount:'adult'},
             {count: 0, text: 'дети', typeOfCount:'children'},
             {count: 0, text: 'младенцы', typeOfCount:'baby'},
           ]})
-        +dateDropdown({title:"Date Dropdown", type:'double',expanded: 'js-calendar_content_expanded', id: 'first'})
+        +dateDropdown({title:"Date Dropdown", type:'double',expanded: 'js-calendar_content_expanded!', id: 'first'})
         +dateDropdown({title:"Filter date dropdown", type:'single', })
         +dateDropdown({title:"Date Dropdown", type:'double', id: 'second'})
+        +expandableCheckboxList({title:'expandable checkbox list',rows:[
+          {title:"Завтрак", name:'Breakfast'},
+          {title:"Письменный стол", name:'Desk'},
+          {title:"Стул для кормления", name:'Feeding chair'},
+          {title:"Кроватка", name:'Crib'},
+          {title:"Телевизор", name:'TV'},
+          {title:"Шампунь", name:'Shampoo'},
+          {title:"Телевизор", name:'TV1'},
+          {title:"Шампунь", name:'Shampoo1'},
+        ]})
 
 
 
