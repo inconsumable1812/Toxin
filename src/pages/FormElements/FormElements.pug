@@ -5,6 +5,7 @@ include ../../components/dropdown/dropdown.pug
 include ../../components/dateDropdown/dateDropdown.pug
 include ../../components/logo/logo.pug
 include ../../components/expandableCheckboxList/expandableCheckboxList.pug
+include ../../components/checkbox/checkbox.pug
 
 block variables
   - var title = "formElements"
@@ -41,6 +42,11 @@ block content
           {title:"Шампунь", name:'Shampoo'},
           {title:"Телевизор", name:'TV1'},
           {title:"Шампунь", name:'Shampoo1'},
+        ]})
+        +checkbox({header:'Checkbox Buttons', rows: [
+          {title:"Можно курить", name:'smoke'},
+          {title:"Можно с питомцами", name:'pet'},
+          {title:"Можно пригласить гостей (до 10 человек)", name:'more guests'},
         ]})
 
 

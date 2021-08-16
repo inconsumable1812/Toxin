@@ -1,5 +1,6 @@
 @import '../../utils/vars';
 @import '../../utils/mixins';
+@import '../../utils/font';
 
 .expandableCheckboxList {
   width: 16.625rem;
@@ -11,7 +12,7 @@
     align-items: center;
     cursor: pointer;
     .expandableCheckboxList__title {
-      font: 'Montserrat', Helvetica, sans-serif;
+      font-family: 'Montserrat', Helvetica, sans-serif;
       font-size: 0.75rem;
       font-weight: bold;
       text-transform: uppercase;
@@ -36,6 +37,7 @@
     position: absolute;
     display: none;
     z-index: 1;
+    background-color: white;
     &_expanded {
       display: block;
     }
@@ -44,7 +46,7 @@
       padding-bottom: 0.625rem;
       line-height: 1.125rem;
       font-size: 0.875rem;
-      font: 'Montserrat', Helvetica, sans-serif;
+      font-family: 'Montserrat', Helvetica, sans-serif;
       color: $color-dark-50;
       .expandableCheckboxList__input {
         position: absolute;

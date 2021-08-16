@@ -1,6 +1,7 @@
 @import '../../components/dateDropdown/datepicker_styles/datepicker_styles.css';
 @import '../../utils/vars';
 @import '../../utils/mixins';
+@import '../../utils/font';
 
 .dateDropdown {
   position: relative;
@@ -34,8 +35,142 @@
       background: white;
     }
   }
+  .datepicker {
+    .datepicker--nav {
+      margin: 1rem 0;
+      border: none;
+      [data-action='next'] {
+        background: url('./img/arrow-forward.svg') no-repeat center center;
+        svg {
+          display: none;
+        }
+      }
+      [data-action='prev'] {
+        background: url('./img/arrow_back.svg') no-repeat center center;
+        svg {
+          display: none;
+        }
+      }
+      .datepicker--nav-title {
+        //width: 14rem;
+        font-size: 1.1875rem;
+        font-family: 'Montserrat', Helvetica, sans-serif;
+        font-weight: bold;
+        color: black;
+        i {
+          color: black;
+        }
+        &:hover {
+          background: none;
+        }
+      }
+    }
+    .datepicker--content {
+      .datepicker--days-names {
+        .datepicker--day-name {
+          color: $color-purple;
+          font-size: 0.75rem;
+          font-family: 'Montserrat', Helvetica, sans-serif;
+          font-weight: bold;
+        }
+      }
+      .datepicker--cells-days {
+        .datepicker--cell-day {
+          padding: 0 0.5rem;
+          color: $color-dark-50;
+          height: 2.78rem;
+          width: 2.78rem;
+          font-size: 0.75rem;
+          font-family: 'Montserrat', Helvetica, sans-serif;
+          &:hover {
+            border-radius: 50%;
+          }
+        }
+        .-other-month-,
+        .-disabled- {
+          color: $color-dark-25;
+        }
+        .-current- {
+          color: white;
+          background: $grad-green;
+          border-radius: 50%;
+          font-weight: bold;
+        }
+        /* .-selected- {
+          background: $grad-purple;
+          color: white;
+          border-radius: 50%;
+          font-weight: bold;
+        } */
+        .-range-from- {
+          background: $grad-purple;
+          color: white;
+          border-radius: 50%;
+          font-weight: bold;
+          &::after {
+            position: absolute;
+            background: $grad-purple-25;
+            z-index: -1;
+            width: 50%;
+            content: '';
+            right: -0.5;
+            height: 100%;
+          }
+        }
+        .-range-to- {
+          background: $grad-purple;
+          color: white;
+          border-radius: 50%;
+          font-weight: bold;
+          &::before {
+            position: absolute;
+            background: $grad-purple-25;
+            z-index: -1;
+            width: 50%;
+            content: '';
+            left: 0;
+            height: 100%;
+          }
+        }
+
+        .-in-range- {
+          background: $grad-purple-25;
+          &:hover {
+            background: $grad-purple-25;
+            border-radius: 0;
+            color: white;
+          }
+        }
+      }
+    }
+    .datepicker--buttons {
+      display: flex;
+      border: none;
+      .datepicker--button,
+      .datepicker--button_apply {
+        color: $color-purple;
+        font-size: 0.75rem;
+        font: 'Montserrat', Helvetica, sans-serif;
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+        align-items: center;
+        height: 32px;
+        justify-content: center;
+        display: inline-flex;
+        flex: 1;
+        &:hover {
+          background: #f0f0f0;
+        }
+      }
+      [data-action='clear'] {
+        margin-right: 80px;
+      }
+    }
+  }
 }
 .dateDropdown_single {
+  width: 16.625rem;
   .js-calendar_content {
     position: absolute;
     left: 0;
@@ -46,141 +181,135 @@
     &_expanded {
       display: block;
     }
+    .datepicker {
+      .datepicker--nav {
+        margin: 1rem 0;
+        border: none;
+        [data-action='next'] {
+          background: url('./img/arrow-forward.svg') no-repeat center center;
+          svg {
+            display: none;
+          }
+        }
+        [data-action='prev'] {
+          background: url('./img/arrow_back.svg') no-repeat center center;
+          svg {
+            display: none;
+          }
+        }
+        .datepicker--nav-title {
+          //width: 14rem;
+          font-size: 1.1875rem;
+          font-family: 'Montserrat', Helvetica, sans-serif;
+          font-weight: bold;
+          color: black;
+          i {
+            color: black;
+          }
+          &:hover {
+            background: none;
+          }
+        }
+      }
+      .datepicker--content {
+        .datepicker--days-names {
+          .datepicker--day-name {
+            color: $color-purple;
+            font-size: 0.75rem;
+            font-family: 'Montserrat', Helvetica, sans-serif;
+            font-weight: bold;
+          }
+        }
+        .datepicker--cells-days {
+          .datepicker--cell-day {
+            //padding: 0 0.1rem;
+            color: $color-dark-50;
+            height: 2.3rem;
+            width: 2.3rem;
+            font-size: 0.75rem;
+            font-family: 'Montserrat', Helvetica, sans-serif;
+            &:hover {
+              border-radius: 50%;
+            }
+          }
+          .-other-month-,
+          .-disabled- {
+            color: $color-dark-25;
+          }
+          .-current- {
+            color: white;
+            background: $grad-green;
+            border-radius: 50%;
+            font-weight: bold;
+          }
+          .-range-from- {
+            background: $grad-purple;
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            &::after {
+              position: absolute;
+              background: $grad-purple-25;
+              z-index: -1;
+              width: 50%;
+              content: '';
+              right: -0.5;
+              height: 100%;
+            }
+          }
+          .-range-to- {
+            background: $grad-purple;
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            &::before {
+              position: absolute;
+              background: $grad-purple-25;
+              z-index: -1;
+              width: 50%;
+              content: '';
+              left: 0;
+              height: 100%;
+            }
+          }
+
+          .-in-range- {
+            background: $grad-purple-25;
+            &:hover {
+              background: $grad-purple-25;
+              border-radius: 0;
+              color: white;
+            }
+          }
+        }
+      }
+      .datepicker--buttons {
+        display: flex;
+        border: none;
+        .datepicker--button,
+        .datepicker--button_apply {
+          color: $color-purple;
+          font-size: 0.75rem;
+          font: 'Montserrat', Helvetica, sans-serif;
+          font-weight: bold;
+          text-transform: uppercase;
+          cursor: pointer;
+          align-items: center;
+          height: 32px;
+          justify-content: center;
+          display: inline-flex;
+          flex: 1;
+          &:hover {
+            background: #f0f0f0;
+          }
+        }
+        [data-action='clear'] {
+          margin-right: 80px;
+        }
+      }
+    }
   }
   .datepicker-inline .datepicker {
-    min-width: 20rem;
-  }
-}
-.datepicker {
-  .datepicker--nav {
-    margin: 1rem 0;
-    border: none;
-    [data-action='next'] {
-      background: url('./img/arrow-forward.svg') no-repeat center center;
-      svg {
-        display: none;
-      }
-    }
-    [data-action='prev'] {
-      background: url('./img/arrow_back.svg') no-repeat center center;
-      svg {
-        display: none;
-      }
-    }
-    .datepicker--nav-title {
-      //width: 14rem;
-      font-size: 1.1875rem;
-      font-family: 'Montserrat', Helvetica, sans-serif;
-      font-weight: bold;
-      color: black;
-      i {
-        color: black;
-      }
-      &:hover {
-        background: none;
-      }
-    }
-  }
-  .datepicker--content {
-    .datepicker--days-names {
-      .datepicker--day-name {
-        color: $color-purple;
-        font-size: 0.75rem;
-        font-family: 'Montserrat', Helvetica, sans-serif;
-        font-weight: bold;
-      }
-    }
-    .datepicker--cells-days {
-      .datepicker--cell-day {
-        padding: 0 0.5rem;
-        color: $color-dark-50;
-        height: 2.78rem;
-        width: 2.78rem;
-        font-size: 0.75rem;
-        font-family: 'Montserrat', Helvetica, sans-serif;
-        &:hover {
-          border-radius: 50%;
-        }
-      }
-      .-other-month-,
-      .-disabled- {
-        color: $color-dark-25;
-      }
-      .-current- {
-        color: white;
-        background: $grad-green;
-        border-radius: 50%;
-        font-weight: bold;
-      }
-      /* .-selected- {
-        background: $grad-purple;
-        color: white;
-        border-radius: 50%;
-        font-weight: bold;
-      } */
-      .-range-from- {
-        background: $grad-purple;
-        color: white;
-        border-radius: 50%;
-        font-weight: bold;
-        &::after {
-          position: absolute;
-          background: $grad-purple-25;
-          z-index: -1;
-          width: 50%;
-          content: '';
-          right: -0.5;
-          height: 100%;
-        }
-      }
-      .-range-to- {
-        background: $grad-purple;
-        color: white;
-        border-radius: 50%;
-        font-weight: bold;
-        &::before {
-          position: absolute;
-          background: $grad-purple-25;
-          z-index: -1;
-          width: 50%;
-          content: '';
-          left: 0;
-          height: 100%;
-        }
-      }
-
-      .-in-range- {
-        background: $grad-purple-25;
-        &:hover {
-          background: $grad-purple-25;
-          border-radius: 0;
-          color: white;
-        }
-      }
-    }
-  }
-  .datepicker--buttons {
-    display: flex;
-    border: none;
-    .datepicker--button,
-    .datepicker--button_apply {
-      color: $color-purple;
-      font-size: 0.75rem;
-      font: 'Montserrat', Helvetica, sans-serif;
-      font-weight: bold;
-      text-transform: uppercase;
-      cursor: pointer;
-      align-items: center;
-      height: 32px;
-      justify-content: center;
-      display: inline-flex;
-      flex: 1;
-      &:hover {
-        background: #f0f0f0;
-      }
-    }
-    [data-action='clear'] {
-      margin-right: 80px;
-    }
+    min-width: 16.625rem;
   }
 }

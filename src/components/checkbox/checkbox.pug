@@ -1,0 +1,12 @@
+mixin checkbox(options)
+  - const {rows =[] } = options || {}
+
+  div.checkbox
+    div.checkbox__header= options.header
+    ul.checkbox__list 
+      each row in rows
+        li.checkbox__item
+          label.checkbox__label 
+            input.checkbox__input(type="checkbox", name= row.name)
+            span.checkbox__checkbox
+            span.checkbox__title= row.title
