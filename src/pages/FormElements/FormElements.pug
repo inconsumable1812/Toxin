@@ -9,6 +9,7 @@ include ../../components/checkbox/checkbox.pug
 include ../../components/radioButton/radioButton.pug
 include ../../components/toggle/toggle.pug
 include ../../components/likeButton/likeButton.pug
+include ../../components/rateButton/rateButton.pug
 
 block variables
   - var title = "formElements"
@@ -25,7 +26,7 @@ block content
             {count: 2, text: 'спальни', typeOfCount:'bedroom'},
             {count: 2, text: 'кровати', typeOfCount:'bed'},
             {count: 0, text: 'ванные комнаты', typeOfCount: 'bathroom'},
-          ], dropdownExpanded:"dropdown__list_expanded!", type:"rooms",})
+          ],isExpanded: false, type:"rooms",})
         +input({title: "MASKED TEXT FIELD",type:'text', name:'text', isData:true})
         +input({title: "SUBSCRIPTION TEXT FIELD", type:'email', name:'text', placeholder:'Email', withButton :true})
         +dropdown({title:"Dropdown", hint:"default", name:"guestNumber", placeholder:"Сколько гостей",type:"guest",rows: [
@@ -33,10 +34,10 @@ block content
             {count: 0, text: 'дети', typeOfCount:'children'},
             {count: 0, text: 'младенцы', typeOfCount:'baby'},
           ]})
-        +dateDropdown({title:"Date Dropdown", type:'double',expanded: 'js-calendar_content_expanded!', id: 'first'})
+        +dateDropdown({title:"Date Dropdown", type:'double',isExpanded:false, id: 'first'})
         +dateDropdown({title:"Filter date dropdown", type:'single', })
         +dateDropdown({title:"Date Dropdown", type:'double', id: 'second'})
-        +expandableCheckboxList({title:'expandable checkbox list',rows:[
+        +expandableCheckboxList({title:'expandable checkbox list',isExpanded:true ,rows:[
           {title:"Завтрак", name:'Breakfast'},
           {title:"Письменный стол", name:'Desk'},
           {title:"Стул для кормления", name:'Feeding chair'},
@@ -61,6 +62,7 @@ block content
         ]})
         +likeButton({count:'2'})
         +likeButton({count:'12', isPressed: true})
+        +rateButton({base:5, rate: 4, isVariable:true})
 
 
 

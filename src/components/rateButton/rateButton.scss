@@ -1,0 +1,31 @@
+@import '../../utils/vars';
+@import '../../utils/font';
+@import '../../utils/mixins';
+
+.rateButton {
+  display: flex;
+  padding-bottom: 5rem;
+  &__item {
+    display: flex;
+  }
+  &__input {
+    appearance: none;
+    &:checked ~ .rateButton__icon {
+      background: url('./img/star_border.svg') no-repeat center;
+    }
+  }
+  &__label {
+    height: 1.5rem;
+    width: 1.5rem;
+    display: flex;
+    cursor: pointer;
+  }
+  &__icon {
+    background: url('./img/star.svg') no-repeat center;
+    height: 1.5rem;
+    width: 1.5rem;
+    &_type_outline {
+      background: url('./img/star_border.svg') no-repeat center;
+    }
+  }
+}

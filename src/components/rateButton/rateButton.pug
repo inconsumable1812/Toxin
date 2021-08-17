@@ -1,0 +1,16 @@
+mixin rateButton (options)
+  -
+
+  div.rateButton 
+      if options.isVariable
+        - for(let i = 0; i < options.base; i++)
+          div.rateButton__item
+            label.rateButton__label
+              input.rateButton__input(type="radio", name = 'rating', id = `rating-${i+1}`)
+              - let iconClass = i >= options.rate ? "rateButton__icon_type_outline" : ""
+              span.rateButton__icon(class = iconClass)
+      if !options.isVariable    
+        - for(let i = 0; i < options.base; i++)
+          div.rateButton__item
+            - let iconClass = i >= options.rate ? "rateButton__icon_type_outline" : ""
+            span.rateButton__icon(class = iconClass)

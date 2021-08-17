@@ -1,5 +1,7 @@
 mixin dropdown(options)
   - const {rows =[] } = options || {}
+  - var listClass = 'dropdown__list'
+  - listClass += options.isExpanded ? ' dropdown__list_expanded' : ''
 
   div.dropdown
     if options.title
@@ -10,7 +12,7 @@ mixin dropdown(options)
       input.dropdown__input(name = options.name, placeholder = options.placeholder, readonly="readonly", class = 'dropdown__input_' + options.type)
       button.dropdown__button(type="button")
       if !options.calendar
-        ul.dropdown__list(class = options.dropdownExpanded)
+        ul(class = listClass)
           if options.rows
             each row in rows
               li.dropdown__list-item(class = 'dropdown__list-item_'+ row.typeOfCount)

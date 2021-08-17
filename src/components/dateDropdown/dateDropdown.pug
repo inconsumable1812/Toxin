@@ -1,7 +1,8 @@
 include ../dropdown/dropdown.pug
 
 mixin dateDropdown(options)
-  -
+  - var calendarClass = 'js-calendar_content'
+  - calendarClass += options.isExpanded ? ' js-calendar_content_expanded' : ''
 
   div.dateDropdown(class= 'dateDropdown_' + options.type, id=options.id )
     if (options.type === 'double')
@@ -20,4 +21,4 @@ mixin dateDropdown(options)
           span.dateDropdown__title= options.title
           div.dateDropdown__dropdownBox
             +dropdown({name:"date-filter", placeholder:"ДД.ММ.ГГГГ", type: "date", calendar:true})
-    div.dropdown__calendar_content.js-calendar_content(class= options.expanded)
+    div.dropdown__calendar_content(class= calendarClass)
