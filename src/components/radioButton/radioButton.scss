@@ -4,12 +4,13 @@
 
 .radioButton {
   width: 13.8rem;
+  margin: 1rem 0;
   &__header {
     font-family: 'Montserrat', Helvetica, sans-serif;
     font-size: 0.75rem;
     font-weight: bold;
     text-transform: uppercase;
-    margin: 1rem 0;
+    padding-bottom: 0.7rem;
   }
   &__group {
     display: flex;

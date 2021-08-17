@@ -1,0 +1,61 @@
+@import '../../utils/vars';
+@import '../../utils/font';
+@import '../../utils/mixins';
+
+.toggle {
+  width: 16.25rem;
+  //убрать
+  padding-bottom: 5rem;
+  &__header {
+    font-family: 'Montserrat', Helvetica, sans-serif;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 0.625rem;
+  }
+  &__list {
+    list-style-type: none;
+  }
+  &__items {
+    line-height: 1.5rem;
+    font-size: 0.875rem;
+    font-family: 'Montserrat', Helvetica, sans-serif;
+    color: $color-dark-75;
+  }
+  &__input {
+    appearance: none;
+    position: absolute;
+    &:checked + .toggle__checkbox::before {
+      transform: translateX(20px);
+      background: $grad-purple;
+      transition: transform 0.25s ease-in-out;
+    }
+    &:not(:checked) + .toggle__checkbox::before {
+      transform: translateX(0px);
+      transition: transform 0.25s ease-in-out;
+    }
+    &:focus + .toggle__checkbox {
+      box-shadow: 0 0.03125rem 0.3125rem $color-dark-25;
+    }
+  }
+  &__checkbox {
+    position: absolute;
+    height: 1.25rem;
+    width: 2.5rem;
+    border: 0.0625rem solid $color-dark-25;
+    border-radius: 0.625rem;
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0.18rem;
+      left: 0.18rem;
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 0.375rem;
+      background: $color-dark-25;
+    }
+  }
+  &__caption {
+    padding-left: 3rem;
+  }
+}

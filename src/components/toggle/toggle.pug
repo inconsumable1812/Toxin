@@ -1,0 +1,12 @@
+mixin toggle(options)
+  - const {rows =[] } = options || {}
+
+  .toggle 
+    .toggle__header= options.header
+    ul.toggle__list
+      each row in rows 
+        li.toggle__items
+          label.toggle__label
+            input.toggle__input(type="checkbox", name= row.name)
+            span.toggle__checkbox 
+            span.toggle__caption= row.caption 
