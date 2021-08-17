@@ -8,6 +8,7 @@ include ../../components/expandableCheckboxList/expandableCheckboxList.pug
 include ../../components/checkbox/checkbox.pug
 include ../../components/radioButton/radioButton.pug
 include ../../components/toggle/toggle.pug
+include ../../components/likeButton/likeButton.pug
 
 block variables
   - var title = "formElements"
@@ -58,6 +59,8 @@ block content
           {caption:'Получать спецпредложения', name:'special offers'},
           {caption:'Получать спецпредложения', name:'special offers'},
         ]})
+        +likeButton({count:'2'})
+        +likeButton({count:'12', isPressed: true})
 
 
 

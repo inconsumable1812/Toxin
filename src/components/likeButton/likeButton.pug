@@ -1,0 +1,12 @@
+mixin likeButton(options)
+  - var buttonClass = 'likeButton__button'
+  - buttonClass += options.isPressed ? ' likeButton__button_pressed' : ''
+  - var iconClass = 'likeButton__icon'
+  - iconClass += options.isPressed ? ' likeButton__icon_pressed' : ''
+  - var countClass = 'likeButton__count'
+  - countClass += options.isPressed ? ' likeButton__count_pressed' : ''
+
+  .likeButton
+    .div(class = buttonClass)
+      span(class= iconClass) 
+      span(class = countClass)= options.count
