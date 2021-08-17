@@ -100,7 +100,6 @@
   &__counter-buttons_type_minus,
   &__counter-buttons_type_plus {
     @include reset-button;
-    @include reset-outline;
     $diam: 1.875rem;
     display: inline-block;
     font-size: 1rem;

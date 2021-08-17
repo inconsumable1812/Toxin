@@ -6,6 +6,7 @@ include ../../components/dateDropdown/dateDropdown.pug
 include ../../components/logo/logo.pug
 include ../../components/expandableCheckboxList/expandableCheckboxList.pug
 include ../../components/checkbox/checkbox.pug
+include ../../components/radioButton/radioButton.pug
 
 block variables
   - var title = "formElements"
@@ -47,6 +48,10 @@ block content
           {title:"Можно курить", name:'smoke'},
           {title:"Можно с питомцами", name:'pet'},
           {title:"Можно пригласить гостей (до 10 человек)", name:'more guests'},
+        ]})
+        +radioButton({header:"Radio Buttons", rows:[
+          {caption:"Мужчина", id:'Men'},
+          {caption:"Женщина", id:'Women'},
         ]})
 
 

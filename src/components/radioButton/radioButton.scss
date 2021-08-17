@@ -1,0 +1,62 @@
+@import '../../utils/vars';
+@import '../../utils/font';
+@import '../../utils/mixins';
+
+.radioButton {
+  width: 13.8rem;
+  &__header {
+    font-family: 'Montserrat', Helvetica, sans-serif;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 1rem 0;
+  }
+  &__group {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__item {
+    font-size: 0.875rem;
+    font-family: 'Montserrat', Helvetica, sans-serif;
+    color: $color-dark-50;
+  }
+  &__input {
+    appearance: none;
+    position: absolute;
+    &:checked + .radioButton__radio + .radioButton__caption {
+      transition: color 0.25s ease-in-out;
+      color: $color-dark-75;
+    }
+    &:checked + .radioButton__radio {
+      border: 0.0625rem solid $color-purple;
+      &::before {
+        transition: opacity 0.25s ease-in-out;
+        opacity: 1;
+      }
+    }
+    /* &:focus + .radioButton__radio {
+       box-shadow: 0 0.03125rem 0.3125rem $color-dark-25;
+    }*/
+  }
+  &__radio {
+    position: absolute;
+    height: 1.25rem;
+    width: 1.25rem;
+    border-radius: 50%;
+    border: 0.0625rem solid $color-dark-25;
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0.18rem;
+      left: 0.18rem;
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 0.375rem;
+      opacity: 0;
+      background: $grad-purple;
+    }
+  }
+  &__caption {
+    padding-left: 2rem;
+  }
+}
