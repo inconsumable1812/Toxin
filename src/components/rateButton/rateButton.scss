@@ -4,24 +4,57 @@
 
 .rateButton {
   display: flex;
-  padding-bottom: 5rem;
-  &__item {
-    display: flex;
+  &__group {
+    position: relative;
+    width: 7.5rem;
+    height: 1.5rem;
+    background-image: url('./img/star_border.svg');
+    background-size: 1.5rem 1.5rem;
   }
   &__input {
+    cursor: pointer;
     appearance: none;
-    &:checked ~ .rateButton__icon {
-      background: url('./img/star_border.svg') no-repeat center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-size: 1.5rem 1.5rem;
+    &:nth-of-type(1) {
+      z-index: 5;
+      width: 1.5rem;
+    }
+    &:nth-of-type(2) {
+      z-index: 4;
+      width: 3rem;
+    }
+    &:nth-of-type(3) {
+      z-index: 3;
+      width: 4.5rem;
+    }
+    &:nth-of-type(4) {
+      z-index: 2;
+      width: 6rem;
+    }
+    &:nth-of-type(5) {
+      z-index: 1;
+      width: 7.5rem;
+    }
+    &:focus {
+      outline: none;
+    }
+    &:checked,
+    &:hover {
+      background-image: url('./img/star.svg');
+    }
+    &:hover ~ .rateButton__input {
+      background-image: url('./img/star_border.svg');
     }
   }
-  &__label {
-    height: 1.5rem;
-    width: 1.5rem;
-    display: flex;
-    cursor: pointer;
-  }
   &__icon {
-    background: url('./img/star.svg') no-repeat center;
+    background-image: url('./img/star.svg');
+    background-size: 1.5rem 1.5rem;
     height: 1.5rem;
     width: 1.5rem;
     &_type_outline {

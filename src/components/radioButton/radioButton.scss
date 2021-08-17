@@ -35,9 +35,9 @@
         opacity: 1;
       }
     }
-    /* &:focus + .radioButton__radio {
-       box-shadow: 0 0.03125rem 0.3125rem $color-dark-25;
-    }*/
+    &:hover + .radioButton__radio {
+      box-shadow: 0 0.03125rem 0.3125rem $color-dark-25;
+    }
   }
   &__radio {
     position: absolute;

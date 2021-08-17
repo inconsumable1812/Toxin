@@ -1,16 +1,15 @@
 mixin rateButton (options)
-  -
+  - const ratingList = ['Ужасно', 'Так себе', 'Нормально' , 'Хорошо', 'Отлично']
 
-  div.rateButton 
+  div.rateButton
       if options.isVariable
-        - for(let i = 0; i < options.base; i++)
-          div.rateButton__item
-            label.rateButton__label
-              input.rateButton__input(type="radio", name = 'rating', id = `rating-${i+1}`)
-              - let iconClass = i >= options.rate ? "rateButton__icon_type_outline" : ""
-              span.rateButton__icon(class = iconClass)
+         div.rateButton__group 
+          - for(let i = 0; i < options.base; i++)
+            if options.rate === i+1
+              input.rateButton__input(type="radio", name = 'rating', id = `rating-${i+1}`, aria-label= `${ratingList[i]}`, checked)
+            else
+              input.rateButton__input(type="radio", name = 'rating', id = `rating-${i+1}`, aria-label= `${ratingList[i]}`)
       if !options.isVariable    
         - for(let i = 0; i < options.base; i++)
-          div.rateButton__item
-            - let iconClass = i >= options.rate ? "rateButton__icon_type_outline" : ""
-            span.rateButton__icon(class = iconClass)
+          - let iconClass = i >= options.rate ? "rateButton__icon_type_outline" : ""
+          span.rateButton__icon(class = iconClass)

@@ -26,7 +26,8 @@
           border: 0.0625rem solid $color-purple;
           background: url('./img/Vector.svg') no-repeat center center;
         }
-        &:focus + .checkbox__checkbox {
+        &:focus + .checkbox__checkbox,
+        &:hover + .checkbox__checkbox {
           box-shadow: 0 0.03125rem 0.3125rem $color-dark-25;
         }
       }

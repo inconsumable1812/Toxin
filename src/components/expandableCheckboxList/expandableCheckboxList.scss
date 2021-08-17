@@ -55,7 +55,8 @@
           border: 0.0625rem solid $color-purple;
           background: url('./img/Vector.svg') no-repeat center center;
         }
-        &:focus + .expandableCheckboxList__checkbox {
+        &:focus + .expandableCheckboxList__checkbox,
+        &:hover + .expandableCheckboxList__checkbox {
           box-shadow: 0 0.03125rem 0.3125rem $color-dark-25;
         }
       }

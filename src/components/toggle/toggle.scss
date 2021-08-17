@@ -32,7 +32,8 @@
       transform: translateX(0px);
       transition: transform 0.25s ease-in-out;
     }
-    &:focus + .toggle__checkbox {
+    &:focus + .toggle__checkbox,
+    &:hover + .toggle__checkbox {
       box-shadow: 0 0.03125rem 0.3125rem $color-dark-25;
     }
   }
