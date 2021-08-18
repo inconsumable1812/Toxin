@@ -11,6 +11,7 @@ include ../../components/toggle/toggle.pug
 include ../../components/likeButton/likeButton.pug
 include ../../components/rateButton/rateButton.pug
 include ../../components/rangeSlider/rangeSlider.pug
+include ../../components/button/button.pug
 
 block variables
   - var title = "formElements"
@@ -66,6 +67,13 @@ block content
         +rateButton({base:5, rate: 4, isVariable:true, name:'rating'})
         +rateButton({base:5, rate: 5, isVariable:true, name:'rating_1'})
         +rangeSlider({title:"Range Slider", min:"0", max:"16000"})
+        +button({theme:'purple', textTheme:'white', text:'click me'})
+        +button({theme:'purple', textTheme:'white', text:'click me', isDisabled:true})
+        +button({theme:'white', textTheme:'purple', text:'click me'})       
+        +button({theme:'white', textTheme:'purple', text:'click me', isDisabled:true})
+        +button({theme:'transparent', textTheme:'purple', text:'click me'})
+        +button({theme:'transparent', textTheme:'purple', text:'click me', isTransparentDisabled: true})
+        +button({theme:'purple', textTheme:'white', text:'Перейти к оплате', isLarge: true})
 
 
 

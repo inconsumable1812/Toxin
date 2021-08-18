@@ -1,0 +1,17 @@
+mixin button (options)
+  - let buttonClass = "button" 
+  - let textClass = 'button__text'
+  - buttonClass += options.theme === "purple" ? " button_theme_purple" : ''
+  - buttonClass += options.theme === "white" ? " button_theme_white" : ''
+  - buttonClass += options.theme === "transparent" ? " button_theme_transparent" : ''
+  - buttonClass += options.isLarge ? " button_size_large" : ''
+  - buttonClass += options.isDisabled ? " button_disabled" : ''
+  - buttonClass += options.isTransparentDisabled ? " button_transparent_disabled" : ''
+  - textClass += options.textTheme === "purple" ? " button__text_theme_purple" : ''
+  - textClass += options.textTheme === "white" ? " button__text_theme_white" : ''
+
+  button(class = buttonClass)
+    span.button__group
+      span(class = textClass)= options.text
+      if options.isLarge 
+        span.button__arrow 
