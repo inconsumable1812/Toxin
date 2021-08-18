@@ -1,0 +1,80 @@
+@import '../../utils/vars';
+@import '../../utils/font';
+@import '../../utils/mixins';
+@import '../../components/rangeSlider/nouislider_style/nouislider.min.css';
+
+.rangeSlider {
+  width: 16.625rem;
+  padding: 1rem 0;
+  &__header {
+    width: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__title {
+    font-size: 0.75rem;
+    font-family: 'Montserrat', Helvetica, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 5.9375rem;
+  }
+  &__count {
+    display: inline-flex;
+  }
+  &__separator {
+    margin: 0 0.3rem;
+    font-family: 'Montserrat', Helvetica, sans-serif;
+  }
+  &__input_min {
+    width: 3.22rem;
+    color: $color-dark-50;
+    border: none;
+    text-align: end;
+    outline: 0;
+    font-size: 0.75rem;
+    font-family: 'Montserrat', Helvetica, sans-serif;
+  }
+  &__input_max {
+    width: 3.22rem;
+    color: $color-dark-50;
+    border: none;
+    outline: none;
+    font-size: 0.75rem;
+    font-family: 'Montserrat', Helvetica, sans-serif;
+  }
+  &__slider {
+    margin: 1rem 0 1rem 0;
+  }
+
+  .noUi-target {
+    box-shadow: none;
+    border: 0.0625rem solid $color-dark-25;
+    border-radius: 0.1875rem;
+    background: white;
+  }
+  .noUi-connects,
+  .noUi-connect,
+  .noUi-target {
+    height: 0.375rem;
+  }
+  .noUi-connect {
+    background: $grad-green;
+  }
+  .noUi-handle {
+    border: 0.125rem solid white;
+    background: $grad-green;
+    height: 0.875rem;
+    width: 0.875rem;
+    border-radius: 50%;
+    box-shadow: none;
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+  .noUi-horizontal .noUi-handle {
+    right: -0.625rem;
+    top: -0.3125rem;
+  }
+}

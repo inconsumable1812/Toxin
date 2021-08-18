@@ -6,9 +6,9 @@ mixin rateButton (options)
          div.rateButton__group 
           - for(let i = 0; i < options.base; i++)
             if options.rate === i+1
-              input.rateButton__input(type="radio", name = 'rating', id = `rating-${i+1}`, aria-label= `${ratingList[i]}`, checked)
+              input.rateButton__input(type="radio", name = options.name, id = `rating-${i+1}`, aria-label= `${ratingList[i]}`, checked)
             else
-              input.rateButton__input(type="radio", name = 'rating', id = `rating-${i+1}`, aria-label= `${ratingList[i]}`)
+              input.rateButton__input(type="radio", name = options.name, id = `rating-${i+1}`, aria-label= `${ratingList[i]}`)
       if !options.isVariable    
         - for(let i = 0; i < options.base; i++)
           - let iconClass = i >= options.rate ? "rateButton__icon_type_outline" : ""

@@ -1,0 +1,11 @@
+mixin rangeSlider (options)
+  -
+
+  div.rangeSlider 
+    div.rangeSlider__header
+      span.rangeSlider__title= options.title
+      span.rangeSlider__count
+        input.rangeSlider__input_min(type='text', value =options.min)
+        span.rangeSlider__separator -
+        input.rangeSlider__input_max(type='text', value =options.max)
+    div.rangeSlider__slider 
