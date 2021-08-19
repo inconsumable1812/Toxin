@@ -7,7 +7,9 @@
     "air-datepicker": "^2.2.3",
     "imask": "^6.1.0",
     "jquery": "^3.5.1",
-    "nouislider": "^15.4.0"
+    "material-design-icons": "^3.0.1",
+    "nouislider": "^15.4.0",
+    "paginationjs": "^2.1.5"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",

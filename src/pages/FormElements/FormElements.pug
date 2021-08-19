@@ -12,6 +12,7 @@ include ../../components/likeButton/likeButton.pug
 include ../../components/rateButton/rateButton.pug
 include ../../components/rangeSlider/rangeSlider.pug
 include ../../components/button/button.pug
+include ../../components/pagination/pagination.pug
 
 block variables
   - var title = "formElements"
@@ -74,6 +75,7 @@ block content
         +button({theme:'transparent', textTheme:'purple', text:'click me'})
         +button({theme:'transparent', textTheme:'purple', text:'click me', isTransparentDisabled: true})
         +button({theme:'purple', textTheme:'white', text:'Перейти к оплате', isLarge: true})
+        +pagination
 
 
 

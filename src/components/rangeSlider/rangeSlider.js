@@ -21,8 +21,6 @@ for (const rangeSlider of rangeSliders) {
   slider.noUiSlider.on('update', function (values, handle) {
     var value = values[handle]
 
-    console.log(value)
-
     if (handle) {
       inputMax.value = `${Math.round(value).toLocaleString('ru-RU')}₽`
     } else {

@@ -1,0 +1,79 @@
+@import '../../utils/vars';
+@import '../../utils/font';
+@import '../../utils/mixins';
+@import '../../components/pagination/paginationStyles/pagination.css';
+
+.pagination {
+  .paginationjs {
+    font-family: 'Montserrat', Helvetica, sans-serif;
+    display: grid;
+  }
+  .paginationjs-nav {
+    justify-self: start;
+    margin-left: 0;
+    font-size: 0.875rem;
+    color: $color-dark-75;
+  }
+  .paginationjs-pages {
+    align-items: center;
+  }
+  .paginationjs-pages li {
+    border: none;
+    a {
+      font-size: 0.75rem;
+      color: $color-dark-50;
+      &:hover {
+        background: none;
+      }
+    }
+  }
+  .active {
+    background: $grad-purple;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .paginationjs .paginationjs-pages li:first-child,
+  .paginationjs .paginationjs-pages li:first-child > a {
+    border-radius: 50%;
+  }
+  .paginationjs-pages li.active > a {
+    color: white;
+    background: $grad-purple;
+    border-radius: 50%;
+  }
+  .paginationjs-page,
+  .paginationjs-ellipsis,
+  .paginationjs-next,
+  .paginationjs-prev {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: inline-flex;
+    font-size: 0.75rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .paginationjs .paginationjs-pages li:last-child {
+    border: none;
+    border-radius: 50%;
+  }
+  .paginationjs .paginationjs-pages li.disabled > a {
+    background: url('./img/arrow_forward.svg') no-repeat center center;
+    opacity: 1;
+  }
+  .paginationjs-next,
+  .paginationjs-prev {
+    background: $grad-green;
+    border: none;
+    a {
+      background: $grad-green;
+    }
+  }
+  .paginationjs .paginationjs-pages .paginationjs-next > a {
+    background: url('./img/arrow_forward.svg') no-repeat center center;
+  }
+
+  .paginationjs .paginationjs-pages .paginationjs-prev > a {
+    background: url('./img/arrow_forward.svg') no-repeat center center;
+    transform: rotate(180deg);
+  }
+}
