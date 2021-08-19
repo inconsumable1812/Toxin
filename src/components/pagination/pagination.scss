@@ -57,7 +57,6 @@
     border-radius: 50%;
   }
   .paginationjs .paginationjs-pages li.disabled > a {
-    background: url('./img/arrow_forward.svg') no-repeat center center;
     opacity: 1;
   }
   .paginationjs-next,
@@ -69,11 +68,14 @@
     }
   }
   .paginationjs .paginationjs-pages .paginationjs-next > a {
-    background: url('./img/arrow_forward.svg') no-repeat center center;
+    background: url('./img/arrow_forward_pagination.svg') no-repeat center center;
   }
 
   .paginationjs .paginationjs-pages .paginationjs-prev > a {
-    background: url('./img/arrow_forward.svg') no-repeat center center;
+    background: url('./img/arrow_forward_pagination.svg') no-repeat center center;
     transform: rotate(180deg);
+  }
+  .js-currentPage {
+    opacity: 0;
   }
 }
