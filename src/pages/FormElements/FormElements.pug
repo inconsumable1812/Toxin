@@ -13,6 +13,8 @@ include ../../components/rateButton/rateButton.pug
 include ../../components/rangeSlider/rangeSlider.pug
 include ../../components/button/button.pug
 include ../../components/pagination/pagination.pug
+include ../../components/richCheckbox/richCheckbox.pug
+
 
 block variables
   - var title = "formElements"
@@ -76,6 +78,11 @@ block content
         +button({theme:'transparent', textTheme:'purple', text:'click me', isTransparentDisabled: true})
         +button({theme:'purple', textTheme:'white', text:'Перейти к оплате', isLarge: true})
         +pagination
+        +richCheckbox({header:'rich Checkbox Buttons', rows:[
+          {title:'Широкий коридор', name:'wide corridor', subtitle:'Ширина коридоров в номере не менее 91 см.'},
+          {title:'Помощник для инвалидов', name:'Assistant for the disabled', subtitle:'На 1 этаже вас встретит специалист  и проводит до номера.'},
+        ]})
+        
 
 
 
