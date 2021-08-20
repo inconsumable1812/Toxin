@@ -1,0 +1,36 @@
+@import '../../utils/vars';
+@import '../../utils/font';
+@import '../../utils/mixins';
+
+.info {
+  width: 18.1875rem;
+  display: grid;
+  grid-template-areas:
+    'icon title'
+    'icon subtitle';
+  grid-template-columns: 3rem auto;
+  column-gap: 0.45rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid $color-dark-10;
+  &__icon {
+    grid-area: icon;
+    color: $color-purple;
+    font-size: 3rem;
+  }
+  &__title {
+    grid-area: title;
+    font-family: 'Montserrat', Helvetica, sans-serif;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $color-dark-75;
+    line-height: 1.5rem;
+  }
+  &__subtitle {
+    grid-area: subtitle;
+    font-family: 'Montserrat', Helvetica, sans-serif;
+    color: $color-dark-75;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+  }
+}

@@ -27,8 +27,7 @@ const createEntriesFromPageList = (pages) => {
   return [webpackPageEntries, htmlWebpackPageInstances]
 }
 
-const [webpackPageEntries, htmlWebpackPageInstances] =
-  createEntriesFromPageList(fs.readdirSync(pagesDir))
+const [webpackPageEntries, htmlWebpackPageInstances] = createEntriesFromPageList(fs.readdirSync(pagesDir))
 
 const config = {
   entry: {
@@ -53,7 +52,7 @@ const config = {
         },
       },
       {
-        test: /\.(sass|scss)$$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -72,16 +71,14 @@ const config = {
             loader: 'sass-loader',
             options: {
               sourceMap: true,
+              //sourceMapContents: false,
             },
           },
         ],
       },
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-        exclude: [
-          path.resolve(__dirname, './src/img/'),
-          path.resolve(__dirname, './src/components/'),
-        ],
+        exclude: [path.resolve(__dirname, './src/img/'), path.resolve(__dirname, './src/components/')],
         use: [
           {
             loader: 'file-loader',
@@ -94,10 +91,7 @@ const config = {
       },
       {
         test: /\.(png|gif|svg|jpe?g)$/,
-        exclude: [
-          path.resolve(__dirname, './src/fonts/'),
-          path.resolve(__dirname, './src/favicons/'),
-        ],
+        exclude: [path.resolve(__dirname, './src/fonts/'), path.resolve(__dirname, './src/favicons/')],
         use: [
           {
             loader: 'file-loader',

@@ -15,6 +15,7 @@ include ../../components/button/button.pug
 include ../../components/pagination/pagination.pug
 include ../../components/richCheckbox/richCheckbox.pug
 include ../../components/bulletList/bulletList.pug
+include ../../components/info/info.pug
 
 
 block variables
@@ -88,3 +89,5 @@ block content
           {text:'Без вечеринок и мероприятий'},
           {text:'Время прибытия — после 13:00, а выезд до 12:00'},
         ]})
+        +info({title:'Комфорт', subtitle:'Шумопоглощающие стены', icon:'insert_emoticon'})
+        +info({title:'Удобство', subtitle:'Окно в каждой из спален', icon:'location_city'})
