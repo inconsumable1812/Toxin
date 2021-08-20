@@ -1,0 +1,13 @@
+include ../likeButton/likeButton.pug
+
+mixin feedback(options)
+  -
+
+  div.feedback 
+    img.feedback__img(src= options.src, alt="фото автара")
+    div.feedback__header
+      div.feedback__author-name= options.name
+      div.feedback__date= options.date
+    div.feedback__like-button
+      +likeButton({count:'12', isPressed: true})
+    span.feedback__text= options.text

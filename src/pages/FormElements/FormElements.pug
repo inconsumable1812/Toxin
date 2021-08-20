@@ -16,6 +16,7 @@ include ../../components/pagination/pagination.pug
 include ../../components/richCheckbox/richCheckbox.pug
 include ../../components/bulletList/bulletList.pug
 include ../../components/info/info.pug
+include ../../components/feedback/feedback.pug
 
 
 block variables
@@ -91,3 +92,4 @@ block content
         ]})
         +info({title:'Комфорт', subtitle:'Шумопоглощающие стены', icon:'insert_emoticon'})
         +info({title:'Удобство', subtitle:'Окно в каждой из спален', icon:'location_city'})
+        +feedback({src: require('./img/murad.png').default, name:'Мурад Сарафанов', date:'5 дней назад', text:'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'})

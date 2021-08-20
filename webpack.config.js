@@ -91,7 +91,7 @@ const config = {
       },
       {
         test: /\.(png|gif|svg|jpe?g)$/,
-        exclude: [path.resolve(__dirname, './src/fonts/'), path.resolve(__dirname, './src/favicons/')],
+        exclude: [path.resolve(__dirname, './src/assets'), path.resolve(__dirname, './src/favicons/')],
         use: [
           {
             loader: 'file-loader',
