@@ -14,6 +14,7 @@ include ../../components/rangeSlider/rangeSlider.pug
 include ../../components/button/button.pug
 include ../../components/pagination/pagination.pug
 include ../../components/richCheckbox/richCheckbox.pug
+include ../../components/bulletList/bulletList.pug
 
 
 block variables
@@ -82,7 +83,8 @@ block content
           {title:'Широкий коридор', name:'wide corridor', subtitle:'Ширина коридоров в номере не менее 91 см.'},
           {title:'Помощник для инвалидов', name:'Assistant for the disabled', subtitle:'На 1 этаже вас встретит специалист  и проводит до номера.'},
         ]})
-        
-
-
-
+        +bulletList({header:'Bullet List', rows:[
+          {text:'Нельзя с питомцами'},
+          {text:'Без вечеринок и мероприятий'},
+          {text:'Время прибытия — после 13:00, а выезд до 12:00'},
+        ]})

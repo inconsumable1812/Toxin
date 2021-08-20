@@ -1,0 +1,42 @@
+@import '../../utils/vars';
+@import '../../utils/font';
+@import '../../utils/mixins';
+
+.bulletList {
+  width: 18.25rem;
+  &__header {
+    font-family: 'Montserrat', Helvetica, sans-serif;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 0.9375rem;
+    margin-bottom: 0.675rem;
+  }
+  &__list {
+    list-style: none;
+  }
+  &__item {
+    padding-bottom: 0.675rem;
+    display: grid;
+    grid-template-areas: 'icon text';
+    grid-template-columns: 0.625rem auto;
+    column-gap: 0.45rem;
+  }
+  &__icon {
+    margin-top: 0.42rem;
+    grid-area: icon;
+    height: 0.625rem;
+    width: 0.625rem;
+    background: $color-dark-25;
+    align-self: start;
+    border-radius: 50%;
+  }
+  &__text {
+    grid-area: text;
+    align-self: center;
+    justify-self: start;
+    font-family: 'Montserrat', Helvetica, sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+  }
+}
