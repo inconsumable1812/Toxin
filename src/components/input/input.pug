@@ -10,7 +10,7 @@ mixin input(options)
     if options.hint
       span.label__hint= options.hint
     div.input__box
-      input(type = options.type, class= ClassName, name = options.name, placeholder = options.placeholder)
+      input(type = options.type, class= ClassName, name = options.name, placeholder = options.placeholder, value = options.value)
       if options.withButton
         button.text-input__submit-button(type='submit')
 

@@ -11,6 +11,7 @@ $(function () {
       done(result)
     },
     pageSize: 12,
+    pageRange: 1,
     autoHidePrevious: true,
     autoHideNext: true,
     showNavigator: true,

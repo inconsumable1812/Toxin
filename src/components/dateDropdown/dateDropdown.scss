@@ -7,7 +7,7 @@
   position: relative;
   &__group_double {
     display: grid;
-    grid-template-columns: 9.375rem 9.375rem;
+    grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
     column-gap: 1.25rem;
   }
   .dateDropdown__title {

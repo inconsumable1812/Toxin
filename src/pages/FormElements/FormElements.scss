@@ -17,6 +17,40 @@
 @import '../../components/feedback/feedback.scss';
 
 .formElements {
-  margin: 0 auto;
-  width: 95.5%;
+  &__logo {
+    margin: 1.875rem auto 4.1rem auto;
+    width: 80%;
+  }
+  &__main {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 8.8125rem;
+  }
+  &__section-first {
+    display: grid;
+    grid-template-columns: 27.59% 10.86% 22.41% 11.38% 27.59%;
+    .formElements__section-column-start {
+      .formElements__input-default {
+        margin-bottom: 1.3rem;
+      }
+      .formElements__input-hover {
+        margin-bottom: 1.3rem;
+      }
+      .formElements__input-dropdown {
+        margin-bottom: 1.4rem;
+      }
+      .formElements__input-email {
+        margin-bottom: 2.6rem;
+      }
+      .formElements__dropdown-double {
+        margin-bottom: 2.6rem;
+      }
+      .formElements__dropdown-single {
+        margin-bottom: 2.6rem;
+      }
+      .formElements__input-with-button {
+        padding-right: 3.3125rem;
+      }
+    }
+  }
 }

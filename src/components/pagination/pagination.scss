@@ -4,6 +4,7 @@
 @import '../../components/pagination/paginationStyles/pagination.css';
 
 .pagination {
+  min-width: 23rem;
   .paginationjs {
     font-family: 'Montserrat', Helvetica, sans-serif;
     display: grid;

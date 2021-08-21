@@ -44,7 +44,8 @@
     }
   }
   &_size_large {
-    width: 20rem;
+    max-width: 20rem;
+    width: 100%;
     .button__group {
       display: grid;
       grid-template-columns: 1fr auto 1fr;

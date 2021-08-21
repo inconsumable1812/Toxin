@@ -3,19 +3,22 @@
 @import '../../utils/mixins';
 
 .input-text {
-  width: 20rem;
+  max-width: 20rem;
+  width: 100%;
   .input__title {
     font-family: 'Montserrat', Helvetica, sans-serif;
     text-transform: uppercase;
     color: $color-dark-100;
     font-weight: bold;
     font-size: 0.75rem;
+    line-height: 0.9375rem;
   }
   .label__hint {
     font-family: 'Montserrat', Helvetica, sans-serif;
     color: $color-dark-50;
     float: right;
     font-size: 0.75rem;
+    line-height: 0.9375rem;
   }
   .input__box {
     $lineHeight: 2.75rem;
@@ -24,7 +27,7 @@
     position: relative;
     line-height: $lineHeight;
     font-size: 0.75rem;
-    margin: 0.25rem auto 0.5rem;
+    margin: 0.33rem auto 0.5rem;
 
     .input {
       font-family: 'Montserrat', Helvetica, sans-serif;
