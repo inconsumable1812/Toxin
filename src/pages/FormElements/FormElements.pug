@@ -76,15 +76,26 @@ block content
               +rateButton({base:5, rate: 5, isVariable:false, name:'rating_1'})
         .formElements__section-column-gap
         .formElements__section-column-end
-          +rangeSlider({title:"Range Slider", min:"0", max:"16000"})
-          +button({theme:'purple', textTheme:'white', text:'click me'})
-          +button({theme:'purple', textTheme:'white', text:'click me', isDisabled:true})
-          +button({theme:'white', textTheme:'purple', text:'click me'})       
-          +button({theme:'white', textTheme:'purple', text:'click me', isDisabled:true})
-          +button({theme:'transparent', textTheme:'purple', text:'click me'})
-          +button({theme:'transparent', textTheme:'purple', text:'click me', isTransparentDisabled: true})
-          +button({theme:'purple', textTheme:'white', text:'Перейти к оплате', isLarge: true})
-          +pagination
+          .formElements__rangeSlider
+            +rangeSlider({title:"Range Slider", min:"0", max:"16000"})
+          .formElements__buttons 
+            .formElements__buttonsTitle= 'buttons'
+            .formElements__buttonsGroup
+              .formElements__buttons_row_first
+                +button({theme:'purple', textTheme:'white', text:'click me'})
+                +button({theme:'purple', textTheme:'white', text:'click me', isDisabled:true})
+              .formElements__buttons_row_second
+                +button({theme:'white', textTheme:'purple', text:'click me'})       
+                +button({theme:'white', textTheme:'purple', text:'click me', isDisabled:true})
+              .formElements__buttons_row_third
+                +button({theme:'transparent', textTheme:'purple', text:'click me'})
+                +button({theme:'transparent', textTheme:'purple', text:'click me', isTransparentDisabled: true})
+              .formElements__buttons_row_fourth
+              +button({theme:'purple', textTheme:'white', text:'Перейти к оплате', isLarge: true})
+          .formElements__pagination
+            .formElements__paginationTitle= 'pagination'
+            .formElements__paginationElement
+              +pagination
       .formElements__section-second
         .formElements__section-column-start
           +dropdown({title:"Dropdown", hint:"default", name:"Number", placeholder:"Количество комнат",rows: [
