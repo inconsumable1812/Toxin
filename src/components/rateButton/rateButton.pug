@@ -3,13 +3,16 @@ mixin rateButton (options)
 
   div.rateButton
       if options.isVariable
-         div.rateButton__group 
-          - for(let i = 0; i < options.base; i++)
-            if options.rate === i+1
-              input.rateButton__input(type="radio", name = options.name, id = `rating-${i+1}`, aria-label= `${ratingList[i]}`, checked)
-            else
-              input.rateButton__input(type="radio", name = options.name, id = `rating-${i+1}`, aria-label= `${ratingList[i]}`)
+        div.rateButton__group.material-icons
+          div.rateButton__items
+            - for(let i = options.base; i > 0 ; i--)
+              if options.rate === i
+                input.rateButton__input.material-icons(type="radio", name = options.name, id = `rating-${i}`, aria-label= `${ratingList[i-1]}`, checked)
+                label.rateButton__label(for=`rating-${i}`) 
+              else
+                input.rateButton__input.material-icons(type="radio", name = options.name, id = `rating-${i}`, aria-label= `${ratingList[i-1]}`)
+                label.rateButton__label(for=`rating-${i}`) 
       if !options.isVariable    
         - for(let i = 0; i < options.base; i++)
           - let iconClass = i >= options.rate ? "rateButton__icon_type_outline" : ""
-          span.rateButton__icon(class = iconClass)
+          span.rateButton__icon.material-icons(class = iconClass)

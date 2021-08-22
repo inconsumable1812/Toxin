@@ -25,10 +25,22 @@
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 8.8125rem;
+    @include _1200 {
+      padding: 0 2rem;
+    }
   }
   &__section-first {
     display: grid;
     grid-template-columns: 27.59% 10.86% 22.41% 11.38% 27.59%;
+    @include _1200 {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 2.5rem;
+    }
+    .formElements__section-column-gap {
+      @include _1200 {
+        display: none;
+      }
+    }
     .formElements__section-column-start {
       .formElements__input-default {
         margin-bottom: 1.3rem;
@@ -49,7 +61,49 @@
         margin-bottom: 2.6rem;
       }
       .formElements__input-with-button {
-        padding-right: 3.3125rem;
+        max-width: 16.625rem;
+      }
+    }
+    .formElements__section-column-central {
+      padding-left: 0.1rem;
+      .formElements__checkbox {
+        margin-top: 0.2rem;
+        margin-bottom: 1.9rem;
+      }
+      .formElements__radioButton {
+        margin-bottom: 2.75rem;
+      }
+      .formElements__toggle {
+        margin-bottom: 2.1rem;
+      }
+      .formElements__likeButtons {
+        margin-bottom: 2.3rem;
+        .formElements__likeButtons_title {
+          font-family: 'Montserrat', Helvetica, sans-serif;
+          font-size: 0.75rem;
+          color: $color-dark-100;
+          font-weight: bold;
+          text-transform: uppercase;
+          margin-bottom: 1rem;
+        }
+        .likeButton {
+          margin-right: 0.4rem;
+        }
+      }
+      .formElements__rateButtons {
+        .formElements__rateButtons_title {
+          font-family: 'Montserrat', Helvetica, sans-serif;
+          font-size: 0.75rem;
+          color: $color-dark-100;
+          font-weight: bold;
+          text-transform: uppercase;
+          margin-bottom: 1rem;
+        }
+        .formElements__rateButtons-group {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, 7.5rem);
+          column-gap: 1.11rem;
+        }
       }
     }
   }

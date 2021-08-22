@@ -49,23 +49,31 @@ block content
             +input({title: "SUBSCRIPTION TEXT FIELD", type:'email', name:'text', placeholder:'Email', withButton :true})
         .formElements__section-column-gap
         .formElements__section-column-central
-          +checkbox({header:'Checkbox Buttons', rows: [
-            {title:"Можно курить", name:'smoke'},
-            {title:"Можно с питомцами", name:'pet'},
-            {title:"Можно пригласить гостей (до 10 человек)", name:'more guests'},
-          ]})
-          +radioButton({header:"Radio Buttons", rows:[
-            {caption:"Мужчина", id:'Men'},
-            {caption:"Женщина", id:'Women'},
-          ]})
-          +toggle({header:'Toggle', rows:[
-            {caption:'Получать спецпредложения', name:'special offers'},
-            {caption:'Получать спецпредложения', name:'special offers'},
-          ]})
-          +likeButton({count:'2'})
-          +likeButton({count:'12', isPressed: true})
-          +rateButton({base:5, rate: 4, isVariable:true, name:'rating'})
-          +rateButton({base:5, rate: 5, isVariable:true, name:'rating_1'})
+          .formElements__checkbox
+            +checkbox({header:'Checkbox Buttons', rows: [
+              {title:"Можно курить", name:'smoke'},
+              {title:"Можно с питомцами", name:'pet'},
+              {title:"Можно пригласить гостей (до 10 человек)", name:'more guests'},
+            ]})
+          .formElements__radioButton
+            +radioButton({header:"Radio Buttons", rows:[
+              {caption:"Мужчина", id:'Men'},
+              {caption:"Женщина", id:'Women'},
+            ]})
+          .formElements__toggle
+            +toggle({header:'Toggle', rows:[
+              {caption:'Получать спецпредложения', name:'special offers'},
+              {caption:'Получать спецпредложения', name:'special offers'},
+            ]})
+          .formElements__likeButtons
+            div.formElements__likeButtons_title= 'like button'
+            +likeButton({count:'2'})
+            +likeButton({count:'12', isPressed: true})
+          .formElements__rateButtons
+            div.formElements__rateButtons_title= 'rate button'
+            div.formElements__rateButtons-group
+              +rateButton({base:5, rate: 4, isVariable:true, name:'rating'})
+              +rateButton({base:5, rate: 5, isVariable:false, name:'rating_1'})
         .formElements__section-column-gap
         .formElements__section-column-end
           +rangeSlider({title:"Range Slider", min:"0", max:"16000"})

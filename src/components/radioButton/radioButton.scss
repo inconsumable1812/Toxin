@@ -3,23 +3,29 @@
 @import '../../utils/mixins';
 
 .radioButton {
-  width: 13.8rem;
-  margin: 1rem 0;
+  width: 100%;
+  max-width: 13.8rem;
   &__header {
     font-family: 'Montserrat', Helvetica, sans-serif;
     font-size: 0.75rem;
     font-weight: bold;
     text-transform: uppercase;
-    padding-bottom: 0.7rem;
+    padding-bottom: 1rem;
   }
   &__group {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 6.125rem);
+    column-gap: 1.25rem;
+    row-gap: 0.6rem;
   }
   &__item {
     font-size: 0.875rem;
     font-family: 'Montserrat', Helvetica, sans-serif;
     color: $color-dark-50;
+    @include _1200 {
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
   }
   &__input {
     appearance: none;
@@ -58,6 +64,6 @@
     }
   }
   &__caption {
-    padding-left: 2rem;
+    padding-left: 1.85rem;
   }
 }

@@ -3,13 +3,15 @@
 @import '../../utils/mixins';
 
 .toggle {
-  width: 16.25rem;
+  width: 100%;
+  max-width: 16.25rem;
   &__header {
     font-family: 'Montserrat', Helvetica, sans-serif;
     font-size: 0.75rem;
     font-weight: bold;
     text-transform: uppercase;
-    padding-bottom: 0.625rem;
+    padding-bottom: 0.9rem;
+    line-height: 0.9375rem;
   }
   &__list {
     list-style-type: none;
@@ -19,6 +21,7 @@
     font-size: 0.875rem;
     font-family: 'Montserrat', Helvetica, sans-serif;
     color: $color-dark-75;
+    padding-bottom: 0.6rem;
   }
   &__input {
     appearance: none;
@@ -43,6 +46,7 @@
     width: 2.5rem;
     border: 0.0625rem solid $color-dark-25;
     border-radius: 0.625rem;
+    margin-top: 0.125rem;
     &::before {
       position: absolute;
       content: '';

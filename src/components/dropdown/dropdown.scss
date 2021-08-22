@@ -2,6 +2,8 @@
 @import '../../utils/mixins';
 
 .dropdown {
+  max-width: 20rem;
+  width: 100%;
   color: $color-dark-75;
   &__title {
     font-family: 'Montserrat', Helvetica, sans-serif;
