@@ -17,6 +17,7 @@
 @import '../../components/feedback/feedback.scss';
 
 .formElements {
+  overflow: hidden;
   &__logo {
     margin: 1.875rem auto 4.1rem auto;
     width: 80%;
@@ -36,6 +37,9 @@
     @include _1200 {
       grid-template-columns: 1fr 1fr 1fr;
       grid-gap: 2.5rem;
+    }
+    @include _768 {
+      grid-template-columns: repeat(1, 1fr);
     }
 
     .formElements__section-column-gap {
@@ -143,6 +147,7 @@
         }
       }
       .formElements__pagination {
+        max-width: 16.625rem;
         .formElements__paginationTitle {
           font-family: 'Montserrat', Helvetica, sans-serif;
           font-size: 0.75rem;
@@ -162,13 +167,31 @@
       grid-template-columns: 1fr 1fr 1fr;
       grid-gap: 2.5rem;
     }
+    @include _768 {
+      grid-template-columns: repeat(1, 1fr);
+    }
     .formElements__section-column-gap {
       @include _1200 {
         display: none;
       }
     }
-    .formElements__dropdownRooms {
-      margin-bottom: 1.3rem;
+    .formElements__section-column-start {
+      @include _768 {
+        margin-bottom: 5.5rem;
+      }
+      .formElements__dropdownRooms {
+        margin-bottom: 1.3rem;
+      }
+    }
+    .formElements__section-column-central {
+      @include _768 {
+        margin-bottom: 8rem;
+      }
+    }
+    .formElements__section-column-end {
+      @include _768 {
+        margin-bottom: 1rem;
+      }
     }
   }
   &__section-third {
@@ -178,6 +201,9 @@
     @include _1200 {
       grid-template-columns: 1fr 1fr 1fr;
       grid-gap: 2.5rem;
+    }
+    @include _768 {
+      grid-template-columns: repeat(1, 1fr);
     }
     .formElements__section-column-gap {
       @include _1200 {
@@ -213,10 +239,13 @@
   &__section-fourth {
     display: grid;
     grid-template-columns: 25.09% 13.45% 61.29%;
-    padding-bottom: 7.375rem;
+    padding-bottom: 8.25rem;
     @include _1200 {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: auto auto;
       grid-gap: 2.5rem;
+    }
+    @include _768 {
+      grid-template-columns: repeat(1, 1fr);
     }
     .formElements__section-column-gap {
       @include _1200 {

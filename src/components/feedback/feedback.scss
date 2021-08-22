@@ -3,7 +3,8 @@
 @import '../../utils/mixins';
 
 .feedback {
-  width: 44.4375rem;
+  width: 100%;
+  max-width: 44.4375rem;
   display: grid;
   grid-template-areas:
     'img header'
