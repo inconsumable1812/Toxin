@@ -2,11 +2,13 @@ mixin expandableCheckboxList(options)
   - const {rows =[] } = options || {}
   - var listClass = 'expandableCheckboxList__list'
   - listClass += options.isExpanded ? ' expandableCheckboxList__list_expanded': ''
+  - var buttonClass = 'expandableCheckboxList__toggle-button'
+  - buttonClass += options.isExpanded ? ' expandableCheckboxList__toggle-button_expanded' : ''
 
   div.expandableCheckboxList
     div.expandableCheckboxList__header
       span.expandableCheckboxList__title=options.title
-      button.expandableCheckboxList__toggle-button
+      button(class = buttonClass).material-icons
     ul(class = listClass)
       if options.rows
         each row in rows

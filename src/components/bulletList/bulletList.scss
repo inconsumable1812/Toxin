@@ -3,14 +3,15 @@
 @import '../../utils/mixins';
 
 .bulletList {
-  width: 18.25rem;
+  width: 100%;
+  max-width: 18.25rem;
   &__header {
     font-family: 'Montserrat', Helvetica, sans-serif;
     font-size: 0.75rem;
     font-weight: bold;
     text-transform: uppercase;
     line-height: 0.9375rem;
-    margin-bottom: 0.675rem;
+    margin-bottom: 0.83rem;
   }
   &__list {
     list-style: none;
@@ -20,10 +21,10 @@
     display: grid;
     grid-template-areas: 'icon text';
     grid-template-columns: 0.625rem auto;
-    column-gap: 0.45rem;
+    column-gap: 0.6rem;
   }
   &__icon {
-    margin-top: 0.42rem;
+    margin-top: 0.4rem;
     grid-area: icon;
     height: 0.625rem;
     width: 0.625rem;

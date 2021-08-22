@@ -98,64 +98,79 @@ block content
               +pagination
       .formElements__section-second
         .formElements__section-column-start
-          +dropdown({title:"Dropdown", hint:"default", name:"Number", placeholder:"Количество комнат",rows: [
-              {count: 2, text: 'спальни', typeOfCount:'bedroom'},
-              {count: 2, text: 'кровати', typeOfCount:'bed'},
-              {count: 0, text: 'ванные комнаты', typeOfCount: 'bathroom'},
-            ],isExpanded: false, type:"rooms",})
-          +dropdown({title:"Dropdown", hint:"default", name:"Number", placeholder:"Количество комнат",rows: [
-              {count: 2, text: 'спальни', typeOfCount:'bedroom'},
-              {count: 2, text: 'кровати', typeOfCount:'bed'},
-              {count: 0, text: 'ванные комнаты', typeOfCount: 'bathroom'},
-            ],isExpanded: true1, type:"rooms",})
+          .formElements__dropdownRooms
+            +dropdown({title:"Dropdown", hint:"default", name:"Number", placeholder:"Количество комнат",rows: [
+                {count: 2, text: 'спальни', typeOfCount:'bedroom'},
+                {count: 2, text: 'кровати', typeOfCount:'bed'},
+                {count: 0, text: 'ванные комнаты', typeOfCount: 'bathroom'},
+              ],isExpanded: false, type:"rooms",})
+          .formElements__dropdownExpanded
+            +dropdown({title:"Dropdown", hint:"expanded", name:"Number", placeholder:"Количество комнат",rows: [
+                {count: 2, text: 'спальни', typeOfCount:'bedroom'},
+                {count: 2, text: 'кровати', typeOfCount:'bed'},
+                {count: 0, text: 'ванные комнаты', typeOfCount: 'bathroom'},
+              ],isExpanded: true, type:"rooms",})
+        .formElements__section-column-gap
         .formElements__section-column-central
-          +dropdown({title:"Dropdown", hint:"default", name:"guestNumber", placeholder:"Сколько гостей",type:"guest",rows: [
-              {count: 0, text: 'взрослые', typeOfCount:'adult'},
-              {count: 0, text: 'дети', typeOfCount:'children'},
-              {count: 0, text: 'младенцы', typeOfCount:'baby'},
-            ],isExpanded: true1})
+          .formElements__dropdownGuests
+            +dropdown({title:"Dropdown", name:"guestNumber", placeholder:"Сколько гостей",type:"guest",rows: [
+                {count: 0, text: 'взрослые', typeOfCount:'adult'},
+                {count: 0, text: 'дети', typeOfCount:'children'},
+                {count: 0, text: 'младенцы', typeOfCount:'baby'},
+              ],isExpanded: true})
+        .formElements__section-column-gap
         .formElements__section-column-end
-          +dropdown({title:"Dropdown", hint:"default", name:"guestNumber", placeholder:"Сколько гостей",type:"guest",rows: [
-              {count: 0, text: 'взрослые', typeOfCount:'adult'},
-              {count: 0, text: 'дети', typeOfCount:'children'},
-              {count: 0, text: 'младенцы', typeOfCount:'baby'},
-            ],isExpanded: true1})
+          .formElements__dropdownGuests_second
+            +dropdown({title:"Dropdown", name:"guestNumber", placeholder:"Сколько гостей",type:"guest",rows: [
+                {count: 2, text: 'взрослые', typeOfCount:'adult'},
+                {count: 1, text: 'дети', typeOfCount:'children'},
+                {count: 0, text: 'младенцы', typeOfCount:'baby'},
+              ],isExpanded: true})
       .formElements__section-third
         .formElements__section-column-start
-          +expandableCheckboxList({title:'expandable checkbox list',isExpanded:false ,rows:[
-            {title:"Завтрак", name:'Breakfast'},
-            {title:"Письменный стол", name:'Desk'},
-            {title:"Стул для кормления", name:'Feeding chair'},
-            {title:"Кроватка", name:'Crib'},
-            {title:"Телевизор", name:'TV'},
-            {title:"Шампунь", name:'Shampoo'},
-            {title:"Телевизор", name:'TV1'},
-            {title:"Шампунь", name:'Shampoo1'},
-          ]})
-          +expandableCheckboxList({title:'expandable checkbox list',isExpanded:true ,rows:[
-            {title:"Завтрак", name:'Breakfast'},
-            {title:"Письменный стол", name:'Desk'},
-            {title:"Стул для кормления", name:'Feeding chair'},
-            {title:"Кроватка", name:'Crib'},
-            {title:"Телевизор", name:'TV'},
-            {title:"Шампунь", name:'Shampoo'},
-            {title:"Телевизор", name:'TV1'},
-            {title:"Шампунь", name:'Shampoo1'},
-          ]})
+          .formElements__expandableCheckbox
+            +expandableCheckboxList({title:'expandable checkbox list',isExpanded:false ,rows:[
+              {title:"Завтрак", name:'Breakfast'},
+              {title:"Письменный стол", name:'Desk'},
+              {title:"Стул для кормления", name:'Feeding chair'},
+              {title:"Кроватка", name:'Crib'},
+              {title:"Телевизор", name:'TV'},
+              {title:"Шампунь", name:'Shampoo'},
+              {title:"Телевизор", name:'TV1'},
+              {title:"Шампунь", name:'Shampoo1'},
+            ]})
+          .formElements__expandableCheckbox_expanded
+            +expandableCheckboxList({title:'expandable checkbox list',isExpanded:true ,rows:[
+              {title:"Завтрак", name:'Breakfast'},
+              {title:"Письменный стол", name:'Desk'},
+              {title:"Стул для кормления", name:'Feeding chair'},
+              {title:"Кроватка", name:'Crib'},
+              {title:"Телевизор", name:'TV'},
+              {title:"Шампунь", name:'Shampoo'},
+              {title:"Телевизор", name:'TV1'},
+              {title:"Шампунь", name:'Shampoo1'},
+            ]})
+        .formElements__section-column-gap
         .formElements__section-column-central
-          +richCheckbox({header:'rich Checkbox Buttons', rows:[
-            {title:'Широкий коридор', name:'wide corridor', subtitle:'Ширина коридоров в номере не менее 91 см.'},
-            {title:'Помощник для инвалидов', name:'Assistant for the disabled', subtitle:'На 1 этаже вас встретит специалист  и проводит до номера.'},
-          ]})
+          .formElements__richCheckbox
+            +richCheckbox({header:'rich Checkbox Buttons', rows:[
+              {title:'Широкий коридор', name:'wide corridor', subtitle:'Ширина коридоров в номере не менее 91 см.'},
+              {title:'Помощник для инвалидов', name:'Assistant for the disabled', subtitle:'На 1 этаже вас встретит специалист  и проводит до номера.'},
+            ]})
+        .formElements__section-column-gap
         .formElements__section-column-end
-          +bulletList({header:'Bullet List', rows:[
-            {text:'Нельзя с питомцами'},
-            {text:'Без вечеринок и мероприятий'},
-            {text:'Время прибытия — после 13:00, а выезд до 12:00'},
-          ]})
+          .formElements__bulletList
+            +bulletList({header:'Bullet List', rows:[
+              {text:'Нельзя с питомцами'},
+              {text:'Без вечеринок и мероприятий'},
+              {text:'Время прибытия — после 13:00, а выезд до 12:00'},
+            ]})
       .formElements__section-fourth
         .formElements__section-column-start
-          +info({title:'Комфорт', subtitle:'Шумопоглощающие стены', icon:'insert_emoticon'})
-          +info({title:'Удобство', subtitle:'Окно в каждой из спален', icon:'location_city'})
+          .formElements__info
+            +info({title:'Комфорт', subtitle:'Шумопоглощающие стены', icon:'insert_emoticon'})
+            +info({title:'Удобство', subtitle:'Окно в каждой из спален', icon:'location_city'})
+        .formElements__section-column-gap
         .formElements__section-column-central
-          +feedback({src: require('./img/murad.png').default, name:'Мурад Сарафанов', date:'5 дней назад', text:'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'})
+          .formElements__feedback
+            +feedback({src: require('./img/murad.png').default, name:'Мурад Сарафанов', date:'5 дней назад', text:'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'})

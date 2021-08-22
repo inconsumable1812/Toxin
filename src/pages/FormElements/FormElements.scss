@@ -32,10 +32,12 @@
   &__section-first {
     display: grid;
     grid-template-columns: 27.59% 10.86% 22.45% 11.38% 27.75%;
+    margin-bottom: 5.8rem;
     @include _1200 {
       grid-template-columns: 1fr 1fr 1fr;
       grid-gap: 2.5rem;
     }
+
     .formElements__section-column-gap {
       @include _1200 {
         display: none;
@@ -150,6 +152,82 @@
           margin-bottom: 1.2rem;
         }
       }
+    }
+  }
+  &__section-second {
+    display: grid;
+    grid-template-columns: 22.93% 15.6% 27.59% 6.2% 27.59%;
+    margin-bottom: 10.7rem;
+    @include _1200 {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 2.5rem;
+    }
+    .formElements__section-column-gap {
+      @include _1200 {
+        display: none;
+      }
+    }
+    .formElements__dropdownRooms {
+      margin-bottom: 1.3rem;
+    }
+  }
+  &__section-third {
+    display: grid;
+    grid-template-columns: 23.02% 15.52% 22.93% 10.86% 25.17%;
+    margin-bottom: 0.7rem;
+    @include _1200 {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 2.5rem;
+    }
+    .formElements__section-column-gap {
+      @include _1200 {
+        display: none;
+      }
+    }
+    .formElements__section-column-start {
+      .formElements__expandableCheckbox {
+        margin-bottom: 2.8rem;
+      }
+    }
+    .formElements__section-column-central {
+      margin-top: 0.1rem;
+      .formElements__richCheckbox {
+        .richCheckbox__item:first-child {
+          padding-right: 2rem;
+        }
+        .richCheckbox__item:nth-child(2) {
+          padding-right: 0.5rem;
+        }
+      }
+    }
+    .formElements__section-column-end {
+      margin-top: 0.12rem;
+      margin-left: 0.06rem;
+      .formElements__bulletList {
+        .bulletList__list {
+          padding-right: 1.8rem;
+        }
+      }
+    }
+  }
+  &__section-fourth {
+    display: grid;
+    grid-template-columns: 25.09% 13.45% 61.29%;
+    padding-bottom: 7.375rem;
+    @include _1200 {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 2.5rem;
+    }
+    .formElements__section-column-gap {
+      @include _1200 {
+        display: none;
+      }
+    }
+    .formElements__section-column-start {
+      //margin-top: 0.1rem;
+    }
+    .formElements__section-column-central {
+      margin-top: 1.73rem;
     }
   }
 }

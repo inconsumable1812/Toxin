@@ -3,13 +3,14 @@
 @import '../../utils/mixins';
 
 .richCheckBox {
-  width: 16.625rem;
+  width: 100%;
+  max-width: 16.625rem;
   &__header {
     font-family: 'Montserrat', Helvetica, sans-serif;
     font-size: 0.75rem;
     font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.1rem;
   }
   &__list {
     list-style: none;
@@ -19,8 +20,8 @@
   }
   &__label {
     display: grid;
-    column-gap: 5px;
-    row-gap: 5px;
+    column-gap: 0.625rem;
+    row-gap: 0.3125rem;
     grid-template-areas:
       'input title'
       'space subtitle';

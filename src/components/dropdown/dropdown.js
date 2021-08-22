@@ -1,4 +1,3 @@
-//const counterButtons = document.querySelectorAll('.dropdown__counter-buttons')
 const dropdownButtons = document.querySelectorAll('.dropdown__button')
 const dropdownBoxes = document.querySelectorAll('.dropdown__box')
 const nameBedrooms = ['спальня', 'спальни', 'спален']
@@ -35,23 +34,30 @@ for (const dropdownBox of dropdownBoxes) {
     ? +dropdownBox.querySelector('.dropdown__list-item_baby .dropdown__counter').innerHTML
     : ''
 
-  let outBedrooms = `${numberOfBedrooms} ${nameBedrooms[index(numberOfBedrooms)]}`
+  let outBedrooms = `${numberOfBedrooms} ${nameBedrooms[index(numberOfBedrooms)]}, `
   if (numberOfBedrooms === 0) {
     outBedrooms = ''
   }
-  let outBed = `${numberOfBeds} ${nameBeds[index(numberOfBeds)]}`
+  let outBed = `${numberOfBeds} ${nameBeds[index(numberOfBeds)]}, `
   if (numberOfBeds === 0) {
     outBed = ''
   }
-  let outBathrooms = `${numberOfBathrooms} ${nameBathrooms[index(numberOfBathrooms)]}`
+  let outBathrooms = `${numberOfBathrooms} ${nameBathrooms[index(numberOfBathrooms)]}, `
   if (numberOfBathrooms === 0) {
     outBathrooms = ''
   }
+  let outRooms = `${outBedrooms}${outBed}${outBathrooms}`
+  if (outRooms.slice(-2, -1) === ',') {
+    outRooms = outRooms.slice(0, -2)
+  }
   if (dropdownInput.classList.contains('dropdown__input_rooms')) {
-    dropdownInput.placeholder = `${outBedrooms} ${outBed} ${outBathrooms}`
+    dropdownInput.placeholder = outRooms
     if (numberOfBedrooms === 0 && numberOfBeds === 0 && numberOfBathrooms === 0) {
       dropdownInput.placeholder = 'Количество комнат'
     }
+  }
+  if (clearButton && numberOfAdult === 0 && numberOfСhildren === 0 && numberOfBaby === 0) {
+    clearButton.classList.add('dropdown__clear-buttons_hidden')
   }
 
   dropdownButton.addEventListener('click', () => {
@@ -118,20 +124,24 @@ for (const dropdownBox of dropdownBoxes) {
         }
       }
 
-      let outBedrooms = `${numberOfBedrooms} ${nameBedrooms[index(numberOfBedrooms)]}`
+      let outBedrooms = `${numberOfBedrooms} ${nameBedrooms[index(numberOfBedrooms)]}, `
       if (numberOfBedrooms === 0) {
         outBedrooms = ''
       }
-      let outBed = `${numberOfBeds} ${nameBeds[index(numberOfBeds)]}`
+      let outBed = `${numberOfBeds} ${nameBeds[index(numberOfBeds)]}, `
       if (numberOfBeds === 0) {
         outBed = ''
       }
-      let outBathrooms = `${numberOfBathrooms} ${nameBathrooms[index(numberOfBathrooms)]}`
+      let outBathrooms = `${numberOfBathrooms} ${nameBathrooms[index(numberOfBathrooms)]}, `
       if (numberOfBathrooms === 0) {
         outBathrooms = ''
       }
+      let outRooms = `${outBedrooms}${outBed}${outBathrooms}`
+      if (outRooms.slice(-2, -1) === ',') {
+        outRooms = outRooms.slice(0, -2)
+      }
       if (dropdownInput.classList.contains('dropdown__input_rooms')) {
-        dropdownInput.placeholder = `${outBedrooms} ${outBed} ${outBathrooms}`
+        dropdownInput.placeholder = outRooms
         if (numberOfBedrooms === 0 && numberOfBeds === 0 && numberOfBathrooms === 0) {
           dropdownInput.placeholder = 'Количество комнат'
         }
@@ -174,20 +184,24 @@ for (const dropdownBox of dropdownBoxes) {
         }
       }
 
-      let outBedrooms = `${numberOfBedrooms} ${nameBedrooms[index(numberOfBedrooms)]}`
+      let outBedrooms = `${numberOfBedrooms} ${nameBedrooms[index(numberOfBedrooms)]}, `
       if (numberOfBedrooms === 0) {
         outBedrooms = ''
       }
-      let outBed = `${numberOfBeds} ${nameBeds[index(numberOfBeds)]}`
+      let outBed = `${numberOfBeds} ${nameBeds[index(numberOfBeds)]}, `
       if (numberOfBeds === 0) {
         outBed = ''
       }
-      let outBathrooms = `${numberOfBathrooms} ${nameBathrooms[index(numberOfBathrooms)]}`
+      let outBathrooms = `${numberOfBathrooms} ${nameBathrooms[index(numberOfBathrooms)]}, `
       if (numberOfBathrooms === 0) {
         outBathrooms = ''
       }
+      let outRooms = `${outBedrooms}${outBed}${outBathrooms}`
+      if (outRooms.slice(-2, -1) === ',') {
+        outRooms = outRooms.slice(0, -2)
+      }
       if (dropdownInput.classList.contains('dropdown__input_rooms')) {
-        dropdownInput.placeholder = `${outBedrooms} ${outBed} ${outBathrooms}`
+        dropdownInput.placeholder = outRooms
       }
       if (clearButton && clearButton.classList.contains('dropdown__clear-buttons_hidden')) {
         clearButton.classList.remove('dropdown__clear-buttons_hidden')
