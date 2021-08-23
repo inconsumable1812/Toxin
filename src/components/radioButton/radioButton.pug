@@ -2,11 +2,12 @@ mixin radioButton(options)
   - const {rows =[] } = options || {}
 
   div.radioButton
-    div.radioButton__header= options.header 
+    if options.header 
+      div.radioButton__header= options.header 
     div.radioButton__group
       each row in rows
         .radioButton__item 
           label.radioButton__label
-            input.radioButton__input(type="radio", id=row.id, name= 'sex')
+            input.radioButton__input(type="radio", id=row.id, name= 'gender')
             span.radioButton__radio 
             span.radioButton__caption= row.caption

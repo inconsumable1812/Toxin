@@ -1,0 +1,36 @@
+include ../../components/input/input.pug
+include ../../components/radioButton/radioButton.pug
+include ../../components/toggle/toggle.pug
+include ../../components/button/button.pug
+
+mixin registrationForm(options)
+  -
+  .registrationForm
+    form(action="/change-me", method = 'post').registrationForm__form
+      div.registrationForm__header
+        h1.registrationForm__title= 'Регистрация аккаунта'
+      div.registrationForm__main
+        .registrationForm__name
+          +input({type:'text', name:'name', placeholder:'Имя'})
+        .registrationForm__surname
+          +input({type:'text', name:'surname', placeholder:'Фамилия'})
+        .registrationForm__gender
+          +radioButton({rows:[
+            {caption:"Мужчина", id:'Men'},
+            {caption:"Женщина", id:'Women'},
+          ]})
+        .registrationForm__birthDate
+          +input({title: "дата рождения",type:'text', name:'birthDate', isData:true})
+        .registrationForm__email
+          +input({title: "данные для входа в сервис", type:'email', name:'email', placeholder:'Email'})
+        .registrationForm__password
+          +input({type:'text', name:'password', placeholder:'Пароль'})
+        .registrationForm__toggle
+          +toggle({ rows:[
+            {caption:'Получать спецпредложения', name:'special offers'},
+            ]})
+        .registrationForm__button
+          +button({theme:'purple', textTheme:'white', text:'Перейти к оплате', isLarge: true})
+    .registrationForm__group
+      p.registrationForm__hint= 'Уже есть аккаунт на Toxin'
+      +button({theme:'white', textTheme:'purple', text:'Войти', href:'/formElements.html'})       

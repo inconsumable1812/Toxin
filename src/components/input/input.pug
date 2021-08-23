@@ -6,7 +6,8 @@ mixin input(options)
     ClassName += options.isData ? " input-data" : ""
 
   div.input-text
-    span.input__title(class = titleClassName)= options.title
+    if options.title
+      span.input__title(class = titleClassName)= options.title
     if options.hint
       span.label__hint= options.hint
     div.input__box

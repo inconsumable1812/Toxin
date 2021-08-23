@@ -9,9 +9,16 @@ mixin button (options)
   - buttonClass += options.isTransparentDisabled ? " button_transparent_disabled" : ''
   - textClass += options.textTheme === "purple" ? " button__text_theme_purple" : ''
   - textClass += options.textTheme === "white" ? " button__text_theme_white" : ''
-
-  button(class = buttonClass)
-    span.button__group
-      span(class = textClass)= options.text
-      if options.isLarge 
-        span.button__arrow 
+  if options.href
+    a(href=options.href).button__link   
+      button(class = buttonClass)
+        span.button__group
+          span(class = textClass)= options.text
+          if options.isLarge 
+            span.button__arrow 
+  if !options.href
+    button(class = buttonClass) 
+      span.button__group
+        span(class = textClass)= options.text
+        if options.isLarge 
+          span.button__arrow
