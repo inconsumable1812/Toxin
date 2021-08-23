@@ -7,12 +7,12 @@ mixin dateDropdown(options)
   div.dateDropdown(class= 'dateDropdown_' + options.type, id=options.id )
     if (options.type === 'double')
       div.dateDropdown__group_double
-        div.dateDropdown__item 
-          span.dateDropdown__title= options.title
+        div.dateDropdown__item
+          span.dateDropdown__title= options.titleStart
           div.dateDropdown__dropdownBox
             +dropdown({name:"field-date-from", placeholder:"ДД.ММ.ГГГГ", type: "date", calendar:true})
         div.dateDropdown__item 
-          span.dateDropdown__title= options.title
+          span.dateDropdown__title= options.titleEnd
           div.dateDropdown__dropdownBox
             +dropdown({name:"field-date-to", placeholder:"ДД.ММ.ГГГГ", type: "date", calendar:true})
     if (options.type === "single")

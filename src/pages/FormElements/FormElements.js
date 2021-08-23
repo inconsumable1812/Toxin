@@ -1,5 +1,4 @@
-//import $ from 'jquery'
-import './FormElements.scss'
+import './formElements.scss'
 import '../../components/input/input'
 import '../../components/dropdown/dropdown'
 import '../../components/dateDropdown/dateDropdown'

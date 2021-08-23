@@ -42,7 +42,7 @@ block content
           .formElements__input-email
             +input({title: "MASKED TEXT FIELD",type:'text', name:'text', isData:true})
           .formElements__dropdown-double
-            +dateDropdown({title:"Date Dropdown", type:'double',isExpanded:false, id: 'first'})
+            +dateDropdown({titleStart:"Date Dropdown", titleEnd:"Date Dropdown", type:'double',isExpanded:false, id: 'first'})
           .formElements__dropdown-single
             +dateDropdown({title:"Filter date dropdown", type:'single', })
           .formElements__input-with-button
@@ -91,7 +91,7 @@ block content
                 +button({theme:'transparent', textTheme:'purple', text:'click me'})
                 +button({theme:'transparent', textTheme:'purple', text:'click me', isTransparentDisabled: true})
               .formElements__buttons_row_fourth
-              +button({theme:'purple', textTheme:'white', text:'Перейти к оплате', isLarge: true})
+                +button({theme:'purple', textTheme:'white', text:'Перейти к оплате', isLarge: true})
           .formElements__pagination
             .formElements__paginationTitle= 'pagination'
             .formElements__paginationElement

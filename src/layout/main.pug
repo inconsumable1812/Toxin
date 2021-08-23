@@ -1,7 +1,6 @@
 block variables
 
 
-
 html(lang="ru")
   head
     meta(charset='UTF-8')
@@ -18,5 +17,5 @@ html(lang="ru")
     title= title ? `Официальный сайт отеля Toxin | ${title}` : 'Официальный сайт отеля Toxin'
 
 
-body
+body(class= `${theme}`)
   block content    

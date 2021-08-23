@@ -1,4 +1,5 @@
 @import '../../utils/main.scss';
+@import '../../utils/mixins.scss';
 @import '../../components/input/input.scss';
 @import '../../components/dropdown/dropdown.scss';
 @import '../../components/dateDropdown/dateDropdown.scss';
@@ -134,19 +135,22 @@
           display: grid;
           grid-template-columns: repeat(auto-fill, 6.1875rem);
           column-gap: 1.25rem;
-          margin-bottom: 0.9rem;
+          margin-bottom: 1.9rem;
         }
         .formElements__buttons_row_second {
           display: grid;
           grid-template-columns: repeat(auto-fill, 6.1875rem);
           column-gap: 1.25rem;
-          margin-bottom: 0.9rem;
+          margin-bottom: 1.9rem;
         }
         .formElements__buttons_row_third {
           display: grid;
           grid-template-columns: repeat(auto-fill, 3.8125rem);
           column-gap: 1.3rem;
-          margin-bottom: 0.9rem;
+          margin-bottom: 1.9rem;
+        }
+        .formElements__buttons_row_fourth {
+          margin-bottom: 2.5rem;
         }
       }
       .formElements__pagination {
@@ -255,9 +259,9 @@
         display: none;
       }
     }
-    .formElements__section-column-start {
+    /*.formElements__section-column-start {
       //margin-top: 0.1rem;
-    }
+    }*/
     .formElements__section-column-central {
       margin-top: 1.73rem;
     }

@@ -1,8 +1,7 @@
 @import '../../utils/main.scss';
+@import '../../utils/mixins';
 @import '../../components/colors/color.scss';
 @import '../../components/type/type.scss';
-
-@import '../../utils/mixins';
 
 .colorsAndTypes {
   &__nav {

@@ -1,0 +1,17 @@
+extends ../../layout/main.pug
+
+include ../../components/logo/logo.pug
+include ../../components/roomSearch/roomSearch.pug
+
+block variables
+  - var title = "Cards"
+  - var theme = "body_theme_gray"
+
+block content
+  .cards
+    nav.cards__logo
+      +logo
+    .cards__main 
+      .cards__grid-column_first
+        .cards__card
+          +roomSearch
