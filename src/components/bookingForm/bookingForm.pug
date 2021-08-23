@@ -1,0 +1,44 @@
+include ../../components/dropdown/dropdown.pug
+include ../../components/dateDropdown/dateDropdown.pug
+include ../../components/button/button.pug
+
+mixin  bookingForm(options)
+  -
+
+  form(action="/change me").bookingForm
+    div.bookingForm__header
+      div.bookingForm__number
+        span.bookingForm__NumberSymbol= '№'
+        span.bookingForm__numberValue= '888'
+        span.bookingForm__numberFeature= 'люкс'
+      div.bookingForm__price-per-day
+        span.bookingForm__cost= '9 990₽'
+        span.bookingForm__dateUnit= 'в сутки'
+    div.bookingForm__calendar 
+      +dateDropdown({titleStart:"Прибытие", titleEnd:"Выезд", type:'double',isExpanded:false, id:'second'})
+    div.bookingForm__dropdown_guests
+      +dropdown({title:"Гости", name:"guestNumber", placeholder:"Сколько гостей",type:"guest",rows: [
+        {count: 0, text: 'взрослые', typeOfCount:'adult'},
+        {count: 0, text: 'дети', typeOfCount:'children'},
+        {count: 0, text: 'младенцы', typeOfCount:'baby'},
+      ]})
+    div.bookingForm__result
+      div.bookingForm__amount-for-days
+        div.bookingForm__result_type_name-service= '9 990₽ х 4 суток' 
+        div.bookingForm__result_type_currency= '39 960₽'
+      div.bookingForm__discount
+        div.bookingForm__result_type_name-service= 'Сбор за услуги: скидка 2 179₽'
+        div.bookingForm__result_type_info
+          span(data-tooltip='change me').bookingForm__info-icon.material-icons= 'info_outline'
+        div.bookingForm__result_type_currency= '0₽'
+      div.bookingForm__price-of-services
+        div.bookingForm__result_type_name-service= 'Сбор за дополнительные услуги'
+        div.bookingForm__result_type_info
+          span(data-tooltip='change me').bookingForm__info-icon.material-icons= 'info_outline'
+        div.bookingForm__result_type_currency= '300₽'
+      div.bookingForm__total 
+        span.bookingForm__totalTitle='Итого'
+        span.bookingForm__totalLine
+        span.bookingForm__totalValue='38 081₽'
+    div.bookingForm__button 
+      +button({theme:'purple', textTheme:'white', text:'забронировать', isLarge: true})

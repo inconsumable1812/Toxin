@@ -1,5 +1,8 @@
 @import '../../utils/main.scss';
 @import '../../utils/mixins';
+@import '../../components/roomSearch/roomSearch.scss';
+@import '../../components/registrationForm/registrationForm.scss';
+@import '../../components/bookingForm/bookingForm.scss';
 
 .cards {
   overflow: hidden;

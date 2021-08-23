@@ -3,6 +3,7 @@ extends ../../layout/main.pug
 include ../../components/logo/logo.pug
 include ../../components/roomSearch/roomSearch.pug
 include ../../components/registrationForm/registrationForm.pug
+include ../../components/bookingForm/bookingForm.pug
 
 block variables
   - var title = "Cards"
@@ -18,3 +19,6 @@ block content
           +roomSearch
         .cards__card
           +registrationForm
+      .cards__grid-column_second 
+        .cards__card 
+          +bookingForm
