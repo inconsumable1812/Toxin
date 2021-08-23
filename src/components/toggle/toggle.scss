@@ -5,6 +5,9 @@
 .toggle {
   width: 100%;
   max-width: 16.25rem;
+  @include _1200 {
+    max-width: none;
+  }
   &__header {
     font-family: 'Montserrat', Helvetica, sans-serif;
     font-size: 0.75rem;

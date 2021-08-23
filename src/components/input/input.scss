@@ -5,6 +5,9 @@
 .input-text {
   max-width: 20rem;
   width: 100%;
+  @include _1200 {
+    max-width: none;
+  }
   .input__title {
     font-family: 'Montserrat', Helvetica, sans-serif;
     text-transform: uppercase;

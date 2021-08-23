@@ -27,7 +27,7 @@
     margin: 0 auto;
     padding: 0 8.8125rem;
     @include _1200 {
-      padding: 0 2rem;
+      padding: 0 1.5rem;
     }
   }
   &__section-first {
@@ -68,6 +68,9 @@
       }
       .formElements__input-with-button {
         max-width: 16.625rem;
+        @include _1200 {
+          max-width: none;
+        }
       }
     }
     .formElements__section-column-central {

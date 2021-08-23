@@ -5,6 +5,9 @@
   max-width: 20rem;
   width: 100%;
   color: $color-dark-75;
+  @include _1200 {
+    max-width: none;
+  }
   &__title {
     font-family: 'Montserrat', Helvetica, sans-serif;
     text-transform: uppercase;

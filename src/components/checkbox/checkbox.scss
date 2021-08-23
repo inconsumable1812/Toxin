@@ -5,6 +5,9 @@
 .checkbox {
   width: 100%;
   max-width: 13.875rem;
+  @include _1200 {
+    max-width: none;
+  }
   &__header {
     font-family: 'Montserrat', Helvetica, sans-serif;
     font-size: 0.75rem;

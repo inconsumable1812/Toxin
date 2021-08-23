@@ -21,6 +21,9 @@
 .dateDropdown_double {
   max-width: 20rem;
   width: 100%;
+  @include _1200 {
+    max-width: none;
+  }
   .js-calendar_content {
     position: absolute;
     left: 0;
@@ -174,6 +177,9 @@
 }
 .dateDropdown_single {
   max-width: 16.625rem;
+  @include _1200 {
+    max-width: none;
+  }
   .js-calendar_content {
     position: absolute;
     left: 0;
