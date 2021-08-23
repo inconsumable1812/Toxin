@@ -1,0 +1,19 @@
+include ../../components/input/input.pug
+include ../../components/button/button.pug
+
+mixin loginForm(options)
+  -
+
+  .loginForm 
+    form(action="/change-me").loginForm__form
+      .loginForm__header
+        h1.loginForm__title= 'Войти' 
+      .loginForm__email
+        +input({ type:'email', name:'email', placeholder:'Email'}) 
+      .loginForm__password
+        +input({type:'text', name:'password', placeholder:'Пароль'})
+      .loginForm__button
+        +button({theme:'purple', textTheme:'white', text:'Войти', isLarge: true})
+    .loginForm__group
+      p.registrationForm__hint= 'Нет аккаунта на Toxin?'
+      +button({theme:'white', textTheme:'purple', text:'Создать', href:'/formElements.html'})      
