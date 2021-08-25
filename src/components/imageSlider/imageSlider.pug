@@ -1,0 +1,18 @@
+mixin imageSlider (options)
+  - const {rows = []} = options || {}
+  - let sliderClass = 'imageSlider'
+  - sliderClass += options.isHovered ? " imageSlider__hovered" : ""
+ 
+
+  div(class = sliderClass)
+    .imageSlider__sliderWrapper 
+      each row in rows
+        .imageSlider__slide
+          img(src=row.src, alt=row.alt).imageSlider__img
+      div.imageSlider__btn-prev 
+        span.imageSlider__arrow.material-icons= 'expand_more'
+      div.imageSlider__btn-next
+        span.imageSlider__arrow.material-icons= 'expand_more'
+      .imageSlider__dotWrapper 
+        each row in rows
+          span.imageSlider__dot

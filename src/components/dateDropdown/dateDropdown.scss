@@ -35,6 +35,9 @@
       display: block;
     }
   }
+  .disabled {
+    position: relative;
+  }
   .datepicker-inline .datepicker {
     border: 0.0625rem solid $color-dark-25;
     width: 19.85rem;
