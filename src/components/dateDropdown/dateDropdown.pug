@@ -3,6 +3,7 @@ include ../dropdown/dropdown.pug
 mixin dateDropdown(options)
   - var calendarClass = 'js-calendar_content'
   - calendarClass += options.isExpanded ? ' js-calendar_content_expanded' : ''
+  - calendarClass += options.hidden ? ' disabled' : ''
 
   div.dateDropdown(class= 'dateDropdown_' + options.type, id=options.id )
     if (options.type === 'double')

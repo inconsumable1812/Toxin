@@ -75,17 +75,19 @@ $(function () {
   addApplyButton()
 
   let $applyButton = $('[data-action="apply"]')
-  $applyButton.on('click', hideDatePicker)
+  $applyButton.on('click', function () {
+    let $isDatePicker = $(this).parents('.js-calendar_content')
+    if ($(this).parents().hasClass('disabled')) {
+      return
+    } else {
+      $isDatePicker.removeClass('js-calendar_content_expanded')
+    }
+  })
 
   function addApplyButton() {
     let $isPickerButtons = $('.datepicker--buttons')
     if ($isPickerButtons) {
       $isPickerButtons.append('<span class="datepicker--button_apply" data-action="apply">Применить</span>')
     }
-  }
-
-  function hideDatePicker() {
-    let $isDatePicker = $('.dropdown__calendar_content')
-    $isDatePicker.removeClass('js-calendar_content_expanded')
   }
 })

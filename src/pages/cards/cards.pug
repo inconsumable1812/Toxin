@@ -5,6 +5,7 @@ include ../../components/roomSearch/roomSearch.pug
 include ../../components/registrationForm/registrationForm.pug
 include ../../components/bookingForm/bookingForm.pug
 include ../../components/loginForm/loginForm.pug
+include ../../components/dateDropdown/dateDropdown.pug
 
 block variables
   - var title = "Cards"
@@ -25,3 +26,6 @@ block content
           +bookingForm
         .cards__card
           +loginForm
+      .cards__grid-column_third 
+        .cards__card
+          +dateDropdown({hidden: true , type:'double',isExpanded:true, id:'second'})

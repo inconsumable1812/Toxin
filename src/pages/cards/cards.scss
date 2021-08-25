@@ -28,4 +28,9 @@
   &__card {
     margin-bottom: 2.5rem;
   }
+  &__grid-column_third {
+    .dateDropdown__group_double {
+      display: none;
+    }
+  }
 }
