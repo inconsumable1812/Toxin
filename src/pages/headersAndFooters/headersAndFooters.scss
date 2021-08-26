@@ -1,0 +1,10 @@
+@import '../../utils/main.scss';
+@import '../../utils/mixins';
+@import '../../components/header/header.scss';
+
+.headersAndFooters {
+  &__logo {
+    margin: 1.875rem auto 4.1rem auto;
+    width: 80%;
+  }
+}

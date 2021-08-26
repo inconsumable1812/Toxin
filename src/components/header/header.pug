@@ -1,0 +1,26 @@
+include ../../components/logo/logo.pug
+
+mixin header(options)
+  - const {menuLink} = options || {};
+  - let classLink = 'header__link'
+  - let classSubMenu = 'header__subMenu'
+  - let classSubLink = 'header__link header__subLink'
+
+  .header 
+    nav.header__navigation 
+      .header__logo
+        +logo(true)
+      button.header__burger.material-icons= 'menu'
+      ul.header__menu
+        each link in menuLink
+          if link.bold 
+            - classLink += ' header_bold'
+            - classSubMenu += ' header_bold'
+          if !link.subMenu
+            a(class = classLink, href = link.href)= link.name
+          if link.subMenu
+            div(class = classSubMenu) 
+              a(class = classLink, href = link.href)= link.name
+              .header__dropdown 
+                each subLink in link.subMenu
+                  a(class = classSubLink, href = subLink.href)= subLink.name
