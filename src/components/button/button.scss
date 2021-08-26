@@ -3,8 +3,8 @@
 @import '../../utils/mixins';
 
 .button {
+  padding: 0 1.4125rem 0 1.1875rem;
   height: 2.75rem;
-  width: 6.1875rem;
   appearance: none;
   border: none;
   border-radius: 1.375rem;
@@ -31,8 +31,10 @@
   &_theme_white {
     background: white;
     border: 0.125rem solid $color-purple;
+    padding: 0 1.3rem 0 1.05rem;
   }
   &_theme_transparent {
+    padding: 0;
     height: initial;
     width: initial;
     background: transparent;
@@ -45,6 +47,7 @@
   &_size_large {
     max-width: 20rem;
     width: 100%;
+    padding: 0;
     .button__group {
       display: grid;
       grid-template-columns: 1fr auto 1fr;

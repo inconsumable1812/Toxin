@@ -1,10 +1,12 @@
 include ../../components/logo/logo.pug
+include ../../components/button/button.pug
 
 mixin header(options)
-  - const {menuLink} = options || {};
+  - const {menuLink, bold, auth, subMenu} = options || {};
   - let classLink = 'header__link'
   - let classSubMenu = 'header__subMenu'
   - let classSubLink = 'header__link header__subLink'
+  - let classUser = 'header__userMenu'
 
   .header 
     nav.header__navigation 
@@ -24,3 +26,10 @@ mixin header(options)
               .header__dropdown 
                 each subLink in link.subMenu
                   a(class = classSubLink, href = subLink.href)= subLink.name
+      if !auth
+        - classUser += ' header__userMenu_notAuth'
+        div(class = classUser)
+          +button({theme:'white', textTheme:'purple', text:'войти'})
+          +button({theme:'purple', textTheme:'white', text:'зарегистрироваться'}) 
+      if auth
+        - classUser += ' header__userMenu_auth'

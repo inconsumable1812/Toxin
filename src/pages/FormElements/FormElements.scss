@@ -136,12 +136,22 @@
           grid-template-columns: repeat(auto-fill, 6.1875rem);
           column-gap: 1.25rem;
           margin-bottom: 1.9rem;
+          .button_theme_purple {
+            .button__text {
+              letter-spacing: -0.5px;
+            }
+          }
         }
         .formElements__buttons_row_second {
           display: grid;
           grid-template-columns: repeat(auto-fill, 6.1875rem);
           column-gap: 1.25rem;
           margin-bottom: 1.9rem;
+          .button_theme_white {
+            .button__text {
+              letter-spacing: -0.5px;
+            }
+          }
         }
         .formElements__buttons_row_third {
           display: grid;
