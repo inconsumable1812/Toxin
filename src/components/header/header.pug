@@ -35,3 +35,5 @@ mixin header(options)
               +button({theme:'purple', textTheme:'white', text:'зарегистрироваться'}) 
           if auth
             - classUser += ' header__userMenu_auth'
+            div(class = classUser)
+              a(href='/account').header__userName= `${auth.name} ${auth.surname}`

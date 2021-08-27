@@ -46,14 +46,15 @@
   &__menu {
     display: grid;
     grid-auto-flow: column;
-    column-gap: 1.25rem;
+    column-gap: 1.3rem;
     align-items: center;
-    margin-right: 1.25rem;
+    padding-right: 1.25rem;
     @include _992 {
       margin: 0 auto;
       display: block;
       margin-bottom: 1rem;
-      //border-bottom: 1px solid #000;
+      padding-right: 0;
+      border-bottom: 0.0625rem solid $color-dark-25;
     }
   }
   &__link {
@@ -96,7 +97,6 @@
   &__dropdown {
     display: none;
     position: absolute;
-    //display: flex;
     flex-direction: column;
     top: 25px;
     background: white;
@@ -140,6 +140,7 @@
     display: grid;
     grid-auto-flow: column;
     column-gap: 1.25rem;
+    align-items: center;
     @include _992 {
       display: block;
       margin: 0 auto;
@@ -151,6 +152,25 @@
         margin: 0 auto;
         margin-bottom: 0.5rem;
       }
+    }
+  }
+  &__userMenu_auth {
+    padding-left: 1.25rem;
+    height: 30px;
+    border-left: 1px solid $color-dark-10;
+    @include _992 {
+      height: inherit;
+      padding-left: 0;
+      border-left: none;
+    }
+  }
+  &__userName {
+    font-size: 0.875rem;
+    color: $color-dark-50;
+    line-height: 1.0625rem;
+    text-decoration: none;
+    &:hover {
+      color: $color-purple;
     }
   }
 }
