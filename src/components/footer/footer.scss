@@ -9,16 +9,91 @@
     margin: 0 auto;
     padding: 0 1.5rem;
   }
+  &__main-area {
+    display: grid;
+    padding-top: 6.25rem;
+    grid-template-columns: 1fr 2.153fr 1fr;
+    column-gap: 2.5rem;
+    grid-template-areas: 'logo link subscribe';
+    padding-bottom: 5.59rem;
+  }
+  &__main-border {
+    border-bottom: 0.0625rem solid #dedee3;
+  }
+  &__about-us {
+    grid-area: logo;
+  }
+  &__about-us-text {
+    padding-top: 1.125rem;
+    font-size: 0.875rem;
+    color: $color-dark-75;
+    line-height: 1.5rem;
+  }
+  &__navigation {
+    padding-top: 0.25rem;
+    display: grid;
+    grid-area: link;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+  }
+  &__navigation-title {
+    padding-bottom: 0.6875rem;
+  }
+  &__navigation-item {
+    list-style: none;
+    padding: 0.6rem 0;
+    a {
+      color: $color-dark-50;
+      appearance: none;
+      text-decoration: none;
+      font-size: 0.875rem;
+      line-height: 1.0625rem;
+    }
+  }
+  &__navigation-row {
+    &:nth-child(2) {
+      padding-left: 0.85rem;
+    }
+    &:nth-child(3) {
+      padding-left: 1.68rem;
+    }
+  }
+  &__subscribe-form {
+    padding-top: 0.25rem;
+    grid-area: subscribe;
+  }
+  &__subscribe-txt {
+    padding-top: 1.2rem;
+    font-size: 0.875rem;
+    color: $color-dark-75;
+    line-height: 1.5rem;
+    padding-bottom: 1.1rem;
+  }
+  &__copyright-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    padding-bottom: 1.3rem;
+  }
+  &__copyright-text {
+    font-size: 0.875rem;
+    line-height: 1.0625rem;
+    color: $color-dark-75;
+  }
+  &__copyright-list {
+    display: flex;
+  }
   &__copyright-list-item {
     list-style: none;
+    padding-left: 1.29rem;
+    padding-right: 0.1rem;
+    a {
+      color: $color-purple;
+      appearance: none;
+      text-decoration: none;
+      font-size: 1.5rem;
+      line-height: 23px;
+    }
   }
-  &__copyright-list-item a {
-    color: $color-purple;
-    appearance: none;
-    text-decoration: none;
-    font-size: 1.5rem;
-  }
-  /* &__twitter {
-    //background: url('');
-  }*/
 }

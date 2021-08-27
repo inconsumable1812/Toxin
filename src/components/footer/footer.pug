@@ -38,25 +38,28 @@ mixin footer(options)
     copyrightText = copyrightTextDefault } = options || {}
   -
   
-  .footer 
+  .footer
+    .footer__main-border
+      .footer__container
+        .footer__main-area 
+          .footer__about-us
+            .footer__logo 
+              +logo(true)
+            p.footer__about-us-text= aboutUs
+          .footer__navigation
+            each item in menuLinkDefault
+              .footer__navigation-row
+                h3.footer__navigation-title= item.title
+                ul.footer__navigation-list
+                  each link in item.links
+                    li.footer__navigation-item
+                      a(href = link.href).footer__navigation-link= link.name
+          form(action="/change").footer__subscribe-form
+            h3.footer__subscribe-title= subscribeTitle
+            p.footer__subscribe-txt= subscribeText
+            .footer__input 
+              +input({type:'email', name:'email', placeholder:'Email', withButton :true})
     .footer__container
-      .footer__main-area 
-        .footer__about-us
-          .footer__logo 
-            +logo(true)
-          .footer__about-us-text= aboutUs
-        .footer__navigation
-          each item in menuLinkDefault
-            .footer__navigation-row
-              h3.footer__navigation-title= item.title
-              .footer__navigation-list
-                each link in item.links
-                  a(href = link.href).footer__navigation-link= link.name
-        form(action="/change").footer__subscribe-form
-          h3.footer__subscribe-title= subscribeTitle
-          p.footer__subscribe-txt= subscribeText
-          .footer__input 
-            +input({type:'email', name:'email', placeholder:'Email', withButton :true})
       .footer__copyright-area
         p.footer__copyright-text= copyrightText
         div.footer__copyright-list

@@ -52,9 +52,10 @@
     @include _992 {
       margin: 0 auto;
       display: block;
+      width: 100vw;
       margin-bottom: 1rem;
       padding-right: 0;
-      border-bottom: 0.0625rem solid $color-dark-25;
+      border-bottom: 0.0625rem solid $color-dark-10;
     }
   }
   &__link {
@@ -66,7 +67,7 @@
       color: $color-purple;
     }
     @include _992 {
-      text-align: center;
+      text-align: start;
       display: block;
       line-height: 2rem;
     }
@@ -77,8 +78,7 @@
     grid-template-columns: max-content min-content;
     align-items: center;
     @include _992 {
-      justify-content: center;
-      justify-self: center;
+      justify-content: start;
     }
   }
   &__subMenuIcon {
@@ -143,13 +143,13 @@
     align-items: center;
     @include _992 {
       display: block;
-      margin: 0 auto;
+      // margin: 0 auto;
     }
     button {
       height: 2.125rem;
       @include _992 {
         display: block;
-        margin: 0 auto;
+        //margin: 0 auto;
         margin-bottom: 0.5rem;
       }
     }

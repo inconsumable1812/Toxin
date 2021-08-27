@@ -24,12 +24,9 @@
     width: 80%;
   }
   &__main {
-    max-width: 1440px;
+    max-width: 1208px;
     margin: 0 auto;
-    padding: 0 8.8125rem;
-    @include _1200 {
-      padding: 0 1.5rem;
-    }
+    padding: 0 1.5rem;
   }
   &__section-first {
     display: grid;
