@@ -3,6 +3,154 @@
 @import '../../components/button/button.scss';
 
 .header {
-  max-width: 1440px;
-  margin: 0 auto;
+  background: white;
+  position: relative;
+  padding: 0.9375rem 0;
+  &__container {
+    max-width: 1208px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  &__navigation {
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 50;
+    grid-template-areas: 'logo menuGroup';
+    @include _992 {
+      grid-template-areas:
+        'logo logo'
+        'menuGroup menuGroup';
+    }
+  }
+  &__logo {
+    grid-area: logo;
+  }
+  &__menuGroup {
+    display: grid;
+    grid-auto-flow: column;
+    grid-area: menuGroup;
+    @include _992 {
+      display: none;
+      grid-auto-flow: inherit;
+      justify-content: center;
+      width: 100%;
+    }
+    &_expanded {
+      display: grid;
+      @include _992 {
+        display: grid;
+      }
+    }
+  }
+  &__menu {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 1.25rem;
+    align-items: center;
+    margin-right: 1.25rem;
+    @include _992 {
+      margin: 0 auto;
+      display: block;
+      margin-bottom: 1rem;
+      //border-bottom: 1px solid #000;
+    }
+  }
+  &__link {
+    color: $color-dark-50;
+    font-size: 0.875rem;
+    line-height: 1.0625rem;
+    text-decoration: none;
+    &:hover {
+      color: $color-purple;
+    }
+    @include _992 {
+      text-align: center;
+      display: block;
+      line-height: 2rem;
+    }
+  }
+  &__subMenu {
+    position: relative;
+    display: grid;
+    grid-template-columns: max-content min-content;
+    align-items: center;
+    @include _992 {
+      justify-content: center;
+      justify-self: center;
+    }
+  }
+  &__subMenuIcon {
+    cursor: pointer;
+    color: $color-dark-50;
+    user-select: none;
+    transition: transform 0.25s ease;
+    &_expanded {
+      transform: rotate(180deg);
+      transition: transform 0.25s ease;
+    }
+    &:hover {
+      color: $color-purple;
+    }
+  }
+  &__dropdown {
+    display: none;
+    position: absolute;
+    //display: flex;
+    flex-direction: column;
+    top: 25px;
+    background: white;
+    z-index: 5;
+    border: 0.0625rem solid $color-dark-10;
+    box-shadow: 0rem 0rem 0.0625rem 0.0625rem $color-dark-10;
+    &_expanded {
+      display: flex;
+    }
+  }
+  &__subLink {
+    padding: 0.5rem 1rem;
+    line-height: 2rem;
+    border-bottom: 0.0625rem solid $color-dark-10;
+    &:hover {
+      color: $color-purple;
+    }
+  }
+  &_bold {
+    font-weight: bold;
+  }
+
+  &__burger {
+    font-size: 3rem;
+    display: none;
+    position: absolute;
+    right: 2%;
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: $color-dark-50;
+    user-select: none;
+    &:hover {
+      color: $color-purple;
+    }
+    @include _992 {
+      display: block;
+    }
+  }
+  &__userMenu {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 1.25rem;
+    @include _992 {
+      display: block;
+      margin: 0 auto;
+    }
+    button {
+      height: 2.125rem;
+      @include _992 {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
 }

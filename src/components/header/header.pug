@@ -8,28 +8,30 @@ mixin header(options)
   - let classSubLink = 'header__link header__subLink'
   - let classUser = 'header__userMenu'
 
-  .header 
-    nav.header__navigation 
-      .header__logo
-        +logo(true)
-      button.header__burger.material-icons= 'menu'
-      ul.header__menu
-        each link in menuLink
-          if link.bold 
-            - classLink += ' header_bold'
-            - classSubMenu += ' header_bold'
-          if !link.subMenu
-            a(class = classLink, href = link.href)= link.name
-          if link.subMenu
-            div(class = classSubMenu) 
-              a(class = classLink, href = link.href)= link.name
-              .header__dropdown 
-                each subLink in link.subMenu
-                  a(class = classSubLink, href = subLink.href)= subLink.name
-      if !auth
-        - classUser += ' header__userMenu_notAuth'
-        div(class = classUser)
-          +button({theme:'white', textTheme:'purple', text:'войти'})
-          +button({theme:'purple', textTheme:'white', text:'зарегистрироваться'}) 
-      if auth
-        - classUser += ' header__userMenu_auth'
+  div.header
+    .header__container
+      nav.header__navigation 
+        .header__logo
+          +logo(true)
+        button.header__burger.material-icons= 'menu'
+        .header__menuGroup
+          ul.header__menu
+            each link in menuLink
+              - classLink = link.bold ? 'header__link header_bold' : 'header__link'
+              - classSubMenu = link.bold ? 'header__subMenu header_bold' : 'header__subMenu'
+              if !link.subMenu
+                a(class = classLink, href = link.href)= link.name
+              if link.subMenu
+                div(class = classSubMenu) 
+                  a(class = classLink, href = link.href)= link.name
+                  .header__dropdown 
+                    each subLink in link.subMenu
+                      a(class = classSubLink, href = subLink.href)= subLink.name
+                  span.header__subMenuIcon.material-icons= 'expand_more'
+          if !auth
+            - classUser += ' header__userMenu_notAuth'
+            div(class = classUser)
+              +button({theme:'white', textTheme:'purple', text:'войти'})
+              +button({theme:'purple', textTheme:'white', text:'зарегистрироваться'}) 
+          if auth
+            - classUser += ' header__userMenu_auth'

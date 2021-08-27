@@ -3,7 +3,7 @@
 @import '../../utils/mixins';
 
 .button {
-  padding: 0 1.4125rem 0 1.1875rem;
+  padding: 0 1.3125rem 0 1.1875rem;
   height: 2.75rem;
   appearance: none;
   border: none;
@@ -15,6 +15,7 @@
   }
   &__text {
     font-size: 0.75rem;
+    line-height: 0.9375rem;
     font-family: 'Montserrat', Helvetica, sans-serif;
     font-weight: bold;
     text-transform: uppercase;
@@ -31,7 +32,7 @@
   &_theme_white {
     background: white;
     border: 0.125rem solid $color-purple;
-    padding: 0 1.3rem 0 1.05rem;
+    padding: 0 1.2rem 0 1.15rem;
   }
   &_theme_transparent {
     padding: 0;

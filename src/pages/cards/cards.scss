@@ -14,13 +14,13 @@
   }
   &__main {
     display: grid;
-    max-width: 1440px;
+    max-width: 1208px;
     margin: 0 auto;
-    padding: 0 8.1254%;
+    padding: 0 1.5rem;
     grid-template-columns: 1.1875fr 1.1875fr 1fr;
     column-gap: 2.5rem;
     @include _1200 {
-      padding: 0 1.5rem;
+      //padding: 0 1.5rem;
       grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
       justify-items: center;
     }
