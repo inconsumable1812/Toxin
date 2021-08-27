@@ -1,0 +1,24 @@
+@import '../../utils/vars.scss';
+@import '../../utils/mixins';
+@import '../../components/input/input.scss';
+
+.footer {
+  background: white;
+  &__container {
+    max-width: 1208px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  &__copyright-list-item {
+    list-style: none;
+  }
+  &__copyright-list-item a {
+    color: $color-purple;
+    appearance: none;
+    text-decoration: none;
+    font-size: 1.5rem;
+  }
+  /* &__twitter {
+    //background: url('');
+  }*/
+}

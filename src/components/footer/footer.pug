@@ -1,0 +1,69 @@
+include ../../components/logo/logo.pug
+include ../../components/input/input.pug
+
+mixin footer(options)
+  - 
+    menuLinkDefault = [
+      {title:'Навигация',
+        links:[
+          {name: 'О нас', href:'/about-us'},
+          {name: 'Новости', href:'/news'},
+          {name: 'Служба поддержки', href:'/help'},
+          {name: 'Услуги', href:'/services'},
+        ]},
+      {title:'О нас',
+        links:[
+          {name: 'О сервисе', href:'/about-us'},
+          {name: 'Наша команда', href:'/team'},
+          {name: 'Вакансии', href:'/vacancies'},
+          {name: 'Инвесторы', href:'/investors'},
+        ]},
+      {title:'Служба поддержки',
+        links:[
+          {name: 'Соглашения', href:'/agreements'},
+          {name: 'Сообщества', href:'/communities'},
+          {name: 'Связь с нами', href:'/contact-us'},
+        ]},
+      ]
+
+  - const subscribeTitleDefault = 'Подписка'
+  - const subscribeTextDefault = 'Получайте специальные предложения и новости сервиса'
+  - const aboutUsDefault = 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»'
+  - const copyrightTextDefault = 'Copyright © 2018 Toxin отель. Все права защищены.'
+  -
+    const {aboutUs= aboutUsDefault, 
+    menuLink = menuLinkDefault, 
+    subscribeTitle = subscribeTitleDefault, 
+    subscribeText = subscribeTextDefault,
+    copyrightText = copyrightTextDefault } = options || {}
+  -
+  
+  .footer 
+    .footer__container
+      .footer__main-area 
+        .footer__about-us
+          .footer__logo 
+            +logo(true)
+          .footer__about-us-text= aboutUs
+        .footer__navigation
+          each item in menuLinkDefault
+            .footer__navigation-row
+              h3.footer__navigation-title= item.title
+              .footer__navigation-list
+                each link in item.links
+                  a(href = link.href).footer__navigation-link= link.name
+        form(action="/change").footer__subscribe-form
+          h3.footer__subscribe-title= subscribeTitle
+          p.footer__subscribe-txt= subscribeText
+          .footer__input 
+            +input({type:'email', name:'email', placeholder:'Email', withButton :true})
+      .footer__copyright-area
+        p.footer__copyright-text= copyrightText
+        div.footer__copyright-list
+          li.footer__copyright-list-item
+            a(href = 'https://twitter.com/', target='blank').footer__twitter.fab.fa-twitter
+          li.footer__copyright-list-item
+            a(href = 'https://facebook.com/', target='blank').footer__facebook.fab.fa-facebook-square
+          li.footer__copyright-list-item
+            a(href = 'https://instagram.com/', target='blank').footer__instagram.fab.fa-instagram
+

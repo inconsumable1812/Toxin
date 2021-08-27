@@ -2,6 +2,7 @@ extends ../../layout/main.pug
 
 include ../../components/logo/logo.pug
 include ../../components/header/header.pug
+include ../../components/footer/footer.pug
 
 
 block variables
@@ -11,23 +12,6 @@ block variables
 block content
   - const bottomClass = 'headersAndFooters__margin-bottom'
   -
-   const menuLink = [
-    {name: 'О нас', href:'/about', bold:true},
-    {name: 'Услуги', href:'/services',
-    subMenu:[
-      {name: 'Трансфер', href:'/transfer'},
-      {name: 'Завтрак', href:'/breakfast'},
-      {name: 'Обед', href:'/lunch'},
-      {name: 'Ужин', href:'/dinner'},
-        ]},
-    {name: 'Вакансии', href:'/vacancies'},
-    {name: 'Новости', href:'/news'},
-    {name: 'Соглашения', href:'/agreements',
-      subMenu:[
-      {name: 'Договор 1', href:'/contract'},
-      {name: 'Договор 2', href:'/contract_2'},
-        ]},
-    ]
    const auth = {name: 'Юлий', surname: 'Цезарь'}
   -
   
@@ -39,4 +23,5 @@ block content
   div(class = bottomClass).headersAndFooters__header_login
     +header({menuLink, auth})
   div(class = bottomClass).headersAndFooters__footer
+    +footer({})
   div.headersAndFooters__footer_size_small

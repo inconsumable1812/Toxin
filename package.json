@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "air-datepicker": "^2.2.3",
     "imask": "^6.1.0",
     "jquery": "^3.5.1",

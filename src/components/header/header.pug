@@ -2,7 +2,25 @@ include ../../components/logo/logo.pug
 include ../../components/button/button.pug
 
 mixin header(options)
-  - const {menuLink, bold, auth, subMenu} = options || {};
+  -
+   let menuLinkDefault = [
+    {name: 'О нас', href:'/about', bold:true},
+    {name: 'Услуги', href:'/services',
+    subMenu:[
+      {name: 'Трансфер', href:'/transfer'},
+      {name: 'Завтрак', href:'/breakfast'},
+      {name: 'Обед', href:'/lunch'},
+      {name: 'Ужин', href:'/dinner'},
+        ]},
+    {name: 'Вакансии', href:'/vacancies'},
+    {name: 'Новости', href:'/news'},
+    {name: 'Соглашения', href:'/agreements',
+      subMenu:[
+      {name: 'Договор 1', href:'/contract'},
+      {name: 'Договор 2', href:'/contract_2'},
+        ]},
+    ]
+  - const {menuLink= menuLinkDefault, bold, auth, subMenu} = options || {};
   - let classLink = 'header__link'
   - let classSubMenu = 'header__subMenu'
   - let classSubLink = 'header__link header__subLink'
