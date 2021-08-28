@@ -4,6 +4,7 @@
 
 .footer {
   background: white;
+  box-shadow: 0 0.625rem 1.25rem $color-dark-5;
   &__container {
     max-width: 1208px;
     margin: 0 auto;
@@ -16,25 +17,56 @@
     column-gap: 2.5rem;
     grid-template-areas: 'logo link subscribe';
     padding-bottom: 5.59rem;
+    @include _992 {
+      column-gap: 1.2rem;
+      row-gap: 1rem;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        'logo subscribe'
+        'link link';
+    }
+    @include _768 {
+      column-gap: 0;
+      row-gap: 0;
+      grid-template-areas: none;
+      grid-template-columns: 1fr;
+      padding-bottom: 0;
+      padding-top: 7.55rem;
+    }
   }
   &__main-border {
     border-bottom: 0.0625rem solid #dedee3;
+    @include _768 {
+      border-bottom: none;
+    }
   }
   &__about-us {
     grid-area: logo;
+    @include _768 {
+      text-align: center;
+      padding-right: 0.8rem;
+    }
   }
   &__about-us-text {
     padding-top: 1.125rem;
     font-size: 0.875rem;
     color: $color-dark-75;
     line-height: 1.5rem;
+    @include _768 {
+      visibility: hidden;
+      height: 0;
+      padding-top: 0;
+    }
   }
   &__navigation {
     padding-top: 0.25rem;
     display: grid;
     grid-area: link;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, auto);
     justify-content: space-between;
+    @include _768 {
+      display: none;
+    }
   }
   &__navigation-title {
     padding-bottom: 0.6875rem;
@@ -48,19 +80,31 @@
       text-decoration: none;
       font-size: 0.875rem;
       line-height: 1.0625rem;
+      &:hover {
+        color: $color-purple;
+      }
     }
   }
   &__navigation-row {
     &:nth-child(2) {
-      padding-left: 0.85rem;
+      padding-right: 2.15rem;
+      @include _992 {
+        padding-right: 0;
+      }
     }
     &:nth-child(3) {
-      padding-left: 1.68rem;
+      padding-right: 0.75rem;
+      @include _992 {
+        padding-right: 0;
+      }
     }
   }
   &__subscribe-form {
     padding-top: 0.25rem;
     grid-area: subscribe;
+    @include _768 {
+      display: none;
+    }
   }
   &__subscribe-txt {
     padding-top: 1.2rem;
@@ -74,15 +118,30 @@
     justify-content: space-between;
     align-items: center;
     padding-top: 1.5rem;
-    padding-bottom: 1.3rem;
+    padding-bottom: 1.4rem;
+    @include _768 {
+      padding-top: 1.3rem;
+      display: grid;
+      justify-content: center;
+      row-gap: 1rem;
+      padding-bottom: 7.48rem;
+    }
   }
   &__copyright-text {
     font-size: 0.875rem;
     line-height: 1.0625rem;
     color: $color-dark-75;
+    @include _768 {
+      justify-self: center;
+    }
   }
   &__copyright-list {
     display: flex;
+    @include _768 {
+      justify-self: center;
+      padding-top: 0.55rem;
+      padding-right: 1.4rem;
+    }
   }
   &__copyright-list-item {
     list-style: none;
@@ -94,6 +153,55 @@
       text-decoration: none;
       font-size: 1.5rem;
       line-height: 23px;
+      &:hover {
+        color: $color-dark-50;
+      }
     }
+  }
+}
+
+.footer_size_small {
+  max-width: 768px;
+  margin: 0 auto;
+  .footer__main-area {
+    column-gap: 0;
+    row-gap: 0;
+    grid-template-areas: none;
+    grid-template-columns: 1fr;
+    padding-bottom: 0;
+    padding-top: 7.55rem;
+  }
+  .footer__main-border {
+    border-bottom: none;
+  }
+  .footer__about-us {
+    text-align: center;
+    padding-right: 0.8rem;
+  }
+  .footer__about-us-text {
+    visibility: hidden;
+    height: 0;
+    padding-top: 0;
+  }
+  .footer__navigation {
+    display: none;
+  }
+  .footer__subscribe-form {
+    display: none;
+  }
+  .footer__copyright-area {
+    padding-top: 1.3rem;
+    display: grid;
+    justify-content: center;
+    row-gap: 1rem;
+    padding-bottom: 7.48rem;
+  }
+  .footer__copyright-text {
+    justify-self: center;
+  }
+  .footer__copyright-list {
+    justify-self: center;
+    padding-top: 0.55rem;
+    padding-right: 1.4rem;
   }
 }

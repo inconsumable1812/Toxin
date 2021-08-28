@@ -30,15 +30,18 @@ mixin footer(options)
   - const subscribeTextDefault = 'Получайте специальные предложения и новости сервиса'
   - const aboutUsDefault = 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»'
   - const copyrightTextDefault = 'Copyright © 2018 Toxin отель. Все права защищены.'
-  -
+  - let footerClass = 'footer'
+  - footerClass += options.isSmall ? ' footer_size_small' : ''
+  - 
     const {aboutUs= aboutUsDefault, 
     menuLink = menuLinkDefault, 
     subscribeTitle = subscribeTitleDefault, 
     subscribeText = subscribeTextDefault,
-    copyrightText = copyrightTextDefault } = options || {}
+    copyrightText = copyrightTextDefault,
+    } = options || {}
   -
   
-  .footer
+  div(class = footerClass)
     .footer__main-border
       .footer__container
         .footer__main-area 
