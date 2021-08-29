@@ -16,6 +16,7 @@ html(lang="ru")
     meta(name='theme-color' content='#ffffff')
     title= title ? `Официальный сайт отеля Toxin | ${title}` : 'Официальный сайт отеля Toxin'
 
-
-body(class= `${theme}`)
+  - theme= theme ? `${theme}` : ''
+  - pageClass= pageClass ? `${pageClass}` : ''
+body(class= theme)
   block content    
