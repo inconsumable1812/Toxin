@@ -4,6 +4,11 @@ include ../components/header/header.pug
 include ../components/footer/footer.pug
 
 
-block content 
-  header(class= pageClass)
-    +header
+block content
+  div(class = pageClass)
+    header(class= headerClass)
+      +header
+    main(class= mainClass)
+      block main 
+    footer(class = footerClass)
+      +footer({})

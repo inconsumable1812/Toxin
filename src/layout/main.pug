@@ -18,5 +18,8 @@ html(lang="ru")
 
   - theme= theme ? `${theme}` : ''
   - pageClass= pageClass ? `${pageClass}` : ''
+  - headerClass= pageClass ? `${pageClass + '__header'}` : ''
+  - mainClass= pageClass ? `${pageClass+ '__main'}` : ''
+  - footerClass= pageClass ? `${pageClass+ '__footer'}` : '' 
 body(class= theme)
   block content    

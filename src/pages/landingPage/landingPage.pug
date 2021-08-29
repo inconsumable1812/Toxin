@@ -1,4 +1,12 @@
 extends ../../layout/pages.pug
+include ../../components/roomSearch/roomSearch.pug
 
 block variables
-  - let pageClass = 'landingPage'
+  - let pageClass = 'landing'
+
+block main 
+  .landing__container 
+    .landing__room-search
+      +roomSearch
+    .landing__slogan
+      span.landing__slogan-text= 'Лучшие номера для вашей работы, отдыха и просто вдохновения'
