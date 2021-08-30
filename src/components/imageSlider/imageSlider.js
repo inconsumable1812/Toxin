@@ -63,4 +63,8 @@ for (slider of sliders) {
 
   next.addEventListener('click', nextSlide)
   prev.addEventListener('click', prevSlide)
+
+  if (slider.classList.contains('imageSlider__interval')) {
+    setInterval(nextSlide, 2500)
+  }
 }

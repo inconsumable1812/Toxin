@@ -1,10 +1,16 @@
 extends ../../layout/pages.pug
 include ../../components/roomSearch/roomSearch.pug
+include ../../components/imageSlider/imageSlider.pug
 
 block variables
   - let pageClass = 'landing'
 
-block main 
+block main
+  +imageSlider({isInterval:true,rows:[
+        {src: require('./img/landing_1.png').default, alt: '1'},
+        {src: require('./img/landing_2.png').default, alt: '2'},
+        {src: require('./img/landing_3.png').default, alt: '3'},
+        ]})
   .landing__container 
     .landing__room-search
       +roomSearch
