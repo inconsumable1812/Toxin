@@ -1,7 +1,7 @@
-const expandableCheckboxLists = document.querySelectorAll('.expandableCheckboxList__header')
+const expandableCheckboxLists = document.querySelectorAll('.expandableCheckboxList')
 
 for (const expandableCheckboxList of expandableCheckboxLists) {
-  const CheckboxList = expandableCheckboxList.parentElement.querySelector('.expandableCheckboxList__list')
+  const CheckboxList = expandableCheckboxList.querySelector('.expandableCheckboxList__list')
   const button = expandableCheckboxList.querySelector('.expandableCheckboxList__toggle-button')
 
   expandableCheckboxList.addEventListener('click', () => {

@@ -1,0 +1,7 @@
+import './searchRoom.scss'
+import '../../components/dropdown/dropdown'
+import '../../components/dateDropdown/dateDropdown'
+import '../../components/expandableCheckboxList/expandableCheckboxList'
+import '../../components/rangeSlider/rangeSlider'
+import '../../components/pagination/pagination'
+import '../../components/header/header'

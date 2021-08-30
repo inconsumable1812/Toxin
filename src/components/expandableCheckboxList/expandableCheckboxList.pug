@@ -8,7 +8,7 @@ mixin expandableCheckboxList(options)
   div.expandableCheckboxList
     div.expandableCheckboxList__header
       span.expandableCheckboxList__title=options.title
-      button(class = buttonClass).material-icons
+      button(class = buttonClass, type='button').material-icons
     ul(class = listClass)
       if options.rows
         each row in rows

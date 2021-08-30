@@ -1,0 +1,60 @@
+extends ../../layout/pages.pug
+
+include ../../components/dropdown/dropdown.pug
+include ../../components/dateDropdown/dateDropdown.pug
+include ../../components/expandableCheckboxList/expandableCheckboxList.pug
+include ../../components/checkbox/checkbox.pug
+include ../../components/rangeSlider/rangeSlider.pug
+include ../../components/pagination/pagination.pug
+include ../../components/richCheckbox/richCheckbox.pug
+
+block variables
+  - let pageClass = 'searchRoom'
+
+block main
+  .searchRoom__container
+    .searchRoom__filter 
+      button.searchRoom__filter-button
+      form.searchRoom__filter-form 
+        .searchRoom__calendar
+          +dateDropdown({title:"даты пребывания в отеле", type:'single', })
+        .searchRoom__dropdownGuest
+          +dropdown({title:"Гости", name:"guestNumber", placeholder:"Сколько гостей",type:"guest",rows: [
+              {count: 0, text: 'взрослые', typeOfCount:'adult'},
+              {count: 0, text: 'дети', typeOfCount:'children'},
+              {count: 0, text: 'младенцы', typeOfCount:'baby'},
+            ]})
+        .searchRoom__rangeSlider
+          +rangeSlider({title:"диапазон цены", min:"0", max:"16000", description:'Стоимость за сутки пребывания в номере'})
+        .searchRoom__checkbox
+          +checkbox({header:'правила дома', rows: [
+            {title:"Можно курить", name:'smoke'},
+            {title:"Можно с питомцами", name:'pet'},
+            {title:"Можно пригласить гостей (до 10 человек)", name:'more guests'},
+          ]})
+        .searchRoom__richCheckbox
+          +richCheckbox({header:'доступность', rows:[
+            {title:'Широкий коридор', name:'wide corridor', subtitle:'Ширина коридоров в номере не менее 91 см.'},
+            {title:'Помощник для инвалидов', name:'Assistant for the disabled', subtitle:'На 1 этаже вас встретит специалист  и проводит до номера.'},
+          ]})
+        .searchRoom__dropdownRoom
+          +dropdown({title:"удобства номера", name:"Number", placeholder:"Количество комнат",rows: [
+          {count: 0, text: 'спальни', typeOfCount:'bedroom'},
+          {count: 0, text: 'кровати', typeOfCount:'bed'},
+          {count: 0, text: 'ванные комнаты', typeOfCount: 'bathroom'},
+          ], type:"rooms",})
+        .searchRoom__expandableCheckbox
+          +expandableCheckboxList({title:'дополнительные удобства',isExpanded:false ,rows:[
+          {title:"Завтрак", name:'Breakfast'},
+          {title:"Письменный стол", name:'Desk'},
+          {title:"Стул для кормления", name:'Feeding chair'},
+          {title:"Кроватка", name:'Crib'},
+          {title:"Телевизор", name:'TV'},
+          {title:"Шампунь", name:'Shampoo'},
+          {title:"Телевизор", name:'TV1'},
+          {title:"Шампунь", name:'Shampoo1'},
+          ]})
+    .searchRoom__result 
+      h1.searchRoom__result-title= 'Номера, которые мы для вас подобрали'
+      ul.searchRoom__roomSketch-list 
+      

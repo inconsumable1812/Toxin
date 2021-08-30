@@ -8,4 +8,6 @@ mixin rangeSlider (options)
         input.rangeSlider__input_min(type='text', value =options.min)
         span.rangeSlider__separator= '-'
         input.rangeSlider__input_max(type='text', value =options.max)
-    div.rangeSlider__slider 
+    div.rangeSlider__slider
+    if options.description
+      p.rangeSlider__description= options.description

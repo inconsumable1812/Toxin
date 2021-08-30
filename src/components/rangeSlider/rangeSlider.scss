@@ -18,7 +18,7 @@
     font-family: 'Montserrat', Helvetica, sans-serif;
     font-weight: bold;
     text-transform: uppercase;
-    width: 5.9375rem;
+    //width: 5.9375rem;
   }
   &__count {
     display: inline-flex;
@@ -86,5 +86,11 @@
   }
   .noUi-horizontal .noUi-handle-upper {
     right: -0.6rem;
+  }
+  &__description {
+    padding-top: 0.625rem;
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+    color: $color-dark-50;
   }
 }

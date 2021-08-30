@@ -1,0 +1,28 @@
+@import '../../utils/main.scss';
+@import '../../utils/mixins';
+@import '../../components/footer/footer.scss';
+@import '../../components/dropdown/dropdown.scss';
+@import '../../components/dateDropdown/dateDropdown.scss';
+@import '../../components/expandableCheckboxList/expandableCheckboxList.scss';
+@import '../../components/checkbox/checkbox.scss';
+@import '../../components/rangeSlider/rangeSlider.scss';
+@import '../../components/pagination/pagination.scss';
+@import '../../components/richCheckbox/richCheckbox.scss';
+@import '../../components/header/header.scss';
+
+.searchRoom {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  &__main {
+    flex: 1 0 auto;
+  }
+  &__container {
+    max-width: 1208px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  &__footer {
+    flex: 0 0 auto;
+  }
+}
