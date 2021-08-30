@@ -8,6 +8,7 @@
 @import '../../components/rangeSlider/rangeSlider.scss';
 @import '../../components/pagination/pagination.scss';
 @import '../../components/richCheckbox/richCheckbox.scss';
+@import '../../components/roomSketch/roomSketch.scss';
 @import '../../components/header/header.scss';
 
 .searchRoom {
@@ -21,6 +22,52 @@
     max-width: 1208px;
     margin: 0 auto;
     padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 16.625rem 1fr;
+    column-gap: 3.75rem;
+    padding-top: 1.67rem;
+    padding-bottom: 4.45rem;
+    border-bottom: 1px solid $color-dark-25;
+  }
+  &__calendar {
+    padding-bottom: 1.35rem;
+  }
+  &__dropdownGuest {
+    padding-bottom: 1.95rem;
+  }
+  &__rangeSlider {
+    padding-bottom: 1.85rem;
+  }
+  &__checkbox {
+    padding-bottom: 1.25rem;
+    .checkbox__header {
+      padding-bottom: 1.15rem;
+    }
+  }
+  &__richCheckbox {
+    padding-bottom: 1.25rem;
+  }
+  &__dropdownRoom {
+    padding-bottom: 1.68rem;
+  }
+  &__result {
+    margin-top: 0.25rem;
+  }
+  &__roomSketch-list {
+    margin-top: 1.3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 0.75rem;
+    row-gap: 1.25rem;
+  }
+  &__roomSketch-item {
+    list-style: none;
+  }
+  &__pagination {
+    padding-top: 1.4rem;
+    padding-left: 7.2rem;
+    grid-column: span 3;
+    justify-self: center;
   }
   &__footer {
     flex: 0 0 auto;

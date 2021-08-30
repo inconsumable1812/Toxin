@@ -7,6 +7,8 @@ include ../../components/checkbox/checkbox.pug
 include ../../components/rangeSlider/rangeSlider.pug
 include ../../components/pagination/pagination.pug
 include ../../components/richCheckbox/richCheckbox.pug
+include ../../components/roomSketch/roomSketch.pug
+
 
 block variables
   - let pageClass = 'searchRoom'
@@ -56,5 +58,90 @@ block main
           ]})
     .searchRoom__result 
       h1.searchRoom__result-title= 'Номера, которые мы для вас подобрали'
-      ul.searchRoom__roomSketch-list 
-      
+      ul.searchRoom__roomSketch-list
+        li.searchRoom__roomSketch-item
+          +roomSketch({isVip:true, roomNumber:'888', cost:'9 990₽', rows:[
+          {src: require('./img/searchRoom_1.png').default, alt: '1'},
+          {src: require('./img/searchRoom_2.png').default, alt: '2'},
+          {src: require('./img/searchRoom_3.png').default, alt: '3'},
+          {src: require('./img/searchRoom_4.png').default, alt: '4'},
+          ], base:5, rate:5 , feedbackNumber: '145', feedbackText: 'Отзывов'})
+        li.searchRoom__roomSketch-item
+          +roomSketch({roomNumber:'840', cost:'9 900₽', rows:[
+          {src: require('./img/searchRoom_2.png').default, alt: '1'},
+          {src: require('./img/searchRoom_1.png').default, alt: '2'},
+          {src: require('./img/searchRoom_3.png').default, alt: '3'},
+          {src: require('./img/searchRoom_4.png').default, alt: '4'},
+          ], base:5, rate:4 , feedbackNumber: '65', feedbackText: 'Отзывов'})
+        li.searchRoom__roomSketch-item
+          +roomSketch({isVip:true, roomNumber:'980', cost:'8 500₽', rows:[
+          {src: require('./img/searchRoom_3.png').default, alt: '1'},
+          {src: require('./img/searchRoom_2.png').default, alt: '2'},
+          {src: require('./img/searchRoom_3.png').default, alt: '3'},
+          {src: require('./img/searchRoom_4.png').default, alt: '4'},
+          ], base:5, rate:3 , feedbackNumber: '35', feedbackText: 'Отзывов'})
+        li.searchRoom__roomSketch-item
+          +roomSketch({isVip:false, roomNumber:'856', cost:'7 300₽', rows:[
+          {src: require('./img/searchRoom_4.png').default, alt: '1'},
+          {src: require('./img/searchRoom_2.png').default, alt: '2'},
+          {src: require('./img/searchRoom_3.png').default, alt: '3'},
+          {src: require('./img/searchRoom_4.png').default, alt: '4'},
+          ], base:5, rate:5 , feedbackNumber: '19', feedbackText: 'Отзывов'})
+        li.searchRoom__roomSketch-item
+          +roomSketch({roomNumber:'740', cost:'6 000₽', rows:[
+          {src: require('./img/searchRoom_5.png').default, alt: '1'},
+          {src: require('./img/searchRoom_2.png').default, alt: '2'},
+          {src: require('./img/searchRoom_3.png').default, alt: '3'},
+          {src: require('./img/searchRoom_4.png').default, alt: '4'},
+          ], base:5, rate:4 , feedbackNumber: '44', feedbackText: 'Отзывов'})
+        li.searchRoom__roomSketch-item
+          +roomSketch({roomNumber:'982', cost:'5 800₽', rows:[
+          {src: require('./img/searchRoom_6.png').default, alt: '1'},
+          {src: require('./img/searchRoom_2.png').default, alt: '2'},
+          {src: require('./img/searchRoom_3.png').default, alt: '3'},
+          {src: require('./img/searchRoom_4.png').default, alt: '4'},
+          ], base:5, rate:3 , feedbackNumber: '56', feedbackText: 'Отзывов'})
+        li.searchRoom__roomSketch-item
+          +roomSketch({roomNumber:'678', cost:'5 500₽', rows:[
+          {src: require('./img/searchRoom_7.png').default, alt: '1'},
+          {src: require('./img/searchRoom_2.png').default, alt: '2'},
+          {src: require('./img/searchRoom_3.png').default, alt: '3'},
+          {src: require('./img/searchRoom_4.png').default, alt: '4'},
+          ], base:5, rate:5 , feedbackNumber: '45', feedbackText: 'Отзывов'})
+        li.searchRoom__roomSketch-item
+          +roomSketch({ roomNumber:'450', cost:'5 300₽', rows:[
+          {src: require('./img/searchRoom_8.png').default, alt: '1'},
+          {src: require('./img/searchRoom_2.png').default, alt: '2'},
+          {src: require('./img/searchRoom_3.png').default, alt: '3'},
+          {src: require('./img/searchRoom_4.png').default, alt: '4'},
+          ], base:5, rate:4 , feedbackNumber: '39', feedbackText: 'Отзывов'})
+        li.searchRoom__roomSketch-item
+          +roomSketch({roomNumber:'350', cost:'5 000₽', rows:[
+          {src: require('./img/searchRoom_9.png').default, alt: '1'},
+          {src: require('./img/searchRoom_2.png').default, alt: '2'},
+          {src: require('./img/searchRoom_3.png').default, alt: '3'},
+          {src: require('./img/searchRoom_4.png').default, alt: '4'},
+          ], base:5, rate:3 , feedbackNumber: '77', feedbackText: 'Отзывов'})
+        li.searchRoom__roomSketch-item
+          +roomSketch({roomNumber:'666', cost:'5 000₽', rows:[
+          {src: require('./img/searchRoom_10.png').default, alt: '1'},
+          {src: require('./img/searchRoom_2.png').default, alt: '2'},
+          {src: require('./img/searchRoom_3.png').default, alt: '3'},
+          {src: require('./img/searchRoom_4.png').default, alt: '4'},
+          ], base:5, rate:5 , feedbackNumber: '25', feedbackText: 'Отзывов'})
+        li.searchRoom__roomSketch-item
+          +roomSketch({roomNumber:'444', cost:'5 000₽', rows:[
+          {src: require('./img/searchRoom_11.png').default, alt: '1'},
+          {src: require('./img/searchRoom_2.png').default, alt: '2'},
+          {src: require('./img/searchRoom_3.png').default, alt: '3'},
+          {src: require('./img/searchRoom_4.png').default, alt: '4'},
+          ], base:5, rate:3 , feedbackNumber: '15', feedbackText: 'Отзывов'})
+        li.searchRoom__roomSketch-item
+          +roomSketch({roomNumber:'352', cost:'5 000₽', rows:[
+          {src: require('./img/searchRoom_12.png').default, alt: '1'},
+          {src: require('./img/searchRoom_2.png').default, alt: '2'},
+          {src: require('./img/searchRoom_3.png').default, alt: '3'},
+          {src: require('./img/searchRoom_4.png').default, alt: '4'},
+          ], base:5, rate:3 , feedbackNumber: '55', feedbackText: 'Отзывов'})
+        .searchRoom__pagination 
+          +pagination 
