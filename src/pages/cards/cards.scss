@@ -20,16 +20,23 @@
     grid-template-columns: 1.1875fr 1.1875fr 1fr;
     column-gap: 2.5rem;
     @include _1200 {
-      //padding: 0 1.5rem;
       grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
       justify-items: center;
     }
   }
   &__grid-column_first {
     max-width: 23.75rem;
+    .button_theme_white {
+      padding: 0 1.9em 0 1.5rem;
+    }
   }
   &__card {
     margin-bottom: 2.5rem;
+  }
+  &__grid-column_second {
+    .button_theme_white {
+      padding: 0 1.1rem 0 1rem;
+    }
   }
   &__grid-column_third {
     .dateDropdown__group_double {

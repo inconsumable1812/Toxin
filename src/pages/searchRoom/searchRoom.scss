@@ -9,6 +9,7 @@
 @import '../../components/pagination/pagination.scss';
 @import '../../components/richCheckbox/richCheckbox.scss';
 @import '../../components/roomSketch/roomSketch.scss';
+@import '../../components/button/button.scss';
 @import '../../components/header/header.scss';
 
 .searchRoom {
@@ -28,6 +29,69 @@
     padding-top: 1.67rem;
     padding-bottom: 4.45rem;
     border-bottom: 1px solid $color-dark-25;
+    @include _992 {
+      display: block;
+    }
+  }
+  &__button-open {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    @include _992 {
+      display: grid;
+      padding-bottom: 1.5rem;
+    }
+    @include _768 {
+      grid-template-columns: 1fr;
+    }
+
+    .button {
+      grid-column: span 2;
+      justify-self: center;
+      @include _600 {
+        grid-column: span 1;
+      }
+      &__arrow {
+        display: none;
+      }
+    }
+    .button_size_large {
+      max-width: none;
+    }
+  }
+  &__filter {
+    @include _992 {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: -25rem;
+      z-index: 20;
+      background: white;
+      padding: 0.9375rem 1.56rem 0 1.56rem;
+      transition: left 0.25s ease;
+      overflow-y: auto;
+      display: grid;
+      grid-template-rows: 24px auto;
+      box-shadow: 0 0 0.75rem 0.75rem $color-dark-25;
+      &_expanded {
+        left: 0;
+        transition: left 0.25s ease;
+      }
+    }
+  }
+  &__button-close {
+    display: none;
+    appearance: none;
+    border: none;
+    background: transparent;
+    user-select: none;
+    cursor: pointer;
+    justify-self: end;
+    &:hover {
+      color: $color-purple;
+    }
+    @include _992 {
+      display: block;
+    }
   }
   &__calendar {
     padding-bottom: 1.35rem;
@@ -59,6 +123,12 @@
     grid-template-columns: repeat(3, 1fr);
     column-gap: 0.75rem;
     row-gap: 1.25rem;
+    @include _1200 {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include _600 {
+      display: block;
+    }
   }
   &__roomSketch-item {
     list-style: none;
@@ -68,6 +138,12 @@
     padding-left: 7.2rem;
     grid-column: span 3;
     justify-self: center;
+    @include _1200 {
+      grid-column: span 2;
+    }
+    @include _600 {
+      grid-column: span 1;
+    }
   }
   &__footer {
     flex: 0 0 auto;

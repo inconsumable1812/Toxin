@@ -8,6 +8,7 @@ include ../../components/rangeSlider/rangeSlider.pug
 include ../../components/pagination/pagination.pug
 include ../../components/richCheckbox/richCheckbox.pug
 include ../../components/roomSketch/roomSketch.pug
+include ../../components/button/button.pug
 
 
 block variables
@@ -16,7 +17,7 @@ block variables
 block main
   .searchRoom__container
     .searchRoom__filter 
-      button.searchRoom__filter-button
+      button.searchRoom__button-close.material-icons= 'close'
       form.searchRoom__filter-form 
         .searchRoom__calendar
           +dateDropdown({title:"даты пребывания в отеле", type:'single', })
@@ -56,7 +57,9 @@ block main
           {title:"Телевизор", name:'TV1'},
           {title:"Шампунь", name:'Shampoo1'},
           ]})
-    .searchRoom__result 
+    .searchRoom__result
+      div.searchRoom__button-open
+        +button({theme:'purple', textTheme:'white', text:'Фильтр', isLarge: true})
       h1.searchRoom__result-title= 'Номера, которые мы для вас подобрали'
       ul.searchRoom__roomSketch-list
         li.searchRoom__roomSketch-item
