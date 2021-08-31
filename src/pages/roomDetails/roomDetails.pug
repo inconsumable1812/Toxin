@@ -1,0 +1,25 @@
+extends ../../layout/pages.pug
+
+include ../../components/roomSearch/roomSearch.pug
+include ../../components/imageSlider/imageSlider.pug
+include ../../components/chart/chart.pug
+
+block variables
+  - let pageClass = 'roomDetails'
+
+block main
+  .roomDetails__images 
+    img(src = require('./img/roomDetails_1.png').default, alt: '1').roomDetails__image
+    img(src = require('./img/roomDetails_2.png').default, alt: '2').roomDetails__image
+    img(src = require('./img/roomDetails_3.png').default, alt: '3').roomDetails__image
+  .roomDetails__container 
+    .roomDetails__content
+      .roomDetails__about-room
+        .roomDetails__info 
+        .roomDetails__chart
+          +chart
+      .roomDetails__reviews
+      .roomDetails__rules 
+        .roomDetails__bulletList
+        .roomDetails__cancel
+      .roomDetails__booking
