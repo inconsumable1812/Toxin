@@ -2,4 +2,16 @@
 @import '../../utils/mixins.scss';
 
 @import '../../components/footer/footer.scss';
+@import '../../components/bulletList/bulletList.scss';
+@import '../../components/info/info.scss';
+@import '../../components/feedback/feedback.scss';
+@import '../../components/chart/chart.scss';
+@import '../../components/bookingForm/bookingForm.scss';
 @import '../../components/header/header.scss';
+
+/*.roomDetails {
+  &__chart {
+    width: 311px;
+    height: 121px;
+  }
+}*/

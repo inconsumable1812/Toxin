@@ -1,7 +1,7 @@
 include ../likeButton/likeButton.pug
 
 mixin feedback(options)
-  -
+  - const {count='12', isPressed=true} = options || {}
 
   div.feedback 
     img.feedback__img(src= options.src, alt="фото автара")
@@ -9,5 +9,5 @@ mixin feedback(options)
       div.feedback__author-name= options.name
       div.feedback__date= options.date
     div.feedback__like-button
-      +likeButton({count:'12', isPressed: true})
+      +likeButton({count:count, isPressed: isPressed})
     span.feedback__text= options.text

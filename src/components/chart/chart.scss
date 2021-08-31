@@ -1,4 +1,25 @@
+@import '../../utils/vars.scss';
+@import '../../utils/mixins.scss';
+
 .chart {
-  width: 400px;
-  height: 400px;
+  width: 345px;
+  height: 121px;
+  position: relative;
+  &__sum {
+    position: absolute;
+    top: 34;
+    left: 56;
+  }
+  &__number {
+    font-size: 1.5rem;
+    color: $color-purple;
+    font-weight: bold;
+    text-align: center;
+  }
+  &__text {
+    font-size: 0.75rem;
+    color: $color-purple;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
 }
