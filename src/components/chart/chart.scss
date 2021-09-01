@@ -2,13 +2,11 @@
 @import '../../utils/mixins.scss';
 
 .chart {
-  width: 345px;
-  height: 121px;
   position: relative;
   &__sum {
     position: absolute;
-    top: 35;
-    left: 62;
+    top: 36;
+    left: 54;
   }
   &__number {
     font-size: 1.5rem;

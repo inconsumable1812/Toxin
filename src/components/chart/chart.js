@@ -1,10 +1,10 @@
 import Chart from 'chart.js/auto'
 
-var ctx = document.querySelector('.chart__item').getContext('2d')
-var gradientGreat = ctx.createLinearGradient(0, 0, 0, 135)
-var gradientGood = ctx.createLinearGradient(0, 0, 0, 130)
-var gradientAcceptable = ctx.createLinearGradient(0, 0, 0, 130)
-var gradientDisappoint = ctx.createLinearGradient(0, 0, 0, 135)
+let ctx = document.querySelector('.chart__item').getContext('2d')
+let gradientGreat = ctx.createLinearGradient(0, 0, 0, 135)
+let gradientGood = ctx.createLinearGradient(0, 0, 0, 130)
+let gradientAcceptable = ctx.createLinearGradient(0, 0, 0, 130)
+let gradientDisappoint = ctx.createLinearGradient(0, 0, 0, 135)
 let dataNumber = [0, 65, 65, 130]
 
 let dataSum = 0
@@ -40,13 +40,13 @@ var myChart = new Chart(ctx, {
     ],
   },
   options: {
-    cutout: '90%',
+    cutout: '89%',
     //responsive: true,
-    radius: '60',
+    radius: '61',
     maintainAspectRatio: false,
     layout: {
       padding: {
-        left: -40,
+        left: -11,
         right: 0,
         top: 0,
         bottom: -8,
@@ -75,3 +75,8 @@ var myChart = new Chart(ctx, {
     },
   },
 })
+myChart.canvas.parentNode.style.height = '121px'
+
+setTimeout(() => {
+  myChart.canvas.parentNode.style.width = '345px'
+}, 100)
