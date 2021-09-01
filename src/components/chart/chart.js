@@ -40,10 +40,18 @@ var myChart = new Chart(ctx, {
     ],
   },
   options: {
-    cutout: '85%',
+    cutout: '90%',
     //responsive: true,
-    //radius: '60',
+    radius: '60',
     maintainAspectRatio: false,
+    layout: {
+      padding: {
+        left: -40,
+        right: 0,
+        top: 0,
+        bottom: -8,
+      },
+    },
     plugins: {
       legend: {
         position: 'right',
@@ -52,18 +60,17 @@ var myChart = new Chart(ctx, {
         labels: {
           color: 'rgba(31, 32, 65, 0,75)',
           usePointStyle: true,
-          boxWidth: 10,
+          boxWidth: 8,
+          /*backdropPadding: {
+            x: 0,
+            y: 0,
+          },*/
           font: {
             size: 14,
             lineHeight: 24,
             family: 'Montserrat',
           },
         },
-      },
-    },
-    layout: {
-      padding: {
-        left: -8,
       },
     },
   },

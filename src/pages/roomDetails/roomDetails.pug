@@ -11,9 +11,7 @@ block variables
 
 block main
   .roomDetails__images 
-    img(src = require('./img/roomDetails_1.png').default, alt: '1').roomDetails__image
-    img(src = require('./img/roomDetails_2.png').default, alt: '2').roomDetails__image
-    img(src = require('./img/roomDetails_3.png').default, alt: '3').roomDetails__image
+
   .roomDetails__container 
     .roomDetails__content
       .roomDetails__about-room
@@ -24,7 +22,8 @@ block main
           +info({title:'Уют', subtitle:'Номер оснащён камином', icon:'whatshot'})          
         .roomDetails__chart
           h2.roomDetails__chart-title= 'Впечатления от номера'
-          +chart
+          .roomDetails__chart-item
+            +chart
       .roomDetails__reviews
         .roomDetails__reviews-header 
           h2.roomDetails__reviews-title= 'Отзывы посетителей номера'

@@ -11,7 +11,8 @@
     'icon subtitle';
   grid-template-columns: 3rem auto;
   column-gap: 0.55rem;
-  padding: 1.1875rem 0;
+  padding-top: 1.4rem;
+  padding-bottom: 1.15rem;
   border-bottom: 1px solid $color-dark-10;
   &__icon {
     grid-area: icon;
