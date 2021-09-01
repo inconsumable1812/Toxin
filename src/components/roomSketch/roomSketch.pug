@@ -8,18 +8,19 @@ mixin roomSketch(options)
     div.roomSketch__slider
       +imageSlider({rows, isHovered, isInterval})
     .roomSketch__main
-      .roomSketch__header
-        .roomSketch__number
-          span.roomSketch__numberSymbol= '№'
-          span.roomSketch__numberValue= options.roomNumber
-          if options.isVip
-            span.roomSketch__numberFeature= 'люкс'
-        .roomSketch__price-per-day
-          span.roomSketch__cost= options.cost
-          span.roomSketch__dateUnit='в сутки'
-      .roomSketch__footer
-        .roomSketch__rate
-          +rateButton({base, rate, isVariable, name:'rating', id:'rating'})
-        .roomSketch__feedback-counter
-          span.roomSketch__feedback-number= options.feedbackNumber
-          span.roomSketch__feedback-text= options.feedbackText
+      a(href='/roomDetails.html').roomSketch__link
+        .roomSketch__header
+          .roomSketch__number
+            span.roomSketch__numberSymbol= '№'
+            span.roomSketch__numberValue= options.roomNumber
+            if options.isVip
+              span.roomSketch__numberFeature= 'люкс'
+          .roomSketch__price-per-day
+            span.roomSketch__cost= options.cost
+            span.roomSketch__dateUnit='в сутки'
+        .roomSketch__footer
+          .roomSketch__rate
+            +rateButton({base, rate, isVariable, name:'rating', id:'rating'})
+          .roomSketch__feedback-counter
+            span.roomSketch__feedback-number= options.feedbackNumber
+            span.roomSketch__feedback-text= options.feedbackText

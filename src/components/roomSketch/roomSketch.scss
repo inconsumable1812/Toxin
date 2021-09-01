@@ -68,4 +68,8 @@
     color: $color-dark-50;
     margin-right: 0.1rem;
   }
+  &__link {
+    appearance: none;
+    text-decoration: none;
+  }
 }

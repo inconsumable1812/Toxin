@@ -1,5 +1,6 @@
 @import '../../utils/vars';
-@import '../../utils/font';
+@import '../../utils/font.scss';
+@import '../../utils/mixins.scss';
 
 .indexMenu {
   $blockClass: &;

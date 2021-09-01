@@ -49,8 +49,8 @@ mixin header(options)
           if !auth
             - classUser += ' header__userMenu_notAuth'
             div(class = classUser)
-              +button({theme:'white', textTheme:'purple', text:'войти'})
-              +button({theme:'purple', textTheme:'white', text:'зарегистрироваться'}) 
+              +button({theme:'white', textTheme:'purple', text:'войти', href:'/sign-in-page.html'})
+              +button({theme:'purple', textTheme:'white', text:'зарегистрироваться', href:'/registration.html'}) 
           if auth
             - classUser += ' header__userMenu_auth'
             div(class = classUser)
