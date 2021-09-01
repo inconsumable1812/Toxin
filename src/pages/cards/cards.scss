@@ -42,5 +42,13 @@
     .dateDropdown__group_double {
       display: none;
     }
+    .cards__card {
+      &:nth-child(2) {
+        max-width: 16.875rem;
+      }
+      &:nth-child(3) {
+        max-width: 16.875rem;
+      }
+    }
   }
 }

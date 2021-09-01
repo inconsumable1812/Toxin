@@ -17,11 +17,26 @@
     }
   }
   &__icon {
+    position: relative;
     height: 1.25rem;
     width: 1.25rem;
-    background: url('./img/favorite_border.svg') no-repeat center;
+    &::before {
+      top: 0.35rem;
+      left: 0.25rem;
+      position: absolute;
+      content: 'favorite_border';
+      color: $color-dark-25;
+      font-size: 0.625rem;
+    }
     &_pressed {
-      background: url('./img/favorite.svg') no-repeat center;
+      &::before {
+        top: 0.35rem;
+        left: 0.25rem;
+        position: absolute;
+        content: 'favorite';
+        color: $color-purple;
+        font-size: 0.625rem;
+      }
     }
   }
   &__count {

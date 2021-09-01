@@ -58,7 +58,13 @@
     right: 0;
     padding-right: 2.55rem;
     height: 2.6rem;
-    background: url('./img/expand_more.svg') no-repeat center center;
+    &::before {
+      top: 0.6875rem;
+      left: 0.5rem;
+      position: absolute;
+      content: 'expand_more';
+      color: $color-dark-75;
+    }
   }
   &__list {
     position: absolute;

@@ -62,6 +62,7 @@
   }
   .paginationjs-next,
   .paginationjs-prev {
+    // position: relative;
     background: $grad-green;
     border: none;
     a {
@@ -69,12 +70,37 @@
     }
   }
   .paginationjs .paginationjs-pages .paginationjs-next > a {
-    background: url('./img/arrow_forward_pagination.svg') no-repeat center center;
+    background: inherit;
+    border-radius: 50%;
+  }
+  .pagination__arrow-next {
+    position: relative;
+    height: 2.75rem;
+    width: 2.75rem;
+    &::before {
+      top: 0.1875rem;
+      left: 0.5rem;
+      position: absolute;
+      content: 'arrow_forward';
+      color: white;
+    }
+  }
+  .pagination__arrow-prev {
+    position: relative;
+    height: 2.75rem;
+    width: 2.75rem;
+    &::before {
+      top: 0.1875rem;
+      left: 0.5rem;
+      position: absolute;
+      content: 'arrow_back';
+      color: white;
+    }
   }
 
   .paginationjs .paginationjs-pages .paginationjs-prev > a {
-    background: url('./img/arrow_forward_pagination.svg') no-repeat center center;
-    transform: rotate(180deg);
+    background: inherit;
+    border-radius: 50%;
   }
   .js-currentPage {
     opacity: 0;

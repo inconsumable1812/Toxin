@@ -10,7 +10,7 @@ mixin dropdown(options)
       span.dropdown__hint= options.hint
     div.dropdown__box(class= 'dropdown__box_' + options.type)
       input.dropdown__input(name = options.name, placeholder = options.placeholder, readonly="readonly", class = 'dropdown__input_' + options.type)
-      button.dropdown__button(type="button")
+      button.dropdown__button.material-icons(type="button")
       if !options.calendar
         ul(class = listClass)
           if options.rows

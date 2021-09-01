@@ -1,10 +1,9 @@
 import $ from 'jquery'
 import 'air-datepicker'
 
+const dateDropdowns = document.querySelectorAll('.dateDropdown')
 const dateDropdownItems = document.querySelectorAll('.dateDropdown__item')
 const dateDropdownsDouble = document.querySelectorAll('.dateDropdown_double')
-//const inputFrom = document.querySelectorAll('input[name="field-date-from"]')
-//const inputTo = document.querySelectorAll('input[name="field-date-to"]')
 
 for (const dateDropdownItem of dateDropdownItems) {
   const dropdownBox = dateDropdownItem.querySelector('.dateDropdown__dropdownBox')
@@ -39,6 +38,8 @@ $(function () {
     },
     range: 'true',
     multipleDatesSeparator: ' - ',
+    prevHtml: '<span class="arrow_back material-icons">arrow_back</span>',
+    nextHtml: '<span class="arrow_forward material-icons">arrow_forward</span>',
     clearButton: 'true',
     onSelect: function (fd, d, picker) {
       $('#firstFrom').val(fd.split('-')[0])
@@ -53,6 +54,8 @@ $(function () {
     range: 'true',
     multipleDatesSeparator: ' - ',
     clearButton: 'true',
+    prevHtml: '<span class="arrow_back material-icons">arrow_back</span>',
+    nextHtml: '<span class="arrow_forward material-icons">arrow_forward</span>',
     onSelect: function (fd, d, picker) {
       $('#secondFrom').val(fd.split('-')[0])
       $('#secondTo').val(fd.split('-')[1])
@@ -66,6 +69,8 @@ $(function () {
       days: 'MM <i>yyyy</i>',
     },
     multipleDatesSeparator: ' - ',
+    prevHtml: '<span class="arrow_back material-icons">arrow_back</span>',
+    nextHtml: '<span class="arrow_forward material-icons">arrow_forward</span>',
     clearButton: 'true',
     onSelect: function (fd, d, picker) {
       $('input[name="date-filter"]').val(fd)

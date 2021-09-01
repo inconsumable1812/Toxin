@@ -15,8 +15,8 @@ $(function () {
     autoHidePrevious: true,
     autoHideNext: true,
     showNavigator: true,
-    prevText: '<span class="pagination__arrow-prev"></span>',
-    nextText: '<span class="pagination__arrow-next"></span>',
+    prevText: '<span class="pagination__arrow-prev material-icons"></span>',
+    nextText: '<span class="pagination__arrow-next material-icons"></span>',
     formatNavigator: `<span class="js-pagination__from"><%= currentPage %></span> &ndash; 
   <span class="js-pagination__to">12</span> из 100+ вариантов аренды <span class="js-currentPage"><%= currentPage %></span>`,
   })

@@ -15,10 +15,10 @@ mixin button (options)
         span.button__group
           span(class = textClass)= options.text
           if options.isLarge 
-            span.button__arrow 
+            span.button__arrow.material-icons 
   if !options.href
     button(class = buttonClass) 
       span.button__group
         span(class = textClass)= options.text
         if options.isLarge 
-          span.button__arrow
+          span.button__arrow.material-icons

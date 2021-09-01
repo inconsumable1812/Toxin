@@ -57,10 +57,17 @@
       grid-column-start: 2;
     }
     .button__arrow {
-      background: url('./img/arrow_forward.svg') no-repeat center center;
+      position: relative;
       height: 2.75rem;
       width: 2.75rem;
       justify-self: end;
+      &::before {
+        top: 0.6875rem;
+        left: 0.55rem;
+        position: absolute;
+        content: 'arrow_forward';
+        color: white;
+      }
     }
   }
   &_disabled {
