@@ -1,0 +1,17 @@
+extends ../../layout/pages.pug
+
+include ../../components/imageSlider/imageSlider.pug
+include ../../components/loginForm/loginForm.pug
+
+
+block variables
+  - let pageClass = 'sign-in'
+
+block main
+  .sign-in__slider
+    +imageSlider({isInterval:true,rows:[
+        {src: require('../../img/registration_1.png').default, alt: '1'},
+        {src: require('../../img/registration_2.png').default, alt: '2'},
+        ]})
+  .sign-in__form 
+    +loginForm

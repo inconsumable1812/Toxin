@@ -1,0 +1,16 @@
+extends ../../layout/pages.pug
+
+include ../../components/imageSlider/imageSlider.pug
+include ../../components/registrationForm/registrationForm.pug
+
+block variables
+  - let pageClass = 'registration'
+
+block main
+  .registration__slider
+    +imageSlider({isInterval:true,rows:[
+        {src: require('../../img/registration_1.png').default, alt: '1'},
+        {src: require('../../img/registration_2.png').default, alt: '2'},
+        ]})
+  .registration__form 
+    +registrationForm
