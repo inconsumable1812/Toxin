@@ -45,6 +45,16 @@ const config = {
   module: {
     rules: [
       {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
+      },
+      {
         test: /\.pug$/,
         loader: 'pug-loader',
         options: {
@@ -57,8 +67,8 @@ const config = {
           {
             loader: MiniCssExtractPlugin.loader,
           },
-          'css-loader',
-          //'postcss-loader',
+          { loader: 'css-loader', options: {} },
+          { loader: 'postcss-loader', options: { sourceMap: true } },
           {
             loader: 'resolve-url-loader',
             options: {
@@ -71,7 +81,6 @@ const config = {
             loader: 'sass-loader',
             options: {
               sourceMap: true,
-              //sourceMapContents: false,
             },
           },
         ],

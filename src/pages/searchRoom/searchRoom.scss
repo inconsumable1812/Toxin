@@ -143,6 +143,8 @@
     }
     @include _600 {
       grid-column: span 1;
+      padding-left: 0;
+      justify-self: center;
     }
   }
   &__footer {
