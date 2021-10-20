@@ -19,7 +19,7 @@ const createEntriesFromPageList = (pages) => {
       new HtmlWebpackPlugin({
         filename: `${pageName}.html`,
         template: `${pagesDir}/${pageName}/${pageName}.pug`,
-        chunks: [pageName],
+        chunks: [pageName]
       })
     )
   })
@@ -27,20 +27,19 @@ const createEntriesFromPageList = (pages) => {
   return [webpackPageEntries, htmlWebpackPageInstances]
 }
 
-const [webpackPageEntries, htmlWebpackPageInstances] = createEntriesFromPageList(fs.readdirSync(pagesDir))
+const [webpackPageEntries, htmlWebpackPageInstances] = createEntriesFromPageList(
+  fs.readdirSync(pagesDir)
+)
 
 const config = {
   entry: {
     favicon: './src/favicons/favicons.js',
     logo: './src/components/logo/logo.js',
-    ...webpackPageEntries,
+    ...webpackPageEntries
   },
   output: {
     filename: devMode ? '[name].js' : '[name].[hash].js',
-    path: path.resolve(__dirname, './dist'),
-  },
-  devServer: {
-    open: true,
+    path: path.resolve(__dirname, './dist')
   },
   module: {
     rules: [
@@ -50,22 +49,22 @@ const config = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env'],
-          },
-        },
+            presets: ['@babel/preset-env']
+          }
+        }
       },
       {
         test: /\.pug$/,
         loader: 'pug-loader',
         options: {
-          pretty: true,
-        },
+          pretty: true
+        }
       },
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader,
+            loader: MiniCssExtractPlugin.loader
           },
           { loader: 'css-loader', options: {} },
           { loader: 'postcss-loader', options: { sourceMap: true } },
@@ -74,65 +73,71 @@ const config = {
             options: {
               debug: true,
               sourceMap: false,
-              removeCR: true,
-            },
+              removeCR: true
+            }
           },
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: true,
-            },
-          },
-        ],
+              sourceMap: true
+            }
+          }
+        ]
       },
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-        exclude: [path.resolve(__dirname, './src/img/'), path.resolve(__dirname, './src/components/')],
+        exclude: [
+          path.resolve(__dirname, './src/img/'),
+          path.resolve(__dirname, './src/components/')
+        ],
         use: [
           {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'fonts/',
-            },
-          },
-        ],
+              outputPath: 'fonts/'
+            }
+          }
+        ]
       },
       {
         test: /\.(png|gif|svg|jpe?g)$/,
-        exclude: [path.resolve(__dirname, './src/assets'), path.resolve(__dirname, './src/favicons/')],
+        exclude: [
+          path.resolve(__dirname, './src/assets'),
+          path.resolve(__dirname, './src/favicons/')
+        ],
         use: [
           {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'img/',
-            },
-          },
-        ],
-      },
-    ],
+              outputPath: 'img/'
+            }
+          }
+        ]
+      }
+    ]
   },
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     port: 4200,
     hot: true,
     compress: true,
-    open: true,
+    open: true
   },
 
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
+      filename: '[name].[contenthash].css'
     }),
     new CleanWebpackPlugin(),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
-      'window.jQuery': 'jquery',
+      'window.jQuery': 'jquery'
     }),
-    ...htmlWebpackPageInstances,
-  ],
+    ...htmlWebpackPageInstances
+  ]
 }
 
 module.exports = config

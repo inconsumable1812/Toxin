@@ -1,3 +1,5 @@
+/* eslint-disable no-restricted-syntax */
+
 const dropdownButtons = document.querySelectorAll('.dropdown__button')
 const dropdownBoxes = document.querySelectorAll('.dropdown__box')
 const nameBedrooms = ['спальня', 'спальни', 'спален']
@@ -16,19 +18,23 @@ for (const dropdownBox of dropdownBoxes) {
   const calendar = dropdownBox.parentElement.querySelector('.dropdown__box_date')
 
   let numberOfBedrooms = dropdownBox.querySelector('.dropdown__list-item_bedroom')
-    ? +dropdownBox.querySelector('.dropdown__list-item_bedroom .dropdown__counter').innerHTML
+    ? +dropdownBox.querySelector('.dropdown__list-item_bedroom .dropdown__counter')
+        .innerHTML
     : ''
   let numberOfBeds = dropdownBox.querySelector('.dropdown__list-item_bed')
     ? +dropdownBox.querySelector('.dropdown__list-item_bed .dropdown__counter').innerHTML
     : ''
   let numberOfBathrooms = dropdownBox.querySelector('.dropdown__list-item_bathroom')
-    ? +dropdownBox.querySelector('.dropdown__list-item_bathroom .dropdown__counter').innerHTML
+    ? +dropdownBox.querySelector('.dropdown__list-item_bathroom .dropdown__counter')
+        .innerHTML
     : ''
   let numberOfAdult = dropdownBox.querySelector('.dropdown__list-item_adult')
-    ? +dropdownBox.querySelector('.dropdown__list-item_adult .dropdown__counter').innerHTML
+    ? +dropdownBox.querySelector('.dropdown__list-item_adult .dropdown__counter')
+        .innerHTML
     : ''
   let numberOfСhildren = dropdownBox.querySelector('.dropdown__list-item_children')
-    ? +dropdownBox.querySelector('.dropdown__list-item_children .dropdown__counter').innerHTML
+    ? +dropdownBox.querySelector('.dropdown__list-item_children .dropdown__counter')
+        .innerHTML
     : ''
   let numberOfBaby = dropdownBox.querySelector('.dropdown__list-item_baby')
     ? +dropdownBox.querySelector('.dropdown__list-item_baby .dropdown__counter').innerHTML
@@ -56,7 +62,12 @@ for (const dropdownBox of dropdownBoxes) {
       dropdownInput.placeholder = 'Количество комнат'
     }
   }
-  if (clearButton && numberOfAdult === 0 && numberOfСhildren === 0 && numberOfBaby === 0) {
+  if (
+    clearButton &&
+    numberOfAdult === 0 &&
+    numberOfСhildren === 0 &&
+    numberOfBaby === 0
+  ) {
     clearButton.classList.add('dropdown__clear-buttons_hidden')
   }
 
@@ -84,11 +95,16 @@ for (const dropdownBox of dropdownBoxes) {
   })
 
   for (const counterButton of counterButtons) {
-    const buttonsMinus = counterButton.querySelector('.dropdown__counter-buttons_type_minus')
-    const buttonsPlus = counterButton.querySelector('.dropdown__counter-buttons_type_plus')
+    const buttonsMinus = counterButton.querySelector(
+      '.dropdown__counter-buttons_type_minus'
+    )
+    const buttonsPlus = counterButton.querySelector(
+      '.dropdown__counter-buttons_type_plus'
+    )
     const counter = counterButton.querySelector('.dropdown__counter')
     let counterInt = parseInt(counter.innerHTML)
-    const countName = counterButton.parentElement.querySelector('.dropdown__item-name').innerHTML
+    const countName =
+      counterButton.parentElement.querySelector('.dropdown__item-name').innerHTML
 
     buttonsMinus.addEventListener('click', () => {
       if (counterInt > 0) {
@@ -132,7 +148,9 @@ for (const dropdownBox of dropdownBoxes) {
       if (numberOfBeds === 0) {
         outBed = ''
       }
-      let outBathrooms = `${numberOfBathrooms} ${nameBathrooms[index(numberOfBathrooms)]}, `
+      let outBathrooms = `${numberOfBathrooms} ${
+        nameBathrooms[index(numberOfBathrooms)]
+      }, `
       if (numberOfBathrooms === 0) {
         outBathrooms = ''
       }
@@ -146,7 +164,12 @@ for (const dropdownBox of dropdownBoxes) {
           dropdownInput.placeholder = 'Количество комнат'
         }
       }
-      if (clearButton && numberOfAdult === 0 && numberOfСhildren === 0 && numberOfBaby === 0) {
+      if (
+        clearButton &&
+        numberOfAdult === 0 &&
+        numberOfСhildren === 0 &&
+        numberOfBaby === 0
+      ) {
         clearButton.classList.add('dropdown__clear-buttons_hidden')
       }
     })
@@ -192,7 +215,9 @@ for (const dropdownBox of dropdownBoxes) {
       if (numberOfBeds === 0) {
         outBed = ''
       }
-      let outBathrooms = `${numberOfBathrooms} ${nameBathrooms[index(numberOfBathrooms)]}, `
+      let outBathrooms = `${numberOfBathrooms} ${
+        nameBathrooms[index(numberOfBathrooms)]
+      }, `
       if (numberOfBathrooms === 0) {
         outBathrooms = ''
       }
@@ -203,7 +228,10 @@ for (const dropdownBox of dropdownBoxes) {
       if (dropdownInput.classList.contains('dropdown__input_rooms')) {
         dropdownInput.placeholder = outRooms
       }
-      if (clearButton && clearButton.classList.contains('dropdown__clear-buttons_hidden')) {
+      if (
+        clearButton &&
+        clearButton.classList.contains('dropdown__clear-buttons_hidden')
+      ) {
         clearButton.classList.remove('dropdown__clear-buttons_hidden')
       }
     })
