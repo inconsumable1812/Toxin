@@ -1,100 +1,71 @@
+/* eslint-disable no-loop-func */
 /* eslint-disable no-restricted-syntax */
 
-const dropdownButtons = document.querySelectorAll('.dropdown__button')
-const dropdownBoxes = document.querySelectorAll('.dropdown__box')
+import {
+  checkForZero,
+  init,
+  checkEndingInRoomToInputs,
+  checkEndingInGuestToInputs,
+  toggle
+} from './dropdown.functions'
+
+const dropdownOfRooms = document.querySelectorAll('.dropdown__box_rooms')
+const dropdownOfGuests = document.querySelectorAll('.dropdown__box_guest')
 const nameBedrooms = ['спальня', 'спальни', 'спален']
 const nameBeds = ['кровать', 'кровати', 'кроватей']
 const nameBathrooms = ['ванная комната', 'ванные комнаты', 'ванных комнат']
 const nameAdult = ['гость', 'гостя', 'гостей']
 const nameBaby = ['младенец', 'младенца', 'младенцев']
 
-for (const dropdownBox of dropdownBoxes) {
-  const dropdownButton = dropdownBox.querySelector('.dropdown__button')
-  const dropdownList = dropdownBox.querySelector('.dropdown__list')
-  const dropdownInput = dropdownBox.querySelector('.dropdown__input')
-  const clearButton = dropdownBox.querySelector('.dropdown__clear-buttons')
-  const applyButton = dropdownBox.querySelector('.dropdown__apply-buttons')
-  const counterButtons = dropdownBox.querySelectorAll('.dropdown__counter-buttons')
-  const calendar = dropdownBox.parentElement.querySelector('.dropdown__box_date')
+for (const dropdownOfRoom of dropdownOfRooms) {
+  const initArray = init(dropdownOfRoom)
+  let numberOfBedrooms
+  let numberOfBeds
+  let numberOfBathrooms
+  let bedroomsToInput
+  let bedToInput
+  let bathroomsToInput
 
-  let numberOfBedrooms = dropdownBox.querySelector('.dropdown__list-item_bedroom')
-    ? +dropdownBox.querySelector('.dropdown__list-item_bedroom .dropdown__counter')
-        .innerHTML
-    : ''
-  let numberOfBeds = dropdownBox.querySelector('.dropdown__list-item_bed')
-    ? +dropdownBox.querySelector('.dropdown__list-item_bed .dropdown__counter').innerHTML
-    : ''
-  let numberOfBathrooms = dropdownBox.querySelector('.dropdown__list-item_bathroom')
-    ? +dropdownBox.querySelector('.dropdown__list-item_bathroom .dropdown__counter')
-        .innerHTML
-    : ''
-  let numberOfAdult = dropdownBox.querySelector('.dropdown__list-item_adult')
-    ? +dropdownBox.querySelector('.dropdown__list-item_adult .dropdown__counter')
-        .innerHTML
-    : ''
-  let numberOfСhildren = dropdownBox.querySelector('.dropdown__list-item_children')
-    ? +dropdownBox.querySelector('.dropdown__list-item_children .dropdown__counter')
-        .innerHTML
-    : ''
-  let numberOfBaby = dropdownBox.querySelector('.dropdown__list-item_baby')
-    ? +dropdownBox.querySelector('.dropdown__list-item_baby .dropdown__counter').innerHTML
-    : ''
+  numberOfBedrooms = +dropdownOfRoom.querySelector(
+    '.dropdown__list-item_bedroom .dropdown__counter'
+  ).textContent
 
-  let outBedrooms = `${numberOfBedrooms} ${nameBedrooms[index(numberOfBedrooms)]}, `
-  if (numberOfBedrooms === 0) {
-    outBedrooms = ''
-  }
-  let outBed = `${numberOfBeds} ${nameBeds[index(numberOfBeds)]}, `
-  if (numberOfBeds === 0) {
-    outBed = ''
-  }
-  let outBathrooms = `${numberOfBathrooms} ${nameBathrooms[index(numberOfBathrooms)]}, `
-  if (numberOfBathrooms === 0) {
-    outBathrooms = ''
-  }
-  let outRooms = `${outBedrooms}${outBed}${outBathrooms}`
-  if (outRooms.slice(-2, -1) === ',') {
-    outRooms = outRooms.slice(0, -2)
-  }
-  if (dropdownInput.classList.contains('dropdown__input_rooms')) {
-    dropdownInput.placeholder = outRooms
-    if (numberOfBedrooms === 0 && numberOfBeds === 0 && numberOfBathrooms === 0) {
-      dropdownInput.placeholder = 'Количество комнат'
-    }
-  }
-  if (
-    clearButton &&
-    numberOfAdult === 0 &&
-    numberOfСhildren === 0 &&
-    numberOfBaby === 0
-  ) {
-    clearButton.classList.add('dropdown__clear-buttons_hidden')
+  numberOfBeds = +dropdownOfRoom.querySelector(
+    '.dropdown__list-item_bed .dropdown__counter'
+  ).textContent
+
+  numberOfBathrooms = +dropdownOfRoom.querySelector(
+    '.dropdown__list-item_bathroom .dropdown__counter'
+  ).textContent
+
+  bedroomsToInput = checkForZero(numberOfBedrooms, nameBedrooms)
+  bedToInput = checkForZero(numberOfBeds, nameBeds)
+  bathroomsToInput = checkForZero(numberOfBathrooms, nameBathrooms)
+
+  let roomsToInput = checkEndingInRoomToInputs(
+    bedroomsToInput,
+    bedToInput,
+    bathroomsToInput
+  )
+  initArray.dropdownInput.placeholder = roomsToInput
+  if (numberOfBedrooms === 0 && numberOfBeds === 0 && numberOfBathrooms === 0) {
+    initArray.dropdownInput.placeholder = 'Количество комнат'
   }
 
-  dropdownButton.addEventListener('click', () => {
-    if (!calendar) {
-      if (dropdownList.classList.contains('dropdown__list_expanded')) {
-        dropdownList.classList.remove('dropdown__list_expanded')
-        dropdownInput.classList.remove('dropdown__input_hover')
-      } else {
-        dropdownList.classList.add('dropdown__list_expanded')
-        dropdownInput.classList.add('dropdown__input_hover')
-      }
-    }
+  initArray.dropdownButton.addEventListener('click', () => {
+    const isExpanded = initArray.dropdownList.classList.contains(
+      'dropdown__list_expanded'
+    )
+    toggle(isExpanded, initArray.dropdownList, initArray.dropdownInput)
   })
-  dropdownInput.addEventListener('click', () => {
-    if (!calendar) {
-      if (dropdownList.classList.contains('dropdown__list_expanded')) {
-        dropdownList.classList.remove('dropdown__list_expanded')
-        dropdownInput.classList.remove('dropdown__input_hover')
-      } else {
-        dropdownList.classList.add('dropdown__list_expanded')
-        dropdownInput.classList.add('dropdown__input_hover')
-      }
-    }
+  initArray.dropdownInput.addEventListener('click', () => {
+    const isExpanded = initArray.dropdownList.classList.contains(
+      'dropdown__list_expanded'
+    )
+    toggle(isExpanded, initArray.dropdownList, initArray.dropdownInput)
   })
 
-  for (const counterButton of counterButtons) {
+  for (const counterButton of initArray.counterButtons) {
     const buttonsMinus = counterButton.querySelector(
       '.dropdown__counter-buttons_type_minus'
     )
@@ -102,15 +73,15 @@ for (const dropdownBox of dropdownBoxes) {
       '.dropdown__counter-buttons_type_plus'
     )
     const counter = counterButton.querySelector('.dropdown__counter')
-    let counterInt = parseInt(counter.innerHTML)
+    let counterInt = +counter.textContent
     const countName =
-      counterButton.parentElement.querySelector('.dropdown__item-name').innerHTML
+      counterButton.parentElement.querySelector('.dropdown__item-name').textContent
 
     buttonsMinus.addEventListener('click', () => {
       if (counterInt > 0) {
-        counterInt = --counterInt
+        counterInt -= 1
       }
-      counter.innerHTML = `${counterInt}`
+      counter.textContent = `${counterInt}`
       if (counterInt === 0) {
         buttonsMinus.classList.add('dropdown__counter-buttons_type_minus_disabled')
       }
@@ -126,58 +97,28 @@ for (const dropdownBox of dropdownBoxes) {
           numberOfBathrooms = counterInt
           break
         }
-        case 'взрослые': {
-          numberOfAdult = counterInt
+        default:
           break
-        }
-        case 'дети': {
-          numberOfСhildren = counterInt
-          break
-        }
-        case 'младенцы': {
-          numberOfBaby = counterInt
-          break
-        }
       }
 
-      let outBedrooms = `${numberOfBedrooms} ${nameBedrooms[index(numberOfBedrooms)]}, `
-      if (numberOfBedrooms === 0) {
-        outBedrooms = ''
-      }
-      let outBed = `${numberOfBeds} ${nameBeds[index(numberOfBeds)]}, `
-      if (numberOfBeds === 0) {
-        outBed = ''
-      }
-      let outBathrooms = `${numberOfBathrooms} ${
-        nameBathrooms[index(numberOfBathrooms)]
-      }, `
-      if (numberOfBathrooms === 0) {
-        outBathrooms = ''
-      }
-      let outRooms = `${outBedrooms}${outBed}${outBathrooms}`
-      if (outRooms.slice(-2, -1) === ',') {
-        outRooms = outRooms.slice(0, -2)
-      }
-      if (dropdownInput.classList.contains('dropdown__input_rooms')) {
-        dropdownInput.placeholder = outRooms
-        if (numberOfBedrooms === 0 && numberOfBeds === 0 && numberOfBathrooms === 0) {
-          dropdownInput.placeholder = 'Количество комнат'
-        }
-      }
-      if (
-        clearButton &&
-        numberOfAdult === 0 &&
-        numberOfСhildren === 0 &&
-        numberOfBaby === 0
-      ) {
-        clearButton.classList.add('dropdown__clear-buttons_hidden')
+      bedroomsToInput = checkForZero(numberOfBedrooms, nameBedrooms)
+      bedToInput = checkForZero(numberOfBeds, nameBeds)
+      bathroomsToInput = checkForZero(numberOfBathrooms, nameBathrooms)
+      roomsToInput = checkEndingInRoomToInputs(
+        bedroomsToInput,
+        bedToInput,
+        bathroomsToInput
+      )
+      initArray.dropdownInput.placeholder = roomsToInput
+      if (numberOfBedrooms === 0 && numberOfBeds === 0 && numberOfBathrooms === 0) {
+        initArray.dropdownInput.placeholder = 'Количество комнат'
       }
     })
     buttonsPlus.addEventListener('click', () => {
       if (counterInt < 20) {
-        counterInt = ++counterInt
+        counterInt += 1
       }
-      counter.innerHTML = `${counterInt}`
+      counter.textContent = `${counterInt}`
       if (counterInt > 0) {
         buttonsMinus.classList.remove('dropdown__counter-buttons_type_minus_disabled')
       }
@@ -193,6 +134,83 @@ for (const dropdownBox of dropdownBoxes) {
           numberOfBathrooms = counterInt
           break
         }
+        default:
+          break
+      }
+
+      bedroomsToInput = checkForZero(numberOfBedrooms, nameBedrooms)
+      bedToInput = checkForZero(numberOfBeds, nameBeds)
+      bathroomsToInput = checkForZero(numberOfBathrooms, nameBathrooms)
+      roomsToInput = checkEndingInRoomToInputs(
+        bedroomsToInput,
+        bedToInput,
+        bathroomsToInput
+      )
+      initArray.dropdownInput.placeholder = roomsToInput
+    })
+  }
+}
+
+for (const dropdownOfGuest of dropdownOfGuests) {
+  const initArray = init(dropdownOfGuest)
+  let numberOfAdult
+  let numberOfСhildren
+  let numberOfBaby
+
+  numberOfAdult = +dropdownOfGuest.querySelector(
+    '.dropdown__list-item_adult .dropdown__counter'
+  ).textContent
+
+  numberOfСhildren = +dropdownOfGuest.querySelector(
+    '.dropdown__list-item_children .dropdown__counter'
+  ).textContent
+
+  numberOfBaby = +dropdownOfGuest.querySelector(
+    '.dropdown__list-item_baby .dropdown__counter'
+  ).textContent
+  if (
+    initArray.clearButton &&
+    numberOfAdult === 0 &&
+    numberOfСhildren === 0 &&
+    numberOfBaby === 0
+  ) {
+    initArray.clearButton.classList.add('dropdown__clear-buttons_hidden')
+  }
+
+  initArray.dropdownButton.addEventListener('click', () => {
+    const isExpanded = initArray.dropdownList.classList.contains(
+      'dropdown__list_expanded'
+    )
+    toggle(isExpanded, initArray.dropdownList, initArray.dropdownInput)
+  })
+  initArray.dropdownInput.addEventListener('click', () => {
+    const isExpanded = initArray.dropdownList.classList.contains(
+      'dropdown__list_expanded'
+    )
+    toggle(isExpanded, initArray.dropdownList, initArray.dropdownInput)
+  })
+
+  for (const counterButton of initArray.counterButtons) {
+    const buttonsMinus = counterButton.querySelector(
+      '.dropdown__counter-buttons_type_minus'
+    )
+    const buttonsPlus = counterButton.querySelector(
+      '.dropdown__counter-buttons_type_plus'
+    )
+    const counter = counterButton.querySelector('.dropdown__counter')
+    let counterInt = +counter.textContent
+    const countName =
+      counterButton.parentElement.querySelector('.dropdown__item-name').textContent
+
+    buttonsMinus.addEventListener('click', () => {
+      if (counterInt > 0) {
+        counterInt -= 1
+      }
+      counter.textContent = `${counterInt}`
+      if (counterInt === 0) {
+        buttonsMinus.classList.add('dropdown__counter-buttons_type_minus_disabled')
+      }
+      switch (countName) {
         case 'взрослые': {
           numberOfAdult = counterInt
           break
@@ -205,81 +223,73 @@ for (const dropdownBox of dropdownBoxes) {
           numberOfBaby = counterInt
           break
         }
+        default:
+          break
       }
 
-      let outBedrooms = `${numberOfBedrooms} ${nameBedrooms[index(numberOfBedrooms)]}, `
-      if (numberOfBedrooms === 0) {
-        outBedrooms = ''
-      }
-      let outBed = `${numberOfBeds} ${nameBeds[index(numberOfBeds)]}, `
-      if (numberOfBeds === 0) {
-        outBed = ''
-      }
-      let outBathrooms = `${numberOfBathrooms} ${
-        nameBathrooms[index(numberOfBathrooms)]
-      }, `
-      if (numberOfBathrooms === 0) {
-        outBathrooms = ''
-      }
-      let outRooms = `${outBedrooms}${outBed}${outBathrooms}`
-      if (outRooms.slice(-2, -1) === ',') {
-        outRooms = outRooms.slice(0, -2)
-      }
-      if (dropdownInput.classList.contains('dropdown__input_rooms')) {
-        dropdownInput.placeholder = outRooms
-      }
       if (
-        clearButton &&
-        clearButton.classList.contains('dropdown__clear-buttons_hidden')
+        initArray.clearButton &&
+        numberOfAdult === 0 &&
+        numberOfСhildren === 0 &&
+        numberOfBaby === 0
       ) {
-        clearButton.classList.remove('dropdown__clear-buttons_hidden')
+        initArray.clearButton.classList.add('dropdown__clear-buttons_hidden')
       }
     })
-    if (clearButton) {
-      clearButton.addEventListener('click', () => {
-        if (dropdownInput.classList.contains('dropdown__input_guest')) {
-          dropdownInput.placeholder = `Сколько гостей`
-          numberOfAdult = 0
-          numberOfСhildren = 0
-          numberOfBaby = 0
-          counter.innerHTML = `0`
-          counterInt = 0
-          clearButton.classList.add('dropdown__clear-buttons_hidden')
-        }
-      })
-    }
-  }
 
-  if (applyButton) {
-    applyButton.addEventListener('click', () => {
-      let countGuests = numberOfAdult + numberOfСhildren
-      let outGuests = `${countGuests} ${nameAdult[index(countGuests)]}`
-      if (countGuests === 0) {
-        outGuests = ''
+    buttonsPlus.addEventListener('click', () => {
+      if (counterInt < 20) {
+        counterInt += 1
       }
-      let outBaby = `${numberOfBaby} ${nameBaby[index(numberOfBaby)]}`
-      if (numberOfBaby === 0) {
-        outBaby = ''
+      counter.textContent = `${counterInt}`
+      if (counterInt > 0) {
+        buttonsMinus.classList.remove('dropdown__counter-buttons_type_minus_disabled')
       }
-      if (dropdownInput.classList.contains('dropdown__input_guest')) {
-        if (countGuests === 0 && numberOfBaby === 0) {
-          dropdownInput.placeholder = `Сколько гостей`
-        } else {
-          dropdownInput.placeholder = `${outGuests} ${outBaby}`
+      switch (countName) {
+        case 'взрослые': {
+          numberOfAdult = counterInt
+          break
         }
-        dropdownList.classList.remove('dropdown__list_expanded')
-        dropdownInput.classList.remove('dropdown__input_hover')
+        case 'дети': {
+          numberOfСhildren = counterInt
+          break
+        }
+        case 'младенцы': {
+          numberOfBaby = counterInt
+          break
+        }
+        default:
+          break
+      }
+
+      if (initArray.clearButton.classList.contains('dropdown__clear-buttons_hidden')) {
+        initArray.clearButton.classList.remove('dropdown__clear-buttons_hidden')
       }
     })
-  }
-}
 
-function index(number) {
-  if (number === 1) {
-    return 0
-  } else if (number === 2 || number === 3 || number === 4) {
-    return 1
-  } else {
-    return 2
+    initArray.clearButton.addEventListener('click', () => {
+      initArray.dropdownInput.placeholder = `Сколько гостей`
+      numberOfAdult = 0
+      numberOfСhildren = 0
+      numberOfBaby = 0
+      counter.textContent = `0`
+      counterInt = 0
+      initArray.clearButton.classList.add('dropdown__clear-buttons_hidden')
+    })
+
+    initArray.applyButton.addEventListener('click', () => {
+      const countGuests = numberOfAdult + numberOfСhildren
+      const adultsToInput = checkForZero(countGuests, nameAdult)
+      const babyToInput = checkForZero(numberOfBaby, nameBaby)
+      const guestsToInput = checkEndingInGuestToInputs(adultsToInput, babyToInput)
+
+      if (countGuests === 0 && numberOfBaby === 0) {
+        initArray.dropdownInput.placeholder = `Сколько гостей`
+      } else {
+        initArray.dropdownInput.placeholder = guestsToInput
+      }
+      initArray.dropdownList.classList.remove('dropdown__list_expanded')
+      initArray.dropdownInput.classList.remove('dropdown__input_hover')
+    })
   }
 }
