@@ -1,13 +1,13 @@
+/* eslint-disable func-names */
 import $ from 'jquery'
 import 'air-datepicker'
 
-const dateDropdowns = document.querySelectorAll('.dateDropdown')
 const dateDropdownItems = document.querySelectorAll('.dateDropdown__item')
-const dateDropdownsDouble = document.querySelectorAll('.dateDropdown_double')
 
 for (const dateDropdownItem of dateDropdownItems) {
   const dropdownBox = dateDropdownItem.querySelector('.dateDropdown__dropdownBox')
-  const calendarContent = dateDropdownItem.parentElement.parentElement.querySelector('.js-calendar_content')
+  const calendarContent =
+    dateDropdownItem.parentElement.parentElement.querySelector('.js-calendar_content')
 
   dropdownBox.addEventListener('click', () => {
     if (calendarContent.classList.contains('js-calendar_content_expanded')) {
@@ -27,17 +27,17 @@ $('.dateDropdown_double').each(function () {
     clearButton: true,
     minDate: new Date(),
     navTitles: {
-      days: 'MM <i>yyyy</i>',
+      days: 'MM <i>yyyy</i>'
     },
     range: 'true',
     multipleDatesSeparator: ' - ',
     prevHtml: '<span class="arrow_back material-icons">arrow_back</span>',
     nextHtml: '<span class="arrow_forward material-icons">arrow_forward</span>',
-    clearButton: 'true',
-    onSelect: function (fd, d, picker) {
+
+    onSelect: function (fd) {
       dateFrom.val(fd.split('-')[0])
       dateTo.val(fd.split('-')[1])
-    },
+    }
   })
 
   // Экземпляр класса
@@ -46,13 +46,13 @@ $('.dateDropdown_double').each(function () {
   // Экземпляр кода календаря
   const datepEl = datep.$datepicker
   // Добавление кнопки
-  const applyButton = $(`<span class="datepicker--button_apply" data-action="apply">Применить</span>`)
+  const applyButton = $(
+    `<span class="datepicker--button_apply" data-action="apply">Применить</span>`
+  )
 
   applyButton.on('click', function () {
     let $isDatePicker = $(this).parents('.js-calendar_content')
-    if ($(this).parents().hasClass('disabled')) {
-      return
-    } else {
+    if (!$(this).parents().hasClass('disabled')) {
       $isDatePicker.removeClass('js-calendar_content_expanded')
     }
   })
@@ -68,16 +68,16 @@ $('.dateDropdown_single').each(function () {
     clearButton: true,
     minDate: new Date(),
     navTitles: {
-      days: 'MM <i>yyyy</i>',
+      days: 'MM <i>yyyy</i>'
     },
     range: 'true',
     multipleDatesSeparator: ' - ',
     prevHtml: '<span class="arrow_back material-icons">arrow_back</span>',
     nextHtml: '<span class="arrow_forward material-icons">arrow_forward</span>',
-    clearButton: 'true',
-    onSelect: function (fd, d, picker) {
+
+    onSelect: function (fd) {
       date.val(fd)
-    },
+    }
   })
 
   // Экземпляр класса
@@ -86,13 +86,13 @@ $('.dateDropdown_single').each(function () {
   // Экземпляр кода календаря
   const datepEl = datep.$datepicker
   // Добавление кнопки
-  const applyButton = $(`<span class="datepicker--button_apply" data-action="apply">Применить</span>`)
+  const applyButton = $(
+    `<span class="datepicker--button_apply" data-action="apply">Применить</span>`
+  )
 
   applyButton.on('click', function () {
     let $isDatePicker = $(this).parents('.js-calendar_content')
-    if ($(this).parents().hasClass('disabled')) {
-      return
-    } else {
+    if (!$(this).parents().hasClass('disabled')) {
       $isDatePicker.removeClass('js-calendar_content_expanded')
     }
   })

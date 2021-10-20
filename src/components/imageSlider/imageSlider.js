@@ -1,6 +1,6 @@
 const sliders = document.querySelectorAll('.imageSlider')
 
-for (slider of sliders) {
+for (const slider of sliders) {
   const prev = slider.querySelector('.imageSlider__btn-prev')
   const next = slider.querySelector('.imageSlider__btn-next')
   const slides = slider.querySelectorAll('.imageSlider__slide')
@@ -16,14 +16,14 @@ for (slider of sliders) {
   }
 
   const activeSlide = (n) => {
-    for (slide of slides) {
+    for (const slide of slides) {
       slide.classList.remove('imageSlider__slide_active')
     }
     slides[n].classList.add('imageSlider__slide_active')
   }
 
   const activeDot = (n) => {
-    for (dot of dots) {
+    for (const dot of dots) {
       dot.classList.remove('imageSlider__dot_active')
     }
     dots[n].classList.add('imageSlider__dot_active')
@@ -39,7 +39,7 @@ for (slider of sliders) {
       index = 0
       prepareCurrentSlide(index)
     } else {
-      index++
+      index += 1
       prepareCurrentSlide(index)
     }
   }
@@ -49,7 +49,7 @@ for (slider of sliders) {
       index = slides.length - 1
       prepareCurrentSlide(index)
     } else {
-      index--
+      index -= 1
       prepareCurrentSlide(index)
     }
   }

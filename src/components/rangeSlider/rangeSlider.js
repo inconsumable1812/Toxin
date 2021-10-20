@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 import noUiSlider from 'nouislider'
 
 const rangeSliders = document.querySelectorAll('.rangeSlider')
@@ -14,8 +15,8 @@ for (const rangeSlider of rangeSliders) {
     connect: true,
     range: {
       min: min,
-      max: max,
-    },
+      max: max
+    }
   })
 
   slider.noUiSlider.on('update', function (values, handle) {

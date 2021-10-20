@@ -10,7 +10,7 @@ let dataNumber = [0, 65, 65, 130]
 let dataSum = 0
 const sumHTML = document.querySelector('.chart__number')
 
-for (let i = 0; i < dataNumber.length; i++) {
+for (let i = 0; i < dataNumber.length; i += 1) {
   dataSum += dataNumber[i]
 }
 sumHTML.innerHTML = dataSum
@@ -24,7 +24,7 @@ gradientAcceptable.addColorStop(1, 'rgba(139, 164, 249, 1)')
 gradientDisappoint.addColorStop(0.5, 'rgba(144, 144, 144, 1)')
 gradientDisappoint.addColorStop(1, 'rgba(61, 73, 117, 1)')
 
-var myChart = new Chart(ctx, {
+let myChart = new Chart(ctx, {
   type: 'doughnut',
   data: {
     labels: ['Разочарован', 'Удовлетворительно', 'Хорошо', 'Великолепно'],
@@ -32,16 +32,25 @@ var myChart = new Chart(ctx, {
       {
         label: '# of Votes',
         data: dataNumber,
-        backgroundColor: [gradientDisappoint, gradientAcceptable, gradientGood, gradientGreat],
-        borderColor: ['rgba(255, 255, 255, 1)', 'rgba(255, 255, 255, 1)', 'rgba(255, 255, 255, 1)', 'rgba(255, 255, 255, 1)'],
+        backgroundColor: [
+          gradientDisappoint,
+          gradientAcceptable,
+          gradientGood,
+          gradientGreat
+        ],
+        borderColor: [
+          'rgba(255, 255, 255, 1)',
+          'rgba(255, 255, 255, 1)',
+          'rgba(255, 255, 255, 1)',
+          'rgba(255, 255, 255, 1)'
+        ],
         borderWidth: 2,
-        hoverOffset: 0,
-      },
-    ],
+        hoverOffset: 0
+      }
+    ]
   },
   options: {
     cutout: '89%',
-    //responsive: true,
     radius: '61',
     maintainAspectRatio: false,
     layout: {
@@ -49,8 +58,8 @@ var myChart = new Chart(ctx, {
         left: -11,
         right: 0,
         top: 0,
-        bottom: -8,
-      },
+        bottom: -8
+      }
     },
     plugins: {
       legend: {
@@ -61,19 +70,15 @@ var myChart = new Chart(ctx, {
           color: 'rgba(31, 32, 65, 0,75)',
           usePointStyle: true,
           boxWidth: 8,
-          /*backdropPadding: {
-            x: 0,
-            y: 0,
-          },*/
           font: {
             size: 14,
             lineHeight: 24,
-            family: 'Montserrat',
-          },
-        },
-      },
-    },
-  },
+            family: 'Montserrat'
+          }
+        }
+      }
+    }
+  }
 })
 myChart.canvas.parentNode.style.height = '121px'
 

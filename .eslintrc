@@ -5,6 +5,6 @@
     "browser": true,
     "node": true
   },
-  "rules": { "linebreak-style": "off", "semi": "off" },
+  "rules": { "linebreak-style": "off", "semi": "off", "no-restricted-syntax": "off" },
   "extends": ["eslint:recommended", "airbnb-base/legacy", "prettier"]
 }

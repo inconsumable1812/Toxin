@@ -1,11 +1,11 @@
 const headers = document.querySelectorAll('.header')
 
-for (header of headers) {
+for (const header of headers) {
   const burger = header.querySelector('.header__burger')
   const menuGroup = header.querySelector('.header__menuGroup')
   const subMenus = header.querySelectorAll('.header__subMenu')
 
-  for (subMenu of subMenus) {
+  for (const subMenu of subMenus) {
     const subMenuGroup = subMenu.querySelector('.header__dropdown')
     const subMenuIcon = subMenu.querySelector('.header__subMenuIcon')
 
