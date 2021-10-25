@@ -1,6 +1,6 @@
 @import '../../utils/vars';
 @import '../../utils/mixins';
-@import '../../components/rangeSlider/nouislider_style/nouislider.min.css';
+@import '../../../node_modules/nouislider/dist/nouislider.min.css';
 
 .rangeSlider {
   width: 100%;
