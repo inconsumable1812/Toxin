@@ -42,23 +42,6 @@
   }
 }
 
-@mixin card {
-  border: 0.0625rem solid rgba(0, 0, 0, 0.12);
-  border-radius: 0.25rem;
-  box-shadow: 0 0 1.5625rem rgba(0, 0, 0, 0.2);
-  background: white;
-}
-
-@mixin reset-outline($property: box-shadow) {
-  transition: #{$property} 0.25s ease-in-out;
-
-  &:focus,
-  &:hover {
-    outline: none;
-    #{$property}: 0 0.03125rem 0.03125rem $color-dark-25;
-  }
-}
-
 @mixin reset-button {
   border: none;
   appearance: none;
