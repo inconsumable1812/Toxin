@@ -1,17 +1,18 @@
 mixin input(options)
+  - const {isData, title, hint, type, name, placeholder, value, withButton} = options || {}
   -
     var titleClassName = "title"
-    titleClassName += options.isData ? " title-data" : ""
+    titleClassName += isData ? " title-data" : ""
     var ClassName = "input"
-    ClassName += options.isData ? " input-data" : ""
+    ClassName += isData ? " input-data" : ""
 
   div.input-text
-    if options.title
-      span.input__title(class = titleClassName)= options.title
-    if options.hint
-      span.label__hint= options.hint
+    if title
+      span.input__title(class = titleClassName)= title
+    if hint
+      span.label__hint= hint
     div.input__box
-      input(type = options.type, class= ClassName, name = options.name, placeholder = options.placeholder, value = options.value)
-      if options.withButton
+      input(type = type, class= ClassName, name = name, placeholder = placeholder, value = value)
+      if withButton
         button.text-input__submit-button(type='submit')
 

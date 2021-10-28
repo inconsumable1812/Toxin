@@ -1,9 +1,9 @@
 mixin radioButton(options)
-  - const {rows =[] } = options || {}
+  - const {header, rows =[] } = options || {}
 
   div.radioButton
-    if options.header 
-      div.radioButton__header= options.header 
+    if header 
+      div.radioButton__header= header 
     div.radioButton__group
       each row in rows
         .radioButton__item 

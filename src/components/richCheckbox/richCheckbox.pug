@@ -1,8 +1,8 @@
 mixin richCheckbox(options)
-  - const {rows = []} = options || {}
+  - const {header, rows = []} = options || {}
 
   div.richCheckbox
-    div.richCheckbox__header= options.header 
+    div.richCheckbox__header= header 
     ul.richCheckbox__list
       each row in rows
         li.richCheckbox__item

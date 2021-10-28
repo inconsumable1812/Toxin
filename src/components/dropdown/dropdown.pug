@@ -1,19 +1,29 @@
 mixin dropdown(options)
-  - const {rows =[] } = options || {}
+  - 
+    const {
+      isExpanded,
+      title, 
+      hint, 
+      type, 
+      name, 
+      placeholder, 
+      calendar,
+      rows =[] } = options || {}
+
   - let listClass = 'dropdown__list'
-  - listClass += options.isExpanded ? ' dropdown__list_expanded' : ''
+  - listClass += isExpanded ? ' dropdown__list_expanded' : ''
 
   div.dropdown
-    if options.title
-      span.dropdown__title= options.title
-    if options.hint
-      span.dropdown__hint= options.hint
-    div.dropdown__box(class= 'dropdown__box_' + options.type)
-      input.dropdown__input(name = options.name, placeholder = options.placeholder, readonly="readonly", class = 'dropdown__input_' + options.type)
+    if title
+      span.dropdown__title= title
+    if hint
+      span.dropdown__hint= hint
+    div.dropdown__box(class= 'dropdown__box_' + type)
+      input.dropdown__input(name = name, placeholder = placeholder, readonly="readonly", class = 'dropdown__input_' + type)
       button.dropdown__button.material-icons(type="button")
-      if !options.calendar
+      if !calendar
         ul(class = listClass)
-          if options.rows
+          if rows
             each row in rows
               li.dropdown__list-item(class = 'dropdown__list-item_'+ row.typeOfCount)
                 .dropdown__item-name= row.text
@@ -23,9 +33,9 @@ mixin dropdown(options)
                   - var clearButtonClass ="dropdown__clear-buttons"
                   - clearButtonClass += row.count < 1 ? " dropdown__clear-buttons_hidden" : ""
                   button(class=minusButtonClass, type="button")= "-"
-                  span.dropdown__counter(class = 'dropdown__counter_'+ options.type)= row.count
+                  span.dropdown__counter(class = 'dropdown__counter_'+ type)= row.count
                   button(class="dropdown__counter-buttons_type_plus", type="button")= "+"
-          if options.type === "guest"
+          if type === "guest"
             li.dropdown__footer-buttons           
               span(class = "dropdown__clear-buttons")
                 button.dropdown__button_theme_textual.dropdown__button_theme_textual_hovered(type="button")

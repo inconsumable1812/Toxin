@@ -3,7 +3,7 @@ include ../../components/button/button.pug
 
 mixin header(options)
   -
-   let menuLinkDefault = [
+   const menuLinkDefault = [
     {name: 'О нас', href:'/about', bold:true},
     {name: 'Услуги', href:'/services',
     subMenu:[
@@ -20,7 +20,7 @@ mixin header(options)
       {name: 'Договор 2', href:'/contract_2'},
         ]},
     ]
-  - const {menuLink= menuLinkDefault, bold, auth, subMenu} = options || {};
+  - const {menuLink= menuLinkDefault, auth = false} = options || {};
   - let classLink = 'header__link'
   - let classSubMenu = 'header__subMenu'
   - let classSubLink = 'header__link header__subLink'

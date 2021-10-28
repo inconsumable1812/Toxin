@@ -1,9 +1,9 @@
 mixin toggle(options)
-  - const {rows =[] } = options || {}
+  - const {header, rows =[] } = options || {}
 
   .toggle
-    if options.header
-      .toggle__header= options.header
+    if header
+      .toggle__header= header
     ul.toggle__list
       each row in rows 
         li.toggle__items

@@ -2,10 +2,10 @@ include ../../components/input/input.pug
 include ../../components/button/button.pug
 
 mixin loginForm(options)
-  -
+  - const {action = '/change-me'} = options || {}
 
   .loginForm 
-    form(action="/change-me").loginForm__form
+    form(action= action).loginForm__form
       .loginForm__header
         h1.loginForm__title= 'Войти' 
       .loginForm__email

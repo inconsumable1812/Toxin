@@ -1,24 +1,33 @@
 mixin button (options)
+  -
+    const {theme, 
+    isLarge, 
+    isDisabled, 
+    isTransparentDisabled, 
+    textTheme,
+    href, 
+    text} = options || {}
+
   - let buttonClass = "button" 
   - let textClass = 'button__text'
-  - buttonClass += options.theme === "purple" ? " button_theme_purple" : ''
-  - buttonClass += options.theme === "white" ? " button_theme_white" : ''
-  - buttonClass += options.theme === "transparent" ? " button_theme_transparent" : ''
-  - buttonClass += options.isLarge ? " button_size_large" : ''
-  - buttonClass += options.isDisabled ? " button_disabled" : ''
-  - buttonClass += options.isTransparentDisabled ? " button_transparent_disabled" : ''
-  - textClass += options.textTheme === "purple" ? " button__text_theme_purple" : ''
-  - textClass += options.textTheme === "white" ? " button__text_theme_white" : ''
-  if options.href
-    a(href=options.href).button__link   
+  - buttonClass += theme === "purple" ? " button_theme_purple" : ''
+  - buttonClass += theme === "white" ? " button_theme_white" : ''
+  - buttonClass += theme === "transparent" ? " button_theme_transparent" : ''
+  - buttonClass += isLarge ? " button_size_large" : ''
+  - buttonClass += isDisabled ? " button_disabled" : ''
+  - buttonClass += isTransparentDisabled ? " button_transparent_disabled" : ''
+  - textClass += textTheme === "purple" ? " button__text_theme_purple" : ''
+  - textClass += textTheme === "white" ? " button__text_theme_white" : ''
+  if href
+    a(href=href).button__link   
       button(class = buttonClass)
         span.button__group
-          span(class = textClass)= options.text
-          if options.isLarge 
+          span(class = textClass)= text
+          if isLarge 
             span.button__arrow.material-icons 
-  if !options.href
+  if !href
     button(class = buttonClass) 
       span.button__group
-        span(class = textClass)= options.text
-        if options.isLarge 
+        span(class = textClass)= text
+        if isLarge 
           span.button__arrow.material-icons

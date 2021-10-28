@@ -1,15 +1,15 @@
 mixin type(options)
-  -
+  - const {title, subtitle} = options || {}
 
-  div.type(class = `type_${options.title}`)
-    #{options.title}.type-title #{options.title}
-    #{options.title}.type-subtitle #{options.subtitle}
+  div.type(class = `type_${title}`)
+    #{title}.type-title #{title}
+    #{title}.type-subtitle #{subtitle}
 
 mixin body(options)
-  -
+  - const {title, subtitle} = options || {}
 
   .type.colorsAndTypes-type_body
-    p.type-title #{options.title}
-    p.type-subtitle__text #{options.subtitle}
+    p.type-title #{title}
+    p.type-subtitle__text #{subtitle}
 
 

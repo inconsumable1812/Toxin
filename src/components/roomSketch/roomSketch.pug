@@ -2,7 +2,22 @@ include ../../components/imageSlider/imageSlider.pug
 include ../../components/rateButton/rateButton.pug
 
 mixin roomSketch(options)
-  - const {rows, isHovered, base, rate, isVariable} = options || {}
+  - 
+    const {
+    rows,
+    isHovered, 
+    isInterval, 
+    base, 
+    rate, 
+    isVariable = false, 
+    name = 'rating', 
+    id = 'rating',
+    roomNumber,
+    isVip,
+    cost,
+    feedbackNumber,
+    feedbackText
+    } = options || {}
 
   div.roomSketch 
     div.roomSketch__slider
@@ -12,15 +27,15 @@ mixin roomSketch(options)
         .roomSketch__header
           .roomSketch__number
             span.roomSketch__numberSymbol= '№'
-            span.roomSketch__numberValue= options.roomNumber
-            if options.isVip
+            span.roomSketch__numberValue= roomNumber
+            if isVip
               span.roomSketch__numberFeature= 'люкс'
           .roomSketch__price-per-day
-            span.roomSketch__cost= options.cost
+            span.roomSketch__cost= cost
             span.roomSketch__dateUnit='в сутки'
         .roomSketch__footer
           .roomSketch__rate
-            +rateButton({base, rate, isVariable, name:'rating', id:'rating'})
+            +rateButton({base, rate, isVariable, name, id})
           .roomSketch__feedback-counter
-            span.roomSketch__feedback-number= options.feedbackNumber
-            span.roomSketch__feedback-text= options.feedbackText
+            span.roomSketch__feedback-number= feedbackNumber
+            span.roomSketch__feedback-text= feedbackText

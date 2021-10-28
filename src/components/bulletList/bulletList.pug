@@ -1,9 +1,9 @@
 mixin bulletList(options)
-  - const {rows = []} = options || {}
+  - const {header, rows = []} = options || {}
 
   div.bulletList
-    if options.header 
-      div.bulletList__header= options.header 
+    if header 
+      div.bulletList__header= header 
     ul.bulletList__list 
       each row in rows 
         li.bulletList__item

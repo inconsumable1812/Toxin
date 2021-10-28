@@ -1,25 +1,28 @@
 include ../dropdown/dropdown.pug
 
 mixin dateDropdown(options)
-  - var calendarClass = 'js-calendar_content'
-  - calendarClass += options.isExpanded ? ' js-calendar_content_expanded' : ''
-  - calendarClass += options.hidden ? ' disabled' : ''
+  -
+    const {isExpanded, hidden, type, id, titleStart, titleEnd, title} = options || {}
 
-  div.dateDropdown(class= 'dateDropdown_' + options.type, id=options.id )
-    if (options.type === 'double')
+  - let calendarClass = 'js-calendar_content'
+  - calendarClass += isExpanded ? ' js-calendar_content_expanded' : ''
+  - calendarClass += hidden ? ' disabled' : ''
+
+  div.dateDropdown(class= 'dateDropdown_' + type, id=id )
+    if (type === 'double')
       div.dateDropdown__group_double
         div.dateDropdown__item
-          span.dateDropdown__title= options.titleStart
+          span.dateDropdown__title= titleStart
           div.dateDropdown__dropdownBox
             +dropdown({name:"field-date-from", placeholder:"ДД.ММ.ГГГГ", type: "date", calendar:true})
         div.dateDropdown__item 
-          span.dateDropdown__title= options.titleEnd
+          span.dateDropdown__title= titleEnd
           div.dateDropdown__dropdownBox
             +dropdown({name:"field-date-to", placeholder:"ДД.ММ.ГГГГ", type: "date", calendar:true})
-    if (options.type === "single")
+    if (type === "single")
       div.dateDropdown__group_single
         div.dateDropdown__item
-          span.dateDropdown__title= options.title
+          span.dateDropdown__title= title
           div.dateDropdown__dropdownBox
             +dropdown({name:"date-filter", placeholder:"ДД.ММ.ГГГГ", type: "date", calendar:true})
     div.dropdown__calendar_content(class= calendarClass)

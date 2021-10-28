@@ -1,8 +1,9 @@
 mixin imageSlider (options)
-  - const {rows = []} = options || {}
+  - const {isHovered, isInterval, rows = []} = options || {}
+
   - let sliderClass = 'imageSlider'
-  - sliderClass += options.isHovered ? " imageSlider__hovered" : ""
-  - sliderClass += options.isInterval ? " imageSlider__interval" : ""
+  - sliderClass += isHovered ? " imageSlider__hovered" : ""
+  - sliderClass += isInterval ? " imageSlider__interval" : ""
  
 
   div(class = sliderClass)
