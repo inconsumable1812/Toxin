@@ -64,6 +64,15 @@ for (const dropdownOfRoom of dropdownOfRooms) {
     toggle(isExpanded, initArray.dropdownList, initArray.dropdownInput)
   })
 
+  document.addEventListener('click', (event) => {
+    const isExpanded = initArray.dropdownList.classList.contains(
+      'dropdown__list_expanded'
+    )
+    if (isExpanded && !event.target.closest('.dropdown')) {
+      toggle(isExpanded, initArray.dropdownList, initArray.dropdownInput)
+    }
+  })
+
   for (const counterButton of initArray.counterButtons) {
     const buttonsMinus = counterButton.querySelector(
       '.dropdown__counter-buttons_type_minus'
@@ -187,6 +196,15 @@ for (const dropdownOfGuest of dropdownOfGuests) {
       'dropdown__list_expanded'
     )
     toggle(isExpanded, initArray.dropdownList, initArray.dropdownInput)
+  })
+
+  document.addEventListener('click', (event) => {
+    const isExpanded = initArray.dropdownList.classList.contains(
+      'dropdown__list_expanded'
+    )
+    if (isExpanded && !event.target.closest('.dropdown')) {
+      toggle(isExpanded, initArray.dropdownList, initArray.dropdownInput)
+    }
   })
 
   for (const counterButton of initArray.counterButtons) {
