@@ -1,7 +1,7 @@
 mixin rateButton (options)
   - const ratingList = ['Ужасно', 'Так себе', 'Нормально' , 'Хорошо', 'Отлично']
 
-  div.rateButton
+  div(class='rateButton' , tabindex="0")
       if options.isVariable
         div.rateButton__group.material-icons
           div.rateButton__items

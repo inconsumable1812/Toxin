@@ -18,14 +18,26 @@
   .paginationjs-pages {
     align-items: center;
   }
+
+  .J-paginationjs-page {
+    a {
+      &:focus-visible,
+      &:focus,
+      &:hover {
+        outline: none;
+        background: #eee;
+        border-radius: 50%;
+      }
+    }
+  }
   .paginationjs-pages li {
     border: none;
     a {
       font-size: 0.75rem;
       color: $color-dark-50;
-      &:hover {
-        background: none;
-      }
+      // &:hover {
+      //   background: none;
+      // }
     }
   }
   .active {
@@ -62,21 +74,14 @@
   }
   .paginationjs-next,
   .paginationjs-prev {
-    // position: relative;
     background: $grad-green;
     border: none;
-    a {
-      background: $grad-green;
+    &:hover {
+      background: #eee;
     }
   }
-  .paginationjs .paginationjs-pages .paginationjs-next > a {
-    background: inherit;
-    border-radius: 50%;
-  }
+
   .pagination__arrow-next {
-    position: relative;
-    height: 2.75rem;
-    width: 2.75rem;
     &::before {
       top: 0.1875rem;
       left: 0.5rem;
@@ -86,9 +91,6 @@
     }
   }
   .pagination__arrow-prev {
-    position: relative;
-    height: 2.75rem;
-    width: 2.75rem;
     &::before {
       top: 0.1875rem;
       left: 0.5rem;
@@ -97,12 +99,31 @@
       color: white;
     }
   }
+  .pagination__arrow-next,
+  .pagination__arrow-prev {
+    position: relative;
+    height: 2.75rem;
+    width: 2.75rem;
+  }
 
+  .js-currentPage {
+    opacity: 0;
+  }
+
+  .paginationjs .paginationjs-pages .paginationjs-next > a,
   .paginationjs .paginationjs-pages .paginationjs-prev > a {
     background: inherit;
     border-radius: 50%;
-  }
-  .js-currentPage {
-    opacity: 0;
+    &:focus-visible,
+    &:focus {
+      outline: none;
+      background: #eee;
+      height: 2.5rem;
+      width: 2.5rem;
+      .pagination__arrow-next:before,
+      .pagination__arrow-prev:before {
+        top: 0.625rem;
+      }
+    }
   }
 }

@@ -31,7 +31,7 @@
         }
         &:focus + .checkbox__checkbox,
         &:hover + .checkbox__checkbox {
-          box-shadow: 0 0.03125rem 0.3125rem $color-dark-25;
+          box-shadow: 0 0.125rem 0.3125rem $color-dark-25;
         }
       }
       .checkbox__checkbox {

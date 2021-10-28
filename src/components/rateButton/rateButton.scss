@@ -2,6 +2,10 @@
 @import '../../utils/mixins';
 
 .rateButton {
+  &:focus,
+  &:hover {
+    outline: 0.125rem solid $color-purple;
+  }
   &__group {
     position: relative;
     width: 7.5rem;

@@ -7,6 +7,6 @@ mixin likeButton(options)
   - countClass += options.isPressed ? ' likeButton__count_pressed' : ''
 
   .likeButton
-    .div(class = buttonClass)
+    div(class = buttonClass, tabindex="0")
       span(class= iconClass) 
       span(class = countClass)= options.count
