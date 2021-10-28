@@ -1,6 +1,6 @@
 mixin dropdown(options)
   - const {rows =[] } = options || {}
-  - var listClass = 'dropdown__list'
+  - let listClass = 'dropdown__list'
   - listClass += options.isExpanded ? ' dropdown__list_expanded' : ''
 
   div.dropdown
