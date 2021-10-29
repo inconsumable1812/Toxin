@@ -2,6 +2,7 @@ function index(number) {
   if (number === 1) {
     return 0
   }
+  // eslint-disable-next-line fsd/split-conditionals
   if (number === 2 || number === 3 || number === 4) {
     return 1
   }
@@ -13,25 +14,6 @@ function checkForZero(number, arrayName) {
     return `${number} ${arrayName[index(number)]}, `
   }
   return ''
-}
-
-function init(dropdown) {
-  if (dropdown.classList.contains('dropdown__box_rooms')) {
-    return {
-      dropdownButton: dropdown.querySelector('.dropdown__button'),
-      dropdownList: dropdown.querySelector('.dropdown__list'),
-      dropdownInput: dropdown.querySelector('.dropdown__input'),
-      counterButtons: dropdown.querySelectorAll('.dropdown__counter-buttons')
-    }
-  }
-  return {
-    dropdownButton: dropdown.querySelector('.dropdown__button'),
-    dropdownList: dropdown.querySelector('.dropdown__list'),
-    dropdownInput: dropdown.querySelector('.dropdown__input'),
-    counterButtons: dropdown.querySelectorAll('.dropdown__counter-buttons'),
-    clearButton: dropdown.querySelector('.dropdown__clear-buttons'),
-    applyButton: dropdown.querySelector('.dropdown__apply-buttons')
-  }
 }
 
 function checkEndingInRoomToInputs(bedrooms, beds, bathrooms) {
@@ -50,20 +32,62 @@ function checkEndingInGuestToInputs(adult, baby) {
   return value
 }
 
-function toggle(isExpanded, dropdownList, dropdownInput) {
+function toggle(isExpanded, list) {
   if (isExpanded) {
-    dropdownList.classList.remove('dropdown__list_expanded')
-    dropdownInput.classList.remove('dropdown__input_hover')
-  } else {
-    dropdownList.classList.add('dropdown__list_expanded')
-    dropdownInput.classList.add('dropdown__input_hover')
+    return list.classList.remove('dropdown__list_expanded')
   }
+  return list.classList.add('dropdown__list_expanded')
+}
+
+function disabledMinusButtonIfLessUnit(count, button) {
+  if (count < 1) {
+    return button.classList.add('dropdown__counter-buttons_type_minus_disabled')
+  }
+  return null
+}
+
+function enabledMinusButtonIfBiggerZero(count, button) {
+  if (count > 0) {
+    return button.classList.remove('dropdown__counter-buttons_type_minus_disabled')
+  }
+  return null
+}
+
+function isGuestsAreNot(adult, children, baby) {
+  return adult === 0 && children === 0 && baby === 0
+}
+
+function hideClearButton(adult, children, baby, button) {
+  if (isGuestsAreNot(adult, children, baby)) {
+    button.classList.add('dropdown__clear-buttons_hidden')
+  }
+}
+
+function isGuestsAre(adult, children, baby) {
+  return adult > 0 || children > 0 || baby > 0
+}
+
+function showClearButton(adult, children, baby, button) {
+  if (isGuestsAre(adult, children, baby)) {
+    button.classList.remove('dropdown__clear-buttons_hidden')
+  }
+}
+
+function createNameOfRooms(number, arrayName) {
+  if (number !== 0) {
+    return `${number} ${arrayName[index(number)]}, `
+  }
+  return ''
 }
 
 export {
   checkForZero,
-  init,
   checkEndingInRoomToInputs,
   checkEndingInGuestToInputs,
-  toggle
+  toggle,
+  disabledMinusButtonIfLessUnit,
+  showClearButton,
+  enabledMinusButtonIfBiggerZero,
+  hideClearButton,
+  createNameOfRooms
 }
