@@ -28,6 +28,7 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-loader": "^3.0.3",
+    "eslint-plugin-fsd": "^1.0.1",
     "eslint-plugin-prettier": "^4.0.0",
     "file-loader": "^6.2.0",
     "gh-pages": "^3.2.3",

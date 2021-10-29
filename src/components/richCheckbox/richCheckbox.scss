@@ -6,7 +6,7 @@
   max-width: 16.625rem;
 
   &__header {
-    font-family: Montserrat, Helvetica, sans-serif;
+    font-family: Montserrat, Arial, sans-serif;
     font-size: 0.75rem;
     font-weight: bold;
     text-transform: uppercase;
@@ -61,7 +61,7 @@
     grid-area: title;
     line-height: 1.125rem;
     font-size: 0.875rem;
-    font-family: Montserrat, Helvetica, sans-serif;
+    font-family: Montserrat, Arial, sans-serif;
     color: $color-dark-75;
     font-weight: bold;
   }
@@ -70,7 +70,7 @@
     grid-area: subtitle;
     line-height: 0.875rem;
     font-size: 0.75rem;
-    font-family: Montserrat, Helvetica, sans-serif;
+    font-family: Montserrat, Arial, sans-serif;
     color: $color-dark-50;
   }
 }
