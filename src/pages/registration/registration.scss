@@ -1,33 +1,37 @@
-@import '../../utils/main.scss';
-@import '../../utils/mixins.scss';
-
-@import '../../components/footer/footer.scss';
-@import '../../components/imageSlider/imageSlider.scss';
-@import '../../components/registrationForm/registrationForm.scss';
-@import '../../components/header/header.scss';
+@import '../../utils/main';
+@import '../../utils/mixins';
+@import '../../components/footer/footer';
+@import '../../components/imageSlider/imageSlider';
+@import '../../components/registrationForm/registrationForm';
+@import '../../components/header/header';
 
 .registration {
   &__slider {
     position: absolute;
     z-index: -1;
     width: 100%;
+
     .imageSlider__img {
       object-fit: cover;
       object-position: 50% 50%;
       width: 100%;
-      height: 700px;
+      height: 43.75rem;
+
       @include _480 {
-        height: 750px;
+        height: 46.875rem;
       }
     }
+
     .imageSlider__dotWrapper {
       display: none;
     }
   }
+
   &__form {
-    padding: 19px 0;
+    padding: 1.1875rem 0;
     margin: 0 auto;
-    max-width: 380px;
+    max-width: 23.75rem;
+
     .button_theme_white {
       padding: 0 1.6em 0 1.6rem;
     }

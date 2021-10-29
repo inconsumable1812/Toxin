@@ -1,19 +1,22 @@
-@import '../../utils/vars.scss';
-@import '../../utils/mixins.scss';
+@import '../../utils/vars';
+@import '../../utils/mixins';
 
 .chart {
   position: relative;
+
   &__sum {
     position: absolute;
     top: 36;
     left: 54;
   }
+
   &__number {
     font-size: 1.5rem;
     color: $color-purple;
     font-weight: bold;
     text-align: center;
   }
+
   &__text {
     font-size: 0.75rem;
     color: $color-purple;

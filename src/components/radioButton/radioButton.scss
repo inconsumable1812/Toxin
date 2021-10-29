@@ -4,56 +4,44 @@
 .radioButton {
   width: 100%;
   max-width: 13.8rem;
+
   @include _1200 {
     max-width: none;
   }
+
   &__header {
-    font-family: 'Montserrat', Helvetica, sans-serif;
+    font-family: Montserrat, Helvetica, sans-serif;
     font-size: 0.75rem;
     font-weight: bold;
     text-transform: uppercase;
     padding-bottom: 1rem;
   }
+
   &__group {
     display: grid;
     grid-template-columns: repeat(auto-fill, 6.125rem);
     column-gap: 1.25rem;
     row-gap: 0.6rem;
   }
+
   &__item {
     font-size: 0.875rem;
-    font-family: 'Montserrat', Helvetica, sans-serif;
+    font-family: Montserrat, Helvetica, sans-serif;
     color: $color-dark-50;
+
     @include _1200 {
       display: inline-block;
       margin-bottom: 0.5rem;
     }
   }
-  &__input {
-    appearance: none;
-    position: absolute;
-    &:checked + .radioButton__radio + .radioButton__caption {
-      transition: color 0.25s ease-in-out;
-      color: $color-dark-75;
-    }
-    &:checked + .radioButton__radio {
-      border: 0.0625rem solid $color-purple;
-      &::before {
-        transition: opacity 0.25s ease-in-out;
-        opacity: 1;
-      }
-    }
-    &:hover + .radioButton__radio,
-    &:focus + .radioButton__radio {
-      box-shadow: 0 0.125rem 0.3125rem $color-dark-25;
-    }
-  }
+
   &__radio {
     position: absolute;
     height: 1.25rem;
     width: 1.25rem;
     border-radius: 50%;
     border: 0.0625rem solid $color-dark-25;
+
     &::before {
       position: absolute;
       content: '';
@@ -66,7 +54,32 @@
       background: $grad-purple;
     }
   }
+
   &__caption {
     padding-left: 1.85rem;
+  }
+
+  &__input {
+    appearance: none;
+    position: absolute;
+
+    &:checked + .radioButton__radio + .radioButton__caption {
+      transition: color 0.25s ease-in-out;
+      color: $color-dark-75;
+    }
+
+    &:checked + .radioButton__radio {
+      border: 0.0625rem solid $color-purple;
+
+      &::before {
+        transition: opacity 0.25s ease-in-out;
+        opacity: 1;
+      }
+    }
+
+    &:hover + .radioButton__radio,
+    &:focus + .radioButton__radio {
+      box-shadow: 0 0.125rem 0.3125rem $color-dark-25;
+    }
   }
 }

@@ -1,26 +1,28 @@
-@import '../../utils/main.scss';
+@import '../../utils/main';
 @import '../../utils/mixins';
-@import '../../components/footer/footer.scss';
-@import '../../components/dropdown/dropdown.scss';
-@import '../../components/dateDropdown/dateDropdown.scss';
-@import '../../components/expandableCheckboxList/expandableCheckboxList.scss';
-@import '../../components/checkbox/checkbox.scss';
-@import '../../components/rangeSlider/rangeSlider.scss';
-@import '../../components/pagination/pagination.scss';
-@import '../../components/richCheckbox/richCheckbox.scss';
-@import '../../components/roomSketch/roomSketch.scss';
-@import '../../components/button/button.scss';
-@import '../../components/header/header.scss';
+@import '../../components/footer/footer';
+@import '../../components/dropdown/dropdown';
+@import '../../components/dateDropdown/dateDropdown';
+@import '../../components/expandableCheckboxList/expandableCheckboxList';
+@import '../../components/checkbox/checkbox';
+@import '../../components/rangeSlider/rangeSlider';
+@import '../../components/pagination/pagination';
+@import '../../components/richCheckbox/richCheckbox';
+@import '../../components/roomSketch/roomSketch';
+@import '../../components/button/button';
+@import '../../components/header/header';
 
 .searchRoom {
   display: flex;
   flex-direction: column;
   min-height: 100%;
+
   &__main {
     flex: 1 0 auto;
   }
+
   &__container {
-    max-width: 1208px;
+    max-width: 75.5rem;
     margin: 0 auto;
     padding: 0 1.5rem;
     display: grid;
@@ -29,17 +31,21 @@
     padding-top: 1.67rem;
     padding-bottom: 4.45rem;
     border-bottom: 1px solid $color-dark-25;
+
     @include _992 {
       display: block;
     }
   }
+
   &__button-open {
     display: none;
     grid-template-columns: 1fr 1fr;
+
     @include _992 {
       display: grid;
       padding-bottom: 1.5rem;
     }
+
     @include _768 {
       grid-template-columns: 1fr;
     }
@@ -47,17 +53,21 @@
     .button {
       grid-column: span 2;
       justify-self: center;
+
       @include _600 {
         grid-column: span 1;
       }
+
       &__arrow {
         display: none;
       }
     }
+
     .button_size_large {
       max-width: none;
     }
   }
+
   &__filter {
     @include _992 {
       position: fixed;
@@ -66,18 +76,20 @@
       left: -25rem;
       z-index: 20;
       background: white;
-      padding: 0.9375rem 1.56rem 0 1.56rem;
+      padding: 0.9375rem 1.56rem 0;
       transition: left 0.25s ease;
       overflow-y: auto;
       display: grid;
       grid-template-rows: 24px auto;
       box-shadow: 0 0 0.75rem 0.75rem $color-dark-25;
+
       &_expanded {
         left: 0;
         transition: left 0.25s ease;
       }
     }
   }
+
   &__button-close {
     display: none;
     appearance: none;
@@ -86,67 +98,85 @@
     user-select: none;
     cursor: pointer;
     justify-self: end;
+
     &:hover {
       color: $color-purple;
     }
+
     @include _992 {
       display: block;
     }
   }
+
   &__calendar {
     padding-bottom: 1.35rem;
   }
+
   &__dropdownGuest {
     padding-bottom: 1.95rem;
   }
+
   &__rangeSlider {
     padding-bottom: 1.85rem;
   }
+
   &__checkbox {
     padding-bottom: 1.25rem;
+
     .checkbox__header {
       padding-bottom: 1.15rem;
     }
   }
+
   &__richCheckbox {
     padding-bottom: 1.25rem;
   }
+
   &__dropdownRoom {
     padding-bottom: 1.68rem;
   }
+
   &__result {
     margin-top: 0.25rem;
   }
+
   &__roomSketch-list {
     margin-top: 1.3rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 0.75rem;
     row-gap: 1.25rem;
+
     @include _1200 {
       grid-template-columns: 1fr 1fr;
     }
+
     @include _600 {
       display: block;
     }
   }
+
   &__roomSketch-item {
     list-style: none;
   }
+
   &__pagination {
     padding-top: 1.4rem;
     padding-left: 7.2rem;
     grid-column: span 3;
     justify-self: center;
+
     @include _1200 {
       grid-column: span 2;
     }
+
     @include _600 {
       grid-column: span 1;
       padding-left: 0;
       justify-self: center;
     }
   }
+
   &__footer {
     flex: 0 0 auto;
   }

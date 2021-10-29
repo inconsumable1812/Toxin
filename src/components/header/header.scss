@@ -1,55 +1,65 @@
-@import '../../utils/vars.scss';
+@import '../../utils/vars';
 @import '../../utils/mixins';
-@import '../../components/button/button.scss';
+@import '../../components/button/button';
 
 .header {
   background: white;
   position: relative;
   padding: 0.9375rem 0;
   box-shadow: 0 0.625rem 1.25rem $color-dark-5;
+
   &__container {
     max-width: 1208px;
     margin: 0 auto;
     padding: 0 1.5rem;
   }
+
   &__navigation {
     display: grid;
     align-items: center;
     justify-content: space-between;
     z-index: 50;
     grid-template-areas: 'logo menuGroup';
+
     @include _992 {
       grid-template-areas:
         'logo logo'
         'menuGroup menuGroup';
     }
   }
+
   &__logo {
     grid-area: logo;
   }
+
   &__menuGroup {
     display: grid;
     grid-auto-flow: column;
     grid-area: menuGroup;
+
     @include _992 {
       display: none;
       grid-auto-flow: inherit;
       justify-content: center;
       width: 100%;
     }
+
     &_expanded {
       display: grid;
+
       @include _992 {
         display: grid;
       }
     }
   }
+
   &__menu {
     display: grid;
     grid-auto-flow: column;
     column-gap: 1.3rem;
     align-items: center;
     padding-right: 1.25rem;
+
     @include _992 {
       margin: 0 auto;
       display: block;
@@ -59,63 +69,76 @@
       border-bottom: 0.0625rem solid $color-dark-10;
     }
   }
+
   &__link {
     color: $color-dark-50;
     font-size: 0.875rem;
     line-height: 1.0625rem;
     text-decoration: none;
+
     &:hover {
       color: $color-purple;
     }
+
     @include _992 {
       text-align: start;
       display: block;
       line-height: 2rem;
     }
   }
+
   &__subMenu {
     position: relative;
     display: grid;
     grid-template-columns: max-content min-content;
     align-items: center;
+
     @include _992 {
       justify-content: start;
     }
   }
+
   &__subMenuIcon {
     cursor: pointer;
     color: $color-dark-50;
     user-select: none;
     transition: transform 0.25s ease;
+
     &_expanded {
       transform: rotate(180deg);
       transition: transform 0.25s ease;
     }
+
     &:hover {
       color: $color-purple;
     }
   }
+
   &__dropdown {
     display: none;
     position: absolute;
     flex-direction: column;
-    top: 25px;
+    top: 1.5625rem;
     background: white;
     z-index: 5;
     border: 0.0625rem solid $color-dark-10;
-    box-shadow: 0rem 0rem 0.0625rem 0.0625rem $color-dark-10;
+    box-shadow: 0 0 0.0625rem 0.0625rem $color-dark-10;
+
     &_expanded {
       display: flex;
     }
   }
+
   &__subLink {
     padding: 0.5rem 1rem;
     line-height: 2rem;
     border-bottom: 0.0625rem solid $color-dark-10;
+
     &:hover {
       color: $color-purple;
     }
   }
+
   &_bold {
     font-weight: bold;
   }
@@ -130,46 +153,54 @@
     border: none;
     color: $color-dark-50;
     user-select: none;
+
     &:hover {
       color: $color-purple;
     }
+
     @include _992 {
       display: block;
     }
   }
+
   &__userMenu {
     display: grid;
     grid-auto-flow: column;
     column-gap: 1.25rem;
     align-items: center;
+
     @include _992 {
       display: block;
-      // margin: 0 auto;
     }
+
     button {
       height: 2.125rem;
+
       @include _992 {
         display: block;
-        //margin: 0 auto;
         margin-bottom: 0.5rem;
       }
     }
   }
+
   &__userMenu_auth {
     padding-left: 1.25rem;
     height: 30px;
     border-left: 1px solid $color-dark-10;
+
     @include _992 {
       height: inherit;
       padding-left: 0;
       border-left: none;
     }
   }
+
   &__userName {
     font-size: 0.875rem;
     color: $color-dark-50;
     line-height: 1.0625rem;
     text-decoration: none;
+
     &:hover {
       color: $color-purple;
     }

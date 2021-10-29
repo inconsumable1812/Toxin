@@ -1,7 +1,6 @@
 @import '../../utils/vars';
 @import '../../utils/mixins';
-
-@import '../../components/likeButton/likeButton.scss';
+@import '../../components/likeButton/likeButton';
 
 .feedback {
   width: 100%;
@@ -13,37 +12,43 @@
   grid-template-columns: 3.125rem auto;
   column-gap: 0.5rem;
   row-gap: 0.65rem;
+
   &__img {
     grid-area: img;
     justify-self: center;
     align-self: center;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(0 0.25rem 0.25rem rgba(0, 0, 0, 0.25));
     border-radius: 2rem;
   }
+
   &__header {
     grid-area: header;
     align-self: center;
   }
+
   &__author-name {
-    font-family: 'Montserrat', Helvetica, sans-serif;
+    font-family: Montserrat, Helvetica, sans-serif;
     font-size: 0.875rem;
     font-weight: bold;
     line-height: 1.5rem;
     color: $color-dark-75;
   }
+
   &__date {
-    font-family: 'Montserrat', Helvetica, sans-serif;
+    font-family: Montserrat, Helvetica, sans-serif;
     font-size: 0.875rem;
     line-height: 1.5rem;
     color: $color-dark-75;
   }
+
   &__like-button {
     grid-area: button;
     justify-self: center;
   }
+
   &__text {
     grid-area: text;
-    font-family: 'Montserrat', Helvetica, sans-serif;
+    font-family: Montserrat, Helvetica, sans-serif;
     font-size: 0.875rem;
     line-height: 1.5rem;
     color: $color-dark-75;

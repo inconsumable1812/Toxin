@@ -1,23 +1,24 @@
 @import '../../utils/vars';
-@import '../../utils/font.scss';
-@import '../../utils/mixins.scss';
+@import '../../utils/font';
+@import '../../utils/mixins';
 
 .indexMenu {
-  $blockClass: &;
-  font-family: 'Montserrat', Arial, sans-serif;
+  $block-class: &;
+
+  font-family: Montserrat, Arial, sans-serif;
   list-style: none;
   line-height: 2.7rem;
   padding: 1rem;
 
   &_theme {
     &_purple {
-      #{$blockClass}__link {
+      #{$block-class}__link {
         color: $color-purple;
       }
     }
 
     &_green {
-      #{$blockClass}__link {
+      #{$block-class}__link {
         color: $color-green;
       }
     }

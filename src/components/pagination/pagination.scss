@@ -4,10 +4,12 @@
 
 .pagination {
   min-width: 23rem;
+
   .paginationjs {
-    font-family: 'Montserrat', Helvetica, sans-serif;
+    font-family: Montserrat, Helvetica, sans-serif;
     display: grid;
   }
+
   .paginationjs-nav {
     justify-self: start;
     margin-top: 0.1rem;
@@ -15,6 +17,7 @@
     font-size: 0.875rem;
     color: $color-dark-75;
   }
+
   .paginationjs-pages {
     align-items: center;
   }
@@ -30,27 +33,33 @@
       }
     }
   }
+
   .paginationjs-pages li {
     border: none;
+
     a {
       font-size: 0.75rem;
       color: $color-dark-50;
     }
   }
+
   .active {
     background: $grad-purple;
     border-radius: 50%;
     cursor: pointer;
   }
+
   .paginationjs .paginationjs-pages li:first-child,
   .paginationjs .paginationjs-pages li:first-child > a {
     border-radius: 50%;
   }
+
   .paginationjs-pages li.active > a {
     color: white;
     background: $grad-purple;
     border-radius: 50%;
   }
+
   .paginationjs-page,
   .paginationjs-ellipsis,
   .paginationjs-next,
@@ -62,17 +71,21 @@
     justify-content: center;
     align-items: center;
   }
+
   .paginationjs .paginationjs-pages li:last-child {
     border: none;
     border-radius: 50%;
   }
+
   .paginationjs .paginationjs-pages li.disabled > a {
     opacity: 1;
   }
+
   .paginationjs-next,
   .paginationjs-prev {
     background: $grad-green;
     border: none;
+
     &:hover {
       background: #eee;
     }
@@ -87,6 +100,7 @@
       color: white;
     }
   }
+
   .pagination__arrow-prev {
     &::before {
       top: 0.1875rem;
@@ -96,6 +110,7 @@
       color: white;
     }
   }
+
   .pagination__arrow-next,
   .pagination__arrow-prev {
     position: relative;
@@ -111,14 +126,16 @@
   .paginationjs .paginationjs-pages .paginationjs-prev > a {
     background: inherit;
     border-radius: 50%;
+
     &:focus-visible,
     &:focus {
       outline: none;
       background: #eee;
       height: 2.5rem;
       width: 2.5rem;
-      .pagination__arrow-next:before,
-      .pagination__arrow-prev:before {
+
+      .pagination__arrow-next::before,
+      .pagination__arrow-prev::before {
         top: 0.625rem;
       }
     }

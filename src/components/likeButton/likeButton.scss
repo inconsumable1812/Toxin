@@ -3,6 +3,7 @@
 
 .likeButton {
   display: inline-block;
+
   &__button {
     width: 2.5rem;
     height: 1.25rem;
@@ -12,18 +13,22 @@
     align-items: center;
     cursor: pointer;
     user-select: none;
+
     &_pressed {
       border: 0.0625rem solid $color-purple;
     }
+
     &:focus,
     &:hover {
       outline: 0.125rem solid $color-purple;
     }
   }
+
   &__icon {
     position: relative;
     height: 1.25rem;
     width: 1.25rem;
+
     &::before {
       top: 0.35rem;
       left: 0.25rem;
@@ -32,6 +37,7 @@
       color: $color-dark-25;
       font-size: 0.625rem;
     }
+
     &_pressed {
       &::before {
         top: 0.35rem;
@@ -43,9 +49,11 @@
       }
     }
   }
+
   &__count {
     font-size: 0.625rem;
     color: $color-dark-25;
+
     &_pressed {
       color: $color-purple;
     }

@@ -4,44 +4,32 @@
 .toggle {
   width: 100%;
   max-width: 16.25rem;
+
   @include _1200 {
     max-width: none;
   }
+
   &__header {
-    font-family: 'Montserrat', Helvetica, sans-serif;
+    font-family: Montserrat, Helvetica, sans-serif;
     font-size: 0.75rem;
     font-weight: bold;
     text-transform: uppercase;
     padding-bottom: 0.9rem;
     line-height: 0.9375rem;
   }
+
   &__list {
     list-style-type: none;
   }
+
   &__items {
     line-height: 1.5rem;
     font-size: 0.875rem;
-    font-family: 'Montserrat', Helvetica, sans-serif;
+    font-family: Montserrat, Helvetica, sans-serif;
     color: $color-dark-75;
     padding-bottom: 0.6rem;
   }
-  &__input {
-    appearance: none;
-    position: absolute;
-    &:checked + .toggle__checkbox::before {
-      transform: translateX(20px);
-      background: $grad-purple;
-      transition: transform 0.25s ease-in-out;
-    }
-    &:not(:checked) + .toggle__checkbox::before {
-      transform: translateX(0px);
-      transition: transform 0.25s ease-in-out;
-    }
-    &:focus + .toggle__checkbox,
-    &:hover + .toggle__checkbox {
-      box-shadow: 0 0.125rem 0.3125rem $color-dark-25;
-    }
-  }
+
   &__checkbox {
     position: absolute;
     height: 1.25rem;
@@ -49,6 +37,7 @@
     border: 0.0625rem solid $color-dark-25;
     border-radius: 0.625rem;
     margin-top: 0.125rem;
+
     &::before {
       position: absolute;
       content: '';
@@ -60,6 +49,28 @@
       background: $color-dark-25;
     }
   }
+
+  &__input {
+    appearance: none;
+    position: absolute;
+
+    &:checked + .toggle__checkbox::before {
+      transform: translateX(20px);
+      background: $grad-purple;
+      transition: transform 0.25s ease-in-out;
+    }
+
+    &:not(:checked) + .toggle__checkbox::before {
+      transform: translateX(0);
+      transition: transform 0.25s ease-in-out;
+    }
+
+    &:focus + .toggle__checkbox,
+    &:hover + .toggle__checkbox {
+      box-shadow: 0 0.125rem 0.3125rem $color-dark-25;
+    }
+  }
+
   &__caption {
     padding-left: 3rem;
   }

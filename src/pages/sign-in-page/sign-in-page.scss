@@ -15,10 +15,10 @@
       object-fit: cover;
       object-position: 50% 50%;
       width: 100%;
-      height: 700px;
+      height: 43.75rem;
 
       @include _480 {
-        height: 750px;
+        height: 46.875rem;
       }
     }
 
@@ -28,9 +28,9 @@
   }
 
   &__form {
-    padding: 162px 0;
+    padding: 10.125rem 0;
     margin: 0 auto;
-    max-width: 380px;
+    max-width: 23.75rem;
 
     .button_theme_white {
       padding: 0 1.1em 0 1.1rem;

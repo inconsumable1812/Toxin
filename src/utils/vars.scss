@@ -7,6 +7,7 @@ $screen-sm-max: 991px;
 $screen-md-min: 992px;
 $screen-md-max: 1199px;
 $screen-lg-min: 1200px;
+
 // Colors and gradients
 $color-purple: #bc9cff;
 $color-green: #6fcf97;
@@ -16,7 +17,6 @@ $color-dark-25: #1f204140;
 $color-dark-50: #1f204180;
 $color-dark-75: #1f2041bf;
 $color-dark-100: #1f2041;
-
 $grad-purple: linear-gradient(180deg, $color-purple, #8ba4f9);
 $grad-purple-25: linear-gradient(
   180deg,

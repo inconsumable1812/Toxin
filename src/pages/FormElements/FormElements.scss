@@ -1,41 +1,46 @@
-@import '../../utils/main.scss';
-@import '../../utils/mixins.scss';
-@import '../../components/input/input.scss';
-@import '../../components/dropdown/dropdown.scss';
-@import '../../components/dateDropdown/dateDropdown.scss';
-@import '../../components/expandableCheckboxList/expandableCheckboxList.scss';
-@import '../../components/checkbox/checkbox.scss';
-@import '../../components/radioButton/radioButton.scss';
-@import '../../components/toggle/toggle.scss';
-@import '../../components/likeButton/likeButton.scss';
-@import '../../components/rateButton/rateButton.scss';
-@import '../../components/rangeSlider/rangeSlider.scss';
-@import '../../components/button/button.scss';
-@import '../../components/pagination/pagination.scss';
-@import '../../components/richCheckbox/richCheckbox.scss';
-@import '../../components/bulletList/bulletList.scss';
-@import '../../components/info/info.scss';
-@import '../../components/feedback/feedback.scss';
+@import '../../utils/main';
+@import '../../utils/mixins';
+@import '../../components/input/input';
+@import '../../components/dropdown/dropdown';
+@import '../../components/dateDropdown/dateDropdown';
+@import '../../components/expandableCheckboxList/expandableCheckboxList';
+@import '../../components/checkbox/checkbox';
+@import '../../components/radioButton/radioButton';
+@import '../../components/toggle/toggle';
+@import '../../components/likeButton/likeButton';
+@import '../../components/rateButton/rateButton';
+@import '../../components/rangeSlider/rangeSlider';
+@import '../../components/button/button';
+@import '../../components/pagination/pagination';
+@import '../../components/richCheckbox/richCheckbox';
+@import '../../components/bulletList/bulletList';
+@import '../../components/info/info';
+@import '../../components/feedback/feedback';
 
 .formElements {
   overflow: hidden;
+
   &__logo {
-    margin: 1.875rem auto 4.1rem auto;
+    margin: 1.875rem auto 4.1rem;
     width: 80%;
   }
+
   &__main {
     max-width: 1208px;
     margin: 0 auto;
     padding: 0 1.5rem;
   }
+
   &__section-first {
     display: grid;
     grid-template-columns: 27.59% 10.86% 22.45% 11.38% 27.75%;
     margin-bottom: 5.8rem;
+
     @include _1200 {
       grid-template-columns: 1fr 1fr 1fr;
       grid-gap: 2.5rem;
     }
+
     @include _768 {
       grid-template-columns: repeat(1, 1fr);
     }
@@ -45,67 +50,84 @@
         display: none;
       }
     }
+
     .formElements__section-column-start {
       .formElements__input-default {
         margin-bottom: 1.3rem;
       }
+
       .formElements__input-hover {
         margin-bottom: 1.3rem;
       }
+
       .formElements__input-dropdown {
         margin-bottom: 1.4rem;
       }
+
       .formElements__input-email {
         margin-bottom: 2.6rem;
       }
+
       .formElements__dropdown-double {
         margin-bottom: 2.6rem;
       }
+
       .formElements__dropdown-single {
         margin-bottom: 2.6rem;
       }
+
       .formElements__input-with-button {
         max-width: 16.625rem;
+
         @include _1200 {
           max-width: none;
         }
       }
     }
+
     .formElements__section-column-central {
       padding-left: 0.1rem;
+
       .formElements__checkbox {
         margin-top: 0.2rem;
         margin-bottom: 1.9rem;
       }
+
       .formElements__radioButton {
         margin-bottom: 2.75rem;
       }
+
       .formElements__toggle {
         margin-bottom: 2.1rem;
       }
+
       .formElements__likeButtons {
         margin-bottom: 2.3rem;
+
         .formElements__likeButtons_title {
-          font-family: 'Montserrat', Helvetica, sans-serif;
+          font-family: Montserrat, Helvetica, sans-serif;
           font-size: 0.75rem;
           color: $color-dark-100;
           font-weight: bold;
           text-transform: uppercase;
           margin-bottom: 1rem;
         }
+
         .likeButton {
           margin-right: 0.4rem;
         }
       }
+
       .formElements__rateButtons {
         .formElements__rateButtons_title {
-          font-family: 'Montserrat', Helvetica, sans-serif;
+          font-family: Montserrat, Helvetica, sans-serif;
           font-size: 0.75rem;
           color: $color-dark-100;
           font-weight: bold;
           text-transform: uppercase;
           margin-bottom: 1.1rem;
         }
+
         .formElements__rateButtons-group {
           display: grid;
           grid-template-columns: repeat(auto-fill, 7.5rem);
@@ -113,57 +135,69 @@
         }
       }
     }
+
     .formElements__section-column-end {
       margin-left: 0.15rem;
+
       .formElements__rangeSlider {
         margin-bottom: 2.6rem;
       }
+
       .formElements__buttons {
         margin-bottom: 1.5rem;
+
         .formElements__buttonsTitle {
-          font-family: 'Montserrat', Helvetica, sans-serif;
+          font-family: Montserrat, Helvetica, sans-serif;
           font-size: 0.75rem;
           color: $color-dark-100;
           text-transform: uppercase;
           font-weight: bold;
           margin-bottom: 1.1rem;
         }
+
         .formElements__buttons_row_first {
           display: grid;
           grid-template-columns: repeat(auto-fill, 6.1875rem);
           column-gap: 1.25rem;
           margin-bottom: 1.9rem;
+
           .button_theme_purple {
             .button__text {
               letter-spacing: -0.5px;
             }
           }
         }
+
         .formElements__buttons_row_second {
           display: grid;
           grid-template-columns: repeat(auto-fill, 6.1875rem);
           column-gap: 1.25rem;
           margin-bottom: 1.9rem;
+
           .button_theme_white {
             .button__text {
               letter-spacing: -0.5px;
             }
           }
         }
+
         .formElements__buttons_row_third {
           display: grid;
           grid-template-columns: repeat(auto-fill, 3.8125rem);
           column-gap: 1.3rem;
           margin-bottom: 1.9rem;
         }
+
         .formElements__buttons_row_fourth {
           margin-bottom: 2.5rem;
         }
       }
+
       .formElements__pagination {
         max-width: 16.625rem;
+
         .formElements__paginationTitle {
-          font-family: 'Montserrat', Helvetica, sans-serif;
+          font-family: Montserrat, Helvetica, sans-serif;
           font-size: 0.75rem;
           color: $color-dark-100;
           text-transform: uppercase;
@@ -173,76 +207,94 @@
       }
     }
   }
+
   &__section-second {
     display: grid;
     grid-template-columns: 22.93% 15.6% 27.59% 6.2% 27.59%;
     margin-bottom: 10.7rem;
+
     @include _1200 {
       grid-template-columns: 1fr 1fr 1fr;
       grid-gap: 2.5rem;
     }
+
     @include _768 {
       grid-template-columns: repeat(1, 1fr);
     }
+
     .formElements__section-column-gap {
       @include _1200 {
         display: none;
       }
     }
+
     .formElements__section-column-start {
       @include _768 {
         margin-bottom: 5.5rem;
       }
+
       .formElements__dropdownRooms {
         margin-bottom: 1.3rem;
       }
     }
+
     .formElements__section-column-central {
       @include _768 {
         margin-bottom: 8rem;
       }
     }
+
     .formElements__section-column-end {
       @include _768 {
         margin-bottom: 1rem;
       }
     }
   }
+
   &__section-third {
     display: grid;
     grid-template-columns: 23.02% 15.52% 22.93% 10.86% 25.17%;
     margin-bottom: 0.7rem;
+
     @include _1200 {
       grid-template-columns: 1fr 1fr 1fr;
       grid-gap: 2.5rem;
     }
+
     @include _768 {
       grid-template-columns: repeat(1, 1fr);
     }
+
     .formElements__section-column-gap {
       @include _1200 {
         display: none;
       }
     }
+
     .formElements__section-column-start {
       .formElements__expandableCheckbox {
         margin-bottom: 2.8rem;
       }
     }
+
     .formElements__section-column-central {
       margin-top: 0.1rem;
+
       .formElements__richCheckbox {
         .richCheckbox__item:first-child {
           padding-right: 2rem;
         }
+
         .richCheckbox__item:nth-child(2) {
           padding-right: 0.5rem;
         }
       }
     }
+
     .formElements__section-column-end {
       margin-top: 0.12rem;
       margin-left: 0.06rem;
+
       .formElements__bulletList {
         .bulletList__list {
           padding-right: 1.8rem;
@@ -250,25 +302,27 @@
       }
     }
   }
+
   &__section-fourth {
     display: grid;
     grid-template-columns: 25.09% 13.45% 61.29%;
     padding-bottom: 8.25rem;
+
     @include _1200 {
       grid-template-columns: auto auto;
       grid-gap: 2.5rem;
     }
+
     @include _768 {
       grid-template-columns: repeat(1, 1fr);
     }
+
     .formElements__section-column-gap {
       @include _1200 {
         display: none;
       }
     }
-    /*.formElements__section-column-start {
-      //margin-top: 0.1rem;
-    }*/
+
     .formElements__section-column-central {
       margin-top: 1.73rem;
     }

@@ -4,20 +4,24 @@
 .bulletList {
   width: 100%;
   max-width: 18.25rem;
+
   @include _1200 {
     max-width: none;
   }
+
   &__header {
-    font-family: 'Montserrat', Helvetica, sans-serif;
+    font-family: Montserrat, Helvetica, sans-serif;
     font-size: 0.75rem;
     font-weight: bold;
     text-transform: uppercase;
     line-height: 0.9375rem;
     margin-bottom: 0.83rem;
   }
+
   &__list {
     list-style: none;
   }
+
   &__item {
     padding-bottom: 0.675rem;
     display: grid;
@@ -25,6 +29,7 @@
     grid-template-columns: 0.625rem auto;
     column-gap: 0.6rem;
   }
+
   &__icon {
     margin-top: 0.4rem;
     grid-area: icon;
@@ -34,11 +39,12 @@
     align-self: start;
     border-radius: 50%;
   }
+
   &__text {
     grid-area: text;
     align-self: center;
     justify-self: start;
-    font-family: 'Montserrat', Helvetica, sans-serif;
+    font-family: Montserrat, Helvetica, sans-serif;
     font-size: 0.875rem;
     line-height: 1.5rem;
   }

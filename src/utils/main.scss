@@ -1,20 +1,22 @@
-@import './vars.scss';
-@import './font.scss';
+@import './vars';
+@import './font';
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
+
 html {
   font-size: 16px;
-  font-family: 'Montserrat', Helvetica, sans-serif;
+  font-family: Montserrat, Helvetica, sans-serif;
   height: 100%;
 }
 
 body {
   height: 100%;
 }
+
 .body_theme_gray {
   background: #e5e5e5;
 }
@@ -23,7 +25,7 @@ h1,
 h2,
 h3 {
   color: $color-dark-100;
-  font-family: 'Montserrat', Helvetica, sans-serif;
+  font-family: Montserrat, Helvetica, sans-serif;
   font-weight: bold;
 }
 
@@ -31,6 +33,7 @@ h1 {
   font-size: 1.5rem;
   line-height: 1.8125rem;
 }
+
 h2 {
   font-size: 1.1875rem;
   line-height: 1.5rem;

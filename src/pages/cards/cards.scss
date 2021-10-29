@@ -1,17 +1,19 @@
-@import '../../utils/main.scss';
+@import '../../utils/main';
 @import '../../utils/mixins';
-@import '../../components/roomSearch/roomSearch.scss';
-@import '../../components/registrationForm/registrationForm.scss';
-@import '../../components/bookingForm/bookingForm.scss';
-@import '../../components/loginForm/loginForm.scss';
-@import '../../components/roomSketch/roomSketch.scss';
+@import '../../components/roomSearch/roomSearch';
+@import '../../components/registrationForm/registrationForm';
+@import '../../components/bookingForm/bookingForm';
+@import '../../components/loginForm/loginForm';
+@import '../../components/roomSketch/roomSketch';
 
 .cards {
   overflow: hidden;
+
   &__logo {
-    margin: 1.875rem auto 4.5rem auto;
+    margin: 1.875rem auto 4.5rem;
     width: 80%;
   }
+
   &__main {
     display: grid;
     max-width: 1208px;
@@ -19,33 +21,41 @@
     padding: 0 1.5rem;
     grid-template-columns: 1.1875fr 1.1875fr 1fr;
     column-gap: 2.5rem;
+
     @include _1200 {
       grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
       justify-items: center;
     }
   }
+
   &__grid-column_first {
     max-width: 23.75rem;
+
     .button_theme_white {
       padding: 0 1.9em 0 1.5rem;
     }
   }
+
   &__card {
     margin-bottom: 2.5rem;
   }
+
   &__grid-column_second {
     .button_theme_white {
       padding: 0 1.1rem 0 1rem;
     }
   }
+
   &__grid-column_third {
     .dateDropdown__group_double {
       display: none;
     }
+
     .cards__card {
       &:nth-child(2) {
         max-width: 16.875rem;
       }
+
       &:nth-child(3) {
         max-width: 16.875rem;
       }
