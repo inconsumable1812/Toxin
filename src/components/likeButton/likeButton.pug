@@ -1,14 +1,10 @@
 mixin likeButton(options)
   - const {count, isPressed} = options || {}
 
-  - var buttonClass = 'likeButton__button'
-  - buttonClass += isPressed ? ' likeButton__button_pressed' : ''
-  - var iconClass = 'likeButton__icon material-icons'
-  - iconClass += isPressed ? ' likeButton__icon_pressed' : ''
-  - var countClass = 'likeButton__count'
-  - countClass += isPressed ? ' likeButton__count_pressed' : ''
+  - let buttonClass = 'likeButton'
+  - buttonClass += isPressed ? ' likeButton_pressed' : ''
 
-  .likeButton
-    div(class = buttonClass, tabindex="0")
-      span(class= iconClass) 
-      span(class = countClass)= count
+  div(class = buttonClass + ' js-likeButton')
+    div(class = 'likeButton__button', tabindex="0")
+      span(class= 'likeButton__icon material-icons') 
+      span(class = 'likeButton__count')= count

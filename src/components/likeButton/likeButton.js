@@ -1,23 +1,27 @@
-const likeButtons = document.querySelectorAll('.likeButton')
+const PRESSED_CLASS = 'likeButton_pressed'
 
-for (const likeButton of likeButtons) {
-  const button = likeButton.querySelector('.likeButton__button')
-  const icon = likeButton.querySelector('.likeButton__icon')
-  const count = likeButton.querySelector('.likeButton__count')
-  let countInt = +count.innerHTML
+export class LikeButton {
+  constructor(button) {
+    this.count = null
+    this.bindEventListeners(button)
+  }
 
-  button.addEventListener('click', () => {
-    if (button.classList.contains('likeButton__button_pressed')) {
-      button.classList.remove('likeButton__button_pressed')
-      icon.classList.remove('likeButton__icon_pressed')
-      count.classList.remove('likeButton__count_pressed')
-      countInt -= 1
+  bindEventListeners(button) {
+    button.addEventListener('click', this.buttonClick)
+  }
+
+  buttonClick(event) {
+    const buttonNode = event.currentTarget
+    const countNode = buttonNode.querySelector('.likeButton__count')
+    this.count = +countNode.textContent
+
+    if (buttonNode.classList.contains(PRESSED_CLASS)) {
+      buttonNode.classList.remove('likeButton_pressed')
+      this.count -= 1
     } else {
-      button.classList.add('likeButton__button_pressed')
-      icon.classList.add('likeButton__icon_pressed')
-      count.classList.add('likeButton__count_pressed')
-      countInt += 1
+      buttonNode.classList.add('likeButton_pressed')
+      this.count += 1
     }
-    count.innerHTML = `${countInt}`
-  })
+    countNode.textContent = this.count
+  }
 }

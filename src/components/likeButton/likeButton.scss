@@ -14,10 +14,6 @@
     cursor: pointer;
     user-select: none;
 
-    &_pressed {
-      border: 0.0625rem solid $color-purple;
-    }
-
     &:focus,
     &:hover {
       outline: 0.125rem solid $color-purple;
@@ -37,8 +33,19 @@
       color: $color-dark-25;
       font-size: 0.625rem;
     }
+  }
 
-    &_pressed {
+  &__count {
+    font-size: 0.625rem;
+    color: $color-dark-25;
+  }
+
+  &_pressed {
+    .likeButton__button {
+      border: 0.0625rem solid $color-purple;
+    }
+
+    .likeButton__icon {
       &::before {
         top: 0.35rem;
         left: 0.25rem;
@@ -48,14 +55,11 @@
         font-size: 0.625rem;
       }
     }
-  }
 
-  &__count {
-    font-size: 0.625rem;
-    color: $color-dark-25;
-
-    &_pressed {
-      color: $color-purple;
+    .likeButton__count {
+      &_pressed {
+        color: $color-purple;
+      }
     }
   }
 }
