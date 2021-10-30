@@ -1,6 +1,6 @@
 const PRESSED_CLASS = 'likeButton_pressed'
 
-export class LikeButton {
+class LikeButton {
   constructor(button) {
     this.count = null
     this.bindEventListeners(button)
@@ -25,3 +25,6 @@ export class LikeButton {
     countNode.textContent = this.count
   }
 }
+
+const buttons = document.querySelectorAll('.js-likeButton')
+buttons.forEach((button) => new LikeButton(button))

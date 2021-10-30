@@ -1,20 +1,31 @@
-const expandableCheckboxLists = document.querySelectorAll('.expandableCheckboxList')
-
-for (const expandableCheckboxList of expandableCheckboxLists) {
-  const CheckboxList = expandableCheckboxList.querySelector(
-    '.expandableCheckboxList__list'
-  )
-  const button = expandableCheckboxList.querySelector(
-    '.expandableCheckboxList__toggle-button'
-  )
-
-  expandableCheckboxList.addEventListener('click', () => {
-    if (CheckboxList.classList.contains('expandableCheckboxList__list_expanded')) {
-      CheckboxList.classList.remove('expandableCheckboxList__list_expanded')
-      button.classList.remove('expandableCheckboxList__toggle-button_expanded')
-    } else {
-      CheckboxList.classList.add('expandableCheckboxList__list_expanded')
-      button.classList.add('expandableCheckboxList__toggle-button_expanded')
-    }
-  })
+function toggle(isExpanded, list) {
+  if (isExpanded) {
+    return list.classList.remove('expandableCheckboxList_expanded')
+  }
+  return list.classList.add('expandableCheckboxList_expanded')
 }
+class ExpandableCheckboxLists {
+  constructor(checkbox) {
+    this.checkbox = checkbox
+    this.isExpanded = this.checkbox.classList.contains('expandableCheckboxList_expanded')
+
+    this.bindEventListeners()
+  }
+
+  CheckExpanded() {
+    this.isExpanded = this.checkbox.classList.contains('expandableCheckboxList_expanded')
+  }
+
+  bindEventListeners() {
+    const header = this.checkbox.querySelector('.js-expandableCheckboxList__header')
+    header.addEventListener('click', this.toggleCallback.bind(this))
+  }
+
+  toggleCallback() {
+    toggle(this.isExpanded, this.checkbox)
+    this.CheckExpanded()
+  }
+}
+
+const expandableCheckboxLists = document.querySelectorAll('.js-expandableCheckboxList')
+expandableCheckboxLists.forEach((list) => new ExpandableCheckboxLists(list))

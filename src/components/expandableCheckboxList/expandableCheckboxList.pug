@@ -1,13 +1,13 @@
 mixin expandableCheckboxList(options)
   - const {isExpanded, title, rows =[] } = options || {}
 
-  - var listClass = 'expandableCheckboxList__list'
-  - listClass += isExpanded ? ' expandableCheckboxList__list_expanded': ''
-  - var buttonClass = 'expandableCheckboxList__toggle-button'
-  - buttonClass += isExpanded ? ' expandableCheckboxList__toggle-button_expanded' : ''
+  - let mainClass = 'expandableCheckboxList js-expandableCheckboxList'
+  - mainClass += isExpanded ? ' expandableCheckboxList_expanded' : ''
+  - const listClass = 'expandableCheckboxList__list'
+  - const buttonClass = 'expandableCheckboxList__toggle-button'
 
-  div.expandableCheckboxList
-    div.expandableCheckboxList__header
+  div(class= mainClass)
+    div.expandableCheckboxList__header.js-expandableCheckboxList__header
       span.expandableCheckboxList__title=title
       button(class = buttonClass, type='button').material-icons
     ul(class = listClass)

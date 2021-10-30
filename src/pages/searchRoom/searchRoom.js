@@ -1,13 +1,18 @@
 import './searchRoom.scss'
-import '../../components/dropdown/dropdown'
 import '../../components/dateDropdown/dateDropdown'
 import '../../components/expandableCheckboxList/expandableCheckboxList'
 import '../../components/rangeSlider/rangeSlider'
 import '../../components/pagination/pagination'
 import '../../components/imageSlider/imageSlider'
 import '../../components/header/header'
+import { Dropdown } from '../../components/dropdown/dropdown'
 
-const openButton = document.querySelector('.searchRoom__button-open').querySelector('.button')
+const Dropdowns = document.querySelectorAll('.js-dropdown')
+Dropdowns.forEach((dropdown) => new Dropdown(dropdown))
+
+const openButton = document
+  .querySelector('.searchRoom__button-open')
+  .querySelector('.button')
 const closeButton = document.querySelector('.searchRoom__button-close')
 const filter = document.querySelector('.searchRoom__filter')
 

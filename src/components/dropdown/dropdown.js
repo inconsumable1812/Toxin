@@ -33,6 +33,9 @@ export class Dropdown {
     this.countOfСhildren = null
     this.countOfBaby = null
     this.isTypeGuest = this.dropdownTypeIsGuest()
+    this.applyButton = null
+    this.clearButton = null
+    this.input = null
 
     this.init()
   }
@@ -75,8 +78,10 @@ export class Dropdown {
   }
 
   init() {
+    this.input = this.dropdown.querySelector('.js-dropdown__input')
     if (this.isTypeGuest) {
-      const clearButton = this.dropdown.querySelector('.js-dropdown__clear-buttons')
+      this.clearButton = this.dropdown.querySelector('.js-dropdown__clear-buttons')
+      this.applyButton = this.dropdown.querySelector('.js-dropdown__apply-buttons')
       this.initCountOfAdult()
       this.initCountOfСhildren()
       this.initCountOfBaby()
@@ -84,14 +89,13 @@ export class Dropdown {
         this.countOfAdult,
         this.countOfСhildren,
         this.countOfBaby,
-        clearButton
+        this.clearButton
       )
     } else {
       this.initCountOfBedrooms()
       this.initCountOfBeds()
       this.initCountOfBathrooms()
-      const inputContent = this.dropdown.querySelector('.js-dropdown__input')
-      inputContent.placeholder = this.sendingRoomsToInput()
+      this.input.placeholder = this.sendingRoomsToInput()
     }
 
     this.bindEventListeners()
@@ -105,9 +109,6 @@ export class Dropdown {
       '.js-dropdown__counter-buttons_type_plus'
     )
     const buttonsForExpand = this.dropdown.querySelector('.js-dropdown__button')
-    const inputForExpand = this.dropdown.querySelector('.js-dropdown__input')
-    const applyButton = this.dropdown.querySelector('.js-dropdown__apply-buttons')
-    const clearButton = this.dropdown.querySelector('.js-dropdown__clear-buttons')
 
     minusButtons.forEach((button) => {
       button.addEventListener('click', this.minusButtonCallback.bind(this))
@@ -118,13 +119,13 @@ export class Dropdown {
     })
 
     buttonsForExpand.addEventListener('click', this.expandedCallback.bind(this))
-    inputForExpand.addEventListener('click', this.expandedCallback.bind(this))
+    this.input.addEventListener('click', this.expandedCallback.bind(this))
     document.addEventListener('click', callbackOnDocument)
-    if (applyButton) {
-      applyButton.addEventListener('click', this.applyButtonCallback.bind(this))
+    if (this.applyButton) {
+      this.applyButton.addEventListener('click', this.applyButtonCallback.bind(this))
     }
-    if (clearButton) {
-      clearButton.addEventListener('click', this.clearButtonCallback.bind(this))
+    if (this.clearButton) {
+      this.clearButton.addEventListener('click', this.clearButtonCallback.bind(this))
     }
   }
 
@@ -138,8 +139,6 @@ export class Dropdown {
     const itemNameNode = event.target.closest('.js-dropdown__list-item')
     const button = itemNameNode.querySelector('.js-dropdown__counter-buttons_type_minus')
     const itemCount = itemNameNode.querySelector('.js-dropdown__counter')
-    const inputContent = this.dropdown.querySelector('.js-dropdown__input')
-    const clearButton = this.dropdown.querySelector('.js-dropdown__clear-buttons')
 
     if (this.isTypeGuest) {
       if (itemNameNode.classList.contains('js-dropdown__list-item_adult')) {
@@ -159,7 +158,7 @@ export class Dropdown {
         this.countOfAdult,
         this.countOfСhildren,
         this.countOfBaby,
-        clearButton
+        this.clearButton
       )
     } else {
       if (itemNameNode.classList.contains('js-dropdown__list-item_bedroom')) {
@@ -175,7 +174,7 @@ export class Dropdown {
         itemCount.textContent = this.countOfBathrooms
         disabledMinusButtonIfLessUnit(this.countOfBathrooms, button)
       }
-      inputContent.placeholder = this.sendingRoomsToInput()
+      this.input.placeholder = this.sendingRoomsToInput()
     }
   }
 
@@ -185,8 +184,6 @@ export class Dropdown {
       '.js-dropdown__counter-buttons_type_minus'
     )
     const itemCount = itemNameNode.querySelector('.js-dropdown__counter')
-    const inputContent = this.dropdown.querySelector('.js-dropdown__input')
-    const clearButton = this.dropdown.querySelector('.js-dropdown__clear-buttons')
 
     if (this.isTypeGuest) {
       if (itemNameNode.classList.contains('js-dropdown__list-item_adult')) {
@@ -206,7 +203,7 @@ export class Dropdown {
         this.countOfAdult,
         this.countOfСhildren,
         this.countOfBaby,
-        clearButton
+        this.clearButton
       )
     } else {
       if (itemNameNode.classList.contains('js-dropdown__list-item_bedroom')) {
@@ -222,7 +219,7 @@ export class Dropdown {
         itemCount.textContent = this.countOfBathrooms
         enabledMinusButtonIfBiggerZero(this.countOfBathrooms, minusButton)
       }
-      inputContent.placeholder = this.sendingRoomsToInput()
+      this.input.placeholder = this.sendingRoomsToInput()
     }
   }
 
@@ -258,12 +255,12 @@ export class Dropdown {
 
   clearButtonCallback() {
     const itemCounts = this.dropdown.querySelectorAll('.js-dropdown__counter')
-    const inputContent = this.dropdown.querySelector('.js-dropdown__input')
     this.countOfAdult = 0
     this.countOfСhildren = 0
     this.countOfBaby = 0
     // eslint-disable-next-line
     itemCounts.forEach((itemCount) => (itemCount.textContent = '0'))
-    inputContent.placeholder = 'Сколько гостей'
+    this.input.placeholder = 'Сколько гостей'
+    this.clearButton.classList.add('dropdown__clear-buttons_hidden')
   }
 }
