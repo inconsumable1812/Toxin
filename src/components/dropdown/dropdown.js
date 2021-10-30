@@ -15,13 +15,13 @@ const BEDS = ['кровать', 'кровати', 'кроватей']
 const BATHROOMS = ['ванная комната', 'ванные комнаты', 'ванных комнат']
 const ADULT = ['гость', 'гостя', 'гостей']
 const BABY = ['младенец', 'младенца', 'младенцев']
-const lists = document.querySelectorAll('.js-dropdown__list')
+// const lists = document.querySelectorAll('.js-dropdown__list')
 
-function callbackOnDocument(event) {
-  if (!event.target.closest('.js-dropdown')) {
-    lists.forEach((list) => list.classList.remove('dropdown__list_expanded'))
-  }
-}
+// function callbackOnDocument(event) {
+//   if (!event.target.closest('.js-dropdown')) {
+//     lists.forEach((list) => list.classList.remove('dropdown__list_expanded'))
+//   }
+// }
 
 export class Dropdown {
   constructor(dropdown) {
@@ -36,6 +36,8 @@ export class Dropdown {
     this.applyButton = null
     this.clearButton = null
     this.input = null
+    this.box = null
+    this.list = null
 
     this.init()
   }
@@ -79,6 +81,8 @@ export class Dropdown {
 
   init() {
     this.input = this.dropdown.querySelector('.js-dropdown__input')
+    this.box = this.dropdown.querySelector('.js-dropdown__box')
+    this.list = this.dropdown.querySelector('.js-dropdown__list')
     if (this.isTypeGuest) {
       this.clearButton = this.dropdown.querySelector('.js-dropdown__clear-buttons')
       this.applyButton = this.dropdown.querySelector('.js-dropdown__apply-buttons')
@@ -108,7 +112,6 @@ export class Dropdown {
     const plusButtons = this.dropdown.querySelectorAll(
       '.js-dropdown__counter-buttons_type_plus'
     )
-    const buttonsForExpand = this.dropdown.querySelector('.js-dropdown__button')
 
     minusButtons.forEach((button) => {
       button.addEventListener('click', this.minusButtonCallback.bind(this))
@@ -118,9 +121,8 @@ export class Dropdown {
       button.addEventListener('click', this.plusButtonCallback.bind(this))
     })
 
-    buttonsForExpand.addEventListener('click', this.expandedCallback.bind(this))
-    this.input.addEventListener('click', this.expandedCallback.bind(this))
-    document.addEventListener('click', callbackOnDocument)
+    this.box.addEventListener('click', this.expandedCallback.bind(this))
+    document.addEventListener('click', this.callbackOnDocument.bind(this))
     if (this.applyButton) {
       this.applyButton.addEventListener('click', this.applyButtonCallback.bind(this))
     }
@@ -129,10 +131,24 @@ export class Dropdown {
     }
   }
 
-  expandedCallback() {
-    const list = this.dropdown.querySelector('.js-dropdown__list')
-    const listIsExpanded = list.classList.contains('dropdown__list_expanded')
-    toggle(listIsExpanded, list)
+  callbackOnDocument(event) {
+    const listIsExpanded = this.list.classList.contains('dropdown__list_expanded')
+    if (listIsExpanded) {
+      const lists = document.querySelectorAll('.js-dropdown__list')
+      if (!event.target.closest('.js-dropdown__box')) {
+        lists.forEach((list) => list.classList.remove('dropdown__list_expanded'))
+      }
+    }
+  }
+
+  expandedCallback(event) {
+    const target = event.target.closest('.js-dropdown__list')
+    const listIsExpanded = this.list.classList.contains('dropdown__list_expanded')
+    const lists = document.querySelectorAll('.js-dropdown__list')
+    lists.forEach((list) => list.classList.remove('dropdown__list_expanded'))
+    if (!target) {
+      toggle(listIsExpanded, this.list, target)
+    }
   }
 
   minusButtonCallback(event) {
@@ -249,8 +265,7 @@ export class Dropdown {
     } else {
       inputContent.placeholder = nameOfGuests
     }
-    const list = this.dropdown.querySelector('.js-dropdown__list')
-    list.classList.remove('dropdown__list_expanded')
+    this.list.classList.remove('dropdown__list_expanded')
   }
 
   clearButtonCallback() {

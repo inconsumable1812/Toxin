@@ -16,14 +16,17 @@ const openButton = document
 const closeButton = document.querySelector('.searchRoom__button-close')
 const filter = document.querySelector('.searchRoom__filter')
 
-openButton.addEventListener('click', () => {
+const openButtonCallback = () => {
   if (!filter.classList.contains('searchRoom__filter_expanded')) {
     filter.classList.add('searchRoom__filter_expanded')
   } else {
     filter.classList.remove('searchRoom__filter_expanded')
   }
-})
+}
+openButton.addEventListener('click', openButtonCallback)
 
-closeButton.addEventListener('click', () => {
+const closeButtonCallback = () => {
   filter.classList.remove('searchRoom__filter_expanded')
-})
+}
+
+closeButton.addEventListener('click', closeButtonCallback)

@@ -21,7 +21,7 @@ mixin dropdown(options)
       span.dropdown__title= title
     if hint
       span.dropdown__hint= hint
-    div.dropdown__box(class= 'dropdown__box_' + type)
+    div.dropdown__box(class= 'js-dropdown__box dropdown__box_' + type)
       input.dropdown__input(name = name, placeholder = placeholder, 
         readonly="readonly", class = 'js-dropdown__input dropdown__input_' + type)
       button.dropdown__button.js-dropdown__button.material-icons(type="button")
