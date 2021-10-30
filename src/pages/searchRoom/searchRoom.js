@@ -1,5 +1,5 @@
 import './searchRoom.scss'
-import '../../components/dateDropdown/dateDropdown'
+import { DateDropdown } from '../../components/dateDropdown/dateDropdown'
 import '../../components/expandableCheckboxList/expandableCheckboxList'
 import '../../components/rangeSlider/rangeSlider'
 import '../../components/pagination/pagination'
@@ -9,6 +9,9 @@ import { Dropdown } from '../../components/dropdown/dropdown'
 
 const Dropdowns = document.querySelectorAll('.js-dropdown')
 Dropdowns.forEach((dropdown) => new Dropdown(dropdown))
+
+const dateDropdowns = document.querySelectorAll('.js-dateDropdown')
+dateDropdowns.forEach((dateDropdown) => new DateDropdown(dateDropdown))
 
 const openButton = document
   .querySelector('.searchRoom__button-open')

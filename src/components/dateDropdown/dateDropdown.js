@@ -1,6 +1,15 @@
 import $ from 'jquery'
 import 'air-datepicker'
 
+function isClickBeyondBorderCalendar(event) {
+  return (
+    event.target.closest('.js-dateDropdown') === null &&
+    event.target.closest('.datepicker--cell') === null &&
+    event.target.closest('.datepicker--nav-action') === null &&
+    event.target.closest('.datepicker--nav-title') === null
+  )
+}
+
 export class DateDropdown {
   constructor(dropdown) {
     this.$dropdown = $(dropdown)
@@ -83,6 +92,7 @@ export class DateDropdown {
     this.$dropdownBoxes.each((_, dropdownBox) =>
       $(dropdownBox).on('click', this.toggleCallback.bind(this))
     )
+    document.addEventListener('click', this.callbackOnDocument.bind(this))
   }
 
   applyButtonCallback() {
@@ -90,6 +100,24 @@ export class DateDropdown {
   }
 
   toggleCallback() {
-    this.$datePicker.toggleClass('js-calendar_content_expanded')
+    const listIsExpanded = this.$datePicker.hasClass('js-calendar_content_expanded')
+    const lists = document.querySelectorAll('.js-calendar_content')
+    const array = [...lists].filter((list) => !$(list).hasClass('disabled'))
+    array.forEach((list) => list.classList.remove('js-calendar_content_expanded'))
+    if (listIsExpanded) {
+      this.$datePicker.removeClass('js-calendar_content_expanded')
+    } else {
+      this.$datePicker.addClass('js-calendar_content_expanded')
+    }
+  }
+
+  callbackOnDocument(event) {
+    const listIsExpanded = this.$datePicker.hasClass('js-calendar_content_expanded')
+    if (listIsExpanded) {
+      if (isClickBeyondBorderCalendar(event)) {
+        if (!this.$datePicker.hasClass('disabled'))
+          this.$datePicker.removeClass('js-calendar_content_expanded')
+      }
+    }
   }
 }

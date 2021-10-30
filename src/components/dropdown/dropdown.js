@@ -15,13 +15,6 @@ const BEDS = ['кровать', 'кровати', 'кроватей']
 const BATHROOMS = ['ванная комната', 'ванные комнаты', 'ванных комнат']
 const ADULT = ['гость', 'гостя', 'гостей']
 const BABY = ['младенец', 'младенца', 'младенцев']
-// const lists = document.querySelectorAll('.js-dropdown__list')
-
-// function callbackOnDocument(event) {
-//   if (!event.target.closest('.js-dropdown')) {
-//     lists.forEach((list) => list.classList.remove('dropdown__list_expanded'))
-//   }
-// }
 
 export class Dropdown {
   constructor(dropdown) {
@@ -135,7 +128,9 @@ export class Dropdown {
     const listIsExpanded = this.list.classList.contains('dropdown__list_expanded')
     if (listIsExpanded) {
       const lists = document.querySelectorAll('.js-dropdown__list')
-      if (!event.target.closest('.js-dropdown__box')) {
+      const currentBox = event.target.closest('.js-dropdown__box')
+      const dateDropdown = event.target.closest('.js-dateDropdown')
+      if (!currentBox || dateDropdown) {
         lists.forEach((list) => list.classList.remove('dropdown__list_expanded'))
       }
     }
@@ -145,8 +140,9 @@ export class Dropdown {
     const target = event.target.closest('.js-dropdown__list')
     const listIsExpanded = this.list.classList.contains('dropdown__list_expanded')
     const lists = document.querySelectorAll('.js-dropdown__list')
-    lists.forEach((list) => list.classList.remove('dropdown__list_expanded'))
+
     if (!target) {
+      lists.forEach((list) => list.classList.remove('dropdown__list_expanded'))
       toggle(listIsExpanded, this.list, target)
     }
   }

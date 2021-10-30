@@ -1,9 +1,12 @@
 import './cards.scss'
 import '../../components/roomSearch/roomSearch'
-// import '../../components/registrationForm/registrationForm'
-// import '../../components/bookingForm/bookingForm'
+import '../../components/registrationForm/registrationForm'
+import '../../components/bookingForm/bookingForm'
 import '../../components/imageSlider/imageSlider'
-import { Dropdown } from '../../components/dropdown/dropdown'
+import { DateDropdown } from '../../components/dateDropdown/dateDropdown'
 
-const Dropdowns = document.querySelectorAll('.js-dropdown')
-Dropdowns.forEach((dropdown) => new Dropdown(dropdown))
+const dateDropdowns = document.querySelectorAll('.js-dateDropdown')
+const arrayOfDateDropdowns = [...dateDropdowns]
+  .filter((dropdown) => !dropdown.closest('.js-bookingForm'))
+  .filter((dropdown) => !dropdown.closest('.js-roomSearch'))
+arrayOfDateDropdowns.forEach((dateDropdown) => new DateDropdown(dateDropdown))
