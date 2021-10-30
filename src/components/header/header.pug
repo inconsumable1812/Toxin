@@ -26,17 +26,17 @@ mixin header(options)
   - let classSubLink = 'header__link header__subLink'
   - let classUser = 'header__userMenu'
 
-  div.header
+  div.header.js-header
     .header__container
       nav.header__navigation 
         .header__logo
           +logo(true)
-        button.header__burger.material-icons= 'menu'
-        .header__menuGroup
+        button.header__burger.js-header__burger.material-icons= 'menu'
+        div.header__menuGroup.js-header__menuGroup
           ul.header__menu
             each link in menuLink
               - classLink = link.bold ? 'header__link header_bold' : 'header__link'
-              - classSubMenu = link.bold ? 'header__subMenu header_bold' : 'header__subMenu'
+              - classSubMenu = link.bold ? 'header__subMenu js-header__subMenu header_bold' : 'header__subMenu js-header__subMenu'
               if !link.subMenu
                 a(class = classLink, href = link.href)= link.name
               if link.subMenu
@@ -45,7 +45,7 @@ mixin header(options)
                   .header__dropdown 
                     each subLink in link.subMenu
                       a(class = classSubLink, href = subLink.href)= subLink.name
-                  span.header__subMenuIcon.material-icons= 'expand_more'
+                  span.header__subMenuIcon.js-header__subMenuIcon.material-icons= 'expand_more'
           if !auth
             - classUser += ' header__userMenu_notAuth'
             div(class = classUser)

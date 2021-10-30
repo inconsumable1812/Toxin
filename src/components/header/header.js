@@ -1,32 +1,61 @@
-const headers = document.querySelectorAll('.header')
+function subMenuCallback(event) {
+  const subMenu = event.target.closest('.js-header__subMenu')
+  if (subMenu.classList.contains('header__subMenu_expanded')) {
+    subMenu.classList.remove('header__subMenu_expanded')
+  } else {
+    subMenu.classList.add('header__subMenu_expanded')
+  }
+}
 
-for (const header of headers) {
-  const burger = header.querySelector('.header__burger')
-  const menuGroup = header.querySelector('.header__menuGroup')
-  const subMenus = header.querySelectorAll('.header__subMenu')
+export class Header {
+  constructor(header) {
+    this.header = header
+    this.burger = null
+    this.menuGroup = null
+    this.subMenus = null
 
-  for (const subMenu of subMenus) {
-    const subMenuGroup = subMenu.querySelector('.header__dropdown')
-    const subMenuIcon = subMenu.querySelector('.header__subMenuIcon')
-
-    subMenuIcon.addEventListener('click', () => {
-      if (!subMenuGroup.classList.contains('header__dropdown_expanded')) {
-        subMenuGroup.classList.add('header__dropdown_expanded')
-        subMenuIcon.classList.add('header__subMenuIcon_expanded')
-      } else {
-        subMenuGroup.classList.remove('header__dropdown_expanded')
-        subMenuIcon.classList.remove('header__subMenuIcon_expanded')
-      }
-    })
+    this.init()
   }
 
-  burger.addEventListener('click', () => {
-    if (!menuGroup.classList.contains('header__menuGroup_expanded')) {
-      menuGroup.classList.add('header__menuGroup_expanded')
-      burger.innerHTML = 'close'
+  findBurger() {
+    this.burger = this.header.querySelector('.js-header__burger')
+  }
+
+  findMenuGroup() {
+    this.menuGroup = this.header.querySelector('.js-header__menuGroup')
+  }
+
+  findSubMenus() {
+    this.subMenus = this.header.querySelectorAll('.js-header__subMenu')
+  }
+
+  init() {
+    this.findBurger()
+    this.findMenuGroup()
+    this.findSubMenus()
+
+    this.bindEventListeners()
+  }
+
+  bindEventListeners() {
+    this.subMenus.forEach((subMenu) => {
+      const subMenuIcon = subMenu.querySelector('.js-header__subMenuIcon')
+      subMenuIcon.addEventListener('click', subMenuCallback)
+    })
+
+    this.burger.addEventListener('click', this.burgerCallback.bind(this))
+  }
+
+  burgerCallback() {
+    if (this.menuGroup.classList.contains('header__menuGroup_expanded')) {
+      this.menuGroup.classList.remove('header__menuGroup_expanded')
+      this.burger.textContent = 'menu'
     } else {
-      menuGroup.classList.remove('header__menuGroup_expanded')
-      burger.innerHTML = 'menu'
+      this.menuGroup.classList.add('header__menuGroup_expanded')
+      this.burger.textContent = 'close'
     }
-  })
+  }
 }
+
+const headers = document.querySelectorAll('.js-header')
+headers.forEach((header) => new Header(header))
