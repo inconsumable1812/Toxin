@@ -1,70 +1,100 @@
-const sliders = document.querySelectorAll('.imageSlider')
+class ImageSlider {
+  constructor(slider) {
+    this.slider = slider
+    this.prev = null
+    this.next = null
+    this.slides = null
+    this.dots = null
+    this.index = 0
 
-for (const slider of sliders) {
-  const prev = slider.querySelector('.imageSlider__btn-prev')
-  const next = slider.querySelector('.imageSlider__btn-next')
-  const slides = slider.querySelectorAll('.imageSlider__slide')
-  const dots = slider.querySelectorAll('.imageSlider__dot')
-
-  let index = 0
-  let isOneStart = true
-
-  if (isOneStart) {
-    slides[index].classList.add('imageSlider__slide_active')
-    dots[index].classList.add('imageSlider__dot_active')
-    isOneStart = false
+    this.init()
   }
 
-  const activeSlide = (n) => {
-    for (const slide of slides) {
-      slide.classList.remove('imageSlider__slide_active')
+  findPrevButton() {
+    this.prev = this.slider.querySelector('.imageSlider__btn-prev')
+  }
+
+  findNextButton() {
+    this.next = this.slider.querySelector('.imageSlider__btn-next')
+  }
+
+  findSlides() {
+    this.slides = this.slider.querySelectorAll('.imageSlider__slide')
+  }
+
+  findDots() {
+    this.dots = this.slider.querySelectorAll('.imageSlider__dot')
+  }
+
+  init() {
+    this.findPrevButton()
+    this.findNextButton()
+    this.findSlides()
+    this.findDots()
+
+    this.initFirstSlide()
+    this.bindEventListeners()
+    this.isSetInterval()
+  }
+
+  initFirstSlide() {
+    this.slides[this.index].classList.add('imageSlider__slide_active')
+    this.dots[this.index].classList.add('imageSlider__dot_active')
+  }
+
+  initActiveSlide(index) {
+    this.slides.forEach((slide) => slide.classList.remove('imageSlider__slide_active'))
+    this.slides[index].classList.add('imageSlider__slide_active')
+  }
+
+  initActiveDot(index) {
+    this.dots.forEach((dot) => dot.classList.remove('imageSlider__dot_active'))
+    this.dots[index].classList.add('imageSlider__dot_active')
+  }
+
+  prepareCurrentSlide(index) {
+    this.initActiveSlide(index)
+    this.initActiveDot(index)
+  }
+
+  isSetInterval() {
+    if (this.slider.classList.contains('imageSlider__interval')) {
+      setInterval(this.nextButtonCallback.bind(this), 2500)
     }
-    slides[n].classList.add('imageSlider__slide_active')
   }
 
-  const activeDot = (n) => {
-    for (const dot of dots) {
-      dot.classList.remove('imageSlider__dot_active')
-    }
-    dots[n].classList.add('imageSlider__dot_active')
+  bindEventListeners() {
+    this.next.addEventListener('click', this.nextButtonCallback.bind(this))
+    this.prev.addEventListener('click', this.prevButtonCallback.bind(this))
+    this.dots.forEach((dot, index) =>
+      dot.addEventListener('click', this.dotCallback.bind(this, index))
+    )
   }
 
-  const prepareCurrentSlide = (ind) => {
-    activeSlide(ind)
-    activeDot(ind)
-  }
-
-  const nextSlide = () => {
-    if (index === slides.length - 1) {
-      index = 0
-      prepareCurrentSlide(index)
+  nextButtonCallback() {
+    if (this.index === this.slides.length - 1) {
+      this.index = 0
+      this.prepareCurrentSlide(this.index)
     } else {
-      index += 1
-      prepareCurrentSlide(index)
+      this.index += 1
+      this.prepareCurrentSlide(this.index)
     }
   }
 
-  const prevSlide = () => {
-    if (index === 0) {
-      index = slides.length - 1
-      prepareCurrentSlide(index)
+  prevButtonCallback() {
+    if (this.index === 0) {
+      this.index = this.slides.length - 1
+      this.prepareCurrentSlide(this.index)
     } else {
-      index -= 1
-      prepareCurrentSlide(index)
+      this.index -= 1
+      this.prepareCurrentSlide(this.index)
     }
   }
 
-  dots.forEach((item, indexDot) => {
-    item.addEventListener('click', () => {
-      index = indexDot
-      prepareCurrentSlide(index)
-    })
-  })
-
-  next.addEventListener('click', nextSlide)
-  prev.addEventListener('click', prevSlide)
-
-  if (slider.classList.contains('imageSlider__interval')) {
-    setInterval(nextSlide, 2500)
+  dotCallback(index) {
+    this.prepareCurrentSlide(index)
   }
 }
+
+const sliders = document.querySelectorAll('.imageSlider')
+sliders.forEach((slide) => new ImageSlider(slide))
