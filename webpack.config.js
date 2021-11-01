@@ -33,7 +33,7 @@ const [webpackPageEntries, htmlWebpackPageInstances] = createEntriesFromPageList
 
 const config = {
   entry: {
-    favicon: './src/favicons/favicons.js',
+    favicon: './src/assets/favicons/favicons.js',
     logo: './src/components/logo/logo.js',
     ...webpackPageEntries
   },
@@ -103,8 +103,8 @@ const config = {
       {
         test: /\.(png|gif|svg|jpe?g)$/,
         exclude: [
-          path.resolve(__dirname, './src/assets'),
-          path.resolve(__dirname, './src/favicons/')
+          path.resolve(__dirname, './src/assets/fonts'),
+          path.resolve(__dirname, './src/assets/favicons/')
         ],
         use: [
           {

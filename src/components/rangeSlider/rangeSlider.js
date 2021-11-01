@@ -65,7 +65,7 @@ class RangeSlider {
   updateCallback(values, handle) {
     let value = values[handle]
 
-    if (handle) {
+    if (handle === 1) {
       this.maxInput.value = `${Math.round(value).toLocaleString('ru-RU')}₽`
     } else {
       this.minInput.value = `${Math.round(value).toLocaleString('ru-RU')}₽`
