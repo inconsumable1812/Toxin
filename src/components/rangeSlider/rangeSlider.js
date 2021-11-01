@@ -1,39 +1,77 @@
 /* eslint-disable func-names */
 import noUiSlider from 'nouislider'
 
-const rangeSliders = document.querySelectorAll('.rangeSlider')
+class RangeSlider {
+  constructor(root) {
+    this.root = root
+    this.sliderContainer = null
+    this.minInput = null
+    this.maxInput = null
+    this.slider = null
 
-for (const rangeSlider of rangeSliders) {
-  const slider = rangeSlider.querySelector('.rangeSlider__slider')
-  const inputMin = rangeSlider.querySelector('.rangeSlider__input_min')
-  const inputMax = rangeSlider.querySelector('.rangeSlider__input_max')
-  const min = +inputMin.value
-  const max = +inputMax.value
+    this.init()
+  }
 
-  noUiSlider.create(slider, {
-    start: [5000, 10000],
-    connect: true,
-    range: {
-      min: min,
-      max: max
-    }
-  })
+  findSliderContainer() {
+    this.sliderContainer = this.root.querySelector('.rangeSlider__slider')
+  }
 
-  slider.noUiSlider.on('update', function (values, handle) {
-    var value = values[handle]
+  findMinInput() {
+    this.minInput = this.root.querySelector('.rangeSlider__input_min')
+  }
+
+  findMaxInput() {
+    this.maxInput = this.root.querySelector('.rangeSlider__input_max')
+  }
+
+  init() {
+    this.findSliderContainer()
+    this.findMinInput()
+    this.findMaxInput()
+
+    this.creatSlider()
+    this.bindEventListeners()
+  }
+
+  creatSlider() {
+    noUiSlider.create(this.sliderContainer, {
+      start: [5000, 10000],
+      connect: true,
+      range: {
+        min: +this.minInput.value,
+        max: +this.maxInput.value
+      }
+    })
+  }
+
+  bindEventListeners() {
+    this.sliderContainer.noUiSlider.on('update', this.updateCallback.bind(this))
+    this.minInput.addEventListener('change', this.minInputCallback.bind(this))
+    this.maxInput.addEventListener('change', this.maxInputCallback.bind(this))
+  }
+
+  minInputCallback() {
+    const arrayOfValue = this.minInput.value.split('')
+    const arrayOfValueNumber = arrayOfValue.filter((value) => value.match(/[0-9]/))
+    this.sliderContainer.noUiSlider.set([arrayOfValueNumber.join(''), null])
+  }
+
+  maxInputCallback() {
+    const arrayOfValue = this.maxInput.value.split('')
+    const arrayOfValueNumber = arrayOfValue.filter((value) => value.match(/[0-9]/))
+    this.sliderContainer.noUiSlider.set([null, arrayOfValueNumber.join('')])
+  }
+
+  updateCallback(values, handle) {
+    let value = values[handle]
 
     if (handle) {
-      inputMax.value = `${Math.round(value).toLocaleString('ru-RU')}₽`
+      this.maxInput.value = `${Math.round(value).toLocaleString('ru-RU')}₽`
     } else {
-      inputMin.value = `${Math.round(value).toLocaleString('ru-RU')}₽`
+      this.minInput.value = `${Math.round(value).toLocaleString('ru-RU')}₽`
     }
-  })
-
-  inputMin.addEventListener('change', function () {
-    slider.noUiSlider.set([this.value, null])
-  })
-
-  inputMax.addEventListener('change', function () {
-    slider.noUiSlider.set([null, this.value])
-  })
+  }
 }
+
+const rangeSliders = document.querySelectorAll('.rangeSlider')
+rangeSliders.forEach((slider) => new RangeSlider(slider))
