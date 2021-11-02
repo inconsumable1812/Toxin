@@ -1,1 +1,1 @@
-import '../../components/indexMenu/indexMenu.scss'
+import '../../components/indexMenu/indexMenu.scss';

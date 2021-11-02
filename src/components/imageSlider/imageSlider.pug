@@ -1,7 +1,7 @@
 mixin imageSlider (options)
   - const {isHovered, isInterval, rows = []} = options || {}
 
-  - let sliderClass = 'imageSlider'
+  - let sliderClass = 'imageSlider js-imageSlider'
   - sliderClass += isHovered ? " imageSlider__hovered" : ""
   - sliderClass += isInterval ? " imageSlider__interval" : ""
  
@@ -9,12 +9,12 @@ mixin imageSlider (options)
   div(class = sliderClass)
     .imageSlider__sliderWrapper 
       each row in rows
-        .imageSlider__slide
+        div.imageSlider__slide.js-imageSlider__slide
           img(src=row.src, alt=row.alt).imageSlider__img
-      div.imageSlider__btn-prev 
+      div.imageSlider__btn-prev.js-imageSlider__btn-prev
         span.imageSlider__arrow.material-icons= 'expand_more'
-      div.imageSlider__btn-next
+      div.imageSlider__btn-next.js-imageSlider__btn-next
         span.imageSlider__arrow.material-icons= 'expand_more'
       .imageSlider__dotWrapper 
         each row in rows
-          span.imageSlider__dot
+          span.imageSlider__dot.js-imageSlider__dot

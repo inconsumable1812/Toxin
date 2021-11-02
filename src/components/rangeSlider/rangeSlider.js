@@ -1,36 +1,36 @@
 /* eslint-disable func-names */
-import noUiSlider from 'nouislider'
+import noUiSlider from 'nouislider';
 
 class RangeSlider {
   constructor(root) {
-    this.root = root
-    this.sliderContainer = null
-    this.minInput = null
-    this.maxInput = null
-    this.slider = null
+    this.root = root;
+    this.sliderContainer = null;
+    this.minInput = null;
+    this.maxInput = null;
+    this.slider = null;
 
-    this.init()
+    this.init();
   }
 
   findSliderContainer() {
-    this.sliderContainer = this.root.querySelector('.rangeSlider__slider')
+    this.sliderContainer = this.root.querySelector('.rangeSlider__slider');
   }
 
   findMinInput() {
-    this.minInput = this.root.querySelector('.rangeSlider__input_min')
+    this.minInput = this.root.querySelector('.rangeSlider__input_min');
   }
 
   findMaxInput() {
-    this.maxInput = this.root.querySelector('.rangeSlider__input_max')
+    this.maxInput = this.root.querySelector('.rangeSlider__input_max');
   }
 
   init() {
-    this.findSliderContainer()
-    this.findMinInput()
-    this.findMaxInput()
+    this.findSliderContainer();
+    this.findMinInput();
+    this.findMaxInput();
 
-    this.creatSlider()
-    this.bindEventListeners()
+    this.creatSlider();
+    this.bindEventListeners();
   }
 
   creatSlider() {
@@ -41,37 +41,37 @@ class RangeSlider {
         min: +this.minInput.value,
         max: +this.maxInput.value
       }
-    })
+    });
   }
 
   bindEventListeners() {
-    this.sliderContainer.noUiSlider.on('update', this.updateCallback.bind(this))
-    this.minInput.addEventListener('change', this.minInputCallback.bind(this))
-    this.maxInput.addEventListener('change', this.maxInputCallback.bind(this))
+    this.sliderContainer.noUiSlider.on('update', this.updateCallback.bind(this));
+    this.minInput.addEventListener('change', this.minInputCallback.bind(this));
+    this.maxInput.addEventListener('change', this.maxInputCallback.bind(this));
   }
 
   minInputCallback() {
-    const arrayOfValue = this.minInput.value.split('')
-    const arrayOfValueNumber = arrayOfValue.filter((value) => value.match(/[0-9]/))
-    this.sliderContainer.noUiSlider.set([arrayOfValueNumber.join(''), null])
+    const arrayOfValue = this.minInput.value.split('');
+    const arrayOfValueNumber = arrayOfValue.filter((value) => value.match(/[0-9]/));
+    this.sliderContainer.noUiSlider.set([arrayOfValueNumber.join(''), null]);
   }
 
   maxInputCallback() {
-    const arrayOfValue = this.maxInput.value.split('')
-    const arrayOfValueNumber = arrayOfValue.filter((value) => value.match(/[0-9]/))
-    this.sliderContainer.noUiSlider.set([null, arrayOfValueNumber.join('')])
+    const arrayOfValue = this.maxInput.value.split('');
+    const arrayOfValueNumber = arrayOfValue.filter((value) => value.match(/[0-9]/));
+    this.sliderContainer.noUiSlider.set([null, arrayOfValueNumber.join('')]);
   }
 
   updateCallback(values, handle) {
-    let value = values[handle]
+    let value = values[handle];
 
     if (handle === 1) {
-      this.maxInput.value = `${Math.round(value).toLocaleString('ru-RU')}₽`
+      this.maxInput.value = `${Math.round(value).toLocaleString('ru-RU')}₽`;
     } else {
-      this.minInput.value = `${Math.round(value).toLocaleString('ru-RU')}₽`
+      this.minInput.value = `${Math.round(value).toLocaleString('ru-RU')}₽`;
     }
   }
 }
 
-const rangeSliders = document.querySelectorAll('.rangeSlider')
-rangeSliders.forEach((slider) => new RangeSlider(slider))
+const rangeSliders = document.querySelectorAll('.rangeSlider');
+rangeSliders.forEach((slider) => new RangeSlider(slider));

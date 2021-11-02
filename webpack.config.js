@@ -1,35 +1,35 @@
-const path = require('path')
-const fs = require('fs')
-const webpack = require('webpack')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const path = require('path');
+const fs = require('fs');
+const webpack = require('webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const devMode = process.env.NODE_ENV === 'development'
+const devMode = process.env.NODE_ENV === 'development';
 
-const pagesDir = './src/pages'
+const pagesDir = './src/pages';
 
 const createEntriesFromPageList = (pages) => {
-  const webpackPageEntries = {}
-  const htmlWebpackPageInstances = []
+  const webpackPageEntries = {};
+  const htmlWebpackPageInstances = [];
 
   pages.forEach((pageName) => {
-    webpackPageEntries[pageName] = `${pagesDir}/${pageName}/${pageName}.js`
+    webpackPageEntries[pageName] = `${pagesDir}/${pageName}/${pageName}.js`;
     htmlWebpackPageInstances.push(
       new HtmlWebpackPlugin({
         filename: `${pageName}.html`,
         template: `${pagesDir}/${pageName}/${pageName}.pug`,
         chunks: [pageName]
       })
-    )
-  })
+    );
+  });
 
-  return [webpackPageEntries, htmlWebpackPageInstances]
-}
+  return [webpackPageEntries, htmlWebpackPageInstances];
+};
 
 const [webpackPageEntries, htmlWebpackPageInstances] = createEntriesFromPageList(
   fs.readdirSync(pagesDir)
-)
+);
 
 const config = {
   entry: {
@@ -138,6 +138,6 @@ const config = {
     }),
     ...htmlWebpackPageInstances
   ]
-}
+};
 
-module.exports = config
+module.exports = config;

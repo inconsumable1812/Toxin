@@ -1,28 +1,28 @@
-import Chart from 'chart.js/auto'
+import Chart from 'chart.js/auto';
 
-let ctx = document.querySelector('.chart__item').getContext('2d')
-let gradientGreat = ctx.createLinearGradient(0, 0, 0, 135)
-let gradientGood = ctx.createLinearGradient(0, 0, 0, 130)
-let gradientAcceptable = ctx.createLinearGradient(0, 0, 0, 130)
-let gradientDisappoint = ctx.createLinearGradient(0, 0, 0, 135)
-let dataNumber = [0, 65, 65, 130]
+let ctx = document.querySelector('.chart__item').getContext('2d');
+let gradientGreat = ctx.createLinearGradient(0, 0, 0, 135);
+let gradientGood = ctx.createLinearGradient(0, 0, 0, 130);
+let gradientAcceptable = ctx.createLinearGradient(0, 0, 0, 130);
+let gradientDisappoint = ctx.createLinearGradient(0, 0, 0, 135);
+let dataNumber = [0, 65, 65, 130];
 
-let dataSum = 0
-const sumHTML = document.querySelector('.chart__number')
+let dataSum = 0;
+const sumHTML = document.querySelector('.chart__number');
 
 for (let i = 0; i < dataNumber.length; i += 1) {
-  dataSum += dataNumber[i]
+  dataSum += dataNumber[i];
 }
-sumHTML.innerHTML = dataSum
+sumHTML.innerHTML = dataSum;
 
-gradientGreat.addColorStop(0.2, 'rgba(255, 227, 156, 1)')
-gradientGreat.addColorStop(1, 'rgba(255, 186, 156, 1)')
-gradientGood.addColorStop(0.5, 'rgba(111, 207, 151, 1)')
-gradientGood.addColorStop(1, 'rgba(102, 210, 234, 1)')
-gradientAcceptable.addColorStop(0.5, 'rgba(188, 156, 255, 1)')
-gradientAcceptable.addColorStop(1, 'rgba(139, 164, 249, 1)')
-gradientDisappoint.addColorStop(0.5, 'rgba(144, 144, 144, 1)')
-gradientDisappoint.addColorStop(1, 'rgba(61, 73, 117, 1)')
+gradientGreat.addColorStop(0.2, 'rgba(255, 227, 156, 1)');
+gradientGreat.addColorStop(1, 'rgba(255, 186, 156, 1)');
+gradientGood.addColorStop(0.5, 'rgba(111, 207, 151, 1)');
+gradientGood.addColorStop(1, 'rgba(102, 210, 234, 1)');
+gradientAcceptable.addColorStop(0.5, 'rgba(188, 156, 255, 1)');
+gradientAcceptable.addColorStop(1, 'rgba(139, 164, 249, 1)');
+gradientDisappoint.addColorStop(0.5, 'rgba(144, 144, 144, 1)');
+gradientDisappoint.addColorStop(1, 'rgba(61, 73, 117, 1)');
 
 let myChart = new Chart(ctx, {
   type: 'doughnut',
@@ -79,9 +79,9 @@ let myChart = new Chart(ctx, {
       }
     }
   }
-})
-myChart.canvas.parentNode.style.height = '121px'
+});
+myChart.canvas.parentNode.style.height = '121px';
 
 setTimeout(() => {
-  myChart.canvas.parentNode.style.width = '345px'
-}, 100)
+  myChart.canvas.parentNode.style.width = '345px';
+}, 100);

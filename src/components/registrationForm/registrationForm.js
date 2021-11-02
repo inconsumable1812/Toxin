@@ -1,1 +1,1 @@
-import '../../components/input/input'
+import '../../components/input/input';
