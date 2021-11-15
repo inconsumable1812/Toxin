@@ -1,15 +1,10 @@
 mixin type(options)
-  - const {title, subtitle} = options || {}
+  - const {tag, title, subtitle} = options || {}
+  - let mainClass = 'type type_'
+  - mainClass += tag
+  - let subtitleClass = 'type-subtitle'
+  - subtitleClass += tag === 'p' ? `__${tag}` : ''
 
-  div.type(class = `type_${title}`)
-    #{title}.type-title #{title}
-    #{title}.type-subtitle #{subtitle}
-
-mixin body(options)
-  - const {title, subtitle} = options || {}
-
-  .type.colorsAndTypes-type_body
-    p.type-title #{title}
-    p.type-subtitle__text #{subtitle}
-
-
+  div(class = mainClass)
+    #{tag}.type-title #{title}
+    #{tag}(class= subtitleClass) #{subtitle}

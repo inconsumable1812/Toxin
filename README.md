@@ -4,9 +4,9 @@
 
 ## Используемые версии
 
-Версия node `14.17.3`
+Версия node `16.13.0`
 
-Версия npm `6.14.13`
+Версия npm `8.1.0`
 
 ## Команды проекта
 
@@ -32,11 +32,11 @@
 
 ## Сторонние ресурсы
 
-* [jQuery](https://www.npmjs.com/package/jquery) - Для работы jQuery-библиотек
-* [air-datepicker](http://t1m0n.name/air-datepicker/docs/index-ru.html) - Календарь
-* [chart.js](https://www.chartjs.org/) - Чарт отзывов
-* [imask](https://imask.js.org/) - Маски для полей форм
-* [paginationjs](https://pagination.js.org/) - Порядковая нумерация страниц
-* [nouislider](https://refreshless.com/nouislider/) - Слайдер
-* [Material Icons](http://google.github.io/material-design-icons/) - Иконки
-* [Font Awesome](https://fontawesome.ru/) - Ещё одни иконки
+- [jQuery](https://www.npmjs.com/package/jquery) - Для работы jQuery-библиотек
+- [air-datepicker](http://t1m0n.name/air-datepicker/docs/index-ru.html) - Календарь
+- [chart.js](https://www.chartjs.org/) - Чарт отзывов
+- [imask](https://imask.js.org/) - Маски для полей форм
+- [paginationjs](https://pagination.js.org/) - Порядковая нумерация страниц
+- [nouislider](https://refreshless.com/nouislider/) - Слайдер
+- [Material Icons](http://google.github.io/material-design-icons/) - Иконки
+- [Font Awesome](https://fontawesome.ru/) - Ещё одни иконки

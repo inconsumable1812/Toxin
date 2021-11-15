@@ -87,7 +87,7 @@ const config = {
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         exclude: [
-          path.resolve(__dirname, './src/img/'),
+          path.resolve(__dirname, './src/assets/img/'),
           path.resolve(__dirname, './src/components/')
         ],
         use: [
