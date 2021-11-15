@@ -8,6 +8,6 @@ mixin radioButton(options)
       each row in rows
         .radioButton__item 
           label.radioButton__label
-            input.radioButton__input(type="radio", id=row.id, name= 'gender')
+            input.radioButton__input(type="radio", name= 'gender')
             span.radioButton__radio 
             span.radioButton__caption= row.caption

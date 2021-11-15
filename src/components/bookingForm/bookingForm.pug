@@ -31,7 +31,7 @@ mixin bookingForm(options)
         span.bookingForm__cost= cost
         span.bookingForm__dateUnit= dateUnit
     div.bookingForm__calendar 
-      +dateDropdown({titleStart:"Прибытие", titleEnd:"Выезд", type:'double',isExpanded:false, id:'second'})
+      +dateDropdown({titleStart:"Прибытие", titleEnd:"Выезд", type:'double',isExpanded:false})
     div.bookingForm__dropdown_type_guests
       +dropdown({title:"Гости", name:"guestNumber", placeholder:"Сколько гостей",type:"guest",rows: [
         {count: 0, text: 'взрослые', typeOfCount:'adult'},

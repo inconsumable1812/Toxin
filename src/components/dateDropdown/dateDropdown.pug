@@ -2,7 +2,7 @@ include ../dropdown/dropdown.pug
 
 mixin dateDropdown(options)
   -
-    const {isExpanded, hidden, type, id, titleStart, titleEnd, title} = options || {}
+    const {isExpanded, hidden, type, titleStart, titleEnd, title} = options || {}
 
   - const mainClass = 'dateDropdown_' + type
   - const JSMainClass = ' js-dateDropdown js-' + mainClass
@@ -10,7 +10,7 @@ mixin dateDropdown(options)
   - calendarClass += isExpanded ? ' js-calendar_content_expanded' : ''
   - calendarClass += hidden ? ' disabled' : ''
 
-  div.dateDropdown(class= mainClass + JSMainClass, id=id )
+  div.dateDropdown(class= mainClass + JSMainClass )
     if (type === 'double')
       div.dateDropdown__group_double
         div.dateDropdown__item

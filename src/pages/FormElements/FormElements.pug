@@ -42,9 +42,9 @@ block content
           .formElements__input-email
             +input({title: "MASKED TEXT FIELD",type:'text', name:'text', isData:true})
           .formElements__dropdown-double
-            +dateDropdown({titleStart:"Date Dropdown", titleEnd:"Date Dropdown", type:'double',isExpanded:false, id: 'first'})
+            +dateDropdown({titleStart:"Date Dropdown", titleEnd:"Date Dropdown", type:'double', isExpanded:false})
           .formElements__dropdown-single
-            +dateDropdown({title:"Filter date dropdown", type:'single', })
+            +dateDropdown({title:"Filter date dropdown", type:'single'})
           .formElements__input-with-button
             +input({title: "SUBSCRIPTION TEXT FIELD", type:'email', name:'text', placeholder:'Email', withButton :true})
         .formElements__section-column-gap
@@ -57,8 +57,8 @@ block content
             ]})
           .formElements__radioButton
             +radioButton({header:"Radio Buttons", rows:[
-              {caption:"Мужчина", id:'Men'},
-              {caption:"Женщина", id:'Women'},
+              {caption:"Мужчина"},
+              {caption:"Женщина"},
             ]})
           .formElements__toggle
             +toggle({header:'Toggle', rows:[
