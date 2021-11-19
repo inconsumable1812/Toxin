@@ -89,9 +89,7 @@ export class DateDropdown {
   bindEventListeners() {
     this.$applyButton.on('click', this.applyButtonCallback.bind(this));
     this.findDropdownBoxes();
-    this.$dropdownBoxes.each((_, dropdownBox) =>
-      $(dropdownBox).on('click', this.toggleCallback.bind(this))
-    );
+    this.$dropdownBoxes.each((_, dropdownBox) => $(dropdownBox).on('click', this.toggleCallback.bind(this)));
     document.addEventListener('click', this.callbackOnDocument.bind(this));
   }
 
@@ -115,8 +113,7 @@ export class DateDropdown {
     const listIsExpanded = this.$datePicker.hasClass('js-calendar_content_expanded');
     if (listIsExpanded) {
       if (isClickBeyondBorderCalendar(event)) {
-        if (!this.$datePicker.hasClass('disabled'))
-          this.$datePicker.removeClass('js-calendar_content_expanded');
+        if (!this.$datePicker.hasClass('disabled')) this.$datePicker.removeClass('js-calendar_content_expanded');
       }
     }
   }

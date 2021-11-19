@@ -32,11 +32,11 @@
 
 ## Сторонние ресурсы
 
-- [jQuery](https://www.npmjs.com/package/jquery) - Для работы jQuery-библиотек
-- [air-datepicker](http://t1m0n.name/air-datepicker/docs/index-ru.html) - Календарь
-- [chart.js](https://www.chartjs.org/) - Чарт отзывов
-- [imask](https://imask.js.org/) - Маски для полей форм
-- [paginationjs](https://pagination.js.org/) - Порядковая нумерация страниц
-- [nouislider](https://refreshless.com/nouislider/) - Слайдер
-- [Material Icons](http://google.github.io/material-design-icons/) - Иконки
-- [Font Awesome](https://fontawesome.ru/) - Ещё одни иконки
+- [jQuery](https://www.npmjs.com/package/jquery) `3.5.1` - Для работы jQuery-библиотек
+- [air-datepicker](http://t1m0n.name/air-datepicker/docs/index-ru.html) `2.2.3` - Календарь
+- [chart.js](https://www.chartjs.org/) `3.5.1` - Чарт отзывов
+- [imask](https://imask.js.org/) `6.1.0` - Маски для полей форм
+- [paginationjs](https://pagination.js.org/) `2.1.5` - Порядковая нумерация страниц
+- [nouislider](https://refreshless.com/nouislider/) `15.4.0` - Слайдер
+- [Material Icons](http://google.github.io/material-design-icons/) `3.0.1` - Иконки
+- [Font Awesome](https://fontawesome.ru/) `5.15.4` - Ещё одни иконки

@@ -1,9 +1,9 @@
-import './cards.scss';
 import '../../components/roomSearch/roomSearch';
 import '../../components/registrationForm/registrationForm';
 import '../../components/bookingForm/bookingForm';
 import '../../components/imageSlider/imageSlider';
 import { DateDropdown } from '../../components/dateDropdown/dateDropdown';
+import './cards.scss';
 
 const dateDropdowns = document.querySelectorAll('.js-dateDropdown');
 const arrayOfDateDropdowns = [...dateDropdowns]

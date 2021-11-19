@@ -1,4 +1,3 @@
-/* eslint-disable func-names */
 import noUiSlider from 'nouislider';
 
 class RangeSlider {
@@ -45,20 +44,27 @@ class RangeSlider {
   }
 
   bindEventListeners() {
-    this.sliderContainer.noUiSlider.on('update', this.updateCallback.bind(this));
+    this.sliderContainer.noUiSlider.on(
+      'update',
+      this.updateCallback.bind(this)
+    );
     this.minInput.addEventListener('change', this.minInputCallback.bind(this));
     this.maxInput.addEventListener('change', this.maxInputCallback.bind(this));
   }
 
   minInputCallback() {
     const arrayOfValue = this.minInput.value.split('');
-    const arrayOfValueNumber = arrayOfValue.filter((value) => value.match(/[0-9]/));
+    const arrayOfValueNumber = arrayOfValue.filter((value) =>
+      value.match(/[0-9]/)
+    );
     this.sliderContainer.noUiSlider.set([arrayOfValueNumber.join(''), null]);
   }
 
   maxInputCallback() {
     const arrayOfValue = this.maxInput.value.split('');
-    const arrayOfValueNumber = arrayOfValue.filter((value) => value.match(/[0-9]/));
+    const arrayOfValueNumber = arrayOfValue.filter((value) =>
+      value.match(/[0-9]/)
+    );
     this.sliderContainer.noUiSlider.set([null, arrayOfValueNumber.join('')]);
   }
 

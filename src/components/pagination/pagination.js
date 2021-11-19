@@ -1,4 +1,3 @@
-/* eslint-disable func-names */
 import $ from 'jquery';
 import 'paginationjs';
 
@@ -28,7 +27,7 @@ class Pagination {
 
   init() {
     this.$paginationContainer.pagination({
-      dataSource: function (done) {
+      dataSource: (done) => {
         var result = [];
         for (let i = 1; i < 180; i += 1) {
           result.push(i);
