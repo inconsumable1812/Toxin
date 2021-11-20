@@ -3,26 +3,26 @@ include ../../components/input/input.pug
 
 mixin footer(options = {})
   - 
-    const menuLinkDefault = [
+     menuLinkDefault = [
       {title:'Навигация',
         links:[
-          {name: 'О нас', href:'./about-us'},
-          {name: 'Новости', href:'./news'},
-          {name: 'Служба поддержки', href:'./help'},
-          {name: 'Услуги', href:'./services'},
+          {name: 'О нас', href:'./error-page.html'},
+          {name: 'Новости', href:'./error-page.html'},
+          {name: 'Служба поддержки', href:'./error-page.html'},
+          {name: 'Услуги', href:'../error-page.html'},
         ]},
       {title:'О нас',
         links:[
-          {name: 'О сервисе', href:'./about-us'},
-          {name: 'Наша команда', href:'./team'},
-          {name: 'Вакансии', href:'./vacancies'},
-          {name: 'Инвесторы', href:'./investors'},
+          {name: 'О сервисе', href:'./error-page.html'},
+          {name: 'Наша команда', href:'./error-page.html'},
+          {name: 'Вакансии', href:'./error-page.html'},
+          {name: 'Инвесторы', href:'../error-page.html'},
         ]},
       {title:'Служба поддержки',
         links:[
-          {name: 'Соглашения', href:'./agreements'},
-          {name: 'Сообщества', href:'./communities'},
-          {name: 'Связь с нами', href:'./contact-us'},
+          {name: 'Соглашения', href:'./error-page.html'},
+          {name: 'Сообщества', href:'./error-page.html'},
+          {name: 'Связь с нами', href:'./error-page.html'},
         ]},
       ]
 
@@ -56,7 +56,7 @@ mixin footer(options = {})
                   each link in item.links
                     li.footer__navigation-item
                       a(href = link.href).footer__navigation-link= link.name
-          form(action="/change").footer__subscribe-form
+          form(action="./error-page.html").footer__subscribe-form
             h3.footer__subscribe-title= subscribeTitle
             p.footer__subscribe-txt= subscribeText
             .footer__input 

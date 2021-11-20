@@ -6,6 +6,10 @@
   max-width: 16.625rem;
   position: relative;
 
+  &__label {
+    cursor: pointer;
+  }
+
   .expandableCheckboxList__header {
     margin-bottom: 1rem;
     display: flex;

@@ -28,6 +28,7 @@ let myChart = new Chart(ctx, {
   type: 'doughnut',
   data: {
     labels: ['Разочарован', 'Удовлетворительно', 'Хорошо', 'Великолепно'],
+    zIndex: 0,
     datasets: [
       {
         label: '# of Votes',
@@ -62,6 +63,9 @@ let myChart = new Chart(ctx, {
       }
     },
     plugins: {
+      tooltip: {
+        enabled: true
+      },
       legend: {
         position: 'right',
         align: 'end',

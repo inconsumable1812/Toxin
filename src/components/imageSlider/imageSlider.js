@@ -43,7 +43,9 @@ class ImageSlider {
   }
 
   initActiveSlide(index) {
-    this.slides.forEach((slide) => slide.classList.remove('imageSlider__slide_active'));
+    this.slides.forEach((slide) =>
+      slide.classList.remove('imageSlider__slide_active')
+    );
     this.slides[index].classList.add('imageSlider__slide_active');
   }
 
@@ -59,7 +61,7 @@ class ImageSlider {
 
   isSetInterval() {
     if (this.slider.classList.contains('imageSlider__interval')) {
-      setInterval(this.nextButtonCallback.bind(this), 2500);
+      setInterval(this.nextButtonCallback.bind(this), 5000);
     }
   }
 

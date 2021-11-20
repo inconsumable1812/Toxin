@@ -1,0 +1,9 @@
+@import '../../utils/main';
+
+.error-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: $color-dark-10;
+}

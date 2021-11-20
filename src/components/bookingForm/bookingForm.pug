@@ -17,11 +17,11 @@ mixin bookingForm(options)
     priceOfServicesName = 'Сбор за дополнительные услуги',
     priceOfServicesTooltip = 'change me',
     priceOfServicesCurrency = '300₽',
-    totalValue = '38 081₽'
+    totalValue = '38 081₽',
      } = options || {}
   
 
-  form(action="/change me").bookingForm.js-bookingForm
+  form(action="./error-page.html").bookingForm.js-bookingForm
     div.bookingForm__header
       div.bookingForm__number
         span.bookingForm__NumberSymbol= '№'

@@ -43,8 +43,9 @@ export class Dropdown {
   }
 
   initCountOfBedrooms() {
-    this.countOfBedrooms = +this.dropdown.querySelector('.js-dropdown__counter_bedroom')
-      .textContent;
+    this.countOfBedrooms = +this.dropdown.querySelector(
+      '.js-dropdown__counter_bedroom'
+    ).textContent;
   }
 
   initCountOfBeds() {
@@ -53,23 +54,27 @@ export class Dropdown {
   }
 
   initCountOfBathrooms() {
-    this.countOfBathrooms = +this.dropdown.querySelector('.js-dropdown__counter_bathroom')
-      .textContent;
+    this.countOfBathrooms = +this.dropdown.querySelector(
+      '.js-dropdown__counter_bathroom'
+    ).textContent;
   }
 
   initCountOfAdult() {
-    this.countOfAdult = +this.dropdown.querySelector('.js-dropdown__counter_adult')
-      .textContent;
+    this.countOfAdult = +this.dropdown.querySelector(
+      '.js-dropdown__counter_adult'
+    ).textContent;
   }
 
   initCountOfСhildren() {
-    this.countOfСhildren = +this.dropdown.querySelector('.js-dropdown__counter_children')
-      .textContent;
+    this.countOfСhildren = +this.dropdown.querySelector(
+      '.js-dropdown__counter_children'
+    ).textContent;
   }
 
   initCountOfBaby() {
-    this.countOfBaby = +this.dropdown.querySelector('.js-dropdown__counter_baby')
-      .textContent;
+    this.countOfBaby = +this.dropdown.querySelector(
+      '.js-dropdown__counter_baby'
+    ).textContent;
   }
 
   init() {
@@ -77,11 +82,16 @@ export class Dropdown {
     this.box = this.dropdown.querySelector('.js-dropdown__box');
     this.list = this.dropdown.querySelector('.js-dropdown__list');
     if (this.isTypeGuest) {
-      this.clearButton = this.dropdown.querySelector('.js-dropdown__clear-buttons');
-      this.applyButton = this.dropdown.querySelector('.js-dropdown__apply-buttons');
+      this.clearButton = this.dropdown.querySelector(
+        '.js-dropdown__clear-buttons'
+      );
+      this.applyButton = this.dropdown.querySelector(
+        '.js-dropdown__apply-buttons'
+      );
       this.initCountOfAdult();
       this.initCountOfСhildren();
       this.initCountOfBaby();
+      this.input.placeholder = this.sendingGuestsToInput();
       hideClearButton(
         this.countOfAdult,
         this.countOfСhildren,
@@ -117,28 +127,40 @@ export class Dropdown {
     this.box.addEventListener('click', this.expandedCallback.bind(this));
     document.addEventListener('click', this.callbackOnDocument.bind(this));
     if (this.applyButton) {
-      this.applyButton.addEventListener('click', this.applyButtonCallback.bind(this));
+      this.applyButton.addEventListener(
+        'click',
+        this.applyButtonCallback.bind(this)
+      );
     }
     if (this.clearButton) {
-      this.clearButton.addEventListener('click', this.clearButtonCallback.bind(this));
+      this.clearButton.addEventListener(
+        'click',
+        this.clearButtonCallback.bind(this)
+      );
     }
   }
 
   callbackOnDocument(event) {
-    const listIsExpanded = this.list.classList.contains('dropdown__list_expanded');
+    const listIsExpanded = this.list.classList.contains(
+      'dropdown__list_expanded'
+    );
     if (listIsExpanded) {
       const lists = document.querySelectorAll('.js-dropdown__list');
       const currentBox = event.target.closest('.js-dropdown__box');
       const dateDropdown = event.target.closest('.js-dateDropdown');
       if (!currentBox || dateDropdown) {
-        lists.forEach((list) => list.classList.remove('dropdown__list_expanded'));
+        lists.forEach((list) =>
+          list.classList.remove('dropdown__list_expanded')
+        );
       }
     }
   }
 
   expandedCallback(event) {
     const target = event.target.closest('.js-dropdown__list');
-    const listIsExpanded = this.list.classList.contains('dropdown__list_expanded');
+    const listIsExpanded = this.list.classList.contains(
+      'dropdown__list_expanded'
+    );
     const lists = document.querySelectorAll('.js-dropdown__list');
 
     if (!target) {
@@ -149,7 +171,9 @@ export class Dropdown {
 
   minusButtonCallback(event) {
     const itemNameNode = event.target.closest('.js-dropdown__list-item');
-    const button = itemNameNode.querySelector('.js-dropdown__counter-buttons_type_minus');
+    const button = itemNameNode.querySelector(
+      '.js-dropdown__counter-buttons_type_minus'
+    );
     const itemCount = itemNameNode.querySelector('.js-dropdown__counter');
 
     if (this.isTypeGuest) {
@@ -157,11 +181,15 @@ export class Dropdown {
         this.countOfAdult -= 1;
         itemCount.textContent = this.countOfAdult;
         disabledMinusButtonIfLessUnit(this.countOfAdult, button);
-      } else if (itemNameNode.classList.contains('js-dropdown__list-item_children')) {
+      } else if (
+        itemNameNode.classList.contains('js-dropdown__list-item_children')
+      ) {
         this.countOfСhildren -= 1;
         itemCount.textContent = this.countOfСhildren;
         disabledMinusButtonIfLessUnit(this.countOfСhildren, button);
-      } else if (itemNameNode.classList.contains('js-dropdown__list-item_baby')) {
+      } else if (
+        itemNameNode.classList.contains('js-dropdown__list-item_baby')
+      ) {
         this.countOfBaby -= 1;
         itemCount.textContent = this.countOfBaby;
         disabledMinusButtonIfLessUnit(this.countOfBaby, button);
@@ -172,12 +200,16 @@ export class Dropdown {
         this.countOfBaby,
         this.clearButton
       );
+
+      this.input.placeholder = this.sendingGuestsToInput();
     } else {
       if (itemNameNode.classList.contains('js-dropdown__list-item_bedroom')) {
         this.countOfBedrooms -= 1;
         itemCount.textContent = this.countOfBedrooms;
         disabledMinusButtonIfLessUnit(this.countOfBedrooms, button);
-      } else if (itemNameNode.classList.contains('js-dropdown__list-item_bed')) {
+      } else if (
+        itemNameNode.classList.contains('js-dropdown__list-item_bed')
+      ) {
         this.countOfBeds -= 1;
         itemCount.textContent = this.countOfBeds;
         disabledMinusButtonIfLessUnit(this.countOfBeds, button);
@@ -202,11 +234,15 @@ export class Dropdown {
         this.countOfAdult += 1;
         itemCount.textContent = this.countOfAdult;
         enabledMinusButtonIfBiggerZero(this.countOfAdult, minusButton);
-      } else if (itemNameNode.classList.contains('js-dropdown__list-item_children')) {
+      } else if (
+        itemNameNode.classList.contains('js-dropdown__list-item_children')
+      ) {
         this.countOfСhildren += 1;
         itemCount.textContent = this.countOfСhildren;
         enabledMinusButtonIfBiggerZero(this.countOfСhildren, minusButton);
-      } else if (itemNameNode.classList.contains('js-dropdown__list-item_baby')) {
+      } else if (
+        itemNameNode.classList.contains('js-dropdown__list-item_baby')
+      ) {
         this.countOfBaby += 1;
         itemCount.textContent = this.countOfBaby;
         enabledMinusButtonIfBiggerZero(this.countOfBaby, minusButton);
@@ -217,12 +253,16 @@ export class Dropdown {
         this.countOfBaby,
         this.clearButton
       );
+
+      this.input.placeholder = this.sendingGuestsToInput();
     } else {
       if (itemNameNode.classList.contains('js-dropdown__list-item_bedroom')) {
         this.countOfBedrooms += 1;
         itemCount.textContent = this.countOfBedrooms;
         enabledMinusButtonIfBiggerZero(this.countOfBedrooms, minusButton);
-      } else if (itemNameNode.classList.contains('js-dropdown__list-item_bed')) {
+      } else if (
+        itemNameNode.classList.contains('js-dropdown__list-item_bed')
+      ) {
         this.countOfBeds += 1;
         itemCount.textContent = this.countOfBeds;
         enabledMinusButtonIfBiggerZero(this.countOfBeds, minusButton);
@@ -250,17 +290,21 @@ export class Dropdown {
     return `${nameOfRooms}`;
   }
 
-  applyButtonCallback() {
-    const inputContent = this.dropdown.querySelector('.js-dropdown__input');
+  sendingGuestsToInput() {
     const adultAndChildren = this.countOfAdult + this.countOfСhildren;
     const nameOfAdultAndChildren = checkForZero(adultAndChildren, ADULT);
     const nameOfBaby = checkForZero(this.countOfBaby, BABY);
-    const nameOfGuests = checkEndingInGuestToInputs(nameOfAdultAndChildren, nameOfBaby);
+    const nameOfGuests = checkEndingInGuestToInputs(
+      nameOfAdultAndChildren,
+      nameOfBaby
+    );
     if (nameOfGuests === '') {
-      inputContent.placeholder = 'Сколько гостей';
-    } else {
-      inputContent.placeholder = nameOfGuests;
+      return 'Сколько гостей';
     }
+    return nameOfGuests;
+  }
+
+  applyButtonCallback() {
     this.list.classList.remove('dropdown__list_expanded');
   }
 

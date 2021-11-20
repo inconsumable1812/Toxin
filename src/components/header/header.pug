@@ -4,20 +4,20 @@ include ../../components/button/button.pug
 mixin header(options)
   -
    const menuLinkDefault = [
-    {name: 'О нас', href:'/about', bold:true},
-    {name: 'Услуги', href:'/services',
+    {name: 'О нас', href:'/error-page.html', bold:true},
+    {name: 'Услуги', href:'/error-page.html',
     subMenu:[
-      {name: 'Трансфер', href:'/transfer'},
-      {name: 'Завтрак', href:'/breakfast'},
-      {name: 'Обед', href:'/lunch'},
-      {name: 'Ужин', href:'/dinner'},
+      {name: 'Трансфер', href:'/error-page.html'},
+      {name: 'Завтрак', href:'/error-page.html'},
+      {name: 'Обед', href:'/error-page.html'},
+      {name: 'Ужин', href:'/error-page.html'},
         ]},
-    {name: 'Вакансии', href:'/vacancies'},
-    {name: 'Новости', href:'/news'},
-    {name: 'Соглашения', href:'/agreements',
+    {name: 'Вакансии', href:'/error-page.html'},
+    {name: 'Новости', href:'/error-page.html'},
+    {name: 'Соглашения', href:'/error-page.html',
       subMenu:[
-      {name: 'Договор 1', href:'/contract'},
-      {name: 'Договор 2', href:'/contract_2'},
+      {name: 'Договор 1', href:'/error-page.html'},
+      {name: 'Договор 2', href:'/error-page.html'},
         ]},
     ]
   - const {menuLink= menuLinkDefault, auth = false} = options || {};
@@ -54,4 +54,4 @@ mixin header(options)
           if auth
             - classUser += ' header__userMenu_auth'
             div(class = classUser)
-              a(href='./account').header__userName= `${auth.name} ${auth.surname}`
+              a(href='/error-page.html').header__userName= `${auth.name} ${auth.surname}`

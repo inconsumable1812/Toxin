@@ -42,6 +42,7 @@
     border: 0.0625rem solid $color-dark-25;
     border-radius: 0.25rem;
     transition: border 0.25s ease-in-out;
+    cursor: pointer;
 
     &:focus,
     &:hover {

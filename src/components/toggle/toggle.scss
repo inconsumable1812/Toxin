@@ -9,6 +9,10 @@
     max-width: none;
   }
 
+  &__label {
+    cursor: pointer;
+  }
+
   &__header {
     font-family: Montserrat, Arial, sans-serif;
     font-size: 0.75rem;
