@@ -1,0 +1,25 @@
+{
+  "menuLinkDefault": [
+    { "name": "О нас", "href": "/error-page.html", "bold": true },
+    {
+      "name": "Услуги",
+      "href": "/error-page.html",
+      "subMenu": [
+        { "name": "Трансфер", "href": "/error-page.html" },
+        { "name": "Завтрак", "href": "/error-page.html" },
+        { "name": "Обед", "href": "/error-page.html" },
+        { "name": "Ужин", "href": "/error-page.html" }
+      ]
+    },
+    { "name": "Вакансии", "href": "/error-page.html" },
+    { "name": "Новости", "href": "/error-page.html" },
+    {
+      "name": "Соглашения",
+      "href": "/error-page.html",
+      "subMenu": [
+        { "name": "Договор 1", "href": "/error-page.html" },
+        { "name": "Договор 2", "href": "/error-page.html" }
+      ]
+    }
+  ]
+}

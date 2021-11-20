@@ -1,0 +1,30 @@
+{
+  "menuLinkDefault": [
+    {
+      "title": "Навигация",
+      "links": [
+        { "name": "О нас", "href": "./error-page.html" },
+        { "name": "Новости", "href": "./error-page.html" },
+        { "name": "Служба поддержки", "href": "./error-page.html" },
+        { "name": "Услуги", "href": "./error-page.html" }
+      ]
+    },
+    {
+      "title": "О нас",
+      "links": [
+        { "name": "О сервисе", "href": "./error-page.html" },
+        { "name": "Наша команда", "href": "./error-page.html" },
+        { "name": "Вакансии", "href": "./error-page.html" },
+        { "name": "Инвесторы", "href": "./error-page.html" }
+      ]
+    },
+    {
+      "title": "Служба поддержки",
+      "links": [
+        { "name": "Соглашения", "href": "./error-page.html" },
+        { "name": "Сообщества", "href": "./error-page.html" },
+        { "name": "Связь с нами", "href": "./error-page.html" }
+      ]
+    }
+  ]
+}

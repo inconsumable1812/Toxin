@@ -1,8 +1,8 @@
 @import '../../utils/main';
 @import '../../utils/mixins';
 @import '../../components/footer/footer';
-@import '../../components/imageSlider/imageSlider';
-@import '../../components/registrationForm/registrationForm';
+@import '../../components/image-slider/image-slider';
+@import '../../components/registration-form/registration-form';
 @import '../../components/header/header';
 
 .registration {
@@ -11,7 +11,7 @@
     z-index: -1;
     width: 100%;
 
-    .imageSlider__img {
+    .image-slider__img {
       object-fit: cover;
       object-position: 50% 50%;
       width: 100%;
@@ -22,7 +22,7 @@
       }
     }
 
-    .imageSlider__dotWrapper {
+    .image-slider__dot-wrapper {
       display: none;
     }
   }

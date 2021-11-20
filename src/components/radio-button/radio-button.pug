@@ -1,0 +1,13 @@
+mixin radio-button(options)
+  - const {header, rows =[] } = options || {}
+
+  .radio-button
+    if header 
+      .radio-button__header= header 
+    .radio-button__group
+      each row in rows
+        .radio-button__item 
+          label.radio-button__label
+            input.radio-button__input(type="radio", name= 'gender')
+            span.radio-button__radio 
+            span.radio-button__caption= row.caption

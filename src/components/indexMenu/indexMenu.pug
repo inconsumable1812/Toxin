@@ -1,7 +1,0 @@
-mixin indexMenu(options)
-  - const { theme, items = [] } = options || {};
-
-  ul.indexMenu(class=`indexMenu_theme_${theme}`)
-    each link in items
-      li.indexMenu__item
-        a.indexMenu__link(href=link.href)= link.text

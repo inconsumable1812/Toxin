@@ -1,0 +1,34 @@
+@import '../../utils/main';
+@import '../../utils/mixins';
+
+.index-menu {
+  $block-class: &;
+
+  font-family: Montserrat, Arial, sans-serif;
+  list-style: none;
+  line-height: 2.7rem;
+  padding: 1.5rem 3rem;
+
+  &_theme {
+    &_purple {
+      #{$block-class}__link {
+        color: $color-purple;
+      }
+    }
+
+    &_green {
+      #{$block-class}__link {
+        color: $color-green;
+      }
+    }
+  }
+
+  &__link {
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    &:hover {
+      color: $color-dark-75;
+    }
+  }
+}

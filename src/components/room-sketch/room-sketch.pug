@@ -1,0 +1,41 @@
+include ../../components/image-slider/image-slider.pug
+include ../../components/rate-button/rate-button.pug
+
+mixin room-sketch(options)
+  - 
+    const {
+    rows,
+    isHovered, 
+    isInterval, 
+    base, 
+    rate, 
+    isVariable = false, 
+    name = 'rating', 
+    id = 'rating',
+    roomNumber,
+    isVip,
+    cost,
+    feedbackNumber,
+    feedbackText
+    } = options || {}
+
+  .room-sketch 
+    .room-sketch__slider
+      +image-slider({rows, isHovered, isInterval})
+    .room-sketch__main
+      a(href='./roomDetails.html').room-sketch__link
+        .room-sketch__header
+          .room-sketch__number
+            span.room-sketch__number-symbol= '№'
+            span.room-sketch__number-value= roomNumber
+            if isVip
+              span.room-sketch__number-feature= 'люкс'
+          .room-sketch__price-per-day
+            span.room-sketch__cost= cost
+            span.room-sketch__date-unit='в сутки'
+        .room-sketch__footer
+          .room-sketch__rate
+            +rate-button({base, rate, isVariable, name, id})
+          .room-sketch__feedback-counter
+            span.room-sketch__feedback-number= feedbackNumber
+            span.room-sketch__feedback-text= feedbackText

@@ -1,0 +1,26 @@
+extends ../../layout/main.pug
+
+include ../../components/logo/logo.pug
+include ../../components/header/header.pug
+include ../../components/footer/footer.pug
+
+
+block variables
+  - let title = "Headers & Footers"
+  - let theme = "body_theme_gray"
+
+block content
+  - const bottomClass = 'headers-and-footers__margin-bottom'
+  - const auth = {name: 'Юлий', surname: 'Цезарь'}
+   
+  .headers-and-footers
+    nav.headers-and-footers__logo
+      +logo
+  div(class = bottomClass).headers-and-footers__header
+    +header({menuLink})
+  div(class = bottomClass).headers-and-footers__header_login
+    +header({menuLink, auth})
+  div(class = bottomClass).headers-and-footers__footer
+    +footer({})
+  div.headers-and-footers__footer_size_small
+    +footer({isSmall:true})

@@ -1,0 +1,19 @@
+include ../../components/dropdown/dropdown.pug
+include ../../components/date-dropdown/date-dropdown.pug
+include ../../components/button/button.pug
+
+mixin room-search() 
+
+  .room-search.js-room-search
+    .room-search__header 
+      h1.room-search__title= 'Найдём номера под ваши пожелания'
+    .room-search__calendar 
+      +date-dropdown({titleStart:"Прибытие", titleEnd:"Выезд", type:'double',isExpanded:false})
+    .room-search__dropdown_guests
+      +dropdown({title:"Гости", name:"guestNumber", placeholder:"Сколько гостей",type:"guest",rows: [
+        {count: 0, text: 'взрослые', typeOfCount:'adult'},
+        {count: 0, text: 'дети', typeOfCount:'children'},
+        {count: 0, text: 'младенцы', typeOfCount:'baby'},
+      ]})
+    .room-search__button 
+      +button({theme:'purple', textTheme:'white', text:'Подобрать номер', isLarge: true, href:'./searchRoom.html'})

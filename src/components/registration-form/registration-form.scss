@@ -1,0 +1,59 @@
+@import '../../utils/vars';
+@import '../../utils/mixins';
+@import '../../components/button/button';
+@import '../../components/input/input';
+@import '../../components/radio-button/radio-button';
+@import '../../components/toggle/toggle';
+
+.registration-form {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 1.5625rem rgba(0, 0, 0, 0.2);
+  padding: 2.4rem 1.85rem 1.875rem 1.875rem;
+
+  &__header {
+    padding-bottom: 1rem;
+  }
+
+  &__name {
+    margin-bottom: 0.6rem;
+  }
+
+  &__surname {
+    margin-bottom: 0.6rem;
+  }
+
+  &__gender {
+    margin-bottom: 1.7rem;
+  }
+
+  &__birth-date {
+    margin-bottom: 1.3rem;
+  }
+
+  &__email {
+    margin-bottom: 0.7rem;
+  }
+
+  &__toggle {
+    margin-bottom: 0.8rem;
+  }
+
+  &__button {
+    margin-bottom: 1.9rem;
+  }
+
+  &__group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__hint {
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    padding-bottom: 0.2rem;
+    color: #000;
+  }
+}

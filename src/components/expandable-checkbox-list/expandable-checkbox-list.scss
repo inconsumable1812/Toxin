@@ -1,0 +1,110 @@
+@import '../../utils/vars';
+@import '../../utils/mixins';
+
+.expandable-checkbox-list {
+  width: 100%;
+  max-width: 16.625rem;
+  position: relative;
+
+  &__label {
+    cursor: pointer;
+  }
+
+  .expandable-checkbox-list__header {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+    .expandable-checkbox-list__title {
+      font-family: Montserrat, Arial, sans-serif;
+      font-size: 0.75rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .expandable-checkbox-list__toggle-button {
+      position: relative;
+      border: none;
+      appearance: none;
+      user-select: none;
+      cursor: pointer;
+      height: 1.25rem;
+      margin-right: 2.16rem;
+
+      &::before {
+        top: 0;
+        left: 0;
+        position: absolute;
+        content: 'expand_more';
+        color: $color-dark-50;
+        transition: transform 0.2s ease-in-out;
+      }
+
+      &:focus {
+        &::before {
+          outline: 2px solid $color-dark-75;
+        }
+      }
+    }
+  }
+
+  .expandable-checkbox-list__list {
+    list-style-type: none;
+    position: relative;
+    display: none;
+    z-index: 1;
+    background-color: white;
+
+    .expandable-checkbox-list__item {
+      padding-bottom: 0.8rem;
+      line-height: 1.125rem;
+      font-size: 0.875rem;
+      font-family: Montserrat, Arial, sans-serif;
+      color: $color-dark-50;
+
+      .expandable-checkbox-list__checkbox {
+        position: absolute;
+        width: 1.25rem;
+        height: 1.25rem;
+        border: 0.0625rem solid $color-dark-25;
+        border-radius: 0.25rem;
+      }
+
+      .expandable-checkbox-list__input {
+        position: absolute;
+        appearance: none;
+
+        &:checked + .expandable-checkbox-list__checkbox {
+          border: 0.0625rem solid $color-purple;
+          background: url('./img/Vector.svg') no-repeat center center;
+        }
+
+        &:focus + .expandable-checkbox-list__checkbox,
+        &:hover + .expandable-checkbox-list__checkbox {
+          box-shadow: 0 0.0313rem 0.3125rem $color-dark-25;
+        }
+      }
+
+      .expandable-checkbox-list__title {
+        padding-left: 1.8rem;
+      }
+    }
+  }
+
+  &_expanded {
+    /* stylelint-disable-next-line */
+    .expandable-checkbox-list__toggle-button {
+      /* stylelint-disable-next-line */
+      &::before {
+        transform: rotate(180deg);
+        transition: transform 0.2s ease-in-out;
+      }
+    }
+
+    .expandable-checkbox-list__list {
+      display: block;
+    }
+  }
+}

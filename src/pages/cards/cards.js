@@ -1,12 +1,12 @@
-import '../../components/roomSearch/roomSearch';
-import '../../components/registrationForm/registrationForm';
-import '../../components/bookingForm/bookingForm';
-import '../../components/imageSlider/imageSlider';
-import { DateDropdown } from '../../components/dateDropdown/dateDropdown';
+import '../../components/room-search/roomSearch';
+import '../../components/registration-form/registrationForm';
+import '../../components/booking-form/bookingForm';
+import '../../components/image-slider/imageSlider';
+import { DateDropdown } from '../../components/date-dropdown/dateDropdown';
 import './cards.scss';
 
-const dateDropdowns = document.querySelectorAll('.js-dateDropdown');
+const dateDropdowns = document.querySelectorAll('.js-date-dropdown');
 const arrayOfDateDropdowns = [...dateDropdowns]
-  .filter((dropdown) => !dropdown.closest('.js-bookingForm'))
+  .filter((dropdown) => !dropdown.closest('.js-booking-form'))
   .filter((dropdown) => !dropdown.closest('.js-roomSearch'));
 arrayOfDateDropdowns.forEach((dateDropdown) => new DateDropdown(dateDropdown));

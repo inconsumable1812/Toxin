@@ -1,10 +1,10 @@
 @import '../../utils/main';
 @import '../../utils/mixins';
-@import '../../components/roomSearch/roomSearch';
-@import '../../components/registrationForm/registrationForm';
-@import '../../components/bookingForm/bookingForm';
-@import '../../components/loginForm/loginForm';
-@import '../../components/roomSketch/roomSketch';
+@import '../../components/room-search/room-search';
+@import '../../components/registration-form/registration-form';
+@import '../../components/booking-form/booking-form';
+@import '../../components/login-form/login-form';
+@import '../../components/room-sketch/room-sketch';
 
 .cards {
   overflow: hidden;

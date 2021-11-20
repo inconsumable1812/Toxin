@@ -1,0 +1,19 @@
+@import '../../utils/main';
+@import '../../utils/mixins';
+@import '../../components/header/header';
+@import '../../components/footer/footer';
+
+.headers-and-footers {
+  &__logo {
+    margin: 1.875rem auto 3.9rem;
+    width: 80%;
+  }
+
+  &__margin-bottom {
+    margin-bottom: 2.5rem;
+  }
+
+  &__footer_size_small {
+    padding-bottom: 8.75rem;
+  }
+}

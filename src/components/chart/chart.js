@@ -28,7 +28,6 @@ let myChart = new Chart(ctx, {
   type: 'doughnut',
   data: {
     labels: ['Разочарован', 'Удовлетворительно', 'Хорошо', 'Великолепно'],
-    zIndex: 0,
     datasets: [
       {
         label: '# of Votes',

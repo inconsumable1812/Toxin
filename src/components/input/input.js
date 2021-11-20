@@ -1,6 +1,6 @@
 import IMask from 'imask';
 
-const inputElement = document.querySelector('.input-data'); // ищем наш  input
+const inputElement = document.querySelector('.input__input_type_data'); // ищем наш  input
 const maskOptions = {
   // создаем объект параметров
   mask: Date,

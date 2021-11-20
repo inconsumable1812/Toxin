@@ -1,0 +1,13 @@
+mixin rich-checkbox(options)
+  - const {header, rows = []} = options || {}
+
+  div.rich-checkbox
+    div.rich-checkbox__header= header 
+    ul.rich-checkbox__list
+      each row in rows
+        li.rich-checkbox__item
+          label.rich-checkbox__label 
+            input.rich-checkbox__input(type="checkbox", name= row.name)
+            span.rich-checkbox__checkbox
+            span.rich-checkbox__title= row.title
+            span.rich-checkbox__subtitle= row.subtitle

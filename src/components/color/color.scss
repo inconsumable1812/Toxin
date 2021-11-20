@@ -1,0 +1,86 @@
+@import '../../utils/mixins';
+@import '../../utils/vars';
+
+.color {
+  font-family: Montserrat, Arial, sans-serif;
+  display: grid;
+  grid-template-areas:
+    'box title'
+    'box subtitle';
+  grid-column-gap: 2.5rem;
+  align-items: center;
+  justify-content: start;
+
+  &__box {
+    grid-area: box;
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+  }
+
+  &__title {
+    grid-area: title;
+    display: flex;
+    line-height: 1.8125rem;
+    font-size: 1.1875rem;
+    text-transform: none;
+    align-self: flex-end;
+    width: max-content;
+  }
+
+  &__subtitle {
+    grid-area: subtitle;
+    display: flex;
+    line-height: 1.8125rem;
+    font-size: 1.1875rem;
+    align-self: flex-start;
+  }
+
+  &_dark100 {
+    .color__box {
+      background-color: $color-dark-100;
+    }
+  }
+
+  &_dark75 {
+    .color__box {
+      background-color: $color-dark-75;
+    }
+  }
+
+  &_dark50 {
+    .color__box {
+      background-color: $color-dark-50;
+    }
+  }
+
+  &_dark25 {
+    .color__box {
+      background-color: $color-dark-25;
+    }
+  }
+
+  &_dark10 {
+    .color__box {
+      background-color: $color-dark-10;
+    }
+  }
+
+  &_dark5 {
+    .color__box {
+      background-color: $color-dark-5;
+    }
+  }
+
+  &_green {
+    .color__box {
+      background-color: $color-green;
+    }
+  }
+
+  &_purple {
+    .color__box {
+      background-color: $color-purple;
+    }
+  }
+}

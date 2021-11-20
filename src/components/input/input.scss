@@ -1,7 +1,7 @@
-@import '../../utils/vars';
+@import '../../utils/main';
 @import '../../utils/mixins';
 
-.input-text {
+.input {
   max-width: 20rem;
   width: 100%;
 
@@ -9,7 +9,7 @@
     max-width: none;
   }
 
-  .input__title {
+  &__title {
     font-family: Montserrat, Arial, sans-serif;
     text-transform: uppercase;
     color: $color-dark-100;
@@ -18,7 +18,7 @@
     line-height: 0.9375rem;
   }
 
-  .label__hint {
+  &__hint {
     font-family: Montserrat, Arial, sans-serif;
     color: $color-dark-50;
     float: right;
@@ -26,56 +26,53 @@
     line-height: 0.9375rem;
   }
 
-  .input__box {
-    $line-height: 2.75rem;
-    $border-radius: 0.25rem;
-
+  &__box {
     display: flex;
     position: relative;
-    line-height: $line-height;
+    line-height: 2.75rem;
     font-size: 0.75rem;
     margin: 0.33rem auto 0.5rem;
+  }
 
-    .input {
-      font-family: Montserrat, Arial, sans-serif;
-      width: 100%;
-      line-height: 2.625rem;
-      padding: 0 2.375rem 0 0.875rem;
-      border: 1px solid $color-dark-25;
-      border-radius: $border-radius;
-      font-size: 0.875rem;
+  &__input {
+    font-family: Montserrat, Arial, sans-serif;
+    width: 100%;
+    line-height: 2.625rem;
+    padding: 0 2.375rem 0 0.875rem;
+    border: 1px solid $color-dark-25;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    color: $color-dark-25;
+
+    &::placeholder {
       color: $color-dark-25;
+      transition: color 0.5s ease-in-out;
+    }
+
+    transition: border 0.5s, color 0.5s ease-in-out;
+
+    &:focus,
+    &:hover {
+      outline: none;
+      border: 0.0625rem solid $color-dark-50;
+      color: $color-dark-75;
 
       &::placeholder {
-        color: $color-dark-25;
-        transition: color 0.5s ease-in-out;
-      }
-
-      transition: border 0.5s, color 0.5s ease-in-out;
-
-      &:focus,
-      &:hover {
-        outline: none;
-        border: 0.0625rem solid $color-dark-50;
         color: $color-dark-75;
-
-        &::placeholder {
-          color: $color-dark-75;
-        }
       }
     }
+  }
 
-    .text-input__submit-button {
-      @include reset-button;
+  &__submit-button {
+    @include reset-button;
 
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      right: 0.8125rem;
-      width: 1.125rem;
-      height: 1.125rem;
-      background: url('./img/arrow-forward.svg') no-repeat center center;
-    }
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0.8125rem;
+    width: 1.125rem;
+    height: 1.125rem;
+    background: url('./img/arrow-forward.svg') no-repeat center center;
   }
 }
 

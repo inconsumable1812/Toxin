@@ -1,4 +1,4 @@
 import '../../components/header/header';
-import '../../components/imageSlider/imageSlider';
-import '../../components/registrationForm/registrationForm';
+import '../../components/image-slider/imageSlider';
+import '../../components/registration-form/registrationForm';
 import './registration.scss';

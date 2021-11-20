@@ -1,3 +1,3 @@
 import '../../components/header/header';
-import '../../components/imageSlider/imageSlider';
+import '../../components/image-slider/imageSlider';
 import './sign-in-page.scss';

@@ -1,0 +1,18 @@
+extends ../../layout/pages.pug
+include ../../components/room-search/room-search.pug
+include ../../components/image-slider/image-slider.pug
+
+block variables
+  - let pageClass = 'landing'
+
+block main
+  +image-slider({isInterval:true,rows:[
+        {src: require('./img/landing_1.png').default, alt: '1'},
+        {src: require('./img/landing_2.png').default, alt: '2'},
+        {src: require('./img/landing_3.png').default, alt: '3'},
+        ]})
+  .landing__container 
+    .landing__room-search
+      +room-search
+    .landing__slogan
+      span.landing__slogan-text= 'Лучшие номера для вашей работы, отдыха и просто вдохновения'

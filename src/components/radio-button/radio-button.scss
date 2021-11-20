@@ -1,0 +1,89 @@
+@import '../../utils/vars';
+@import '../../utils/mixins';
+
+.radio-button {
+  width: 100%;
+  max-width: 13.8rem;
+
+  @include _1200 {
+    max-width: none;
+  }
+
+  &__label {
+    cursor: pointer;
+  }
+
+  &__header {
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 1rem;
+  }
+
+  &__group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 6.125rem);
+    column-gap: 1.25rem;
+    row-gap: 0.6rem;
+  }
+
+  &__item {
+    font-size: 0.875rem;
+    font-family: Montserrat, Arial, sans-serif;
+    color: $color-dark-50;
+
+    @include _1200 {
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__radio {
+    position: absolute;
+    height: 1.25rem;
+    width: 1.25rem;
+    border-radius: 50%;
+    border: 0.0625rem solid $color-dark-25;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0.18rem;
+      left: 0.18rem;
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 0.375rem;
+      opacity: 0;
+      background: $grad-purple;
+    }
+  }
+
+  &__caption {
+    padding-left: 1.85rem;
+  }
+
+  &__input {
+    appearance: none;
+    position: absolute;
+
+    &:checked + .radio-button__radio + .radio-button__caption {
+      transition: color 0.25s ease-in-out;
+      color: $color-dark-75;
+    }
+
+    &:checked + .radio-button__radio {
+      border: 0.0625rem solid $color-purple;
+
+      &::before {
+        transition: opacity 0.25s ease-in-out;
+        opacity: 1;
+      }
+    }
+
+    &:hover + .radio-button__radio,
+    &:focus + .radio-button__radio {
+      box-shadow: 0 0.125rem 0.3125rem $color-dark-25;
+    }
+  }
+}

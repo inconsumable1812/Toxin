@@ -1,0 +1,19 @@
+@import '../../utils/mixins';
+@import '../../utils/vars';
+
+.tag-example {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  column-gap: 1.9rem;
+
+  &__title {
+    text-align: right;
+    font-weight: normal;
+    color: $color-dark-25;
+  }
+
+  &__subtitle_p {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+  }
+}

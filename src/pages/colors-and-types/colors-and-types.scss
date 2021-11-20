@@ -1,0 +1,46 @@
+@import '../../utils/main';
+@import '../../utils/mixins';
+@import '../../components/color/color';
+@import '../../components/tag-example/tag-example';
+
+.colors-and-types {
+  &__nav {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 86.3125rem;
+    display: flex;
+    padding: 1.875rem 0;
+    margin-bottom: 2.3rem;
+  }
+
+  &__main {
+    margin: 0 auto;
+    width: 66.1%;
+    max-width: 87.3125rem;
+    display: grid;
+    grid-template-columns: 16.875rem 25.1875rem;
+    grid-column-gap: 37.2%;
+
+    @include _1200 {
+      width: 95%;
+      grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+      grid-row-gap: 3rem;
+    }
+
+    @include _768 {
+      grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    }
+  }
+
+  &__colors {
+    display: grid;
+    grid-auto-flow: row;
+    grid-gap: 1.25rem;
+  }
+
+  &__types {
+    display: grid;
+    align-content: start;
+    grid-row-gap: 3.125rem;
+  }
+}

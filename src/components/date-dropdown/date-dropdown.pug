@@ -1,0 +1,30 @@
+include ../dropdown/dropdown.pug
+
+mixin date-dropdown(options)
+  -
+    const {isExpanded, hidden, type, titleStart, titleEnd, title} = options || {}
+
+  - const mainClass = 'date-dropdown_' + type
+  - const JSMainClass = ' js-date-dropdown js-' + mainClass
+  - let calendarClass = 'js-date-dropdown__calendar_content'
+  - calendarClass += isExpanded ? ' js-date-dropdown__calendar_content_expanded' : ''
+  - calendarClass += hidden ? ' disabled' : ''
+
+  div.date-dropdown(class= mainClass + JSMainClass )
+    if (type === 'double')
+      .date-dropdown__group_double
+        .date-dropdown__item
+          span.date-dropdown__title= titleStart
+          .date-dropdown__dropdown-box.js-date-dropdown__dropdown-box
+            +dropdown({name:"field-date-from", placeholder:"ДД.ММ.ГГГГ", type: "date", calendar:true})
+        .date-dropdown__item 
+          span.date-dropdown__title= titleEnd
+          .date-dropdown__dropdown-box.js-date-dropdown__dropdown-box
+            +dropdown({name:"field-date-to", placeholder:"ДД.ММ.ГГГГ", type: "date", calendar:true})
+    if (type === "single")
+      .date-dropdown__group_single
+        .date-dropdown__item
+          span.date-dropdown__title= title
+          .date-dropdown__dropdown-box.js-date-dropdown__dropdown-box
+            +dropdown({name:"date-filter", placeholder:"ДД.ММ.ГГГГ", type: "date", calendar:true})
+    div.date-dropdown__calendar_content(class= calendarClass)

@@ -2,31 +2,9 @@ include ../../components/logo/logo.pug
 include ../../components/input/input.pug
 
 mixin footer(options = {})
-  - 
-     menuLinkDefault = [
-      {title:'Навигация',
-        links:[
-          {name: 'О нас', href:'./error-page.html'},
-          {name: 'Новости', href:'./error-page.html'},
-          {name: 'Служба поддержки', href:'./error-page.html'},
-          {name: 'Услуги', href:'../error-page.html'},
-        ]},
-      {title:'О нас',
-        links:[
-          {name: 'О сервисе', href:'./error-page.html'},
-          {name: 'Наша команда', href:'./error-page.html'},
-          {name: 'Вакансии', href:'./error-page.html'},
-          {name: 'Инвесторы', href:'../error-page.html'},
-        ]},
-      {title:'Служба поддержки',
-        links:[
-          {name: 'Соглашения', href:'./error-page.html'},
-          {name: 'Сообщества', href:'./error-page.html'},
-          {name: 'Связь с нами', href:'./error-page.html'},
-        ]},
-      ]
-
-  - 
+  - const { menuLinkDefault } = require("../../components/footer/default-link.json"); 
+  
+  -
     const {
     aboutUs = 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»', 
     menuLink = menuLinkDefault, 
@@ -36,6 +14,7 @@ mixin footer(options = {})
     isSmall = false,
     } = options
 
+  -
   - let footerClass = 'footer'
   - footerClass += isSmall ? ' footer_size_small' : ''
   
@@ -49,7 +28,7 @@ mixin footer(options = {})
               +logo(true)
             p.footer__about-us-text= aboutUs
           .footer__navigation
-            each item in menuLinkDefault
+            each item in menuLink
               .footer__navigation-row
                 h3.footer__navigation-title= item.title
                 ul.footer__navigation-list

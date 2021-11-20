@@ -1,8 +1,8 @@
 mixin checkbox(options)
   - const {header, rows =[] } = options || {}
 
-  div.checkbox
-    div.checkbox__header= header
+  .checkbox
+    .checkbox__header= header
     ul.checkbox__list 
       each row in rows
         li.checkbox__item

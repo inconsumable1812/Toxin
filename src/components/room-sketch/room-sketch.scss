@@ -1,0 +1,84 @@
+@import '../../utils/vars';
+@import '../../utils/mixins';
+@import '../../components/image-slider/image-slider';
+@import '../../components/rate-button/rate-button';
+
+.room-sketch {
+  background: white;
+  box-shadow: 0 0.625rem 1.25rem rgba(31, 32, 65, 0.05);
+  border-radius: 0.25rem;
+
+  &__main {
+    padding: 1.2rem 1.0625rem 1.1875rem 1.25rem;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.7rem;
+    border-bottom: 1px solid $color-dark-10;
+  }
+
+  &__number-symbol {
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: $color-dark-100;
+  }
+
+  &__number-value {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    font-size: 1.1875rem;
+    font-weight: bold;
+    color: $color-dark-100;
+  }
+
+  &__number-feature {
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $color-purple;
+  }
+
+  &__price-per-day {
+    margin-top: 0.3rem;
+  }
+
+  &__cost {
+    font-size: 0.875rem;
+    color: $color-dark-50;
+    margin-right: 0.25rem;
+    font-weight: bold;
+  }
+
+  &__date-unit {
+    font-size: 0.75rem;
+    color: $color-dark-50;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.575rem;
+  }
+
+  &__feedback-number {
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: $color-dark-50;
+    margin-right: 0.35rem;
+  }
+
+  &__feedback-text {
+    font-size: 0.875rem;
+    color: $color-dark-50;
+    margin-right: 0.1rem;
+  }
+
+  &__link {
+    appearance: none;
+    text-decoration: none;
+  }
+}
