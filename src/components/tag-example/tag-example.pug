@@ -1,10 +1,10 @@
 mixin tag-example(options)
-  - const {tag, title, subtitle} = options || {}
-  - let mainClass = 'tag-example tag-example_'
-  - mainClass += tag
-  - let subtitleClass = 'tag-example__subtitle'
-  - subtitleClass += tag === 'p' ? `_${tag}` : ''
+  - const { tag, title, subtitle } = options || {};
+  - let mainClass = 'tag-example tag-example_';
+  - mainClass += tag;
+  - let subtitleClass = 'tag-example__subtitle';
+  - subtitleClass += tag === 'p' ? `_${tag}` : '';
 
-  div(class = mainClass)
-    #{tag}.tag-example__title #{title}
-    #{tag}(class= subtitleClass) #{subtitle}
+  div(class=mainClass)
+    #{tag}.tag-example__title #{ title }
+    #{tag}(class=subtitleClass) #{ subtitle }

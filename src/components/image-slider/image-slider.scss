@@ -38,7 +38,6 @@
     color: white;
     transform: rotate(90deg);
     transition: opacity 0.3s ease;
-    z-index: 3;
   }
 
   &__hovered {
@@ -54,11 +53,6 @@
     .material-icons {
       opacity: 1;
     }
-  }
-
-  .material-icons {
-    opacity: 0;
-    transition: opacity 0.3s ease;
   }
 
   &:hover {

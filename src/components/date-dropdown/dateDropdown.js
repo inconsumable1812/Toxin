@@ -28,7 +28,7 @@ export class DateDropdown {
         clearButton: true,
         minDate: new Date(),
         navTitles: {
-          days: 'MM <i>yyyy</i>'
+          days: 'MM <i>yyyy</i>',
         },
         range: 'true',
         multipleDatesSeparator: ' - ',
@@ -38,7 +38,7 @@ export class DateDropdown {
 
         onSelect(fd) {
           $date.val(fd);
-        }
+        },
       });
     } else {
       const dateFrom = this.$dropdown.find('[name=field-date-from]');
@@ -48,7 +48,7 @@ export class DateDropdown {
         clearButton: true,
         minDate: new Date(),
         navTitles: {
-          days: 'MM <i>yyyy</i>'
+          days: 'MM <i>yyyy</i>',
         },
         range: 'true',
         multipleDatesSeparator: ' - ',
@@ -59,7 +59,7 @@ export class DateDropdown {
         onSelect(fd) {
           dateFrom.val(fd.split('-')[0]);
           dateTo.val(fd.split('-')[1]);
-        }
+        },
       });
     }
 

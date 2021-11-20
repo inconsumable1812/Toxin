@@ -4,23 +4,22 @@ include ../../components/logo/logo.pug
 include ../../components/header/header.pug
 include ../../components/footer/footer.pug
 
-
 block variables
-  - let title = "Headers & Footers"
-  - let theme = "body_theme_gray"
+  - let title = 'Headers & Footers';
+  - let theme = 'body_theme_gray';
 
 block content
-  - const bottomClass = 'headers-and-footers__margin-bottom'
-  - const auth = {name: 'Юлий', surname: 'Цезарь'}
-   
+  - const bottomClass = 'headers-and-footers__margin-bottom';
+  - const auth = { name: 'Юлий', surname: 'Цезарь' };
+
   .headers-and-footers
     nav.headers-and-footers__logo
       +logo
-  div(class = bottomClass).headers-and-footers__header
+  div.headers-and-footers__header(class=bottomClass)
     +header({menuLink})
-  div(class = bottomClass).headers-and-footers__header_login
+  div.headers-and-footers__header_login(class=bottomClass)
     +header({menuLink, auth})
-  div(class = bottomClass).headers-and-footers__footer
+  div.headers-and-footers__footer(class=bottomClass)
     +footer({})
-  div.headers-and-footers__footer_size_small
+  .headers-and-footers__footer_size_small
     +footer({isSmall:true})

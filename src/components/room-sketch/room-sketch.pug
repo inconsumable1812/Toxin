@@ -2,7 +2,7 @@ include ../../components/image-slider/image-slider.pug
 include ../../components/rate-button/rate-button.pug
 
 mixin room-sketch(options)
-  - 
+  -
     const {
     rows,
     isHovered, 
@@ -23,7 +23,7 @@ mixin room-sketch(options)
     .room-sketch__slider
       +image-slider({rows, isHovered, isInterval})
     .room-sketch__main
-      a(href='./room-details.html').room-sketch__link
+      a.room-sketch__link(href="./room-details.html")
         .room-sketch__header
           .room-sketch__number
             span.room-sketch__number-symbol= '№'
@@ -32,7 +32,7 @@ mixin room-sketch(options)
               span.room-sketch__number-feature= 'люкс'
           .room-sketch__price-per-day
             span.room-sketch__cost= cost
-            span.room-sketch__date-unit='в сутки'
+            span.room-sketch__date-unit= 'в сутки'
         .room-sketch__footer
           .room-sketch__rate
             +rate-button({base, rate, isVariable, name, id})

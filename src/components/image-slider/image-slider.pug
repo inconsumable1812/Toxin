@@ -1,16 +1,15 @@
-mixin image-slider (options)
-  - const {isHovered, isInterval, rows = []} = options || {}
+mixin image-slider(options)
+  - const { isHovered, isInterval, rows = [] } = options || {};
 
-  - let sliderClass = 'image-slider js-image-slider'
-  - sliderClass += isHovered ? " image-slider__hovered" : ""
-  - sliderClass += isInterval ? " image-slider__interval" : ""
- 
+  - let sliderClass = 'image-slider js-image-slider';
+  - sliderClass += isHovered ? ' image-slider__hovered' : '';
+  - sliderClass += isInterval ? ' image-slider__interval' : '';
 
-  div(class = sliderClass)
+  div(class=sliderClass)
     .image-slider__slider-wrapper 
       each row in rows
         .image-slider__slide.js-image-slider__slide
-          img(src=row.src, alt=row.alt).image-slider__img
+          img.image-slider__img(src=row.src, alt=row.alt)
       .image-slider__btn-prev.js-image-slider__btn-prev
         span.image-slider__arrow.material-icons= 'expand_more'
       .image-slider__btn-next.js-image-slider__btn-next

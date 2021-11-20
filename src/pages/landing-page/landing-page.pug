@@ -3,9 +3,10 @@ include ../../components/room-search/room-search.pug
 include ../../components/image-slider/image-slider.pug
 
 block variables
-  - let pageClass = 'landing'
+  - let pageClass = 'landing';
 
 block main
+  //- prettier-ignore 
   +image-slider({isInterval:true,rows:[
         {src: require('./img/landing_1.png').default, alt: '1'},
         {src: require('./img/landing_2.png').default, alt: '2'},

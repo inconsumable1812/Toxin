@@ -1,20 +1,23 @@
 mixin expandable-checkbox-list(options)
-  - const {isExpanded, title, rows =[] } = options || {}
+  - const { isExpanded, title, rows = [] } = options || {};
 
-  - let mainClass = 'expandable-checkbox-list js-expandable-checkbox-list'
-  - mainClass += isExpanded ? ' expandable-checkbox-list_expanded' : ''
-  - const listClass = 'expandable-checkbox-list__list'
-  - const buttonClass = 'expandable-checkbox-list__toggle-button'
+  - let mainClass = 'expandable-checkbox-list js-expandable-checkbox-list';
+  - mainClass += isExpanded ? ' expandable-checkbox-list_expanded' : '';
+  - const listClass = 'expandable-checkbox-list__list';
+  - const buttonClass = 'expandable-checkbox-list__toggle-button';
 
-  div(class= mainClass)
+  div(class=mainClass)
     .expandable-checkbox-list__header.js-expandable-checkbox-list__header
-      span.expandable-checkbox-list__title=title
-      button(class = buttonClass, type='button', , tabindex="0").material-icons
-    ul(class = listClass)
+      span.expandable-checkbox-list__title= title
+      button.material-icons(class=buttonClass, type="button", tabindex="0")
+    ul(class=listClass)
       if rows
         each row in rows
           li.expandable-checkbox-list__item
             label.expandable-checkbox-list__label
-              input.expandable-checkbox-list__input(type = "checkbox", name = row.name)
+              input.expandable-checkbox-list__input(
+                type="checkbox",
+                name=row.name
+              )
               span.expandable-checkbox-list__checkbox
               span.expandable-checkbox-list__title= row.title

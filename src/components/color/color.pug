@@ -1,7 +1,7 @@
 mixin color(options)
-  - const {color, title, subtitle } = options || {}
+  - const { color, title, subtitle } = options || {};
 
-  div.color(class = color)
-    div.color__box
-    h2.color__title(class = title) #{title}
-    div.color__subtitle(class = subtitle) #{subtitle}
+  .color(class=color)
+    .color__box
+    h2.color__title(class=title) #{ title }
+    .color__subtitle(class=subtitle) #{ subtitle }

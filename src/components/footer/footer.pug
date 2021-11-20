@@ -2,24 +2,23 @@ include ../../components/logo/logo.pug
 include ../../components/input/input.pug
 
 mixin footer(options = {})
-  - const { menuLinkDefault } = require("../../components/footer/default-link.json"); 
-  
+  - const { menuLinkDefault } = require('../../components/footer/default-link.json');
+
   -
     const {
-    aboutUs = 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»', 
+    aboutUs = "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", 
     menuLink = menuLinkDefault, 
-    subscribeTitle = 'Подписка', 
-    subscribeText = 'Получайте специальные предложения и новости сервиса',
-    copyrightText = 'Copyright © 2018 Toxin отель. Все права защищены.',
+    subscribeTitle = "Подписка", 
+    subscribeText = "Получайте специальные предложения и новости сервиса",
+    copyrightText = "Copyright © 2018 Toxin отель. Все права защищены.",
     isSmall = false,
     } = options
 
   -
-  - let footerClass = 'footer'
-  - footerClass += isSmall ? ' footer_size_small' : ''
-  
-  
-  div(class = footerClass)
+  - let footerClass = 'footer';
+  - footerClass += isSmall ? ' footer_size_small' : '';
+
+  div(class=footerClass)
     .footer__main-border
       .footer__container
         .footer__main-area 
@@ -34,20 +33,31 @@ mixin footer(options = {})
                 ul.footer__navigation-list
                   each link in item.links
                     li.footer__navigation-item
-                      a(href = link.href).footer__navigation-link= link.name
-          form(action="./error-page.html").footer__subscribe-form
+                      a.footer__navigation-link(href=link.href)= link.name
+          form.footer__subscribe-form(action="./error-page.html")
             h3.footer__subscribe-title= subscribeTitle
             p.footer__subscribe-txt= subscribeText
             .footer__input 
-              +input({type:'email', name:'email', placeholder:'Email', withButton :true})
+              +input({type: "email", name: "email", placeholder: "Email", withButton: true})
     .footer__container
       .footer__copyright-area
         p.footer__copyright-text= copyrightText
-        div.footer__copyright-list
+        .footer__copyright-list
           li.footer__copyright-list-item
-            a(href = 'https://twitter.com/', target='_blank', rel="noopener noreferrer").footer__twitter.fab.fa-twitter
+            a.footer__twitter.fab.fa-twitter(
+              href="https://twitter.com/",
+              target="_blank",
+              rel="noopener noreferrer"
+            )
           li.footer__copyright-list-item
-            a(href = 'https://facebook.com/', target='_blank', rel="noopener noreferrer").footer__facebook.fab.fa-facebook-square
+            a.footer__facebook.fab.fa-facebook-square(
+              href="https://facebook.com/",
+              target="_blank",
+              rel="noopener noreferrer"
+            )
           li.footer__copyright-list-item
-            a(href = 'https://instagram.com/', target='_blank', rel="noopener noreferrer").footer__instagram.fab.fa-instagram
-
+            a.footer__instagram.fab.fa-instagram(
+              href="https://instagram.com/",
+              target="_blank",
+              rel="noopener noreferrer"
+            )

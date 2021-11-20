@@ -3,12 +3,12 @@ extends ../../layout/pages.pug
 include ../../components/image-slider/image-slider.pug
 include ../../components/login-form/login-form.pug
 
-
 block variables
-  - let pageClass = 'sign-in'
+  - let pageClass = 'sign-in';
 
 block main
   .sign-in__slider
+    //- prettier-ignore
     +image-slider({isInterval:true,rows:[
         {src: require('../registration/img/registration_1.png').default, alt: '1'},
         {src: require('../registration/img/registration_2.png').default, alt: '2'},

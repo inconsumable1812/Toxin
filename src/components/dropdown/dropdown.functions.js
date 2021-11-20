@@ -41,14 +41,18 @@ function toggle(isExpanded, list) {
 
 function disabledMinusButtonIfLessUnit(count, button) {
   if (count < 1) {
-    return button.classList.add('dropdown__counter-buttons_type_minus_disabled');
+    return button.classList.add(
+      'dropdown__counter-buttons_type_minus_disabled'
+    );
   }
   return null;
 }
 
 function enabledMinusButtonIfBiggerZero(count, button) {
   if (count > 0) {
-    return button.classList.remove('dropdown__counter-buttons_type_minus_disabled');
+    return button.classList.remove(
+      'dropdown__counter-buttons_type_minus_disabled'
+    );
   }
   return null;
 }

@@ -1,5 +1,5 @@
 mixin toggle(options)
-  - const {header, rows =[] } = options || {}
+  - const { header, rows = [] } = options || {};
 
   .toggle
     if header
@@ -8,6 +8,6 @@ mixin toggle(options)
       each row in rows 
         li.toggle__items
           label.toggle__label
-            input.toggle__input(type="checkbox", name= row.name)
+            input.toggle__input(type="checkbox", name=row.name)
             span.toggle__checkbox 
-            span.toggle__caption= row.caption 
+            span.toggle__caption= row.caption

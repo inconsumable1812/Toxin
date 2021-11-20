@@ -2,12 +2,12 @@ include ../../components/logo/logo.pug
 include ../../components/button/button.pug
 
 mixin header(options)
-  - const { menuLinkDefault } = require("../../components/header/default-link.json"); 
-  - const {menuLink= menuLinkDefault, auth = false} = options || {};
-  - let classLink = 'header__link'
-  - let classSubMenu = 'header__subMenu'
-  - let classSubLink = 'header__link header__subLink'
-  - let classUser = 'header__userMenu'
+  - const { menuLinkDefault } = require('../../components/header/default-link.json');
+  - const { menuLink = menuLinkDefault, auth = false } = options || {};
+  - let classLink = 'header__link';
+  - let classSubMenu = 'header__subMenu';
+  - let classSubLink = 'header__link header__subLink';
+  - let classUser = 'header__userMenu';
 
   .header.js-header
     .header__container
@@ -18,23 +18,23 @@ mixin header(options)
         .header__menuGroup.js-header__menuGroup
           ul.header__menu
             each link in menuLink
-              - classLink = link.bold ? 'header__link header_bold' : 'header__link'
-              - classSubMenu = link.bold ? 'header__subMenu js-header__subMenu header_bold' : 'header__subMenu js-header__subMenu'
+              - classLink = link.bold ? 'header__link header_bold' : 'header__link';
+              - classSubMenu = link.bold ? 'header__subMenu js-header__subMenu header_bold' : 'header__subMenu js-header__subMenu';
               if !link.subMenu
-                a(class = classLink, href = link.href)= link.name
+                a(class=classLink, href=link.href)= link.name
               if link.subMenu
-                div(class = classSubMenu) 
-                  a(class = classLink, href = link.href)= link.name
+                div(class=classSubMenu) 
+                  a(class=classLink, href=link.href)= link.name
                   .header__dropdown 
                     each subLink in link.subMenu
-                      a(class = classSubLink, href = subLink.href)= subLink.name
+                      a(class=classSubLink, href=subLink.href)= subLink.name
                   span.header__subMenuIcon.js-header__subMenuIcon.material-icons= 'expand_more'
           if !auth
-            - classUser += ' header__userMenu_notAuth'
-            div(class = classUser)
-              +button({theme:'white', textTheme:'purple', text:'войти', href:'./sign-in-page.html'})
-              +button({theme:'purple', textTheme:'white', text:'зарегистрироваться', href:'./registration.html'}) 
+            - classUser += ' header__userMenu_notAuth';
+            div(class=classUser)
+              +button({theme: 'white', textTheme: 'purple', text: 'войти', href: './sign-in-page.html'})
+              +button({theme: 'purple', textTheme: 'white', text: 'зарегистрироваться', href: './registration.html'}) 
           if auth
-            - classUser += ' header__userMenu_auth'
-            div(class = classUser)
-              a(href='/error-page.html').header__userName= `${auth.name} ${auth.surname}`
+            - classUser += ' header__userMenu_auth';
+            div(class=classUser)
+              a.header__userName(href="/error-page.html")= `${auth.name} ${auth.surname}`

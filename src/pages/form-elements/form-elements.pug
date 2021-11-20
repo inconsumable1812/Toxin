@@ -18,9 +18,8 @@ include ../../components/bullet-list/bullet-list.pug
 include ../../components/info/info.pug
 include ../../components/feedback/feedback.pug
 
-
 block variables
-  - var title = "Form-elements"
+  - var title = 'Form-elements';
 
 block content
   .form-elements
@@ -30,68 +29,76 @@ block content
       .form-elements__section-first
         .form-elements__section-column-start
           .form-elements__input-default
-            +input({title: "Text Field", type:'email', name:'email', placeholder:'Email', hint:'DEFAULT'})
+            +input({title: "Text Field", type: 'email', name: 'email', placeholder: 'Email', hint: 'DEFAULT'})
           .form-elements__input-hover
-            +input({title: "Text Field", type:'text', name:'This is pretty awesome', placeholder:'Enter the text', hint:'HOVER / FOCUS', value:'This is pretty awesome'})
+            //- prettier-ignore
+            +input({title: "Text Field", type: 'text', name: 'This is pretty awesome', 
+              placeholder: 'Enter the text', hint: 'HOVER / FOCUS', value: 'This is pretty awesome'})
           .form-elements__input-dropdown
-            +dropdown({title:"Dropdown", hint:"default", name:"guestNumber", placeholder:"Сколько гостей",type:"guest",rows: [
-                {count: 0, text: 'взрослые', typeOfCount:'adult'},
-                {count: 0, text: 'дети', typeOfCount:'children'},
-                {count: 0, text: 'младенцы', typeOfCount:'baby'},
-              ]})
+            //- prettier-ignore 
+            +dropdown({title: "Dropdown", hint: "default", name: "guestNumber", placeholder: "Сколько гостей", type:"guest",
+              rows: [ 
+                {count: 0, text: 'взрослые', typeOfCount: 'adult'}, 
+                {count: 0, text: 'дети', typeOfCount: 'children'}, 
+                {count: 0, text: 'младенцы', typeOfCount: 'baby'}, 
+              ]
+            })
           .form-elements__input-email
-            +input({title: "MASKED TEXT FIELD",type:'text', name:'text', isData:true})
+            +input({title: "MASKED TEXT FIELD",type: 'text', name: 'text', isData :true})
           .form-elements__dropdown-double
-            +date-dropdown({titleStart:"Date Dropdown", titleEnd:"Date Dropdown", type:'double', isExpanded:false})
+            +date-dropdown({titleStart: "Date Dropdown", titleEnd: "Date Dropdown", type: 'double', isExpanded: false})
           .form-elements__dropdown-single
-            +date-dropdown({title:"Filter date dropdown", type:'single'})
+            +date-dropdown({title: "Filter date dropdown", type: 'single'})
           .form-elements__input-with-button
-            +input({title: "SUBSCRIPTION TEXT FIELD", type:'email', name:'text', placeholder:'Email', withButton :true})
+            +input({title: "SUBSCRIPTION TEXT FIELD", type: 'email', name: 'text', placeholder: 'Email', withButton: true})
         .form-elements__section-column-gap
         .form-elements__section-column-central
           .form-elements__checkbox
-            +checkbox({header:'Checkbox Buttons', rows: [
-              {title:"Можно курить", name:'smoke'},
-              {title:"Можно с питомцами", name:'pet'},
-              {title:"Можно пригласить гостей (до 10 человек)", name:'more guests'},
-            ]})
+            //- prettier-ignore 
+            +checkbox({header:'Checkbox Buttons', 
+              rows: [ 
+                {title: "Можно курить", name: 'smoke'}, 
+                {title: "Можно с питомцами", name: 'pet'}, 
+                {title: "Можно пригласить гостей (до 10 человек)", name: 'more guests'} 
+              ]
+            })
           .form-elements__radio-button
-            +radio-button({header:"Radio Buttons", rows:[
-              {caption:"Мужчина"},
-              {caption:"Женщина"},
-            ]})
+            +radio-button({header: "Radio Buttons", rows: [ {caption: "Мужчина"}, {caption: "Женщина"} ]})
           .form-elements__toggle
-            +toggle({header:'Toggle', rows:[
-              {caption:'Получать спецпредложения', name:'special offers'},
-              {caption:'Получать спецпредложения', name:'special offers'},
-            ]})
+            //- prettier-ignore 
+            +toggle({header: 'Toggle', 
+              rows: [ 
+                {caption: 'Получать спецпредложения', name: 'special offers'}, 
+                {caption: 'Получать спецпредложения', name: 'special offers'}, 
+              ]
+            })
           .form-elements__like-buttons
-            div.form-elements__like-buttons_title= 'like button'
-            +like-button({count:'2'})
-            +like-button({count:'12', isPressed: true})
+            .form-elements__like-buttons_title= 'like button'
+            +like-button({count: '2'})
+            +like-button({count: '12', isPressed: true})
           .form-elements__rate-buttons
-            div.form-elements__rate-buttons_title= 'rate button'
-            div.form-elements__rate-buttons-group
-              +rate-button({base:5, rate: 4, isVariable:true, name:'rating', id:'rating'})
-              +rate-button({base:5, rate: 5, isVariable:true, name:'rating_1', id:'rating_1'})
+            .form-elements__rate-buttons_title= 'rate button'
+            .form-elements__rate-buttons-group
+              +rate-button({base: 5, rate: 4, isVariable: true, name: 'rating', id: 'rating'})
+              +rate-button({base: 5, rate: 5, isVariable: true, name: 'rating_1', id: 'rating_1'})
         .form-elements__section-column-gap
         .form-elements__section-column-end
           .form-elements__range-slider
-            +range-slider({title:"Range Slider", min:"0", max:"16000"})
+            +range-slider({title: "Range Slider", min: "0", max: "16000"})
           .form-elements__buttons 
             .form-elements__buttons-title= 'buttons'
             .form-elements__buttons-group
               .form-elements__buttons_row_first
-                +button({theme:'purple', textTheme:'white', text:'click me'})
-                +button({theme:'purple', textTheme:'white', text:'click me', isDisabled:true})
+                +button({theme: 'purple', textTheme: 'white', text: 'click me'})
+                +button({theme: 'purple', textTheme: 'white', text: 'click me', isDisabled: true})
               .form-elements__buttons_row_second
-                +button({theme:'white', textTheme:'purple', text:'click me'})       
-                +button({theme:'white', textTheme:'purple', text:'click me', isDisabled:true})
+                +button({theme: 'white', textTheme: 'purple', text: 'click me'}) 
+                +button({theme: 'white', textTheme: 'purple', text: 'click me', isDisabled: true})
               .form-elements__buttons_row_third
-                +button({theme:'transparent', textTheme:'purple', text:'click me'})
-                +button({theme:'transparent', textTheme:'purple', text:'click me', isTransparentDisabled: true})
+                +button({theme: 'transparent', textTheme: 'purple', text: 'click me'})
+                +button({theme: 'transparent', textTheme: 'purple', text: 'click me', isTransparentDisabled: true})
               .form-elements__buttons_row_fourth
-                +button({theme:'purple', textTheme:'white', text:'Перейти к оплате', isLarge: true})
+                +button({theme: 'purple', textTheme: 'white', text: 'Перейти к оплате', isLarge: true})
           .form-elements__pagination
             .form-elements__pagination-title= 'pagination'
             .form-elements__pagination-element
@@ -99,72 +106,104 @@ block content
       .form-elements__section-second
         .form-elements__section-column-start
           .form-elements__dropdown-rooms
-            +dropdown({title:"Dropdown", hint:"default", name:"Number", placeholder:"Количество комнат",rows: [
-                {count: 2, text: 'спальни', typeOfCount:'bedroom'},
-                {count: 2, text: 'кровати', typeOfCount:'bed'},
-                {count: 0, text: 'ванные комнаты', typeOfCount: 'bathroom'},
-              ],isExpanded: false, type:"rooms",})
+            //- prettier-ignore 
+            +dropdown({title: "Dropdown", hint: "default", name: "Number", placeholder: "Количество комнат",
+              rows: [ 
+                {count: 2, text: 'спальни', typeOfCount: 'bedroom'}, 
+                {count: 2, text: 'кровати', typeOfCount: 'bed'}, 
+                {count: 0, text: 'ванные комнаты', typeOfCount: 'bathroom'}
+              ],
+              isExpanded: false, type: "rooms"
+            })
           .form-elements__dropdown-expanded
-            +dropdown({title:"Dropdown", hint:"expanded", name:"Number", placeholder:"Количество комнат",rows: [
-                {count: 2, text: 'спальни', typeOfCount:'bedroom'},
-                {count: 2, text: 'кровати', typeOfCount:'bed'},
-                {count: 0, text: 'ванные комнаты', typeOfCount: 'bathroom'},
-              ],isExpanded: true, type:"rooms",})
+            //- prettier-ignore 
+            +dropdown({title: "Dropdown", hint: "expanded", name: "Number", placeholder: "Количество комнат",
+              rows: [ 
+                {count: 2, text: 'спальни', typeOfCount: 'bedroom'}, 
+                {count: 2, text: 'кровати', typeOfCount: 'bed'}, 
+                {count: 0, text: 'ванные комнаты', typeOfCount: 'bathroom'}
+              ],
+              isExpanded: true, type: "rooms"
+            })
         .form-elements__section-column-gap
         .form-elements__section-column-central
           .form-elements__dropdown-guests
-            +dropdown({title:"Dropdown", name:"guestNumber", placeholder:"Сколько гостей",type:"guest",rows: [
-                {count: 0, text: 'взрослые', typeOfCount:'adult'},
-                {count: 0, text: 'дети', typeOfCount:'children'},
-                {count: 0, text: 'младенцы', typeOfCount:'baby'},
-              ],isExpanded: true})
+            //- prettier-ignore 
+            +dropdown({title: "Dropdown", name: "guestNumber", placeholder: "Сколько гостей", type: "guest",
+              rows: [ 
+                {count: 0, text: 'взрослые', typeOfCount: 'adult'}, 
+                {count: 0, text: 'дети', typeOfCount: 'children'}, 
+                {count: 0, text: 'младенцы', typeOfCount: 'baby'}
+              ],
+              isExpanded: true
+            })
         .form-elements__section-column-gap
         .form-elements__section-column-end
           .form-elements__dropdown-guests_second
-            +dropdown({title:"Dropdown", name:"guestNumber", placeholder:"Сколько гостей",type:"guest",rows: [
-                {count: 2, text: 'взрослые', typeOfCount:'adult'},
-                {count: 1, text: 'дети', typeOfCount:'children'},
-                {count: 0, text: 'младенцы', typeOfCount:'baby'},
-              ],isExpanded: true})
+            //- prettier-ignore 
+            +dropdown({title: "Dropdown", name: "guestNumber", placeholder: "Сколько гостей", type: "guest",
+              rows: [ 
+                {count: 2, text: 'взрослые', typeOfCount: 'adult'}, 
+                {count: 1, text: 'дети', typeOfCount: 'children'}, 
+                {count: 0, text: 'младенцы', typeOfCount: 'baby'}
+              ],
+              isExpanded: true
+            })
       .form-elements__section-third
         .form-elements__section-column-start
           .form-elements__expandable-checkbox
-            +expandable-checkbox-list({title:'expandable checkbox list',isExpanded:false ,rows:[
-              {title:"Завтрак", name:'Breakfast'},
-              {title:"Письменный стол", name:'Desk'},
-              {title:"Стул для кормления", name:'Feeding chair'},
-              {title:"Кроватка", name:'Crib'},
-              {title:"Телевизор", name:'TV'},
-              {title:"Шампунь", name:'Shampoo'},
-              {title:"Телевизор", name:'TV1'},
-              {title:"Шампунь", name:'Shampoo1'},
-            ]})
+            //- prettier-ignore 
+            +expandable-checkbox-list({title: 'expandable checkbox list', isExpanded: false ,
+              rows:[ 
+                {title: "Завтрак", name: 'Breakfast'}, 
+                {title: "Письменный стол", name: 'Desk'}, 
+                {title: "Стул для кормления", name: 'Feeding chair'}, 
+                {title: "Кроватка", name: 'Crib'}, 
+                {title: "Телевизор", name: 'TV'}, 
+                {title: "Шампунь", name: 'Shampoo'}, 
+                {title: "Телевизор", name: 'TV1'}, 
+                {title: "Шампунь", name: 'Shampoo1'}
+              ]
+            })
           .form-elements__expandable-checkbox_expanded
-            +expandable-checkbox-list({title:'expandable checkbox list',isExpanded:true ,rows:[
-              {title:"Завтрак", name:'Breakfast'},
-              {title:"Письменный стол", name:'Desk'},
-              {title:"Стул для кормления", name:'Feeding chair'},
-              {title:"Кроватка", name:'Crib'},
-              {title:"Телевизор", name:'TV'},
-              {title:"Шампунь", name:'Shampoo'},
-              {title:"Телевизор", name:'TV1'},
-              {title:"Шампунь", name:'Shampoo1'},
-            ]})
+            //- prettier-ignore 
+            +expandable-checkbox-list({title: 'expandable checkbox list', isExpanded: true,
+              rows:[ 
+                {title: "Завтрак", name: 'Breakfast'}, 
+                {title: "Письменный стол", name: 'Desk'}, 
+                {title: "Стул для кормления", name: 'Feeding chair'}, 
+                {title: "Кроватка", name: 'Crib'}, 
+                {title: "Телевизор", name: 'TV'}, 
+                {title: "Шампунь", name: 'Shampoo'}, 
+                {title: "Телевизор", name: 'TV1'}, 
+                {title: "Шампунь", name: 'Shampoo1'}, 
+              ]
+            })
         .form-elements__section-column-gap
         .form-elements__section-column-central
           .form-elements__rich-checkbox
-            +rich-checkbox({header:'rich Checkbox Buttons', rows:[
-              {title:'Широкий коридор', name:'wide corridor', subtitle:'Ширина коридоров в номере не менее 91 см.'},
-              {title:'Помощник для инвалидов', name:'Assistant for the disabled', subtitle:'На 1 этаже вас встретит специалист  и проводит до номера.'},
-            ]})
+            //- prettier-ignore 
+            +rich-checkbox({header:'rich Checkbox Buttons', 
+              rows:[ 
+                {title: 'Широкий коридор', name: 'wide corridor', 
+                  subtitle: 'Ширина коридоров в номере не менее 91 см.'
+                },
+                {title: 'Помощник для инвалидов', name: 'Assistant for the disabled', 
+                  subtitle: 'На 1 этаже вас встретит специалист и проводит до номера.'
+                }
+              ]
+            })
         .form-elements__section-column-gap
         .form-elements__section-column-end
           .form-elements__bullet-list
-            +bullet-list({header:'Bullet List', rows:[
-              {text:'Нельзя с питомцами'},
-              {text:'Без вечеринок и мероприятий'},
-              {text:'Время прибытия — после 13:00, а выезд до 12:00'},
-            ]})
+            //- prettier-ignore 
+            +bullet-list({header: 'Bullet List', 
+              rows:[ 
+                {text: 'Нельзя с питомцами'}, 
+                {text: 'Без вечеринок и мероприятий'}, 
+                {text: 'Время прибытия — после 13:00, а выезд до 12:00'}, 
+              ]
+            })
       .form-elements__section-fourth
         .form-elements__section-column-start
           .form-elements__info

@@ -1,0 +1,41 @@
+{
+  "rooms": [
+    {
+      "room1": {
+        "isVip": true,
+        "roomNumber": "888",
+        "cost": "9 990₽",
+        "isHovered": true,
+        "base": 5,
+        "rate": 5,
+        "feedbackNumber": "145",
+        "feedbackText": "Отзывов",
+        "rows": [
+          { "src": "img/search-room_1.png", "alt": "1" },
+          { "src": "img/search-room_5.png", "alt": "2" },
+          { "src": "img/search-room_6.png", "alt": "3" },
+          { "src": "img/search-room_7.png", "alt": "4" }
+        ]
+      }
+    },
+
+    {
+      "room2": {
+        "isVip": false,
+        "roomNumber": "840",
+        "cost": "9 990₽",
+        "isHovered": false,
+        "base": 5,
+        "rate": 4,
+        "feedbackNumber": "65",
+        "feedbackText": "Отзывов",
+        "rows": [
+          { "src": "img/search-room_2.png", "alt": "1" },
+          { "src": "img/search-room_5.png", "alt": "2" },
+          { "src": "img/search-room_8.png", "alt": "3" },
+          { "src": "img/search-room_11.png", "alt": "4" }
+        ]
+      }
+    }
+  ]
+}

@@ -2,11 +2,11 @@ extends ../../layout/main.pug
 
 include ../../components/index-menu/index-menu
 
-
 block variables
-  - var title = "Меню выбор страниц"
+  - var title = 'Меню выбор страниц';
 
 block content
+  //- prettier-ignore 
   +index-menu({
     theme: 'purple',
     items: [
@@ -16,6 +16,7 @@ block content
       {text: 'Headers & Footers', href: 'headers-and-footers.html'},
     ],
   })
+  //- prettier-ignore 
   +index-menu({
     theme: 'green',
     items: [

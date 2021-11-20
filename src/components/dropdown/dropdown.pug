@@ -1,5 +1,5 @@
 mixin dropdown(options)
-  - 
+  -
     const {
       isExpanded,
       title, 
@@ -10,42 +10,54 @@ mixin dropdown(options)
       calendar,
       rows =[] } = options || {}
 
-  - const dropdownClass = 'dropdown dropdown__type_' + type
-  - let JSClass = ' js-dropdown'
-  - JSClass += type === 'date' ? `_${type}` : ''
-  - let listClass = 'dropdown__list js-dropdown__list'
-  - listClass += isExpanded ? ' dropdown__list_expanded' : ''
+  - const dropdownClass = 'dropdown dropdown__type_' + type;
+  - let JSClass = ' js-dropdown';
+  - JSClass += type === 'date' ? `_${type}` : '';
+  - let listClass = 'dropdown__list js-dropdown__list';
+  - listClass += isExpanded ? ' dropdown__list_expanded' : '';
 
-  div(class = dropdownClass + JSClass)
+  div(class=dropdownClass + JSClass)
     if title
       span.dropdown__title= title
     if hint
       span.dropdown__hint= hint
-    div.dropdown__box(class= 'js-dropdown__box dropdown__box_' + type)
-      input.dropdown__input(name = name, placeholder = placeholder, 
-        readonly="readonly", class = 'js-dropdown__input dropdown__input_' + type)
+    .dropdown__box(class='js-dropdown__box dropdown__box_' + type)
+      input.dropdown__input(
+        name=name,
+        placeholder=placeholder,
+        readonly="readonly",
+        class='js-dropdown__input dropdown__input_' + type
+      )
       button.dropdown__button.js-dropdown__button.material-icons(type="button")
       if !calendar
-        ul(class = listClass)
+        ul(class=listClass)
           if rows
             each row in rows
-              - const listItemClass = 'dropdown__list-item_' + row.typeOfCount
-              - const JSListItemClass = ' js-' + listItemClass
-              li.dropdown__list-item(class = listItemClass + JSListItemClass +' js-dropdown__list-item')
-                div.dropdown__item-name= row.text
-                div.dropdown__counter-buttons
-                  - var minusButtonClass = "dropdown__counter-buttons_type_minus js-dropdown__counter-buttons_type_minus"
-                  - minusButtonClass += row.count < 1 ? " dropdown__counter-buttons_type_minus_disabled" : ""
-                  - var clearButtonClass ="dropdown__clear-buttons js-dropdown__clear-buttons"
-                  - clearButtonClass += row.count < 1 ? " dropdown__clear-buttons_hidden" : ""
-                  button(class=minusButtonClass, type="button")= "-"
-                  span.dropdown__counter(class = ' js-dropdown__counter js-dropdown__counter_'+ row.typeOfCount)= row.count
-                  button(class="dropdown__counter-buttons_type_plus js-dropdown__counter-buttons_type_plus", type="button")= "+"
+              - const listItemClass = 'dropdown__list-item_' + row.typeOfCount;
+              - const JSListItemClass = ' js-' + listItemClass;
+              li.dropdown__list-item(
+                class=listItemClass + JSListItemClass + ' js-dropdown__list-item'
+              )
+                .dropdown__item-name= row.text
+                .dropdown__counter-buttons
+                  - var minusButtonClass = 'dropdown__counter-buttons_type_minus js-dropdown__counter-buttons_type_minus';
+                  - minusButtonClass += row.count < 1 ? ' dropdown__counter-buttons_type_minus_disabled' : '';
+                  - var clearButtonClass = 'dropdown__clear-buttons js-dropdown__clear-buttons';
+                  - clearButtonClass += row.count < 1 ? ' dropdown__clear-buttons_hidden' : '';
+                  button(class=minusButtonClass, type="button")= '-'
+                  span.dropdown__counter(
+                    class=' js-dropdown__counter js-dropdown__counter_' + row.typeOfCount
+                  )= row.count
+                  button.dropdown__counter-buttons_type_plus.js-dropdown__counter-buttons_type_plus(
+                    type="button"
+                  )= '+'
           if type === "guest"
-            li.dropdown__footer-buttons           
-              span(class = "dropdown__clear-buttons js-dropdown__clear-buttons")
-                button.dropdown__button_theme_textual.dropdown__button_theme_textual_hovered(type="button")
-                  span.dropdown__button-caption_color_dark= "ОЧИСТИТЬ"
-              span(class = "dropdown__apply-buttons js-dropdown__apply-buttons")
+            li.dropdown__footer-buttons 
+              span.dropdown__clear-buttons.js-dropdown__clear-buttons
+                button.dropdown__button_theme_textual.dropdown__button_theme_textual_hovered(
+                  type="button"
+                )
+                  span.dropdown__button-caption_color_dark= 'ОЧИСТИТЬ'
+              span.dropdown__apply-buttons.js-dropdown__apply-buttons
                 button.dropdown__button_theme_textual(type="button")
-                  span.dropdown__button-caption_color_purple= "ПРИМЕНИТЬ"
+                  span.dropdown__button-caption_color_purple= 'ПРИМЕНИТЬ'
