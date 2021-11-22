@@ -37,4 +37,4 @@ mixin header(options)
           if auth
             - classUser += ' header__userMenu_auth';
             div(class=classUser)
-              a.header__user-name(href="/error-page.html")= `${auth.name} ${auth.surname}`
+              a.header__user-name(href="./error-page.html")= `${auth.name} ${auth.surname}`
