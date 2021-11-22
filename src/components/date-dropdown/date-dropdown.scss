@@ -203,6 +203,10 @@
 
       [data-action='clear'] {
         margin-right: 6.7rem;
+
+        @include _768 {
+          margin-right: 0;
+        }
       }
     }
   }
@@ -383,7 +387,11 @@
         }
 
         [data-action='clear'] {
-          margin-right: 80px;
+          margin-right: 5rem;
+
+          @include _768 {
+            margin-right: 0;
+          }
         }
       }
     }
