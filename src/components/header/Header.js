@@ -7,6 +7,8 @@ const SUB_MENU_ICON_CLASS = 'js-header__sub-menu-icon';
 const SUB_MENU_EXPANDED = 'js-header__sub-menu_expanded';
 const CSS_SUB_MENU_EXPANDED = 'header__sub-menu_expanded';
 const DROPDOWN_CLASS = 'js-header__dropdown';
+const MENU_GROUP_EXPANDED = 'js-header__menu-group_expanded';
+const CSS_MENU_GROUP_EXPANDED = 'header__menu-group_expanded';
 
 export default class Header {
   constructor(header) {
@@ -50,11 +52,17 @@ export default class Header {
 
   @boundMethod
   burgerCallback() {
-    if (this.menuGroup.classList.contains('header__menu-group_expanded')) {
-      this.menuGroup.classList.remove('header__menu-group_expanded');
+    if (this.menuGroup.classList.contains(MENU_GROUP_EXPANDED)) {
+      this.menuGroup.classList.remove(
+        MENU_GROUP_EXPANDED,
+        CSS_MENU_GROUP_EXPANDED
+      );
       this.burger.textContent = 'menu';
     } else {
-      this.menuGroup.classList.add('header__menu-group_expanded');
+      this.menuGroup.classList.add(
+        MENU_GROUP_EXPANDED,
+        CSS_MENU_GROUP_EXPANDED
+      );
       this.burger.textContent = 'close';
     }
   }
