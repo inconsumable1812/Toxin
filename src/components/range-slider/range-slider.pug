@@ -1,13 +1,19 @@
 mixin range-slider(options)
   - const { title, min, max, description } = options || {};
 
-  .range-slider 
+  .range-slider.js-range-slider 
     .range-slider__header
       span.range-slider__title= title
       span.range-slider__count
-        input.range-slider__input_min(type="text", value=min)
+        input.range-slider__input_min.js-range-slider__input_min(
+          type="text",
+          value=min
+        )
         span.range-slider__separator= '-'
-        input.range-slider__input_max(type="text", value=max)
-    .range-slider__slider
+        input.range-slider__input_max.js-range-slider__input_max(
+          type="text",
+          value=max
+        )
+    .range-slider__slider.js-range-slider__slider
     if description
       p.range-slider__description= description

@@ -1,6 +1,10 @@
 import noUiSlider from 'nouislider';
+import { boundMethod } from 'autobind-decorator';
 
-class RangeSlider {
+const SLIDER = 'js-range-slider__slider';
+const MIN_INPUT = 'js-range-slider__input_min';
+const MAX_INPUT = 'range-slider__input_max';
+export default class RangeSlider {
   constructor(root) {
     this.root = root;
     this.sliderContainer = null;
@@ -12,15 +16,15 @@ class RangeSlider {
   }
 
   findSliderContainer() {
-    this.sliderContainer = this.root.querySelector('.range-slider__slider');
+    this.sliderContainer = this.root.querySelector('.' + SLIDER);
   }
 
   findMinInput() {
-    this.minInput = this.root.querySelector('.range-slider__input_min');
+    this.minInput = this.root.querySelector('.' + MIN_INPUT);
   }
 
   findMaxInput() {
-    this.maxInput = this.root.querySelector('.range-slider__input_max');
+    this.maxInput = this.root.querySelector('.' + MAX_INPUT);
   }
 
   init() {
@@ -38,20 +42,18 @@ class RangeSlider {
       connect: true,
       range: {
         min: +this.minInput.value,
-        max: +this.maxInput.value
-      }
+        max: +this.maxInput.value,
+      },
     });
   }
 
   bindEventListeners() {
-    this.sliderContainer.noUiSlider.on(
-      'update',
-      this.updateCallback.bind(this)
-    );
-    this.minInput.addEventListener('change', this.minInputCallback.bind(this));
-    this.maxInput.addEventListener('change', this.maxInputCallback.bind(this));
+    this.sliderContainer.noUiSlider.on('update', this.updateCallback);
+    this.minInput.addEventListener('change', this.minInputCallback);
+    this.maxInput.addEventListener('change', this.maxInputCallback);
   }
 
+  @boundMethod
   minInputCallback() {
     const arrayOfValue = this.minInput.value.split('');
     const arrayOfValueNumber = arrayOfValue.filter((value) =>
@@ -60,6 +62,7 @@ class RangeSlider {
     this.sliderContainer.noUiSlider.set([arrayOfValueNumber.join(''), null]);
   }
 
+  @boundMethod
   maxInputCallback() {
     const arrayOfValue = this.maxInput.value.split('');
     const arrayOfValueNumber = arrayOfValue.filter((value) =>
@@ -68,6 +71,7 @@ class RangeSlider {
     this.sliderContainer.noUiSlider.set([null, arrayOfValueNumber.join('')]);
   }
 
+  @boundMethod
   updateCallback(values, handle) {
     let value = values[handle];
 
@@ -78,6 +82,3 @@ class RangeSlider {
     }
   }
 }
-
-const rangeSliders = document.querySelectorAll('.range-slider');
-rangeSliders.forEach((slider) => new RangeSlider(slider));

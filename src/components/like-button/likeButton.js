@@ -1,6 +1,10 @@
-const PRESSED_CLASS = 'like-button_pressed';
+import { boundMethod } from 'autobind-decorator';
 
-class LikeButton {
+const PRESSED_CLASS = 'like-button_pressed';
+const JS_PRESSED_CLASS = 'js-like-button_pressed';
+const COUNT_CLASS = 'js-like-button__count';
+
+export default class LikeButton {
   constructor(button) {
     this.count = null;
     this.bindEventListeners(button);
@@ -10,21 +14,19 @@ class LikeButton {
     button.addEventListener('click', this.buttonClick);
   }
 
+  @boundMethod
   buttonClick(event) {
     const buttonNode = event.currentTarget;
-    const countNode = buttonNode.querySelector('.like-button__count');
+    const countNode = buttonNode.querySelector('.' + COUNT_CLASS);
     this.count = +countNode.textContent;
 
-    if (buttonNode.classList.contains(PRESSED_CLASS)) {
-      buttonNode.classList.remove('like-button_pressed');
+    if (buttonNode.classList.contains(JS_PRESSED_CLASS)) {
+      buttonNode.classList.remove(PRESSED_CLASS, JS_PRESSED_CLASS);
       this.count -= 1;
     } else {
-      buttonNode.classList.add('like-button_pressed');
+      buttonNode.classList.add(PRESSED_CLASS, JS_PRESSED_CLASS);
       this.count += 1;
     }
     countNode.textContent = this.count;
   }
 }
-
-const buttons = document.querySelectorAll('.js-like-button');
-buttons.forEach((button) => new LikeButton(button));

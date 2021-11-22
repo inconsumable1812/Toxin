@@ -11,10 +11,9 @@ mixin dropdown(options)
       rows =[] } = options || {}
 
   - const dropdownClass = 'dropdown dropdown__type_' + type;
-  - let JSClass = ' js-dropdown';
-  - JSClass += type === 'date' ? `_${type}` : '';
+  - const JSClass = type === 'date' ? ' js-dropdown__type_' + type : ' js-dropdown js-dropdown__type_' + type;
   - let listClass = 'dropdown__list js-dropdown__list';
-  - listClass += isExpanded ? ' dropdown__list_expanded' : '';
+  - listClass += isExpanded ? ' dropdown__list_expanded js-dropdown__list_expanded' : '';
 
   div(class=dropdownClass + JSClass)
     if title

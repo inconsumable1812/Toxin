@@ -1,35 +1,49 @@
-import '../../components/expandable-checkbox-list/expandableCheckboxList';
-import '../../components/range-slider/rangeSlider';
-import '../../components/pagination/pagination';
-import '../../components/image-slider/imageSlider';
-import '../../components/header/header';
-import { DateDropdown } from '../../components/date-dropdown/dateDropdown';
-import { Dropdown } from '../../components/dropdown/dropdown';
+import '../../components/expandable-checkbox-list/ExpandableCheckboxList-init';
+import '../../components/range-slider/RangeSlider-init';
+import '../../components/pagination/Pagination-init';
+import '../../components/image-slider/ImageSlider-init';
+import '../../components/header/Header-init';
+import '../../components/date-dropdown/DateDropdown-init';
+import '../../components/dropdown/Dropdown-init';
 import './search-room.scss';
 
-const Dropdowns = document.querySelectorAll('.js-dropdown');
-Dropdowns.forEach((dropdown) => new Dropdown(dropdown));
-
-const dateDropdowns = document.querySelectorAll('.js-date-dropdown');
-dateDropdowns.forEach((dateDropdown) => new DateDropdown(dateDropdown));
+const BUTTON_OPEN = 'js-search-room__button-open';
+const BUTTON = 'js-button';
+const BUTTON_CLOSE = 'js-search-room__button-close';
+const FILTER = 'js-search-room__filter';
+const FILTER_EXPANDED = 'js-search-room__filter_expanded';
+const CSS_FILTER_EXPANDED = 'search-room__filter_expanded';
 
 const openButton = document
-  .querySelector('.search-room__button-open')
-  .querySelector('.button');
-const closeButton = document.querySelector('.search-room__button-close');
-const filter = document.querySelector('.search-room__filter');
+  .querySelector('.' + BUTTON_OPEN)
+  .querySelector('.' + BUTTON);
+const closeButton = document.querySelector('.' + BUTTON_CLOSE);
+const filter = document.querySelector('.' + FILTER);
 
 const openButtonCallback = () => {
-  if (!filter.classList.contains('search-room__filter_expanded')) {
-    filter.classList.add('search-room__filter_expanded');
+  if (!filter.classList.contains(FILTER_EXPANDED)) {
+    filter.classList.add(CSS_FILTER_EXPANDED, FILTER_EXPANDED);
   } else {
-    filter.classList.remove('search-room__filter_expanded');
+    filter.classList.remove(CSS_FILTER_EXPANDED, FILTER_EXPANDED);
   }
 };
 openButton.addEventListener('click', openButtonCallback);
 
 const closeButtonCallback = () => {
-  filter.classList.remove('search-room__filter_expanded');
+  filter.classList.remove(CSS_FILTER_EXPANDED, FILTER_EXPANDED);
 };
-
 closeButton.addEventListener('click', closeButtonCallback);
+
+function isClickOnDocument(clickOnFilter, clickOnOpenButton) {
+  return !clickOnFilter && clickOnOpenButton !== openButton;
+}
+
+const documentCallback = (e) => {
+  const clickOnFilter = e.target.closest('.' + FILTER_EXPANDED);
+  const clickOnOpenButton = e.target.closest('.' + BUTTON);
+
+  if (isClickOnDocument(clickOnFilter, clickOnOpenButton)) {
+    filter.classList.remove(CSS_FILTER_EXPANDED, FILTER_EXPANDED);
+  }
+};
+document.addEventListener('click', documentCallback);

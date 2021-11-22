@@ -5,9 +5,9 @@ mixin header(options)
   - const { menuLinkDefault } = require('../../components/header/default-link.json');
   - const { menuLink = menuLinkDefault, auth = false } = options || {};
   - let classLink = 'header__link';
-  - let classSubMenu = 'header__subMenu';
-  - let classSubLink = 'header__link header__subLink';
-  - let classUser = 'header__userMenu';
+  - let classSubMenu = 'header__sub-menu';
+  - let classSubLink = 'header__link header__sub-link';
+  - let classUser = 'header__user-menu';
 
   .header.js-header
     .header__container
@@ -15,20 +15,20 @@ mixin header(options)
         .header__logo
           +logo(true)
         button.header__burger.js-header__burger.material-icons= 'menu'
-        .header__menuGroup.js-header__menuGroup
+        .header__menu-group.js-header__menu-group
           ul.header__menu
             each link in menuLink
-              - classLink = link.bold ? 'header__link header_bold' : 'header__link';
-              - classSubMenu = link.bold ? 'header__subMenu js-header__subMenu header_bold' : 'header__subMenu js-header__subMenu';
+              - const classLink = link.bold ? 'header__link header_bold' : 'header__link';
+              - const classSubMenu = link.bold ? 'header__sub-menu js-header__sub-menu header_bold' : 'header__sub-menu js-header__sub-menu';
               if !link.subMenu
                 a(class=classLink, href=link.href)= link.name
               if link.subMenu
                 div(class=classSubMenu) 
                   a(class=classLink, href=link.href)= link.name
-                  .header__dropdown 
+                  .header__dropdown.js-header__dropdown
                     each subLink in link.subMenu
                       a(class=classSubLink, href=subLink.href)= subLink.name
-                  span.header__subMenuIcon.js-header__subMenuIcon.material-icons= 'expand_more'
+                  span.header__sub-menu-icon.js-header__sub-menu-icon.material-icons= 'expand_more'
           if !auth
             - classUser += ' header__userMenu_notAuth';
             div(class=classUser)
@@ -37,4 +37,4 @@ mixin header(options)
           if auth
             - classUser += ' header__userMenu_auth';
             div(class=classUser)
-              a.header__userName(href="/error-page.html")= `${auth.name} ${auth.surname}`
+              a.header__user-name(href="/error-page.html")= `${auth.name} ${auth.surname}`

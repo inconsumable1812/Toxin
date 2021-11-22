@@ -1,11 +1,15 @@
 import $ from 'jquery';
 import 'paginationjs';
 
+const CURRENT_PAGE = 'js-current-page';
+const FROM = 'js-pagination__from';
+const TO = 'js-pagination__to';
+
 function observerCallback() {
-  const currentPage = +document.querySelector('.js-currentPage').textContent;
-  const textFrom = document.querySelector('.js-pagination__from');
+  const currentPage = +document.querySelector('.' + CURRENT_PAGE).textContent;
+  const textFrom = document.querySelector('.' + FROM);
   let textFromNumber = +textFrom.textContent;
-  const textTo = document.querySelector('.js-pagination__to');
+  const textTo = document.querySelector('.' + TO);
   let textToNumber = +textTo.textContent;
   textFromNumber = currentPage * 12 - 11;
   textToNumber = currentPage * 12;
@@ -18,7 +22,7 @@ function observerCallback() {
   }
 }
 
-class Pagination {
+export default class Pagination {
   constructor(paginationContainer) {
     this.$paginationContainer = $(paginationContainer);
 
@@ -42,7 +46,7 @@ class Pagination {
       prevText: '<span class="pagination__arrow-prev material-icons"></span>',
       nextText: '<span class="pagination__arrow-next material-icons"></span>',
       formatNavigator: `<span class="js-pagination__from"><%= currentPage %></span> &ndash; 
-    <span class="js-pagination__to">12</span> из 100+ вариантов аренды <span class="js-currentPage"><%= currentPage %></span>`
+    <span class="js-pagination__to">12</span> из 100+ вариантов аренды <span class="${CURRENT_PAGE}"><%= currentPage %></span>`,
     });
 
     this.bindEventListeners();
@@ -51,13 +55,10 @@ class Pagination {
   bindEventListeners() {
     const config = {
       childList: true,
-      subtree: true
+      subtree: true,
     };
 
     const observer = new MutationObserver(observerCallback);
     observer.observe(this.$paginationContainer[0], config);
   }
 }
-
-const paginations = document.querySelectorAll('.js-pagination');
-paginations.forEach((pagination) => new Pagination(pagination));

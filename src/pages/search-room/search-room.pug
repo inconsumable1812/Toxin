@@ -44,9 +44,9 @@ block variables
 
 block main
   .search-room__container
-    .search-room__filter 
-      button.search-room__button-close.material-icons= 'close'
-      form.search-room__filter-form 
+    .search-room__filter.js-search-room__filter
+      button.search-room__button-close.js-search-room__button-close.material-icons= 'close'
+      form.search-room__filter-form
         .search-room__calendar
           +date-dropdown({title: "даты пребывания в отеле", type: 'single'})
         .search-room__dropdown-guest
@@ -104,7 +104,7 @@ block main
             ]
           })
     .search-room__result
-      .search-room__button-open
+      .search-room__button-open.js-search-room__button-open
         +button({theme: 'purple', textTheme: 'white', text: 'Фильтр', isLarge: true})
       h1.search-room__result-title= 'Номера, которые мы для вас подобрали'
       ul.search-room__room-sketch-list

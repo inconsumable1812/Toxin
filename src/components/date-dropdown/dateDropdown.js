@@ -1,5 +1,11 @@
 import $ from 'jquery';
 import 'air-datepicker';
+import { boundMethod } from 'autobind-decorator';
+
+const CONTENT_CLASS = 'js-date-dropdown__calendar_content';
+const SINGLE_CLASS = 'js-date-dropdown_single';
+const BOX_CLASS = 'js-date-dropdown__dropdown-box';
+const EXPANDED_CLASS = 'js-date-dropdown__calendar_content_expanded';
 
 function isClickBeyondBorderCalendar(event) {
   return (
@@ -10,7 +16,7 @@ function isClickBeyondBorderCalendar(event) {
   );
 }
 
-export class DateDropdown {
+export default class DateDropdown {
   constructor(dropdown) {
     this.$dropdown = $(dropdown);
     this.$buttonContainers = null;
@@ -24,7 +30,7 @@ export class DateDropdown {
   init() {
     if (this.isTypeAreSingle()) {
       const $date = this.$dropdown.find('[name=date-filter]');
-      this.$dropdown.find('.js-date-dropdown__calendar_content').datepicker({
+      this.$dropdown.find('.' + CONTENT_CLASS).datepicker({
         clearButton: true,
         minDate: new Date(),
         navTitles: {
@@ -44,7 +50,7 @@ export class DateDropdown {
       const dateFrom = this.$dropdown.find('[name=field-date-from]');
       const dateTo = this.$dropdown.find('[name=field-date-to]');
 
-      this.$dropdown.find('.js-date-dropdown__calendar_content').datepicker({
+      this.$dropdown.find('.' + CONTENT_CLASS).datepicker({
         clearButton: true,
         minDate: new Date(),
         navTitles: {
@@ -63,16 +69,14 @@ export class DateDropdown {
       });
     }
 
-    this.$datePicker = this.$dropdown.find(
-      '.js-date-dropdown__calendar_content'
-    );
+    this.$datePicker = this.$dropdown.find('.' + CONTENT_CLASS);
 
     this.createApplyButton();
     this.bindEventListeners();
   }
 
   isTypeAreSingle() {
-    return this.$dropdown.hasClass('js-date-dropdown_single');
+    return this.$dropdown.hasClass(SINGLE_CLASS);
   }
 
   findButtonContainer() {
@@ -80,9 +84,7 @@ export class DateDropdown {
   }
 
   findDropdownBoxes() {
-    this.$dropdownBoxes = this.$dropdown.find(
-      '.js-date-dropdown__dropdown-box'
-    );
+    this.$dropdownBoxes = this.$dropdown.find('.' + BOX_CLASS);
   }
 
   createApplyButton() {
@@ -95,48 +97,39 @@ export class DateDropdown {
   }
 
   bindEventListeners() {
-    this.$applyButton.on('click', this.applyButtonCallback.bind(this));
+    this.$applyButton.on('click', this.applyButtonCallback);
     this.findDropdownBoxes();
     this.$dropdownBoxes.each((_, dropdownBox) =>
-      $(dropdownBox).on('click', this.toggleCallback.bind(this))
+      $(dropdownBox).on('click', this.toggleCallback)
     );
-    document.addEventListener('click', this.callbackOnDocument.bind(this));
+    document.addEventListener('click', this.callbackOnDocument);
   }
 
+  @boundMethod
   applyButtonCallback() {
-    this.$datePicker.removeClass('js-date-dropdown__calendar_content_expanded');
+    this.$datePicker.removeClass(EXPANDED_CLASS);
   }
 
+  @boundMethod
   toggleCallback() {
-    const listIsExpanded = this.$datePicker.hasClass(
-      'js-date-dropdown__calendar_content_expanded'
-    );
-    const lists = document.querySelectorAll(
-      '.js-date-dropdown__calendar_content'
-    );
+    const listIsExpanded = this.$datePicker.hasClass(EXPANDED_CLASS);
+    const lists = document.querySelectorAll('.' + CONTENT_CLASS);
     const array = [...lists].filter((list) => !$(list).hasClass('disabled'));
-    array.forEach((list) =>
-      list.classList.remove('js-date-dropdown__calendar_content_expanded')
-    );
+    array.forEach((list) => list.classList.remove(EXPANDED_CLASS));
     if (listIsExpanded) {
-      this.$datePicker.removeClass(
-        'js-date-dropdown__calendar_content_expanded'
-      );
+      this.$datePicker.removeClass(EXPANDED_CLASS);
     } else {
-      this.$datePicker.addClass('js-date-dropdown__calendar_content_expanded');
+      this.$datePicker.addClass(EXPANDED_CLASS);
     }
   }
 
+  @boundMethod
   callbackOnDocument(event) {
-    const listIsExpanded = this.$datePicker.hasClass(
-      'js-date-dropdown__calendar_content_expanded'
-    );
+    const listIsExpanded = this.$datePicker.hasClass(EXPANDED_CLASS);
     if (listIsExpanded) {
       if (isClickBeyondBorderCalendar(event)) {
         if (!this.$datePicker.hasClass('disabled'))
-          this.$datePicker.removeClass(
-            'js-date-dropdown__calendar_content_expanded'
-          );
+          this.$datePicker.removeClass(EXPANDED_CLASS);
       }
     }
   }

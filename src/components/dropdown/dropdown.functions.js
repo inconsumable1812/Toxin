@@ -1,3 +1,5 @@
+import { CSS_EXPANDED_CLASS, EXPANDED_CLASS } from './Dropdown-const';
+
 function index(number) {
   if (number === 1) {
     return 0;
@@ -34,9 +36,9 @@ function checkEndingInGuestToInputs(adult, baby) {
 
 function toggle(isExpanded, list) {
   if (isExpanded) {
-    return list.classList.remove('dropdown__list_expanded');
+    return list.classList.remove(CSS_EXPANDED_CLASS, EXPANDED_CLASS);
   }
-  return list.classList.add('dropdown__list_expanded');
+  return list.classList.add(CSS_EXPANDED_CLASS, EXPANDED_CLASS);
 }
 
 function disabledMinusButtonIfLessUnit(count, button) {
@@ -93,5 +95,5 @@ export {
   showClearButton,
   enabledMinusButtonIfBiggerZero,
   hideClearButton,
-  createNameOfRooms
+  createNameOfRooms,
 };

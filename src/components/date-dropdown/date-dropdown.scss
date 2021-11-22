@@ -209,7 +209,7 @@
 
   .datepicker-inline .datepicker {
     border: 0.0625rem solid $color-dark-25;
-    width: 19.85rem;
+    width: inherit;
     border-radius: 0.25rem;
     box-shadow: 0 0.625rem 1.25rem $color-dark-5;
 
@@ -390,6 +390,6 @@
   }
 
   .datepicker-inline .datepicker {
-    min-width: 16.625rem;
+    width: inherit;
   }
 }

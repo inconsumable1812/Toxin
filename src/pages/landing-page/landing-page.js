@@ -1,4 +1,5 @@
-import '../../components/header/header';
-import '../../components/room-search/roomSearch';
-import '../../components/image-slider/imageSlider';
+import '../../components/header/Header-init';
+import '../../components/image-slider/ImageSlider-init';
+import '../../components/date-dropdown/DateDropdown-init';
+import '../../components/dropdown/Dropdown-init';
 import './landing-page.scss';

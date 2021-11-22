@@ -32,7 +32,7 @@
     grid-area: logo;
   }
 
-  &__menuGroup {
+  &__menu-group {
     display: grid;
     grid-auto-flow: column;
     grid-area: menuGroup;
@@ -97,7 +97,7 @@
     box-shadow: 0 0 0.0625rem 0.0625rem $color-dark-10;
   }
 
-  &__subMenuIcon {
+  &__sub-menu-icon {
     cursor: pointer;
     color: $color-dark-50;
     user-select: none;
@@ -108,7 +108,7 @@
     }
   }
 
-  &__subMenu {
+  &__sub-menu {
     position: relative;
     display: grid;
     grid-template-columns: max-content min-content;
@@ -119,7 +119,7 @@
         display: flex;
       }
 
-      .header__subMenuIcon {
+      .header__sub-menu-icon {
         transform: rotate(180deg);
         transition: transform 0.25s ease;
       }
@@ -130,7 +130,7 @@
     }
   }
 
-  &__subLink {
+  &__sub-link {
     padding: 0.5rem 1rem;
     line-height: 2rem;
     border-bottom: 0.0625rem solid $color-dark-10;
@@ -165,7 +165,7 @@
     }
   }
 
-  &__userMenu {
+  &__user-menu {
     display: grid;
     grid-auto-flow: column;
     column-gap: 1.25rem;
@@ -185,7 +185,7 @@
     }
   }
 
-  &__userMenu_auth {
+  &__user-menu_auth {
     padding-left: 1.25rem;
     height: 30px;
     border-left: 1px solid $color-dark-10;
@@ -197,7 +197,7 @@
     }
   }
 
-  &__userName {
+  &__user-name {
     font-size: 0.875rem;
     color: $color-dark-50;
     line-height: 1.0625rem;

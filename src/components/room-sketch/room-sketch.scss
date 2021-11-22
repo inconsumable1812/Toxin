@@ -8,6 +8,10 @@
   box-shadow: 0 0.625rem 1.25rem rgba(31, 32, 65, 0.05);
   border-radius: 0.25rem;
 
+  &__slider {
+    max-height: 151px;
+  }
+
   &__main {
     padding: 1.2rem 1.0625rem 1.1875rem 1.25rem;
   }

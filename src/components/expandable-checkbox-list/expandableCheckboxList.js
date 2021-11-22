@@ -1,39 +1,36 @@
+import { boundMethod } from 'autobind-decorator';
+
+const EXPANDED_CLASS = 'js-expandable-checkbox-list_expanded';
+const CSS_EXPANDED_CLASS = 'expandable-checkbox-list_expanded';
+const HEADER_CLASS = 'js-expandable-checkbox-list__header';
+
 function toggle(isExpanded, list) {
   if (isExpanded) {
-    return list.classList.remove('expandable-checkbox-list_expanded');
+    return list.classList.remove(CSS_EXPANDED_CLASS, EXPANDED_CLASS);
   }
-  return list.classList.add('expandable-checkbox-list_expanded');
+  return list.classList.add(CSS_EXPANDED_CLASS, EXPANDED_CLASS);
 }
-class ExpandableCheckboxLists {
+
+export default class ExpandableCheckboxList {
   constructor(checkbox) {
     this.checkbox = checkbox;
-    this.isExpanded = this.checkbox.classList.contains(
-      'expandable-checkbox-list_expanded'
-    );
+    this.isExpanded = this.checkbox.classList.contains(EXPANDED_CLASS);
 
     this.bindEventListeners();
   }
 
   CheckExpanded() {
-    this.isExpanded = this.checkbox.classList.contains(
-      'expandable-checkbox-list_expanded'
-    );
+    this.isExpanded = this.checkbox.classList.contains(EXPANDED_CLASS);
   }
 
   bindEventListeners() {
-    const header = this.checkbox.querySelector(
-      '.js-expandable-checkbox-list__header'
-    );
-    header.addEventListener('click', this.toggleCallback.bind(this));
+    const header = this.checkbox.querySelector('.' + HEADER_CLASS);
+    header.addEventListener('click', this.toggleCallback);
   }
 
+  @boundMethod
   toggleCallback() {
     toggle(this.isExpanded, this.checkbox);
     this.CheckExpanded();
   }
 }
-
-const expandableCheckboxLists = document.querySelectorAll(
-  '.js-expandable-checkbox-list'
-);
-expandableCheckboxLists.forEach((list) => new ExpandableCheckboxLists(list));

@@ -1,4 +1,14 @@
-class ImageSlider {
+import { boundMethod } from 'autobind-decorator';
+
+const PREV_BUTTON_CLASS = 'js-image-slider__btn-prev';
+const NEXT_BUTTON_CLASS = 'js-image-slider__btn-next';
+const SLIDE_CLASS = 'js-image-slider__slide';
+const DOT_CLASS = 'js-image-slider__dot';
+const ACTIVE_SLIDE_CLASS = 'image-slider__slide_active';
+const ACTIVE_DOT_CLASS = 'image-slider__dot_active';
+const INTERVAL_CLASS = 'js-image-slider__interval';
+
+export default class ImageSlider {
   constructor(slider) {
     this.slider = slider;
     this.prev = null;
@@ -11,19 +21,19 @@ class ImageSlider {
   }
 
   findPrevButton() {
-    this.prev = this.slider.querySelector('.js-image-slider__btn-prev');
+    this.prev = this.slider.querySelector('.' + PREV_BUTTON_CLASS);
   }
 
   findNextButton() {
-    this.next = this.slider.querySelector('.js-image-slider__btn-next');
+    this.next = this.slider.querySelector('.' + NEXT_BUTTON_CLASS);
   }
 
   findSlides() {
-    this.slides = this.slider.querySelectorAll('.js-image-slider__slide');
+    this.slides = this.slider.querySelectorAll('.' + SLIDE_CLASS);
   }
 
   findDots() {
-    this.dots = this.slider.querySelectorAll('.js-image-slider__dot');
+    this.dots = this.slider.querySelectorAll('.' + DOT_CLASS);
   }
 
   init() {
@@ -38,22 +48,18 @@ class ImageSlider {
   }
 
   initFirstSlide() {
-    this.slides[this.index].classList.add('image-slider__slide_active');
-    this.dots[this.index].classList.add('image-slider__dot_active');
+    this.slides[this.index].classList.add(ACTIVE_SLIDE_CLASS);
+    this.dots[this.index].classList.add(ACTIVE_DOT_CLASS);
   }
 
   initActiveSlide(index) {
-    this.slides.forEach((slide) =>
-      slide.classList.remove('image-slider__slide_active')
-    );
-    this.slides[index].classList.add('image-slider__slide_active');
+    this.slides.forEach((slide) => slide.classList.remove(ACTIVE_SLIDE_CLASS));
+    this.slides[index].classList.add(ACTIVE_SLIDE_CLASS);
   }
 
   initActiveDot(index) {
-    this.dots.forEach((dot) =>
-      dot.classList.remove('image-slider__dot_active')
-    );
-    this.dots[index].classList.add('image-slider__dot_active');
+    this.dots.forEach((dot) => dot.classList.remove(ACTIVE_DOT_CLASS));
+    this.dots[index].classList.add(ACTIVE_DOT_CLASS);
   }
 
   prepareCurrentSlide(index) {
@@ -62,19 +68,20 @@ class ImageSlider {
   }
 
   isSetInterval() {
-    if (this.slider.classList.contains('image-slider__interval')) {
+    if (this.slider.classList.contains(INTERVAL_CLASS)) {
       setInterval(this.nextButtonCallback.bind(this), 5000);
     }
   }
 
   bindEventListeners() {
-    this.next.addEventListener('click', this.nextButtonCallback.bind(this));
-    this.prev.addEventListener('click', this.prevButtonCallback.bind(this));
+    this.next.addEventListener('click', this.nextButtonCallback);
+    this.prev.addEventListener('click', this.prevButtonCallback);
     this.dots.forEach((dot, index) =>
       dot.addEventListener('click', this.dotCallback.bind(this, index))
     );
   }
 
+  @boundMethod
   nextButtonCallback() {
     if (this.index === this.slides.length - 1) {
       this.index = 0;
@@ -85,6 +92,7 @@ class ImageSlider {
     }
   }
 
+  @boundMethod
   prevButtonCallback() {
     if (this.index === 0) {
       this.index = this.slides.length - 1;
@@ -99,6 +107,3 @@ class ImageSlider {
     this.prepareCurrentSlide(index);
   }
 }
-
-const sliders = document.querySelectorAll('.js-image-slider');
-sliders.forEach((slide) => new ImageSlider(slide));

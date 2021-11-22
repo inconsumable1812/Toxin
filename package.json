@@ -6,6 +6,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "air-datepicker": "^2.2.3",
+    "autobind-decorator": "^2.4.0",
     "chart.js": "^3.5.1",
     "imask": "^6.1.0",
     "jquery": "^3.5.1",
@@ -15,6 +16,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
+    "@babel/plugin-proposal-decorators": "^7.16.4",
     "@babel/preset-env": "^7.15.0",
     "@prettier/plugin-pug": "^1.17.3",
     "autoprefixer": "^9.0.0",

@@ -1,6 +1,6 @@
 import Chart from 'chart.js/auto';
 
-let ctx = document.querySelector('.chart__item').getContext('2d');
+let ctx = document.querySelector('.js-chart__item').getContext('2d');
 let gradientGreat = ctx.createLinearGradient(0, 0, 0, 135);
 let gradientGood = ctx.createLinearGradient(0, 0, 0, 130);
 let gradientAcceptable = ctx.createLinearGradient(0, 0, 0, 130);
@@ -8,7 +8,7 @@ let gradientDisappoint = ctx.createLinearGradient(0, 0, 0, 135);
 let dataNumber = [0, 65, 65, 130];
 
 let dataSum = 0;
-const sumHTML = document.querySelector('.chart__number');
+const sumHTML = document.querySelector('.js-chart__number');
 
 for (let i = 0; i < dataNumber.length; i += 1) {
   dataSum += dataNumber[i];
@@ -36,18 +36,18 @@ let myChart = new Chart(ctx, {
           gradientDisappoint,
           gradientAcceptable,
           gradientGood,
-          gradientGreat
+          gradientGreat,
         ],
         borderColor: [
           'rgba(255, 255, 255, 1)',
           'rgba(255, 255, 255, 1)',
           'rgba(255, 255, 255, 1)',
-          'rgba(255, 255, 255, 1)'
+          'rgba(255, 255, 255, 1)',
         ],
         borderWidth: 2,
-        hoverOffset: 0
-      }
-    ]
+        hoverOffset: 0,
+      },
+    ],
   },
   options: {
     cutout: '89%',
@@ -58,12 +58,12 @@ let myChart = new Chart(ctx, {
         left: -11,
         right: 0,
         top: 0,
-        bottom: -8
-      }
+        bottom: -8,
+      },
     },
     plugins: {
       tooltip: {
-        enabled: true
+        enabled: true,
       },
       legend: {
         position: 'right',
@@ -76,12 +76,12 @@ let myChart = new Chart(ctx, {
           font: {
             size: 14,
             lineHeight: 24,
-            family: 'Montserrat'
-          }
-        }
-      }
-    }
-  }
+            family: 'Montserrat',
+          },
+        },
+      },
+    },
+  },
 });
 myChart.canvas.parentNode.style.height = '121px';
 
