@@ -50,11 +50,11 @@ export default class Header {
 
   @boundMethod
   burgerCallback() {
-    if (this.menuGroup.classList.contains('header__menuGroup_expanded')) {
-      this.menuGroup.classList.remove('header__menuGroup_expanded');
+    if (this.menuGroup.classList.contains('header__menu-group_expanded')) {
+      this.menuGroup.classList.remove('header__menu-group_expanded');
       this.burger.textContent = 'menu';
     } else {
-      this.menuGroup.classList.add('header__menuGroup_expanded');
+      this.menuGroup.classList.add('header__menu-group_expanded');
       this.burger.textContent = 'close';
     }
   }
