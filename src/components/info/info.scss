@@ -1,5 +1,6 @@
 @import '../../utils/vars';
 @import '../../utils/mixins';
+@import '../info-icon/info-icon';
 
 .info {
   width: 100%;
@@ -13,16 +14,6 @@
   padding-top: 1.4rem;
   padding-bottom: 1.1rem;
   border-bottom: 1px solid $color-dark-10;
-
-  &__icon {
-    grid-area: icon;
-    color: $color-purple;
-    font-size: 3rem;
-  }
-
-  .material-icons {
-    font-size: 3rem;
-  }
 
   &__title {
     grid-area: title;

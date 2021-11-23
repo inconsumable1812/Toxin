@@ -1,7 +1,9 @@
+include ../info-icon/info-icon.pug
+
 mixin info(options)
   - const { icon, title, subtitle } = options || {};
 
   .info 
-    .info__icon.material-icons= icon
+    +info-icon({icon:icon})
     span.info__title= title
     span.info__subtitle= subtitle

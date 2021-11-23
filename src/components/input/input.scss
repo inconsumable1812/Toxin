@@ -74,8 +74,8 @@
     height: 1.125rem;
     background: url('./img/arrow-forward.svg') no-repeat center center;
   }
-}
 
-:focus::placeholder {
-  color: transparent;
+  :focus::placeholder {
+    color: transparent;
+  }
 }
