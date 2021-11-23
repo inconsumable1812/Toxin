@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import 'air-datepicker';
 import { boundMethod } from 'autobind-decorator';
+import Datepicker from '../../libs/datepicker/Datepicker';
 
 const CONTENT_CLASS = 'js-date-dropdown__calendar_content';
 const SINGLE_CLASS = 'js-date-dropdown_single';
@@ -21,43 +22,21 @@ export default class DateDropdown {
   init() {
     if (this.isTypeAreSingle()) {
       const $date = this.$dropdown.find('[name=date-filter]');
-      this.$dropdown.find(`.${CONTENT_CLASS}`).datepicker({
-        clearButton: true,
-        minDate: new Date(),
-        navTitles: {
-          days: 'MM <i>yyyy</i>',
-        },
-        range: 'true',
-        multipleDatesSeparator: ' - ',
-        prevHtml: '<span class="arrow_back material-icons">arrow_back</span>',
-        nextHtml:
-          '<span class="arrow_forward material-icons">arrow_forward</span>',
-
-        onSelect(fd) {
-          $date.val(fd);
-        },
-      });
+      this.datepickerInstance = new Datepicker(
+        CONTENT_CLASS,
+        this.$dropdown,
+        $date
+      );
     } else {
-      const dateFrom = this.$dropdown.find('[name=field-date-from]');
-      const dateTo = this.$dropdown.find('[name=field-date-to]');
+      const $dateFrom = this.$dropdown.find('[name=field-date-from]');
+      const $dateTo = this.$dropdown.find('[name=field-date-to]');
 
-      this.$dropdown.find(`.${CONTENT_CLASS}`).datepicker({
-        clearButton: true,
-        minDate: new Date(),
-        navTitles: {
-          days: 'MM <i>yyyy</i>',
-        },
-        range: 'true',
-        multipleDatesSeparator: ' - ',
-        prevHtml: '<span class="arrow_back material-icons">arrow_back</span>',
-        nextHtml:
-          '<span class="arrow_forward material-icons">arrow_forward</span>',
-
-        onSelect(fd) {
-          dateFrom.val(fd.split('-')[0]);
-          dateTo.val(fd.split('-')[1]);
-        },
-      });
+      this.datepickerInstance = new Datepicker(
+        CONTENT_CLASS,
+        this.$dropdown,
+        $dateFrom,
+        $dateTo
+      );
     }
 
     this.$datePicker = this.$dropdown.find(`.${CONTENT_CLASS}`);
