@@ -18,17 +18,8 @@
     font-size: 0.75rem;
     text-transform: uppercase;
   }
-}
 
-.date-dropdown_double {
-  max-width: 20rem;
-  width: 100%;
-
-  @include _1200 {
-    max-width: none;
-  }
-
-  .js-date-dropdown__calendar_content {
+  .date-dropdown__calendar_content {
     position: absolute;
     left: 0;
     display: none;
@@ -38,6 +29,15 @@
     &_expanded {
       display: block;
     }
+  }
+}
+
+.date-dropdown_double {
+  max-width: 20rem;
+  width: 100%;
+
+  @include _1200 {
+    max-width: none;
   }
 
   .disabled {
@@ -50,17 +50,5 @@
 
   @include _1200 {
     max-width: none;
-  }
-
-  .js-date-dropdown__calendar_content {
-    position: absolute;
-    left: 0;
-    display: none;
-    width: 100%;
-    z-index: 5;
-
-    &_expanded {
-      display: block;
-    }
   }
 }

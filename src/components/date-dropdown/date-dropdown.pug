@@ -6,8 +6,8 @@ mixin date-dropdown(options)
 
   - const mainClass = 'date-dropdown_' + type;
   - const JSMainClass = ' js-date-dropdown js-' + mainClass;
-  - let calendarClass = 'js-date-dropdown__calendar_content';
-  - calendarClass += isExpanded ? ' js-date-dropdown__calendar_content_expanded' : '';
+  - let calendarClass = 'js-date-dropdown__calendar_content date-dropdown__calendar_content';
+  - calendarClass += isExpanded ? ' date-dropdown__calendar_content_expanded js-date-dropdown__calendar_content_expanded' : '';
   - calendarClass += hidden ? ' disabled' : '';
 
   .date-dropdown(class=mainClass + JSMainClass)

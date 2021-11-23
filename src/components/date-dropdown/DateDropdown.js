@@ -1,12 +1,13 @@
 import $ from 'jquery';
-import 'air-datepicker';
 import { boundMethod } from 'autobind-decorator';
+
 import Datepicker from '../../libs/datepicker/Datepicker';
 
 const CONTENT_CLASS = 'js-date-dropdown__calendar_content';
 const SINGLE_CLASS = 'js-date-dropdown_single';
 const BOX_CLASS = 'js-date-dropdown__dropdown-box';
 const EXPANDED_CLASS = 'js-date-dropdown__calendar_content_expanded';
+const CSS_EXPANDED_CLASS = 'date-dropdown__calendar_content_expanded';
 
 export default class DateDropdown {
   constructor(dropdown) {
@@ -77,7 +78,7 @@ export default class DateDropdown {
 
   @boundMethod
   applyButtonCallback() {
-    this.$datePicker.removeClass(EXPANDED_CLASS);
+    this.$datePicker[0].classList.remove(EXPANDED_CLASS, CSS_EXPANDED_CLASS);
   }
 
   @boundMethod
@@ -87,9 +88,9 @@ export default class DateDropdown {
     const array = [...lists].filter((list) => !$(list).hasClass('disabled'));
     array.forEach((list) => list.classList.remove(EXPANDED_CLASS));
     if (listIsExpanded) {
-      this.$datePicker.removeClass(EXPANDED_CLASS);
+      this.$datePicker[0].classList.remove(EXPANDED_CLASS, CSS_EXPANDED_CLASS);
     } else {
-      this.$datePicker.addClass(EXPANDED_CLASS);
+      this.$datePicker[0].classList.add(EXPANDED_CLASS, CSS_EXPANDED_CLASS);
     }
   }
 
@@ -111,7 +112,7 @@ export default class DateDropdown {
     const isDisabled = this.$datePicker.hasClass('disabled');
 
     if (this.isClickBeyondBorderCalendar(event, listIsExpanded, isDisabled)) {
-      this.$datePicker.removeClass(EXPANDED_CLASS);
+      this.$datePicker[0].classList.remove(EXPANDED_CLASS, CSS_EXPANDED_CLASS);
     }
   }
 }
