@@ -26,7 +26,7 @@ block content
     nav.form-elements__logo 
       +logo
     .form-elements__main
-      .form-elements__section-first
+      .form-elements__section
         .form-elements__section-column-start
           .form-elements__input-default
             +input({title: "Text Field", type: 'email', name: 'email', placeholder: 'Email', hint: 'DEFAULT'})
@@ -103,7 +103,7 @@ block content
             .form-elements__pagination-title= 'pagination'
             .form-elements__pagination-element
               +pagination
-      .form-elements__section-second
+      .form-elements__section
         .form-elements__section-column-start
           .form-elements__dropdown-rooms
             //- prettier-ignore 
@@ -149,7 +149,7 @@ block content
               ],
               isExpanded: true
             })
-      .form-elements__section-third
+      .form-elements__section
         .form-elements__section-column-start
           .form-elements__expandable-checkbox
             //- prettier-ignore 
@@ -204,7 +204,7 @@ block content
                 {text: 'Время прибытия — после 13:00, а выезд до 12:00'}, 
               ]
             })
-      .form-elements__section-fourth
+      .form-elements__section
         .form-elements__section-column-start
           .form-elements__info
             +info({title:'Комфорт', subtitle:'Шумопоглощающие стены', icon:'insert_emoticon'})
