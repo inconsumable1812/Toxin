@@ -1,3 +1,5 @@
+/* eslint-disable global-require */
+
 module.exports = {
   plugins: [
     require('autoprefixer'),
@@ -5,4 +7,4 @@ module.exports = {
       preset: 'default',
     }),
   ],
-}
+};
