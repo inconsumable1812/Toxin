@@ -3,12 +3,11 @@ extends ./main.pug
 include ../components/header/header.pug
 include ../components/footer/footer.pug
 
-
 block content
-  div(class = pageClass)
-    header(class= headerClass)
+  div(class=pageClass)
+    header(class=headerClass)
       +header
-    main(class= mainClass)
-      block main 
-    footer(class = footerClass)
+    main(class=mainClass)
+      block main
+    footer(class=footerClass)
       +footer
