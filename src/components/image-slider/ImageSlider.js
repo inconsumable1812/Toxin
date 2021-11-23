@@ -21,19 +21,19 @@ export default class ImageSlider {
   }
 
   findPrevButton() {
-    this.prev = this.slider.querySelector('.' + PREV_BUTTON_CLASS);
+    this.prev = this.slider.querySelector(`.${PREV_BUTTON_CLASS}`);
   }
 
   findNextButton() {
-    this.next = this.slider.querySelector('.' + NEXT_BUTTON_CLASS);
+    this.next = this.slider.querySelector(`.${NEXT_BUTTON_CLASS}`);
   }
 
   findSlides() {
-    this.slides = this.slider.querySelectorAll('.' + SLIDE_CLASS);
+    this.slides = this.slider.querySelectorAll(`.${SLIDE_CLASS}`);
   }
 
   findDots() {
-    this.dots = this.slider.querySelectorAll('.' + DOT_CLASS);
+    this.dots = this.slider.querySelectorAll(`.${DOT_CLASS}`);
   }
 
   init() {

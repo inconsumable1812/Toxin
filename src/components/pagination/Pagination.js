@@ -6,13 +6,14 @@ const FROM = 'js-pagination__from';
 const TO = 'js-pagination__to';
 
 function observerCallback() {
-  const currentPage = +document.querySelector('.' + CURRENT_PAGE).textContent;
-  const textFrom = document.querySelector('.' + FROM);
+  const currentPage = document.querySelector(`.${CURRENT_PAGE}`).textContent;
+  const currentPageNumber = +currentPage;
+  const textFrom = document.querySelector(`.${FROM}`);
   let textFromNumber = +textFrom.textContent;
-  const textTo = document.querySelector('.' + TO);
+  const textTo = document.querySelector(`.${TO}`);
   let textToNumber = +textTo.textContent;
-  textFromNumber = currentPage * 12 - 11;
-  textToNumber = currentPage * 12;
+  textFromNumber = currentPageNumber * 12 - 11;
+  textToNumber = currentPageNumber * 12;
 
   if (textToNumber !== +textTo.textContent) {
     textTo.textContent = `${textToNumber}`;

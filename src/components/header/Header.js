@@ -21,15 +21,15 @@ export default class Header {
   }
 
   findBurger() {
-    this.burger = this.header.querySelector('.' + BURGER_CLASS);
+    this.burger = this.header.querySelector(`.${BURGER_CLASS}`);
   }
 
   findMenuGroup() {
-    this.menuGroup = this.header.querySelector('.' + MENU_GROUP_CLASS);
+    this.menuGroup = this.header.querySelector(`.${MENU_GROUP_CLASS}`);
   }
 
   findSubMenus() {
-    this.subMenus = this.header.querySelectorAll('.' + SUB_MENU_CLASS);
+    this.subMenus = this.header.querySelectorAll(`.${SUB_MENU_CLASS}`);
   }
 
   init() {
@@ -42,7 +42,7 @@ export default class Header {
 
   bindEventListeners() {
     this.subMenus.forEach((subMenu) => {
-      const subMenuIcon = subMenu.querySelector('.' + SUB_MENU_ICON_CLASS);
+      const subMenuIcon = subMenu.querySelector(`.${SUB_MENU_ICON_CLASS}`);
       subMenuIcon.addEventListener('click', this.subMenuCallback);
     });
 
@@ -68,7 +68,7 @@ export default class Header {
   }
 
   subMenuCallback = (event) => {
-    const subMenu = event.target.closest('.' + SUB_MENU_CLASS);
+    const subMenu = event.target.closest(`.${SUB_MENU_CLASS}`);
     if (subMenu.classList.contains(CSS_SUB_MENU_EXPANDED, SUB_MENU_EXPANDED)) {
       subMenu.classList.remove(CSS_SUB_MENU_EXPANDED, SUB_MENU_EXPANDED);
     } else {
@@ -79,12 +79,12 @@ export default class Header {
   @boundMethod
   callbackOnDocument(event) {
     const anybodyIsExpanded = document.querySelectorAll(
-      '.' + SUB_MENU_EXPANDED
+      `.${SUB_MENU_EXPANDED}`
     );
     if (anybodyIsExpanded) {
       const subMenus = this.subMenus;
-      const currentSubMenu = event.target.closest('.' + DROPDOWN_CLASS);
-      const subMenuToggleIcon = event.target.closest('.' + SUB_MENU_ICON_CLASS);
+      const currentSubMenu = event.target.closest(`.${DROPDOWN_CLASS}`);
+      const subMenuToggleIcon = event.target.closest(`.${SUB_MENU_ICON_CLASS}`);
       if (!currentSubMenu && !subMenuToggleIcon) {
         subMenus.forEach((subMenu) =>
           subMenu.classList.remove(CSS_SUB_MENU_EXPANDED, SUB_MENU_EXPANDED)

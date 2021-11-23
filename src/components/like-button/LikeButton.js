@@ -17,7 +17,7 @@ export default class LikeButton {
   @boundMethod
   buttonClick(event) {
     const buttonNode = event.currentTarget;
-    const countNode = buttonNode.querySelector('.' + COUNT_CLASS);
+    const countNode = buttonNode.querySelector(`.${COUNT_CLASS}`);
     this.count = +countNode.textContent;
 
     if (buttonNode.classList.contains(JS_PRESSED_CLASS)) {

@@ -15,10 +15,10 @@ const FILTER_EXPANDED = 'js-search-room__filter_expanded';
 const CSS_FILTER_EXPANDED = 'search-room__filter_expanded';
 
 const openButton = document
-  .querySelector('.' + BUTTON_OPEN)
-  .querySelector('.' + BUTTON);
-const closeButton = document.querySelector('.' + BUTTON_CLOSE);
-const filter = document.querySelector('.' + FILTER);
+  .querySelector(`.${BUTTON_OPEN}`)
+  .querySelector(`.${BUTTON}`);
+const closeButton = document.querySelector(`.${BUTTON_CLOSE}`);
+const filter = document.querySelector(`.${FILTER}`);
 
 const openButtonCallback = () => {
   if (!filter.classList.contains(FILTER_EXPANDED)) {
@@ -39,8 +39,8 @@ function isClickOnDocument(clickOnFilter, clickOnOpenButton) {
 }
 
 const documentCallback = (e) => {
-  const clickOnFilter = e.target.closest('.' + FILTER_EXPANDED);
-  const clickOnOpenButton = e.target.closest('.' + BUTTON);
+  const clickOnFilter = e.target.closest(`.${FILTER_EXPANDED}`);
+  const clickOnOpenButton = e.target.closest(`.${BUTTON}`);
 
   if (isClickOnDocument(clickOnFilter, clickOnOpenButton)) {
     filter.classList.remove(CSS_FILTER_EXPANDED, FILTER_EXPANDED);

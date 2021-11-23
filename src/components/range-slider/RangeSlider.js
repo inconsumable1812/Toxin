@@ -4,6 +4,7 @@ import { boundMethod } from 'autobind-decorator';
 const SLIDER = 'js-range-slider__slider';
 const MIN_INPUT = 'js-range-slider__input_min';
 const MAX_INPUT = 'range-slider__input_max';
+
 export default class RangeSlider {
   constructor(root) {
     this.root = root;
@@ -16,15 +17,15 @@ export default class RangeSlider {
   }
 
   findSliderContainer() {
-    this.sliderContainer = this.root.querySelector('.' + SLIDER);
+    this.sliderContainer = this.root.querySelector(`.${SLIDER}`);
   }
 
   findMinInput() {
-    this.minInput = this.root.querySelector('.' + MIN_INPUT);
+    this.minInput = this.root.querySelector(`.${MIN_INPUT}`);
   }
 
   findMaxInput() {
-    this.maxInput = this.root.querySelector('.' + MAX_INPUT);
+    this.maxInput = this.root.querySelector(`.${MAX_INPUT}`);
   }
 
   init() {

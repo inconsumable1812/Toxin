@@ -1,3 +1,4 @@
+/* eslint-disable lines-between-class-members */
 import { boundMethod } from 'autobind-decorator';
 
 import {
@@ -44,20 +45,21 @@ import {
 } from './Dropdown-const';
 
 export default class Dropdown {
+  countOfBedrooms = null;
+  countOfBeds = null;
+  countOfBathrooms = null;
+  countOfAdult = null;
+  countOfСhildren = null;
+  countOfBaby = null;
+  applyButton = null;
+  clearButton = null;
+  input = null;
+  box = null;
+  list = null;
+
   constructor(dropdown) {
     this.dropdown = dropdown;
-    this.countOfBedrooms = null;
-    this.countOfBeds = null;
-    this.countOfBathrooms = null;
-    this.countOfAdult = null;
-    this.countOfСhildren = null;
-    this.countOfBaby = null;
     this.isTypeGuest = this.dropdownTypeIsGuest();
-    this.applyButton = null;
-    this.clearButton = null;
-    this.input = null;
-    this.box = null;
-    this.list = null;
 
     this.init();
   }
@@ -70,42 +72,42 @@ export default class Dropdown {
   }
 
   initCountOfBedrooms() {
-    this.countOfBedrooms = +this.dropdown.querySelector('.' + BEDROOM_CLASS)
+    this.countOfBedrooms = +this.dropdown.querySelector(`.${BEDROOM_CLASS}`)
       .textContent;
   }
 
   initCountOfBeds() {
-    this.countOfBeds = +this.dropdown.querySelector('.' + BED_CLASS)
+    this.countOfBeds = +this.dropdown.querySelector(`.${BED_CLASS}`)
       .textContent;
   }
 
   initCountOfBathrooms() {
-    this.countOfBathrooms = +this.dropdown.querySelector('.' + BATHROOM_CLASS)
+    this.countOfBathrooms = +this.dropdown.querySelector(`.${BATHROOM_CLASS}`)
       .textContent;
   }
 
   initCountOfAdult() {
-    this.countOfAdult = +this.dropdown.querySelector('.' + ADULT_CLASS)
+    this.countOfAdult = +this.dropdown.querySelector(`.${ADULT_CLASS}`)
       .textContent;
   }
 
   initCountOfChildren() {
-    this.countOfСhildren = +this.dropdown.querySelector('.' + CHILDREN_CLASS)
+    this.countOfСhildren = +this.dropdown.querySelector(`.${CHILDREN_CLASS}`)
       .textContent;
   }
 
   initCountOfBaby() {
-    this.countOfBaby = +this.dropdown.querySelector('.' + BABY_CLASS)
+    this.countOfBaby = +this.dropdown.querySelector(`.${BABY_CLASS}`)
       .textContent;
   }
 
   init() {
-    this.input = this.dropdown.querySelector('.' + INPUT_CLASS);
-    this.box = this.dropdown.querySelector('.' + BOX_CLASS);
-    this.list = this.dropdown.querySelector('.' + LIST_CLASS);
+    this.input = this.dropdown.querySelector(`.${INPUT_CLASS}`);
+    this.box = this.dropdown.querySelector(`.${BOX_CLASS}`);
+    this.list = this.dropdown.querySelector(`.${LIST_CLASS}`);
     if (this.isTypeGuest) {
-      this.clearButton = this.dropdown.querySelector('.' + CLEAR_BUTTON_CLASS);
-      this.applyButton = this.dropdown.querySelector('.' + APPLY_BUTTON_CLASS);
+      this.clearButton = this.dropdown.querySelector(`.${CLEAR_BUTTON_CLASS}`);
+      this.applyButton = this.dropdown.querySelector(`.${APPLY_BUTTON_CLASS}`);
       this.initCountOfAdult();
       this.initCountOfChildren();
       this.initCountOfBaby();
@@ -128,9 +130,9 @@ export default class Dropdown {
 
   bindEventListeners() {
     const minusButtons = this.dropdown.querySelectorAll(
-      '.' + MINUS_BUTTON_CLASS
+      `.${MINUS_BUTTON_CLASS}`
     );
-    const plusButtons = this.dropdown.querySelectorAll('.' + PLUS_BUTTON_CLASS);
+    const plusButtons = this.dropdown.querySelectorAll(`.${PLUS_BUTTON_CLASS}`);
 
     minusButtons.forEach((button) => {
       button.addEventListener('click', this.minusButtonCallback);
@@ -154,9 +156,9 @@ export default class Dropdown {
   callbackOnDocument(event) {
     const listIsExpanded = this.list.classList.contains(EXPANDED_CLASS);
     if (listIsExpanded) {
-      const lists = document.querySelectorAll('.' + LIST_CLASS);
-      const currentBox = event.target.closest('.' + BOX_CLASS);
-      const dateDropdown = event.target.closest('.' + DATE_DROPDOWN_CLASS);
+      const lists = document.querySelectorAll(`.${LIST_CLASS}`);
+      const currentBox = event.target.closest(`.${BOX_CLASS}`);
+      const dateDropdown = event.target.closest(`.${DATE_DROPDOWN_CLASS}`);
       if (!currentBox || dateDropdown) {
         lists.forEach((list) =>
           list.classList.remove(EXPANDED_CLASS, CSS_EXPANDED_CLASS)
@@ -167,9 +169,9 @@ export default class Dropdown {
 
   @boundMethod
   expandedCallback(event) {
-    const target = event.target.closest('.' + LIST_CLASS);
+    const target = event.target.closest(`.${LIST_CLASS}`);
     const listIsExpanded = this.list.classList.contains(EXPANDED_CLASS);
-    const lists = document.querySelectorAll('.' + LIST_CLASS);
+    const lists = document.querySelectorAll(`.${LIST_CLASS}`);
 
     if (!target) {
       lists.forEach((list) =>
@@ -181,9 +183,9 @@ export default class Dropdown {
 
   @boundMethod
   minusButtonCallback(event) {
-    const itemNameNode = event.target.closest('.' + LIST_ITEM_CLASS);
-    const button = itemNameNode.querySelector('.' + MINUS_BUTTON_CLASS);
-    const itemCount = itemNameNode.querySelector('.' + COUNTER_CLASS);
+    const itemNameNode = event.target.closest(`.${LIST_ITEM_CLASS}`);
+    const button = itemNameNode.querySelector(`.${MINUS_BUTTON_CLASS}`);
+    const itemCount = itemNameNode.querySelector(`.${COUNTER_CLASS}`);
 
     if (this.isTypeGuest) {
       if (itemNameNode.classList.contains(ADULT_ITEM_CLASS)) {
@@ -227,9 +229,9 @@ export default class Dropdown {
 
   @boundMethod
   plusButtonCallback(event) {
-    const itemNameNode = event.target.closest('.' + LIST_ITEM_CLASS);
-    const minusButton = itemNameNode.querySelector('.' + MINUS_BUTTON_CLASS);
-    const itemCount = itemNameNode.querySelector('.' + COUNTER_CLASS);
+    const itemNameNode = event.target.closest(`.${LIST_ITEM_CLASS}`);
+    const minusButton = itemNameNode.querySelector(`.${MINUS_BUTTON_CLASS}`);
+    const itemCount = itemNameNode.querySelector(`.${COUNTER_CLASS}`);
 
     if (this.isTypeGuest) {
       if (itemNameNode.classList.contains(ADULT_ITEM_CLASS)) {
@@ -307,7 +309,7 @@ export default class Dropdown {
 
   @boundMethod
   clearButtonCallback() {
-    const itemCounts = this.dropdown.querySelectorAll('.' + COUNTER_CLASS);
+    const itemCounts = this.dropdown.querySelectorAll(`.${COUNTER_CLASS}`);
     this.countOfAdult = 0;
     this.countOfСhildren = 0;
     this.countOfBaby = 0;
