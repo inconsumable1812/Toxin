@@ -5,24 +5,6 @@ const CURRENT_PAGE = 'js-current-page';
 const FROM = 'js-pagination__from';
 const TO = 'js-pagination__to';
 
-function observerCallback() {
-  const currentPage = document.querySelector(`.${CURRENT_PAGE}`).textContent;
-  const currentPageNumber = +currentPage;
-  const textFrom = document.querySelector(`.${FROM}`);
-  let textFromNumber = +textFrom.textContent;
-  const textTo = document.querySelector(`.${TO}`);
-  let textToNumber = +textTo.textContent;
-  textFromNumber = currentPageNumber * 12 - 11;
-  textToNumber = currentPageNumber * 12;
-
-  if (textToNumber !== +textTo.textContent) {
-    textTo.textContent = `${textToNumber}`;
-  }
-  if (textFromNumber !== +textFrom.textContent) {
-    textFrom.textContent = `${textFromNumber}`;
-  }
-}
-
 export default class Pagination {
   constructor(paginationContainer) {
     this.$paginationContainer = $(paginationContainer);
@@ -53,13 +35,32 @@ export default class Pagination {
     this.bindEventListeners();
   }
 
+  // eslint-disable-next-line class-methods-use-this
+  observerCallback() {
+    const currentPage = document.querySelector(`.${CURRENT_PAGE}`).textContent;
+    const currentPageNumber = +currentPage;
+    const textFrom = document.querySelector(`.${FROM}`);
+    let textFromNumber = +textFrom.textContent;
+    const textTo = document.querySelector(`.${TO}`);
+    let textToNumber = +textTo.textContent;
+    textFromNumber = currentPageNumber * 12 - 11;
+    textToNumber = currentPageNumber * 12;
+
+    if (textToNumber !== +textTo.textContent) {
+      textTo.textContent = `${textToNumber}`;
+    }
+    if (textFromNumber !== +textFrom.textContent) {
+      textFrom.textContent = `${textFromNumber}`;
+    }
+  }
+
   bindEventListeners() {
     const config = {
       childList: true,
       subtree: true,
     };
 
-    const observer = new MutationObserver(observerCallback);
+    const observer = new MutationObserver(this.observerCallback);
     observer.observe(this.$paginationContainer[0], config);
   }
 }
