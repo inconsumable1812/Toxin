@@ -34,15 +34,22 @@ const closeButtonCallback = () => {
 };
 closeButton.addEventListener('click', closeButtonCallback);
 
-function isClickOnDocument(clickOnFilter, clickOnOpenButton) {
-  return !clickOnFilter && clickOnOpenButton !== openButton;
+function isClickOnDocument(e, clickOnFilter, clickOnOpenButton) {
+  return (
+    !clickOnFilter &&
+    clickOnOpenButton !== openButton &&
+    e.target.closest('.js-date-dropdown') === null &&
+    e.target.closest('.datepicker--cell') === null &&
+    e.target.closest('.datepicker--nav-action') === null &&
+    e.target.closest('.datepicker--nav-title') === null
+  );
 }
 
 const documentCallback = (e) => {
   const clickOnFilter = e.target.closest(`.${FILTER_EXPANDED}`);
   const clickOnOpenButton = e.target.closest(`.${BUTTON}`);
 
-  if (isClickOnDocument(clickOnFilter, clickOnOpenButton)) {
+  if (isClickOnDocument(e, clickOnFilter, clickOnOpenButton)) {
     filter.classList.remove(CSS_FILTER_EXPANDED, FILTER_EXPANDED);
   }
 };

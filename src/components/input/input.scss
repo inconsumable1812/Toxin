@@ -9,21 +9,25 @@
     max-width: none;
   }
 
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
   &__title {
     font-family: Montserrat, Arial, sans-serif;
     text-transform: uppercase;
     color: $color-dark-100;
     font-weight: bold;
     font-size: 0.75rem;
-    line-height: 0.9375rem;
+    line-height: 0.7375rem;
   }
 
   &__hint {
     font-family: Montserrat, Arial, sans-serif;
     color: $color-dark-50;
-    float: right;
     font-size: 0.75rem;
-    line-height: 0.9375rem;
+    line-height: 0.7375rem;
   }
 
   &__box {
@@ -31,7 +35,7 @@
     position: relative;
     line-height: 2.75rem;
     font-size: 0.75rem;
-    margin: 0.33rem auto 0.5rem;
+    margin: 0.45rem auto 0.5rem;
   }
 
   &__input {

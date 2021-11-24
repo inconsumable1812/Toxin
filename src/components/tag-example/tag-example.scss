@@ -16,4 +16,21 @@
     font-size: 0.875rem;
     line-height: 1.5rem;
   }
+
+  &_h1 {
+    margin-bottom: 0.3125rem;
+  }
+
+  &_h2 {
+    margin-bottom: 0.0625rem;
+  }
+
+  &_p {
+    max-width: 23.75rem;
+
+    .tag-example__title {
+      font-size: 0.875rem;
+      line-height: 1.5rem;
+    }
+  }
 }

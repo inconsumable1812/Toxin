@@ -25,7 +25,7 @@
 
   &__number-value {
     margin-left: 0.25rem;
-    margin-right: 0.25rem;
+    margin-right: 0.45rem;
     font-size: 1.5rem;
     font-weight: bold;
     color: $color-dark-100;
@@ -86,7 +86,7 @@
     display: grid;
     grid-template-columns: 67.19% 14.06% 18.75%;
     align-items: center;
-    margin-bottom: 0.95rem;
+    margin-bottom: 0.8rem;
   }
 
   &__info-icon {
@@ -128,7 +128,7 @@
   &__total {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.3rem;
   }
 
   &__total-title {

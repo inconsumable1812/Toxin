@@ -18,7 +18,7 @@
     width: 66.1%;
     max-width: 87.3125rem;
     display: grid;
-    grid-template-columns: 16.875rem 25.1875rem;
+    grid-template-columns: 16.875rem 28rem;
     grid-column-gap: 37.2%;
 
     @include _1200 {
@@ -41,6 +41,6 @@
   &__types {
     display: grid;
     align-content: start;
-    grid-row-gap: 3.125rem;
+    grid-row-gap: 3rem;
   }
 }

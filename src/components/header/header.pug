@@ -30,11 +30,11 @@ mixin header(options)
                       a(class=classSubLink, href=subLink.href)= subLink.name
                   span.header__sub-menu-icon.js-header__sub-menu-icon.material-icons= 'expand_more'
           if !auth
-            - classUser += ' header__userMenu_notAuth';
+            - classUser += ' header__user-menu_not-auth';
             div(class=classUser)
               +button({theme: 'white', textTheme: 'purple', text: 'войти', href: './sign-in-page.html'})
               +button({theme: 'purple', textTheme: 'white', text: 'зарегистрироваться', href: './registration.html'}) 
           if auth
-            - classUser += ' header__userMenu_auth';
+            - classUser += ' header__user-menu_auth';
             div(class=classUser)
               a.header__user-name(href="./error-page.html")= `${auth.name} ${auth.surname}`

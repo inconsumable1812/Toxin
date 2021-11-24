@@ -15,7 +15,7 @@
     font-weight: bold;
     text-transform: uppercase;
     line-height: 0.9375rem;
-    margin-bottom: 0.83rem;
+    margin-bottom: 0.85rem;
   }
 
   &__list {
@@ -27,7 +27,7 @@
     display: grid;
     grid-template-areas: 'icon text';
     grid-template-columns: 0.625rem auto;
-    column-gap: 0.6rem;
+    column-gap: 0.65rem;
   }
 
   &__icon {

@@ -9,10 +9,10 @@
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0 0 1.5625rem rgba(0, 0, 0, 0.2);
-  padding: 2.4rem 1.85rem 1.875rem 1.875rem;
+  padding: 2.35rem 1.85rem 1.875rem 1.875rem;
 
   &__header {
-    padding-bottom: 1rem;
+    padding-bottom: 0.82rem;
   }
 
   &__name {
@@ -20,15 +20,15 @@
   }
 
   &__surname {
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.65rem;
   }
 
   &__gender {
-    margin-bottom: 1.7rem;
+    margin-bottom: 1.8rem;
   }
 
   &__birth-date {
-    margin-bottom: 1.3rem;
+    margin-bottom: 1.25rem;
   }
 
   &__email {

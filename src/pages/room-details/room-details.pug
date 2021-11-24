@@ -10,22 +10,25 @@ block variables
   - let pageClass = 'room-details';
 
 block main
-  .room-details__images 
-    //- prettier-ignore 
-    img.room-details__image(
-      src=require('./img/room-details_1.png').default,
-      alt: 1,
-    )
-    //- prettier-ignore 
-    img.room-details__image(
-      src=require('./img/room-details_2.png').default,
-      alt: 2,
-    )
-    //- prettier-ignore 
-    img.room-details__image(
-      src=require('./img/room-details_3.png').default,
-      alt: 3 
-    )
+  .room-details__images
+    .room-details__box-image 
+      //- prettier-ignore
+      img.room-details__image(
+        src=require('./img/room-details_1.png').default,
+        alt: 1,
+      )
+    .room-details__box-image 
+      //- prettier-ignore 
+      img.room-details__image(
+        src=require('./img/room-details_2.png').default,
+        alt: 2,
+      )
+    .room-details__box-image
+      //- prettier-ignore 
+      img.room-details__image(
+        src=require('./img/room-details_3.png').default,
+        alt: 3 
+      )
   .room-details__container 
     .room-details__content
       .room-details__about-room

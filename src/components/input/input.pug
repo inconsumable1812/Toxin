@@ -7,10 +7,12 @@ mixin input(options)
     inputClassName += isData ? " input__input_type_data js-input__input_type_data" : ""
 
   .input
-    if title
-      span(class=titleClassName)= title
-    if hint
-      span.input__hint= hint
+    if title || hint
+      .input__header
+      if title
+        span(class=titleClassName)= title
+      if hint
+        span.input__hint= hint
     .input__box
       input(
         type=type,
