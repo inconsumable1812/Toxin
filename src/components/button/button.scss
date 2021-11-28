@@ -9,6 +9,14 @@
   border-radius: 1.375rem;
   cursor: pointer;
 
+  &__group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: inherit;
+    height: inherit;
+  }
+
   &__text {
     font-size: 0.75rem;
     line-height: 0.9375rem;

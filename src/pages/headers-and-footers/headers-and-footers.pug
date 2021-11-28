@@ -15,11 +15,11 @@ block content
   .headers-and-footers
     nav.headers-and-footers__logo
       +logo
-  div.headers-and-footers__header(class=bottomClass)
-    +header({menuLink})
-  div.headers-and-footers__header_login(class=bottomClass)
-    +header({menuLink, auth})
-  div.headers-and-footers__footer(class=bottomClass)
-    +footer({})
+  .headers-and-footers__header(class=bottomClass)
+    +header({ menuLink })
+  .headers-and-footers__header_login(class=bottomClass)
+    +header({ menuLink, auth })
+  .headers-and-footers__footer(class=bottomClass)
+    +footer
   .headers-and-footers__footer_size_small
-    +footer({isSmall:true})
+    +footer({ isSmall:true })

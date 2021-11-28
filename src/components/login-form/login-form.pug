@@ -7,11 +7,13 @@ mixin login-form
       .login-form__header
         h1.login-form__title= 'Войти'
       .login-form__email
-        +input({ type: 'email', name: 'email', placeholder: 'Email'}) 
+        +input({ type: 'email', name: 'email', placeholder: 'Email' }) 
       .login-form__password
-        +input({type: 'text', name: 'password', placeholder: 'Пароль'})
+        +input({ type: 'text', name: 'password', placeholder: 'Пароль' })
       .login-form__button
-        +button({theme: 'purple', textTheme: 'white', text: 'Войти', isLarge: true})
+        +button({ theme: 'purple', textTheme: 'white', text: 'Войти', isLarge: true })
     .login-form__group
       p.login-form__hint= 'Нет аккаунта на Toxin?'
-      +button({theme: 'white', textTheme: 'purple', text: 'Создать', href: './registration.html'}) 
+      //- prettier-ignore 
+      +button({ theme: 'white', textTheme: 'purple', text: 'Создать',
+        href: './registration.html' }) 

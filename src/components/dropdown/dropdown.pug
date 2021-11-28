@@ -10,10 +10,14 @@ mixin dropdown(options)
       calendar,
       rows =[] } = options || {}
 
-  - const dropdownClass = 'dropdown dropdown__type_' + type;
-  - const JSClass = type === 'date' ? ' js-dropdown__type_' + type : ' js-dropdown js-dropdown__type_' + type;
-  - let listClass = 'dropdown__list js-dropdown__list';
-  - listClass += isExpanded ? ' dropdown__list_expanded js-dropdown__list_expanded' : '';
+    const dropdownClass = 'dropdown dropdown__type_' + type;
+    const JSClass = type === 'date' 
+      ? ' js-dropdown__type_' + type 
+      : ' js-dropdown js-dropdown__type_' + type;
+    let listClass = 'dropdown__list js-dropdown__list';
+    listClass += isExpanded ? 
+      ' dropdown__list_expanded js-dropdown__list_expanded' 
+      : '';
 
   div(class=dropdownClass + JSClass)
     if title
@@ -39,10 +43,15 @@ mixin dropdown(options)
               )
                 .dropdown__item-name= row.text
                 .dropdown__counter-buttons
-                  - var minusButtonClass = 'dropdown__counter-buttons_type_minus js-dropdown__counter-buttons_type_minus';
-                  - minusButtonClass += row.count < 1 ? ' dropdown__counter-buttons_type_minus_disabled' : '';
-                  - var clearButtonClass = 'dropdown__clear-buttons js-dropdown__clear-buttons';
-                  - clearButtonClass += row.count < 1 ? ' dropdown__clear-buttons_hidden' : '';
+                  -
+                    let minusButtonClass = 'dropdown__counter-buttons_type_minus js-dropdown__counter-buttons_type_minus';
+                    minusButtonClass += row.count < 1 
+                      ? ' dropdown__counter-buttons_type_minus_disabled' 
+                      : '';
+                    let clearButtonClass = 'dropdown__clear-buttons js-dropdown__clear-buttons';
+                    clearButtonClass += row.count < 1 
+                      ? ' dropdown__clear-buttons_hidden' 
+                      : '';
                   button(class=minusButtonClass, type="button")= '-'
                   span.dropdown__counter(
                     class=' js-dropdown__counter js-dropdown__counter_' + row.typeOfCount

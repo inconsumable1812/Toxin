@@ -7,11 +7,18 @@ block variables
 
 block main
   //- prettier-ignore 
-  +image-slider({isInterval:true,rows:[
-        {src: require('./img/landing_1.png').default, alt: '1'},
-        {src: require('./img/landing_2.png').default, alt: '2'},
-        {src: require('./img/landing_3.png').default, alt: '3'},
-        ]})
+  +image-slider({ isInterval:true, rows:[
+      {
+        src: require('./img/landing_1.png').default, alt: '1'
+      },
+      {
+        src: require('./img/landing_2.png').default, alt: '2'
+      },
+      {
+        src: require('./img/landing_3.png').default, alt: '3'
+      },
+    ]
+  })
   .landing__container 
     .landing__room-search
       +room-search

@@ -21,7 +21,7 @@ mixin room-sketch(options)
 
   .room-sketch 
     .room-sketch__slider
-      +image-slider({rows, isHovered, isInterval})
+      +image-slider({ rows, isHovered, isInterval })
     .room-sketch__main
       a.room-sketch__link(href="./room-details.html")
         .room-sketch__header
@@ -35,7 +35,7 @@ mixin room-sketch(options)
             span.room-sketch__date-unit= 'в сутки'
         .room-sketch__footer
           .room-sketch__rate
-            +rate-button({base, rate, isVariable, name, id})
+            +rate-button({ base, rate, isVariable, name, id })
           .room-sketch__feedback-counter
             span.room-sketch__feedback-number= feedbackNumber
             span.room-sketch__feedback-text= feedbackText

@@ -9,8 +9,8 @@ include ../../components/date-dropdown/date-dropdown.pug
 include ../../components/room-sketch/room-sketch.pug
 
 block variables
-  - var title = 'Cards';
-  - var theme = 'body_theme_gray';
+  - let title = 'Cards';
+  - let theme = 'body_theme_gray';
 
 block content
   - const { rooms } = require('../../pages/cards/cardsValue.json');
@@ -31,19 +31,27 @@ block content
           +login-form
       .cards__grid-column_third 
         .cards__card
-          +date-dropdown({ hidden: true, type: 'double', isExpanded :true})
+          +date-dropdown({ hidden: true, type: 'double', isExpanded :true })
         each val, index in rooms
           - const currentRoomName = `room${index + 1}`;
           - const currentRoom = rooms[index][currentRoomName];
           //- prettier-ignore
           .cards__card
-            +room-sketch({isVip: currentRoom.isVip, roomNumber: currentRoom.roomNumber, cost: currentRoom.cost, 
-              isHovered: currentRoom.isHovered, base: currentRoom.base, rate: currentRoom.rate , 
-              feedbackNumber: currentRoom.feedbackNumber, feedbackText: currentRoom.feedbackText,
-              rows:[ 
-                {src: currentRoom.rows[0].src, alt: '1'}, 
-                {src: currentRoom.rows[1].src, alt: '2'}, 
-                {src: currentRoom.rows[2].src, alt: '3'}, 
-                {src: currentRoom.rows[3].src, alt: '4'}, 
+            +room-sketch({ isVip: currentRoom.isVip, roomNumber: currentRoom.roomNumber, 
+              cost: currentRoom.cost,isHovered: currentRoom.isHovered, base: currentRoom.base,
+              rate: currentRoom.rate,feedbackNumber: currentRoom.feedbackNumber, 
+              feedbackText: currentRoom.feedbackText, rows:[ 
+                  {
+                    src: currentRoom.rows[0].src, alt: '1'
+                  }, 
+                  {
+                    src: currentRoom.rows[1].src, alt: '2'
+                  }, 
+                  {
+                    src: currentRoom.rows[2].src, alt: '3'
+                  }, 
+                  {
+                    src: currentRoom.rows[3].src, alt: '4'
+                  }, 
                 ]
               })

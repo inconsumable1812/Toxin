@@ -1,15 +1,15 @@
 mixin expandable-checkbox-list(options)
-  - const { isExpanded, title, rows = [] } = options || {};
-
-  - let mainClass = 'expandable-checkbox-list js-expandable-checkbox-list';
-  - mainClass += isExpanded ? ' expandable-checkbox-list_expanded js-expandable-checkbox-list_expanded' : '';
-  - const listClass = 'expandable-checkbox-list__list';
-  - const buttonClass = 'expandable-checkbox-list__toggle-button';
+  -
+    const { isExpanded, title, rows = [] } = options || {};
+    let mainClass = 'expandable-checkbox-list js-expandable-checkbox-list';
+    mainClass += isExpanded ? ' expandable-checkbox-list_expanded js-expandable-checkbox-list_expanded' : '';
+    const listClass = 'expandable-checkbox-list__list';
+    const buttonClass = 'expandable-checkbox-list__toggle-button';
 
   div(class=mainClass)
     .expandable-checkbox-list__header.js-expandable-checkbox-list__header
       span.expandable-checkbox-list__title= title
-      button.material-icons(class=buttonClass, type="button", tabindex="0")
+      button.material-icons(class=buttonClass, type="button")
     ul(class=listClass)
       if rows
         each row in rows

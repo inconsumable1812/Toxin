@@ -9,21 +9,38 @@ mixin registration-form
       .registration-form__header
         h1.registration-form__title= 'Регистрация аккаунта'
       .registration-form__name
-        +input({type: 'text', name: 'name', placeholder: 'Имя'})
+        +input({ type: 'text', name: 'name', placeholder: 'Имя' })
       .registration-form__surname
-        +input({type: 'text', name: 'surname', placeholder: 'Фамилия'})
+        +input({ type: 'text', name: 'surname', placeholder: 'Фамилия' })
       .registration-form__gender
-        +radio-button({rows:[ {caption: "Мужчина", id: 'Men'}, {caption: "Женщина", id: 'Women'}, ]})
+        //- prettier-ignore 
+        +radio-button({ rows:[ 
+            {
+              caption: "Мужчина", id: 'Men'
+            }, 
+            {
+              caption: "Женщина", id: 'Women'
+            }, 
+          ]
+        })
       .registration-form__birth-date
-        +input({title: "дата рождения",type:'text', name:'birthDate', isData:true})
+        +input({ title: "дата рождения",type:'text', name:'birthDate', isData:true })
       .registration-form__email
-        +input({title: "данные для входа в сервис", type: 'email', name: 'email', placeholder: 'Email'})
+        //- prettier-ignore 
+        +input({ title: "данные для входа в сервис", type: 'email', name: 'email',
+          placeholder: 'Email' })
       .registration-form__password
-        +input({type: 'text', name: 'password', placeholder:'Пароль'})
+        +input({ type: 'text', name: 'password', placeholder:'Пароль' })
       .registration-form__toggle
-        +toggle({ rows:[ {caption: 'Получать спецпредложения', name: 'special offers'}, ]})
+        //- prettier-ignore 
+        +toggle({ rows:[ 
+            {
+              caption: 'Получать спецпредложения', name: 'special offers'
+            }
+          ]
+        })
       .registration-form__button
-        +button({theme: 'purple', textTheme: 'white', text: 'зарегистрироваться', isLarge: true})
+        +button({ theme: 'purple', textTheme: 'white', text: 'зарегистрироваться', isLarge: true })
     .registration-form__group
       p.registration-form__hint= 'Уже есть аккаунт на Toxin'
-      +button({theme: 'white', textTheme: 'purple', text: 'Войти', href: './sign-in-page.html'}) 
+      +button({ theme: 'white', textTheme: 'purple', text: 'Войти', href: './sign-in-page.html' }) 

@@ -30,15 +30,24 @@ mixin booking-form(options)
       .booking-form__price-per-day
         span.booking-form__cost= cost
         span.booking-form__date-unit= dateUnit
-    .booking-form__calendar 
-      +date-dropdown({titleStart: "Прибытие", titleEnd: "Выезд", type: "double", isExpanded: false})
+    .booking-form__calendar
+      //- prettier-ignore  
+      +date-dropdown({ titleStart: "Прибытие", titleEnd: "Выезд", 
+        type: "double", isExpanded: false })
     .booking-form__dropdown_type_guests
       //- prettier-ignore  
-      +dropdown({title: "Гости", name: "guestNumber", placeholder: "Сколько гостей", type: "guest", 
+      +dropdown({title: "Гости", name: "guestNumber", placeholder: "Сколько гостей", 
+        type: "guest", 
         rows: [ 
-        {count: 0, text: "взрослые", typeOfCount: "adult"}, 
-        {count: 0, text: "дети", typeOfCount: "children"}, 
-        {count: 0, text: "младенцы", typeOfCount: "baby"}, 
+          {
+            count: 0, text: "взрослые", typeOfCount: "adult"
+          }, 
+          {
+            count: 0, text: "дети", typeOfCount: "children"
+          }, 
+          {
+            count: 0, text: "младенцы", typeOfCount: "baby"
+          }, 
         ]
       })
     .booking-form__result
@@ -64,4 +73,4 @@ mixin booking-form(options)
         span.booking-form__total-line
         span.booking-form__total-value= totalValue
     .booking-form__button 
-      +button({theme: "purple", textTheme: "white", text: "забронировать", isLarge: true})
+      +button({ theme: "purple", textTheme: "white", text: "забронировать", isLarge: true })

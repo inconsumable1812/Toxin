@@ -1,10 +1,22 @@
 mixin input(options)
-  - const { isData, title, hint, type, name, placeholder, value, withButton } = options || {};
   -
+    const { 
+      isData, 
+      title, 
+      hint, 
+      type, 
+      name, 
+      placeholder, 
+      value, 
+      withButton 
+    } = options || {};
+
     let titleClassName = "input__title"
     titleClassName += isData ? " input__title_type_data" : ""
     let inputClassName = "input__input"
-    inputClassName += isData ? " input__input_type_data js-input__input_type_data" : ""
+    inputClassName += isData 
+      ? " input__input_type_data js-input__input_type_data" 
+      : ""
 
   .input
     if title || hint

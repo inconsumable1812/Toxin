@@ -1,9 +1,11 @@
 mixin image-slider(options)
-  - const { isHovered, isInterval, rows = [] } = options || {};
-
-  - let sliderClass = 'image-slider js-image-slider';
-  - sliderClass += isHovered ? ' image-slider__hovered' : '';
-  - sliderClass += isInterval ? ' image-slider__interval js-image-slider__interval' : '';
+  -
+    const { isHovered, isInterval, rows = [] } = options || {};
+    let sliderClass = 'image-slider js-image-slider';
+    sliderClass += isHovered ? ' image-slider__hovered' : '';
+    sliderClass += isInterval 
+      ? ' image-slider__interval js-image-slider__interval' 
+      : '';
 
   div(class=sliderClass)
     .image-slider__slider-wrapper 

@@ -3,27 +3,45 @@ extends ../../layout/main.pug
 include ../../components/index-menu/index-menu
 
 block variables
-  - var title = 'Меню выбор страниц';
+  - let title = 'Меню выбор страниц';
 
 block content
   //- prettier-ignore 
   +index-menu({
     theme: 'purple',
     items: [
-      {text: 'Colors & Type', href: 'colors-and-types.html'},
-      {text: 'Form elements', href: 'form-elements.html'},
-      {text: 'Cards', href: 'cards.html'},
-      {text: 'Headers & Footers', href: 'headers-and-footers.html'},
-    ],
+      {
+        text: 'Colors & Type', href: 'colors-and-types.html'
+      },
+      {
+        text: 'Form elements', href: 'form-elements.html'
+      },
+      {
+        text: 'Cards', href: 'cards.html'
+      },
+      {
+        text: 'Headers & Footers', href: 'headers-and-footers.html'
+      }
+    ]
   })
   //- prettier-ignore 
   +index-menu({
     theme: 'green',
     items: [
-      {text: 'Landing page', href: 'landing-page.html'},
-      {text: 'Search room', href: 'search-room.html'},
-      {text: 'Room details', href: 'room-details.html'},
-      {text: 'Registration', href: 'registration.html'},
-      {text: 'Sign in', href: 'sign-in-page.html'},
-    ],
+      {
+        text: 'Landing page', href: 'landing-page.html'
+      },
+      {
+        text: 'Search room', href: 'search-room.html'
+      },
+      {
+        text: 'Room details', href: 'room-details.html'
+      },
+      {
+        text: 'Registration', href: 'registration.html'
+      },
+      {
+        text: 'Sign in', href: 'sign-in-page.html'
+      }   
+    ]
   })
