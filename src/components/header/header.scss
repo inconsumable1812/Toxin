@@ -5,7 +5,7 @@
 .header {
   background: white;
   position: relative;
-  padding: 0.9375rem 0;
+  padding: 0.8375rem 0;
   box-shadow: 0 0.625rem 1.25rem $color-dark-5;
 
   &__container {
@@ -175,13 +175,17 @@
       display: block;
     }
 
-    button {
+    .button {
       height: 2.125rem;
 
       @include _992 {
         display: block;
         margin: 0 auto 5px;
       }
+    }
+
+    .button__group-href {
+      height: 30px;
     }
   }
 

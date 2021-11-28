@@ -24,6 +24,7 @@
     float: right;
     font-size: 0.75rem;
     text-transform: uppercase;
+    margin-top: 2px;
   }
 
   &__box {
@@ -154,7 +155,6 @@
     display: flex;
     line-height: 2.5rem;
     justify-content: space-between;
-    margin: 0.7rem 0;
   }
 
   &__clear-buttons {

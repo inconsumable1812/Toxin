@@ -35,7 +35,7 @@
       grid-template-areas: none;
       grid-template-columns: 1fr;
       padding-bottom: 0;
-      padding-top: 7.55rem;
+      padding-top: 7.4rem;
     }
   }
 
@@ -57,7 +57,7 @@
   }
 
   &__about-us-text {
-    padding-top: 1.125rem;
+    padding-top: 0.75rem;
     font-size: 0.875rem;
     color: $color-dark-75;
     line-height: 1.5rem;
@@ -128,7 +128,7 @@
     padding-bottom: 1.4rem;
 
     @include _768 {
-      padding-top: 1.3rem;
+      padding-top: 1.1rem;
       display: grid;
       justify-content: center;
       row-gap: 1rem;
@@ -203,7 +203,7 @@
     grid-template-areas: none;
     grid-template-columns: 1fr;
     padding-bottom: 0;
-    padding-top: 7.55rem;
+    padding-top: 7.4rem;
   }
 
   .footer__main-border {
@@ -230,7 +230,7 @@
   }
 
   .footer__copyright-area {
-    padding-top: 1.3rem;
+    padding-top: 1.1rem;
     display: grid;
     justify-content: center;
     row-gap: 1rem;

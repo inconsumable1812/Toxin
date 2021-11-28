@@ -22,7 +22,7 @@ mixin button(options)
   if href
     a.button__link(href=href) 
       div(class=buttonClass)
-        span.button__group
+        span.button__group.button__group-href
           span(class=textClass)= text
           if isLarge
             span.button__arrow.material-icons 

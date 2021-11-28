@@ -10,10 +10,11 @@
 
   &__slider {
     max-height: 9.4375rem;
+    border-radius: 0.25rem;
   }
 
   &__main {
-    padding: 1.2rem 1.0625rem 1.1875rem 1.25rem;
+    padding: 1.1rem 1.0625rem 1.1875rem 1.25rem;
   }
 
   &__header {
@@ -67,7 +68,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 0.575rem;
+    margin-top: 0.475rem;
   }
 
   &__feedback-number {

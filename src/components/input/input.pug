@@ -21,10 +21,10 @@ mixin input(options)
   .input
     if title || hint
       .input__header
-      if title
-        span(class=titleClassName)= title
-      if hint
-        span.input__hint= hint
+        if title
+          span(class=titleClassName)= title
+        if hint
+          span.input__hint= hint
     .input__box
       input(
         type=type,
