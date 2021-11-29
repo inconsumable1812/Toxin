@@ -24,3 +24,19 @@ $grad-purple-25: linear-gradient(
   rgba(139, 164, 249, 0.25) 100%
 );
 $grad-green: linear-gradient(180deg, $color-green, #66d2ea);
+
+// font
+$font-like-button: 0.625rem;
+$font-icon: 3rem;
+$font-standard: 1rem;
+$font-copyright-icon: 1.5rem;
+
+// box-shadow
+$form-shadow: 0 0 1.5625rem rgba(0, 0, 0, 0.2);
+$checkbox-shadow: 0 0.125rem 0.3125rem $color-dark-25;
+$header-shadow: 0 0.625rem 1.25rem $color-dark-5;
+
+// padding
+$form-padding: 2.4rem 1.85rem 1.875rem 1.875rem;
+$input-padding: 0 2.375rem 0 0.875rem;
+$header-padding: 0 1.5rem;

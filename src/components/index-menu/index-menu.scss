@@ -24,8 +24,7 @@
   }
 
   &__link {
-    font-size: 1.5rem;
-    font-weight: bold;
+    @include font-like-h1;
 
     &:hover {
       color: $color-dark-75;

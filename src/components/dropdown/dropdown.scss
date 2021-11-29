@@ -11,25 +11,24 @@
   }
 
   &__title {
-    font-family: Montserrat, Arial, sans-serif;
-    text-transform: uppercase;
+    @include font-button;
+
     color: $color-dark-100;
-    font-weight: bold;
-    font-size: 0.75rem;
   }
 
   &__hint {
-    font-family: Montserrat, Arial, sans-serif;
+    @include font-hint;
+
     color: $color-dark-50;
     float: right;
-    font-size: 0.75rem;
     text-transform: uppercase;
     margin-top: 2px;
   }
 
   &__box {
+    @include font-hint-875;
+
     position: relative;
-    font-size: 0.875rem;
     color: $color-dark-75;
     margin-top: 0.3125rem;
   }
@@ -39,7 +38,7 @@
     color: $color-dark-75;
     width: 100%;
     line-height: 2.625rem;
-    padding: 0 2.375rem 0 0.875rem;
+    padding: $input-padding;
     border: 0.0625rem solid $color-dark-25;
     border-radius: 0.25rem;
     transition: border 0.25s ease-in-out;
@@ -89,7 +88,7 @@
     border: 0.0625rem solid $color-dark-50;
     border-bottom-right-radius: 0.25rem;
     border-bottom-left-radius: 0.25rem;
-    box-shadow: 0 0.625rem 1.25rem $color-dark-5;
+    box-shadow: $header-shadow;
     background-color: white;
     z-index: 10;
 
@@ -122,9 +121,8 @@
 
   &__item-name,
   &__counter {
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    font-weight: bold;
+    @include font-button;
+
     color: $color-dark-100;
   }
 
@@ -135,7 +133,7 @@
     $diam: 1.875rem;
 
     display: inline-block;
-    font-size: 1rem;
+    font-size: $font-standard;
     color: $color-dark-50;
     text-align: center;
     width: $diam;

@@ -5,7 +5,7 @@
 
 .room-sketch {
   background: white;
-  box-shadow: 0 0.625rem 1.25rem rgba(31, 32, 65, 0.05);
+  box-shadow: $header-shadow;
   border-radius: 0.25rem;
 
   &__slider {
@@ -28,23 +28,24 @@
   }
 
   &__number-symbol {
-    font-size: 0.875rem;
+    @include font-hint-875;
+
     font-weight: bold;
     color: $color-dark-100;
   }
 
   &__number-value {
+    @include font-hint-1-1875;
+
     margin-left: 0.25rem;
     margin-right: 0.6rem;
-    font-size: 1.1875rem;
     font-weight: bold;
     color: $color-dark-100;
   }
 
   &__number-feature {
-    font-size: 0.75rem;
-    font-weight: bold;
-    text-transform: uppercase;
+    @include font-button;
+
     color: $color-purple;
   }
 
@@ -53,14 +54,16 @@
   }
 
   &__cost {
-    font-size: 0.875rem;
+    @include font-hint-875;
+
     color: $color-dark-50;
     margin-right: 0.25rem;
     font-weight: bold;
   }
 
   &__date-unit {
-    font-size: 0.75rem;
+    @include font-hint;
+
     color: $color-dark-50;
   }
 
@@ -72,14 +75,16 @@
   }
 
   &__feedback-number {
-    font-size: 0.875rem;
+    @include font-hint-875;
+
     font-weight: bold;
     color: $color-dark-50;
     margin-right: 0.35rem;
   }
 
   &__feedback-text {
-    font-size: 0.875rem;
+    @include font-hint-875;
+
     color: $color-dark-50;
     margin-right: 0.1rem;
   }

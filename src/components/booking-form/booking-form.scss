@@ -7,8 +7,9 @@
 .booking-form {
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: 0 0 1.5625rem rgba(0, 0, 0, 0.2);
-  padding: 2.4rem 1.85rem 1.875rem 1.875rem;
+  box-shadow: $form-shadow;
+  padding: $form-padding;
+  border-radius: 0.25rem;
 
   &__header {
     display: flex;
@@ -18,23 +19,23 @@
   }
 
   &__number-symbol {
-    font-size: 0.875rem;
+    @include font-hint-875;
+
     font-weight: bold;
     color: $color-dark-100;
   }
 
   &__number-value {
+    @include font-like-h1;
+
     margin-left: 0.25rem;
     margin-right: 0.45rem;
-    font-size: 1.5rem;
-    font-weight: bold;
     color: $color-dark-100;
   }
 
   &__number-feature {
-    font-size: 0.75rem;
-    font-weight: bold;
-    text-transform: uppercase;
+    @include font-button;
+
     color: $color-purple;
   }
 
@@ -43,14 +44,16 @@
   }
 
   &__cost {
-    font-size: 0.875rem;
+    @include font-hint-875;
+
     color: $color-dark-50;
     margin-right: 0.25rem;
     font-weight: bold;
   }
 
   &__date-unit {
-    font-size: 0.75rem;
+    @include font-hint;
+
     color: $color-dark-50;
   }
 
@@ -68,7 +71,8 @@
 
   &__result_type_name-service,
   &__result_type_currency {
-    font-size: 0.875rem;
+    @include font-hint-875;
+
     color: $color-dark-75;
   }
 
@@ -95,8 +99,8 @@
     margin-left: 0.24rem;
 
     &::after {
-      font-family: Montserrat, Arial, sans-serif;
-      font-size: 0.875rem;
+      @include font-hint-875;
+
       background: gray;
       border-radius: 8px 8px 8px 0;
       color: white;
@@ -141,7 +145,8 @@
 
   &__total-title,
   &__total-value {
-    font-size: 1.1875rem;
+    @include font-hint-1-1875;
+
     font-weight: bold;
     color: $color-dark-100;
   }

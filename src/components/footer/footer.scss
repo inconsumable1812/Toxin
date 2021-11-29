@@ -4,12 +4,12 @@
 
 .footer {
   background: white;
-  box-shadow: 0 0.625rem 1.25rem $color-dark-5;
+  box-shadow: $header-shadow;
 
   &__container {
-    max-width: 1208px;
+    max-width: 75.5rem;
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: $header-padding;
   }
 
   &__main-area {
@@ -57,8 +57,9 @@
   }
 
   &__about-us-text {
+    @include font-hint-875;
+
     padding-top: 0.75rem;
-    font-size: 0.875rem;
     color: $color-dark-75;
     line-height: 1.5rem;
 
@@ -113,8 +114,9 @@
   }
 
   &__subscribe-txt {
+    @include font-hint-875;
+
     padding-top: 1.2rem;
-    font-size: 0.875rem;
     color: $color-dark-75;
     line-height: 1.5rem;
     padding-bottom: 0.9rem;
@@ -137,7 +139,8 @@
   }
 
   &__copyright-text {
-    font-size: 0.875rem;
+    @include font-hint-875;
+
     line-height: 1.0625rem;
     color: $color-dark-75;
 
@@ -161,10 +164,11 @@
     padding: 0.585rem 0;
 
     a {
+      @include font-hint-875;
+
       color: $color-dark-50;
       appearance: none;
       text-decoration: none;
-      font-size: 0.875rem;
       line-height: 1.0625rem;
 
       &:hover {
@@ -180,10 +184,10 @@
 
     /* stylelint-disable-next-line */
     a {
+      font-size: $font-copyright-icon;
       color: $color-purple;
       appearance: none;
       text-decoration: none;
-      font-size: 1.5rem;
       line-height: 1.4375rem;
 
       &:hover {
@@ -194,7 +198,7 @@
 }
 
 .footer_size_small {
-  max-width: 768px;
+  max-width: 48rem;
   margin: 0 auto;
 
   .footer__main-area {

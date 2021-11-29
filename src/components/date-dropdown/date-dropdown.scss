@@ -13,10 +13,7 @@
   }
 
   .date-dropdown__title {
-    font-family: Montserrat, Arial, sans-serif;
-    font-weight: bold;
-    font-size: 0.75rem;
-    text-transform: uppercase;
+    @include font-button;
   }
 
   .date-dropdown__calendar_content {

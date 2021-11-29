@@ -15,10 +15,7 @@
   }
 
   &__title {
-    font-size: 0.75rem;
-    font-family: Montserrat, Arial, sans-serif;
-    font-weight: bold;
-    text-transform: uppercase;
+    @include font-button;
   }
 
   &__count {
@@ -27,38 +24,39 @@
   }
 
   &__separator {
+    @include font-hint;
+
     margin: 0 0.25rem 0 0.16rem;
     vertical-align: text-top;
-    font-family: Montserrat, Arial, sans-serif;
     margin-top: 0;
-    font-size: 0.75rem;
     line-height: 0.9375rem;
   }
 
   &__input_min {
+    @include font-hint;
+
     width: 3.3rem;
     color: $color-dark-50;
     border: none;
     text-align: end;
     outline: 0;
-    font-size: 0.75rem;
-    font-family: Montserrat, Arial, sans-serif;
     line-height: 0.9375rem;
   }
 
   &__input_max {
+    @include font-hint;
+
     width: 3rem;
     color: $color-dark-50;
     border: none;
     outline: none;
-    font-size: 0.75rem;
-    font-family: Montserrat, Arial, sans-serif;
     line-height: 0.9375rem;
   }
 
   &__description {
+    @include font-hint;
+
     padding-top: 0.85rem;
-    font-size: 0.75rem;
     line-height: 0.875rem;
     color: $color-dark-50;
   }

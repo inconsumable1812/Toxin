@@ -42,6 +42,34 @@
   }
 }
 
+@mixin font-button {
+  font-size: 0.75rem;
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@mixin font-hint {
+  font-size: 0.75rem;
+  font-family: Montserrat, Arial, sans-serif;
+}
+
+@mixin font-hint-875 {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 0.875rem;
+}
+
+@mixin font-hint-1-1875 {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 1.1875rem;
+}
+
+@mixin font-like-h1 {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 @mixin reset-button {
   border: none;
   appearance: none;

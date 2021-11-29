@@ -6,12 +6,12 @@
   background: white;
   position: relative;
   padding: 0.8375rem 0;
-  box-shadow: 0 0.625rem 1.25rem $color-dark-5;
+  box-shadow: $header-shadow;
 
   &__container {
-    max-width: 1208px;
+    max-width: 75.5rem;
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: $header-padding;
   }
 
   &__link-li {
@@ -74,8 +74,9 @@
   }
 
   &__link {
+    @include font-hint-875;
+
     color: $color-dark-50;
-    font-size: 0.875rem;
     line-height: 1.0625rem;
     text-decoration: none;
 
@@ -98,7 +99,7 @@
     background: white;
     z-index: 5;
     border: 0.0625rem solid $color-dark-10;
-    box-shadow: 0 0 0.0625rem 0.0625rem $color-dark-10;
+    box-shadow: $header-shadow;
   }
 
   &__sub-menu-icon {
@@ -149,7 +150,7 @@
   }
 
   &__burger {
-    font-size: 3rem;
+    font-size: $font-icon;
     display: none;
     position: absolute;
     right: 2%;
@@ -206,7 +207,8 @@
   }
 
   &__user-name {
-    font-size: 0.875rem;
+    @include font-hint-875;
+
     color: $color-dark-50;
     line-height: 1.0625rem;
     text-decoration: none;

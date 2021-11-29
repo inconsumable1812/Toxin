@@ -10,10 +10,8 @@
   }
 
   &__header {
-    font-family: Montserrat, Arial, sans-serif;
-    font-size: 0.75rem;
-    font-weight: bold;
-    text-transform: uppercase;
+    @include font-button;
+
     line-height: 0.9375rem;
     margin-bottom: 0.85rem;
   }
@@ -31,21 +29,23 @@
   }
 
   &__icon {
+    $size: 0.625rem;
+
     margin-top: 0.4rem;
     grid-area: icon;
-    height: 0.625rem;
-    width: 0.625rem;
+    height: $size;
+    width: $size;
     background: $color-dark-25;
     align-self: start;
     border-radius: 50%;
   }
 
   &__text {
+    @include font-hint-875;
+
     grid-area: text;
     align-self: center;
     justify-self: start;
-    font-family: Montserrat, Arial, sans-serif;
-    font-size: 0.875rem;
     line-height: 1.5rem;
   }
 }

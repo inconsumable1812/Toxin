@@ -109,8 +109,10 @@
   }
 
   &__dot {
-    width: 0.5rem;
-    height: 0.5rem;
+    $diam: 0.5rem;
+
+    width: $diam;
+    height: $diam;
     border-radius: 50%;
     border: 0.0625rem solid white;
     margin-right: 0.25rem;

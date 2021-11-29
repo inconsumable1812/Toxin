@@ -6,22 +6,21 @@
 
   &__sum {
     position: absolute;
-    top: 36;
-    left: 54;
+    top: 36px;
+    left: 54px;
     z-index: -1;
   }
 
   &__number {
-    font-size: 1.5rem;
+    @include font-like-h1;
+
     color: $color-purple;
-    font-weight: bold;
     text-align: center;
   }
 
   &__text {
-    font-size: 0.75rem;
+    @include font-button;
+
     color: $color-purple;
-    font-weight: bold;
-    text-transform: uppercase;
   }
 }

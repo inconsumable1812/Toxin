@@ -14,10 +14,8 @@
   }
 
   &__header {
-    font-family: Montserrat, Arial, sans-serif;
-    font-size: 0.75rem;
-    font-weight: bold;
-    text-transform: uppercase;
+    @include font-button;
+
     padding-bottom: 0.9rem;
     line-height: 0.9375rem;
   }
@@ -27,9 +25,9 @@
   }
 
   &__items {
+    @include font-hint-875;
+
     line-height: 1.5rem;
-    font-size: 0.875rem;
-    font-family: Montserrat, Arial, sans-serif;
     color: $color-dark-75;
     padding-bottom: 0.6rem;
   }
@@ -43,12 +41,14 @@
     margin-top: 0.125rem;
 
     &::before {
+      $size: 0.75rem;
+
       position: absolute;
       content: '';
       top: 0.18rem;
       left: 0.18rem;
-      width: 0.75rem;
-      height: 0.75rem;
+      width: $size;
+      height: $size;
       border-radius: 0.375rem;
       background: $color-dark-25;
     }
@@ -71,7 +71,7 @@
 
     &:focus + .toggle__checkbox,
     &:hover + .toggle__checkbox {
-      box-shadow: 0 0.125rem 0.3125rem $color-dark-25;
+      box-shadow: $checkbox-shadow;
     }
   }
 

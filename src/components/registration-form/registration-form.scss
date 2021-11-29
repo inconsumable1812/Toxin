@@ -8,8 +8,9 @@
 .registration-form {
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: 0 0 1.5625rem rgba(0, 0, 0, 0.2);
-  padding: 2.35rem 1.85rem 1.875rem 1.875rem;
+  box-shadow: $form-shadow;
+  padding: $form-padding;
+  border-radius: 0.25rem;
 
   &__header {
     padding-bottom: 0.82rem;
@@ -50,8 +51,8 @@
   }
 
   &__hint {
-    font-family: Montserrat, Arial, sans-serif;
-    font-size: 0.875rem;
+    @include font-hint-875;
+
     line-height: 1.125rem;
     padding-bottom: 0.2rem;
     color: #000;

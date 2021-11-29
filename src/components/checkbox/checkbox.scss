@@ -10,10 +10,8 @@
   }
 
   &__header {
-    font-family: Montserrat, Arial, sans-serif;
-    font-size: 0.75rem;
-    font-weight: bold;
-    text-transform: uppercase;
+    @include font-button;
+
     padding-bottom: 0.8rem;
   }
 
@@ -25,16 +23,18 @@
     list-style: none;
 
     .checkbox__item {
+      @include font-hint-875;
+
       padding-bottom: 0.75rem;
       line-height: 1.125rem;
-      font-size: 0.875rem;
-      font-family: Montserrat, Arial, sans-serif;
       color: $color-dark-50;
 
       .checkbox__checkbox {
+        $size: 1.25rem;
+
         position: absolute;
-        width: 1.25rem;
-        height: 1.25rem;
+        width: $size;
+        height: $size;
         border: 0.0625rem solid $color-dark-25;
         border-radius: 0.25rem;
       }
@@ -50,7 +50,7 @@
 
         &:focus + .checkbox__checkbox,
         &:hover + .checkbox__checkbox {
-          box-shadow: 0 0.125rem 0.3125rem $color-dark-25;
+          box-shadow: $checkbox-shadow;
         }
       }
 

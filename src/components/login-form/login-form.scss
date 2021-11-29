@@ -6,8 +6,9 @@
 .login-form {
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: 0 0 1.5625rem rgba(0, 0, 0, 0.2);
-  padding: 2.5rem 1.8rem 1.875rem 1.875rem;
+  box-shadow: $form-shadow;
+  padding: $form-padding;
+  border-radius: 0.25rem;
 
   &__header {
     margin-bottom: 1.3rem;
@@ -32,8 +33,8 @@
   }
 
   &__hint {
-    font-family: Montserrat, Arial, sans-serif;
-    font-size: 0.875rem;
+    @include font-hint-875;
+
     line-height: 1.125rem;
     padding-bottom: 0.2rem;
     color: #000;

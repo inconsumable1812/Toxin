@@ -18,10 +18,7 @@
     cursor: pointer;
 
     .expandable-checkbox-list__title {
-      font-family: Montserrat, Arial, sans-serif;
-      font-size: 0.75rem;
-      font-weight: bold;
-      text-transform: uppercase;
+      @include font-button;
     }
 
     .expandable-checkbox-list__toggle-button {
@@ -58,16 +55,18 @@
     background-color: white;
 
     .expandable-checkbox-list__item {
+      @include font-hint-875;
+
       padding-bottom: 0.76rem;
       line-height: 1.125rem;
-      font-size: 0.875rem;
-      font-family: Montserrat, Arial, sans-serif;
       color: $color-dark-50;
 
       .expandable-checkbox-list__checkbox {
+        $size: 1.25rem;
+
         position: absolute;
-        width: 1.25rem;
-        height: 1.25rem;
+        width: $size;
+        height: $size;
         border: 0.0625rem solid $color-dark-25;
         border-radius: 0.25rem;
       }
@@ -83,7 +82,7 @@
 
         &:focus + .expandable-checkbox-list__checkbox,
         &:hover + .expandable-checkbox-list__checkbox {
-          box-shadow: 0 0.0313rem 0.3125rem $color-dark-25;
+          box-shadow: $checkbox-shadow;
         }
       }
 

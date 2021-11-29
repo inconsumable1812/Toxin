@@ -14,10 +14,8 @@
   }
 
   &__header {
-    font-family: Montserrat, Arial, sans-serif;
-    font-size: 0.75rem;
-    font-weight: bold;
-    text-transform: uppercase;
+    @include font-button;
+
     padding-bottom: 1rem;
   }
 
@@ -29,8 +27,8 @@
   }
 
   &__item {
-    font-size: 0.875rem;
-    font-family: Montserrat, Arial, sans-serif;
+    @include font-hint-875;
+
     color: $color-dark-50;
 
     @include _1200 {
@@ -40,19 +38,23 @@
   }
 
   &__radio {
+    $size: 1.25rem;
+
     position: absolute;
-    height: 1.25rem;
-    width: 1.25rem;
+    height: $size;
+    width: $size;
     border-radius: 50%;
     border: 0.0625rem solid $color-dark-25;
 
     &::before {
+      $size: 0.75rem;
+
       position: absolute;
       content: '';
       top: 0.18rem;
       left: 0.18rem;
-      width: 0.75rem;
-      height: 0.75rem;
+      width: $size;
+      height: $size;
       border-radius: 0.375rem;
       opacity: 0;
       background: $grad-purple;
@@ -83,7 +85,7 @@
 
     &:hover + .radio-button__radio,
     &:focus + .radio-button__radio {
-      box-shadow: 0 0.125rem 0.3125rem $color-dark-25;
+      box-shadow: $checkbox-shadow;
     }
   }
 }

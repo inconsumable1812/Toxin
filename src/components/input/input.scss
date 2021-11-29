@@ -15,37 +15,36 @@
   }
 
   &__title {
-    font-family: Montserrat, Arial, sans-serif;
-    text-transform: uppercase;
+    @include font-button;
+
     color: $color-dark-100;
-    font-weight: bold;
-    font-size: 0.75rem;
     line-height: 0.7375rem;
   }
 
   &__hint {
-    font-family: Montserrat, Arial, sans-serif;
+    @include font-hint;
+
     color: $color-dark-50;
-    font-size: 0.75rem;
     line-height: 0.7375rem;
   }
 
   &__box {
+    @include font-hint;
+
     display: flex;
     position: relative;
     line-height: 2.75rem;
-    font-size: 0.75rem;
     margin: 0.45rem auto 0.5rem;
   }
 
   &__input {
-    font-family: Montserrat, Arial, sans-serif;
+    @include font-hint-875;
+
     width: 100%;
     line-height: 2.625rem;
-    padding: 0 2.375rem 0 0.875rem;
+    padding: $input-padding;
     border: 1px solid $color-dark-25;
     border-radius: 0.25rem;
-    font-size: 0.875rem;
     color: $color-dark-25;
 
     &::placeholder {
@@ -70,12 +69,14 @@
   &__submit-button {
     @include reset-button;
 
+    $size: 1.125rem;
+
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     right: 0.8125rem;
-    width: 1.125rem;
-    height: 1.125rem;
+    width: $size;
+    height: $size;
     background: url('./img/arrow-forward.svg') no-repeat center center;
   }
 

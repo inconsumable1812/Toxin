@@ -13,7 +13,8 @@
   }
 
   &__subtitle_p {
-    font-size: 0.875rem;
+    @include font-hint-875;
+
     line-height: 1.5rem;
   }
 
@@ -29,7 +30,8 @@
     max-width: 23.75rem;
 
     .tag-example__title {
-      font-size: 0.875rem;
+      @include font-hint-875;
+
       line-height: 1.5rem;
     }
   }

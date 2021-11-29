@@ -7,8 +7,8 @@
 .room-search {
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: 0 0 1.5625rem rgba(0, 0, 0, 0.2);
-  padding: 2.5rem 1.85rem 1.875rem 1.875rem;
+  box-shadow: $form-shadow;
+  padding: $form-padding;
   border-radius: 0.25rem;
 
   &__header {

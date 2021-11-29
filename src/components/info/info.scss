@@ -16,19 +16,19 @@
   border-bottom: 1px solid $color-dark-10;
 
   &__title {
+    @include font-hint-875;
+
     grid-area: title;
-    font-family: Montserrat, Arial, sans-serif;
-    font-size: 0.875rem;
     font-weight: bold;
     color: $color-dark-75;
     line-height: 1.5rem;
   }
 
   &__subtitle {
+    @include font-hint-875;
+
     grid-area: subtitle;
-    font-family: Montserrat, Arial, sans-serif;
     color: $color-dark-75;
-    font-size: 0.875rem;
     line-height: 1.5rem;
   }
 }

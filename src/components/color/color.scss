@@ -12,27 +12,31 @@
   justify-content: start;
 
   &__box {
+    $size: 4.375rem;
+
     grid-area: box;
-    width: 70px;
-    height: 70px;
-    border-radius: 6px;
+    width: $size;
+    height: $size;
+    border-radius: 0.375rem;
   }
 
   &__title {
+    @include font-hint-1-1875;
+
     grid-area: title;
     display: flex;
     line-height: 1.8125rem;
-    font-size: 1.1875rem;
     text-transform: none;
     align-self: flex-end;
     width: max-content;
   }
 
   &__subtitle {
+    @include font-hint-1-1875;
+
     grid-area: subtitle;
     display: flex;
     line-height: 1.8125rem;
-    font-size: 1.1875rem;
     align-self: flex-start;
   }
 

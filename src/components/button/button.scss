@@ -18,11 +18,9 @@
   }
 
   &__text {
-    font-size: 0.75rem;
+    @include font-button;
+
     line-height: 0.9375rem;
-    font-family: Montserrat, Arial, sans-serif;
-    font-weight: bold;
-    text-transform: uppercase;
 
     &_theme_white {
       color: white;
@@ -83,9 +81,11 @@
     }
 
     .button__arrow {
+      $size: 2.75rem;
+
       position: relative;
-      height: 2.75rem;
-      width: 2.75rem;
+      height: $size;
+      width: $size;
       justify-self: end;
 
       &::before {
