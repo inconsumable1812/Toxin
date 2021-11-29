@@ -9,6 +9,8 @@
 @import '../../components/header/header';
 
 .room-details {
+  overflow: hidden;
+
   &__header {
     margin-top: 0.2rem;
   }
@@ -30,6 +32,7 @@
 
     @include _480 {
       display: block;
+      max-height: none;
     }
   }
 
