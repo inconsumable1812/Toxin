@@ -69,7 +69,7 @@ export default class ImageSlider {
 
   isSetInterval() {
     if (this.slider.classList.contains(INTERVAL_CLASS)) {
-      setInterval(this.nextButtonCallback.bind(this), 5000);
+      setInterval(this.nextButtonCallback, 5000);
     }
   }
 
@@ -77,7 +77,7 @@ export default class ImageSlider {
     this.next.addEventListener('click', this.nextButtonCallback);
     this.prev.addEventListener('click', this.prevButtonCallback);
     this.dots.forEach((dot, index) =>
-      dot.addEventListener('click', this.dotCallback.bind(this, index))
+      dot.addEventListener('click', this.dotCallback.bind(null, index))
     );
   }
 
@@ -103,6 +103,7 @@ export default class ImageSlider {
     }
   }
 
+  @boundMethod
   dotCallback(index) {
     this.prepareCurrentSlide(index);
   }

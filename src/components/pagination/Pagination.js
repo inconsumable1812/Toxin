@@ -4,6 +4,7 @@ import PaginationLib from '../../libs/pagination/PaginationLib';
 const CURRENT_PAGE = 'js-current-page';
 const FROM = 'js-pagination__from';
 const TO = 'js-pagination__to';
+const countOnPage = 12;
 
 export default class Pagination {
   constructor(paginationContainer) {
@@ -29,8 +30,8 @@ export default class Pagination {
     let textFromNumber = +textFrom.textContent;
     const textTo = document.querySelector(`.${TO}`);
     let textToNumber = +textTo.textContent;
-    textFromNumber = currentPageNumber * 12 - 11;
-    textToNumber = currentPageNumber * 12;
+    textFromNumber = currentPageNumber * countOnPage - (countOnPage - 1);
+    textToNumber = currentPageNumber * countOnPage;
 
     if (textToNumber !== +textTo.textContent) {
       textTo.textContent = `${textToNumber}`;
