@@ -27,14 +27,16 @@ mixin header(options)
                   ? 'header__sub-menu js-header__sub-menu header_bold' 
                   : 'header__sub-menu js-header__sub-menu';
               if !link.subMenu
-                a(class=classLink, href=link.href)= link.name
-              if link.subMenu
-                div(class=classSubMenu) 
+                li.header__link-li
                   a(class=classLink, href=link.href)= link.name
-                  .header__dropdown.js-header__dropdown
-                    each subLink in link.subMenu
-                      a(class=classSubLink, href=subLink.href)= subLink.name
-                  span.header__sub-menu-icon.js-header__sub-menu-icon.material-icons= 'expand_more'
+              if link.subMenu
+                li.header__link-li
+                  div(class=classSubMenu) 
+                    a(class=classLink, href=link.href)= link.name
+                    .header__dropdown.js-header__dropdown
+                      each subLink in link.subMenu
+                        a(class=classSubLink, href=subLink.href)= subLink.name
+                    span.header__sub-menu-icon.js-header__sub-menu-icon.material-icons= 'expand_more'
           if !auth
             - classUser += ' header__user-menu_not-auth';
             div(class=classUser)

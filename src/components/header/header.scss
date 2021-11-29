@@ -14,6 +14,10 @@
     padding: 0 1.5rem;
   }
 
+  &__link-li {
+    list-style: none;
+  }
+
   &__navigation {
     display: grid;
     align-items: center;
