@@ -1,31 +1,11 @@
+include ../icon/icon.pug
+
 mixin rate-button(options)
-  - const { isVariable, base, rate, name, id } = options || {};
+  - const { base, rate, name, id } = options || {};
   - const ratingList = ['Ужасно', 'Так себе', 'Нормально', 'Хорошо', 'Отлично'];
 
-  if isVariable
-    .rateButton(tabindex="0")
-      .rateButton__group.material-icons
-        .rateButton__items
-          - for(let i = base; i > 0 ; i--)
-            if rate === i
-              input.rateButton__input.material-icons(
-                type="radio",
-                name=name,
-                id=`rating-${i}-${id}`,
-                aria-label=`${ratingList[i-1]}`,
-                checked
-              )
-              label.rateButton__label(for=`rating-${i}-${id}`) 
-            else
-              input.rateButton__input.material-icons(
-                type="radio",
-                name=name,
-                id=`rating-${i}-${id}`,
-                aria-label=`${ratingList[i-1]}`
-              )
-              label.rateButton__label(for=`rating-${i}-${id}`) 
-  if !isVariable
-    .rateButton
-      - for(let i = 0; i < base; i++)
-        - let iconClass = i >= rate ? 'rateButton__icon_type_outline' : '';
-        span.rateButton__icon.material-icons(class=iconClass)
+  .rate-button
+    - for(let i = 0; i < base; i++)
+      - const iconName = i >= rate ? 'star_border' : 'star';
+      span.rate-button__icon
+        +icon({ icon:iconName })

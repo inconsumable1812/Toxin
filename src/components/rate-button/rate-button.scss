@@ -1,86 +1,13 @@
 @import '../../utils/vars';
 @import '../../utils/mixins';
 
-.rateButton {
-  &:focus {
-    outline: 0.125rem solid $color-purple;
-  }
-
-  &__group {
-    position: relative;
-    width: 7.5rem;
-    height: 1.5rem;
-
-    &::before {
-      content: 'star_borderstar_borderstar_borderstar_borderstar_border';
-      color: $color-purple;
-    }
-  }
-
-  &__items {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: row-reverse;
-  }
-
-  &__input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 0;
-    opacity: 0;
-    visibility: hidden;
-
-    &:checked,
-    &:checked ~ .rateButton__label {
-      &::before {
-        content: 'star';
-      }
-    }
-  }
-
-  &__label {
-    flex: 0 0 1.5rem;
-    height: 100%;
-    cursor: pointer;
-    color: $color-purple;
-
-    /* stylelint-disable-next-line */
-    &::before {
-      color: $color-purple;
-    }
-
-    &:hover,
-    &:hover ~ .rateButton__label,
-    &:checked ~ .rateButton__label:hover {
-      /* stylelint-disable-next-line */
-      &::before {
-        content: 'star';
-      }
-    }
-  }
+.rate-button {
+  display: flex;
 
   &__icon {
     $size: 1.5rem;
 
-    height: $size;
-    width: $size;
-
-    &::before {
-      content: 'star';
-      color: $color-purple;
-    }
-
-    &_type_outline {
-      &::before {
-        content: 'star_border';
-        color: $color-purple;
-      }
-    }
+    font-size: $size;
+    color: $color-purple;
   }
 }

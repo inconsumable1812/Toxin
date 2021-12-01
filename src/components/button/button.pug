@@ -1,3 +1,5 @@
+include ../icon/icon.pug
+
 mixin button(options)
   -
     const {theme, 
@@ -25,10 +27,12 @@ mixin button(options)
         span.button__group.button__group-href
           span(class=textClass)= text
           if isLarge
-            span.button__arrow.material-icons 
+            span.button__icon
+              +icon({ icon:'arrow_forward' })
   if !href
     button(class=buttonClass) 
       span.button__group
         span(class=textClass)= text
         if isLarge
-          span.button__arrow.material-icons
+          span.button__icon
+            +icon({ icon:'arrow_forward' })

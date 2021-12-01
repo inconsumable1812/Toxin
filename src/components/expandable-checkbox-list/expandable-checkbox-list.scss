@@ -1,5 +1,6 @@
 @import '../../utils/vars';
 @import '../../utils/mixins';
+@import '../icon/icon';
 
 .expandable-checkbox-list {
   width: 100%;
@@ -11,7 +12,7 @@
   }
 
   .expandable-checkbox-list__header {
-    margin-bottom: 1.05rem;
+    margin-bottom: 1.15rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -22,22 +23,14 @@
     }
 
     .expandable-checkbox-list__toggle-button {
-      position: relative;
-      border: none;
-      appearance: none;
-      user-select: none;
-      cursor: pointer;
-      height: 1.25rem;
-      margin-right: 2.16rem;
+      @include reset-button;
 
-      &::before {
-        top: 0;
-        left: 0;
-        position: absolute;
-        content: 'expand_more';
-        color: $color-dark-50;
-        transition: transform 0.2s ease-in-out;
-      }
+      position: absolute;
+      top: -4px;
+      right: 11px;
+      font-size: $font-copyright-icon;
+      color: $color-dark-50;
+      transition: transform 0.2s ease-in-out;
 
       &:focus {
         &::before {
@@ -95,11 +88,8 @@
   &_expanded {
     /* stylelint-disable-next-line */
     .expandable-checkbox-list__toggle-button {
-      /* stylelint-disable-next-line */
-      &::before {
-        transform: rotate(180deg);
-        transition: transform 0.2s ease-in-out;
-      }
+      transform: rotate(180deg);
+      transition: transform 0.2s ease-in-out;
     }
 
     .expandable-checkbox-list__list {

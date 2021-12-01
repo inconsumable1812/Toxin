@@ -10,9 +10,10 @@
     'icon title'
     'icon subtitle';
   grid-template-columns: 3rem auto;
+  grid-template-rows: 1.5rem 1.55rem;
   column-gap: 0.55rem;
-  padding-top: 1.4rem;
-  padding-bottom: 1.1rem;
+  padding-top: 1.45rem;
+  padding-bottom: 1.05rem;
   border-bottom: 1px solid $color-dark-10;
 
   &__title {

@@ -1,3 +1,5 @@
+include ../icon/icon.pug
+
 mixin dropdown(options)
   -
     const {
@@ -31,7 +33,8 @@ mixin dropdown(options)
         readonly="readonly",
         class='js-dropdown__input dropdown__input_' + type
       )
-      button.dropdown__button.js-dropdown__button.material-icons(type="button")
+      button.dropdown__button-icon(type="button")
+        +icon({ icon:'expand_more' })
       if !calendar
         ul(class=listClass)
           if rows

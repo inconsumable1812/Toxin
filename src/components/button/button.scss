@@ -1,7 +1,9 @@
 @import '../../utils/vars';
 @import '../../utils/mixins';
+@import '../icon/icon';
 
 .button {
+  position: relative;
   padding: 0 1.3125rem 0 1.1875rem;
   height: 2.75rem;
   appearance: none;
@@ -80,21 +82,12 @@
       grid-column-start: 2;
     }
 
-    .button__arrow {
-      $size: 2.75rem;
-
-      position: relative;
-      height: $size;
-      width: $size;
-      justify-self: end;
-
-      &::before {
-        top: 0.6875rem;
-        left: 0.55rem;
-        position: absolute;
-        content: 'arrow_forward';
-        color: white;
-      }
+    .button__icon {
+      position: absolute;
+      font-size: $font-copyright-icon;
+      top: 11px;
+      right: 10px;
+      color: white;
     }
   }
 

@@ -9,7 +9,6 @@ mixin room-sketch(options)
     isInterval, 
     base, 
     rate, 
-    isVariable = false, 
     name = 'rating', 
     id = 'rating',
     roomNumber,
@@ -35,7 +34,7 @@ mixin room-sketch(options)
             span.room-sketch__date-unit= 'в сутки'
         .room-sketch__footer
           .room-sketch__rate
-            +rate-button({ base, rate, isVariable, name, id })
+            +rate-button({ base, rate, name, id })
           .room-sketch__feedback-counter
             span.room-sketch__feedback-number= feedbackNumber
             span.room-sketch__feedback-text= feedbackText

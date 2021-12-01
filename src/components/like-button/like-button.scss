@@ -1,12 +1,14 @@
 @import '../../utils/vars';
 @import '../../utils/mixins';
+@import '../icon/icon';
 
 .like-button {
-  $size: 1.25rem;
-
   display: inline-block;
 
   &__button {
+    $size: 1.25rem;
+
+    position: relative;
     width: 2.5rem;
     height: $size;
     border: 0.0625rem solid $color-dark-25;
@@ -24,21 +26,17 @@
   }
 
   &__icon {
-    position: relative;
-    height: $size;
-    width: $size;
-
-    &::before {
-      top: 0.35rem;
-      left: 0.25rem;
-      position: absolute;
-      content: 'favorite_border';
-      color: $color-dark-25;
-      font-size: $font-like-button;
-    }
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    font-size: $font-like-button;
+    color: $color-dark-25;
   }
 
   &__count {
+    position: absolute;
+    top: 3px;
+    left: 19px;
     font-size: $font-like-button;
     color: $color-dark-25;
   }
@@ -49,14 +47,7 @@
     }
 
     .like-button__icon {
-      &::before {
-        top: 0.35rem;
-        left: 0.25rem;
-        position: absolute;
-        content: 'favorite';
-        color: $color-purple;
-        font-size: $font-like-button;
-      }
+      color: $color-purple;
     }
 
     .like-button__count {

@@ -213,7 +213,7 @@
 
     &:nth-child(2) {
       grid-template-columns: 22.93% 15.6% 27.59% 6.35% 27.59%;
-      margin-bottom: 10.65rem;
+      margin-bottom: 10.75rem;
 
       .form-elements__section-column-start {
         @include _768 {
@@ -244,13 +244,11 @@
 
       .form-elements__section-column-start {
         .form-elements__expandable-checkbox {
-          margin-bottom: 2.68rem;
+          margin-bottom: 3.08rem;
         }
       }
 
       .form-elements__section-column-central {
-        margin-top: 0.1rem;
-
         .form-elements__rich-checkbox {
           .richCheckbox__item:first-child {
             padding-right: 2rem;
@@ -263,7 +261,6 @@
       }
 
       .form-elements__section-column-end {
-        margin-top: 0.12rem;
         margin-left: 0.06rem;
 
         .form-elements__bullet-list {
