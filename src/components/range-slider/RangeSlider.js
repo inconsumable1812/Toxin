@@ -3,8 +3,8 @@ import { boundMethod } from 'autobind-decorator';
 import Slider from '../../libs/slider/Slider';
 
 const SLIDER = 'js-range-slider__slider';
-const MIN_INPUT = 'js-range-slider__input_min';
-const MAX_INPUT = 'range-slider__input_max';
+const MIN_INPUT = 'js-range-slider__input-min';
+const MAX_INPUT = 'js-range-slider__input-max';
 
 export default class RangeSlider {
   constructor(root) {
