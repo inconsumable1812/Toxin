@@ -10,21 +10,6 @@
     position: absolute;
     z-index: -1;
     width: 100%;
-
-    .image-slider__img {
-      object-fit: cover;
-      object-position: 50% 50%;
-      width: 100%;
-      height: 43.75rem;
-
-      @include _480 {
-        height: 46.875rem;
-      }
-    }
-
-    .image-slider__dot-wrapper {
-      display: none;
-    }
   }
 
   &__main {
@@ -35,9 +20,5 @@
     padding: 10.125rem 0;
     margin: 0 auto;
     max-width: 23.75rem;
-
-    .button_theme_white {
-      padding: 0 1.1em 0 1.1rem;
-    }
   }
 }

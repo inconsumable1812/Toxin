@@ -40,7 +40,7 @@ mixin registration-form
           ]
         })
       .registration-form__button
-        +button({ theme: 'purple', textTheme: 'white', text: 'зарегистрироваться', isLarge: true })
+        +button({ theme: 'purple', textTheme: 'white', text: 'зарегистрироваться', isLarge: true, isArrow:true })
     .registration-form__group
       p.registration-form__hint= 'Уже есть аккаунт на Toxin'
       +button({ theme: 'white', textTheme: 'purple', text: 'Войти', href: './sign-in-page.html' }) 

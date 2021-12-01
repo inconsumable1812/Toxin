@@ -18,6 +18,8 @@
 @import '../../components/feedback/feedback';
 
 .form-elements {
+  $r: &;
+
   overflow: hidden;
 
   &__logo {
@@ -43,7 +45,7 @@
       grid-template-columns: repeat(1, 1fr);
     }
 
-    .form-elements__section-column-gap {
+    #{$r}__section-column_gap {
       @include _1200 {
         display: none;
       }
@@ -53,33 +55,33 @@
       grid-template-columns: 27.59% 10.86% 22.45% 11.38% 27.75%;
       margin-bottom: 5.5rem;
 
-      .form-elements__section-column-start {
-        .form-elements__input-default {
+      #{$r}__section-column_start {
+        #{$r}__input-default {
           margin-top: 0.3125rem;
           margin-bottom: 1.35rem;
         }
 
-        .form-elements__input-hover {
+        #{$r}__input-hover {
           margin-bottom: 1rem;
         }
 
-        .form-elements__input-dropdown {
+        #{$r}__input-dropdown {
           margin-bottom: 1.5rem;
         }
 
-        .form-elements__input-email {
+        #{$r}__input-email {
           margin-bottom: 2.25rem;
         }
 
-        .form-elements__dropdown-double {
+        #{$r}__dropdown-double {
           margin-bottom: 2.3rem;
         }
 
-        .form-elements__dropdown-single {
+        #{$r}__dropdown-single {
           margin-bottom: 2.65rem;
         }
 
-        .form-elements__input-with-button {
+        #{$r}__input-with-button {
           max-width: 16.625rem;
 
           @include _1200 {
@@ -88,50 +90,47 @@
         }
       }
 
-      .form-elements__section-column-central {
+      #{$r}__section-column_central {
         padding-left: 0.1rem;
 
-        .form-elements__checkbox {
+        #{$r}__checkbox {
           margin-top: 0.5125rem;
           margin-bottom: 1.9rem;
         }
 
-        .form-elements__radio-button {
+        #{$r}__radio-button {
           margin-bottom: 2.7rem;
         }
 
-        .form-elements__toggle {
+        #{$r}__toggle {
           margin-bottom: 2.1rem;
         }
 
-        .form-elements__like-buttons {
+        #{$r}__like-buttons {
           margin-bottom: 2.3rem;
 
-          .form-elements__like-buttons_title {
-            font-family: Montserrat, Arial, sans-serif;
-            font-size: 0.75rem;
+          #{$r}__like-buttons_title {
+            @include font-button;
+
             color: $color-dark-100;
-            font-weight: bold;
-            text-transform: uppercase;
             margin-bottom: 1rem;
           }
 
-          .like-button {
-            margin-right: 0.3rem;
+          #{$r}__like-buttons_items {
+            display: flex;
+            column-gap: 0.5625rem;
           }
         }
 
-        .form-elements__rate-buttons {
-          .form-elements__rate-buttons_title {
-            font-family: Montserrat, Arial, sans-serif;
-            font-size: 0.75rem;
+        #{$r}__rate-buttons {
+          #{$r}__rate-buttons_title {
+            @include font-button;
+
             color: $color-dark-100;
-            font-weight: bold;
-            text-transform: uppercase;
             margin-bottom: 1.1rem;
           }
 
-          .form-elements__rate-buttons-group {
+          #{$r}__rate-buttons-group {
             display: grid;
             grid-template-columns: repeat(auto-fill, 7.5rem);
             column-gap: 1.11rem;
@@ -139,72 +138,56 @@
         }
       }
 
-      .form-elements__section-column-end {
+      #{$r}__section-column_end {
         margin-left: 0.1rem;
 
-        .form-elements__range-slider {
+        #{$r}__range-slider {
           margin-bottom: 2.6rem;
         }
 
-        .form-elements__buttons {
+        #{$r}__buttons {
           margin-bottom: 1.5rem;
 
-          .form-elements__buttons-title {
-            font-family: Montserrat, Arial, sans-serif;
-            font-size: 0.75rem;
+          #{$r}__buttons-title {
+            @include font-button;
+
             color: $color-dark-100;
-            text-transform: uppercase;
-            font-weight: bold;
             margin-bottom: 1.1rem;
           }
 
-          .form-elements__buttons_row_first {
+          #{$r}__buttons_row_first {
             display: grid;
             grid-template-columns: repeat(auto-fill, 6.1875rem);
             column-gap: 1.25rem;
             margin-bottom: 1.9rem;
-
-            .button_theme_purple {
-              .button__text {
-                letter-spacing: -0.5px;
-              }
-            }
           }
 
-          .form-elements__buttons_row_second {
+          #{$r}__buttons_row_second {
             display: grid;
             grid-template-columns: repeat(auto-fill, 6.1875rem);
             column-gap: 1.25rem;
             margin-bottom: 1.9rem;
-
-            .button_theme_white {
-              .button__text {
-                letter-spacing: -0.5px;
-              }
-            }
           }
 
-          .form-elements__buttons_row_third {
+          #{$r}__buttons_row_third {
             display: grid;
             grid-template-columns: repeat(auto-fill, 3.8125rem);
             column-gap: 1.3rem;
             margin-bottom: 1.9rem;
           }
 
-          .form-elements__buttons_row_fourth {
+          #{$r}__buttons_row_fourth {
             margin-bottom: 2.5rem;
           }
         }
 
-        .form-elements__pagination {
+        #{$r}__pagination {
           max-width: 16.625rem;
 
-          .form-elements__pagination-title {
-            font-family: Montserrat, Arial, sans-serif;
-            font-size: 0.75rem;
+          #{$r}__pagination-title {
+            @include font-button;
+
             color: $color-dark-100;
-            text-transform: uppercase;
-            font-weight: bold;
             margin-bottom: 1.05rem;
           }
         }
@@ -215,23 +198,23 @@
       grid-template-columns: 22.93% 15.6% 27.59% 6.35% 27.59%;
       margin-bottom: 10.75rem;
 
-      .form-elements__section-column-start {
+      #{$r}__section-column_start {
         @include _768 {
           margin-bottom: 5.5rem;
         }
 
-        .form-elements__dropdown-rooms {
+        #{$r}__dropdown-rooms {
           margin-bottom: 0.95rem;
         }
       }
 
-      .form-elements__section-column-central {
+      #{$r}__section-column_central {
         @include _768 {
           margin-bottom: 8rem;
         }
       }
 
-      .form-elements__section-column-end {
+      #{$r}__section-column_end {
         @include _768 {
           margin-bottom: 1rem;
         }
@@ -242,32 +225,14 @@
       grid-template-columns: 23.02% 15.52% 22.83% 11% 25.17%;
       margin-bottom: 0.4rem;
 
-      .form-elements__section-column-start {
-        .form-elements__expandable-checkbox {
+      #{$r}__section-column_start {
+        #{$r}__expandable-checkbox {
           margin-bottom: 3.08rem;
         }
       }
 
-      .form-elements__section-column-central {
-        .form-elements__rich-checkbox {
-          .richCheckbox__item:first-child {
-            padding-right: 2rem;
-          }
-
-          .richCheckbox__item:nth-child(2) {
-            padding-right: 0.5rem;
-          }
-        }
-      }
-
-      .form-elements__section-column-end {
+      #{$r}__section-column_end {
         margin-left: 0.06rem;
-
-        .form-elements__bullet-list {
-          .bulletList__list {
-            padding-right: 1.8rem;
-          }
-        }
       }
     }
 
@@ -279,7 +244,7 @@
         grid-template-columns: auto auto;
       }
 
-      .form-elements__section-column-central {
+      #{$r}__section-column_central {
         margin-top: 2rem;
       }
     }

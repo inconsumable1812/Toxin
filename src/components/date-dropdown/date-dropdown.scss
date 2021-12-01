@@ -10,6 +10,10 @@
     grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
     column-gap: 1.25rem;
     row-gap: 0.6rem;
+
+    &_hidden {
+      display: none;
+    }
   }
 
   .date-dropdown__title {

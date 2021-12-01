@@ -9,6 +9,7 @@ include ../../components/pagination/pagination.pug
 include ../../components/rich-checkbox/rich-checkbox.pug
 include ../../components/room-sketch/room-sketch.pug
 include ../../components/button/button.pug
+include ../../components/icon/icon.pug
 
 mixin search-room__room-sketch(options = {})
   -
@@ -53,7 +54,8 @@ block variables
 block main
   .search-room__container
     .search-room__filter.js-search-room__filter
-      button.search-room__button-close.js-search-room__button-close.material-icons= 'close'
+      button.search-room__button-close.js-search-room__button-close
+        +icon({ icon:'close' })
       form.search-room__filter-form
         .search-room__calendar
           +date-dropdown({ title: "даты пребывания в отеле", type: 'single' })

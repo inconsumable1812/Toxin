@@ -1,5 +1,6 @@
 include ../../components/logo/logo.pug
 include ../../components/button/button.pug
+include ../icon/icon.pug
 
 mixin header(options)
   -
@@ -15,7 +16,8 @@ mixin header(options)
       nav.header__navigation 
         .header__logo
           +logo(true)
-        button.header__burger.js-header__burger.material-icons= 'menu'
+        button.header__burger.js-header__burger
+          +icon({ icon:'menu' })
         .header__menu-group.js-header__menu-group
           ul.header__menu
             each link in menuLink
@@ -41,10 +43,10 @@ mixin header(options)
             - classUser += ' header__user-menu_not-auth';
             div(class=classUser)
               //- prettier-ignore 
-              +button({ theme: 'white', textTheme: 'purple', text: 'войти',
+              +button({ theme: 'white', textTheme: 'purple', text: 'войти', isLogInButton:true,
                 href: './sign-in-page.html' })
               //- prettier-ignore 
-              +button({ theme: 'purple', textTheme: 'white', text: 'зарегистрироваться',
+              +button({ theme: 'purple', textTheme: 'white', text: 'зарегистрироваться', isRegistrationButton:true,
                 href: './registration.html' }) 
           if auth
             - classUser += ' header__user-menu_auth';

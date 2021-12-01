@@ -1,11 +1,16 @@
+include ../icon/icon.pug
+
 mixin image-slider(options)
   -
-    const { isHovered, isInterval, rows = [] } = options || {};
+    const { isHovered, isInterval, rows = [], isLandingPage, isRegistrationPage, isSignInPage } = options || {};
     let sliderClass = 'image-slider js-image-slider';
     sliderClass += isHovered ? ' image-slider__hovered' : '';
     sliderClass += isInterval 
       ? ' image-slider__interval js-image-slider__interval' 
       : '';
+    sliderClass += isLandingPage ? ' image-slider__landing-page' : ''
+    sliderClass += isRegistrationPage ? ' image-slider__registration-page' : ''
+    sliderClass += isSignInPage ? ' image-slider__sign-in-page' : '' 
 
   div(class=sliderClass)
     .image-slider__slider-wrapper 
@@ -13,9 +18,11 @@ mixin image-slider(options)
         .image-slider__slide.js-image-slider__slide
           img.image-slider__img(src=row.src, alt=row.alt)
       .image-slider__btn-prev.js-image-slider__btn-prev
-        span.image-slider__arrow.material-icons= 'expand_more'
+        span.image-slider__icon
+          +icon({ icon:'expand_more' })
       .image-slider__btn-next.js-image-slider__btn-next
-        span.image-slider__arrow.material-icons= 'expand_more'
+        span.image-slider__icon
+          +icon({ icon:'expand_more' })
       .image-slider__dot-wrapper 
         each row in rows
           span.image-slider__dot.js-image-slider__dot

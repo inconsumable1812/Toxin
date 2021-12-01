@@ -1,7 +1,10 @@
 @import '../../utils/vars';
 @import '../../utils/mixins';
+@import '../icon/icon';
 
 .image-slider {
+  $r: &;
+
   width: 100%;
 
   &__btn-prev,
@@ -31,49 +34,50 @@
     transform: rotate(180deg);
   }
 
-  &__arrow {
+  &__icon {
     opacity: 0;
     position: absolute;
-    left: 10px;
-    top: 42%;
+    left: 6px;
+    top: 40%;
     color: white;
     transform: rotate(90deg);
     transition: opacity 0.3s ease;
+    font-size: $font-copyright-icon;
   }
 
   &__hovered {
-    .image-slider__btn-prev,
-    .image-slider__btn-next {
+    #{$r}__btn-prev,
+    #{$r}__btn-next {
       opacity: 1;
       border-radius: 0.25rem;
     }
 
-    .image-slider__arrow {
+    #{$r}__icon {
       opacity: 1;
     }
 
-    .material-icons {
-      opacity: 1;
-    }
+    // .material-icons {
+    //   opacity: 1;
+    // }
   }
 
   &:hover {
-    .image-slider__btn-prev,
-    .image-slider__btn-next {
+    #{$r}__btn-prev,
+    #{$r}__btn-next {
       opacity: 1;
       transition: opacity 0.3s ease;
       border-radius: 0.25rem;
     }
 
-    .image-slider__arrow {
+    #{$r}__icon {
       opacity: 1;
       transition: opacity 0.3s ease;
     }
 
-    .material-icons {
-      opacity: 1;
-      transition: opacity 0.3s ease;
-    }
+    // .material-icons {
+    //   opacity: 1;
+    //   transition: opacity 0.3s ease;
+    // }
   }
 
   &__slider-wrapper {
@@ -129,10 +133,64 @@
     object-fit: cover;
     border-radius: 0.25rem 0.25rem 0 0;
   }
-}
 
-.image-slider__interval {
-  .image-slider__img {
-    border-radius: 0;
+  &__interval {
+    #{$r}__img {
+      border-radius: 0;
+    }
+  }
+
+  &__landing-page {
+    position: absolute;
+    z-index: -1;
+
+    #{$r}__img {
+      object-fit: cover;
+      object-position: 50% 50%;
+      width: 100%;
+      height: 53.125rem;
+
+      @include _480 {
+        height: 62.5rem;
+      }
+    }
+
+    #{$r}__dot-wrapper {
+      display: none;
+    }
+  }
+
+  &__registration-page {
+    #{$r}__img {
+      object-fit: cover;
+      object-position: 50% 50%;
+      width: 100%;
+      height: 43.75rem;
+
+      @include _480 {
+        height: 46.875rem;
+      }
+    }
+
+    #{$r}__dot-wrapper {
+      display: none;
+    }
+  }
+
+  &__sign-in-page {
+    #{$r}__img {
+      object-fit: cover;
+      object-position: 50% 50%;
+      width: 100%;
+      height: 43.75rem;
+
+      @include _480 {
+        height: 46.875rem;
+      }
+    }
+
+    #{$r}__dot-wrapper {
+      display: none;
+    }
   }
 }

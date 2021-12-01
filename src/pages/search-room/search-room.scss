@@ -11,6 +11,7 @@
 @import '../../components/room-sketch/room-sketch';
 @import '../../components/button/button';
 @import '../../components/header/header';
+@import '../../components/icon/icon';
 
 .search-room {
   display: flex;
@@ -30,7 +31,7 @@
     grid-template-columns: 16.625rem 1fr;
     column-gap: 3.75rem;
     padding-top: 1.58rem;
-    padding-bottom: 4.25rem;
+    padding-bottom: 4.45rem;
     border-bottom: 1px solid $color-dark-25;
 
     @include _992 {
@@ -40,32 +41,11 @@
 
   &__button-open {
     display: none;
-    grid-template-columns: 1fr 1fr;
 
     @include _992 {
-      display: grid;
+      display: flex;
       padding-bottom: 1.5rem;
-    }
-
-    @include _768 {
-      grid-template-columns: 1fr;
-    }
-
-    .button {
-      grid-column: span 2;
-      justify-self: center;
-
-      @include _600 {
-        grid-column: span 1;
-      }
-
-      &__arrow {
-        display: none;
-      }
-    }
-
-    .button_size_large {
-      max-width: none;
+      justify-content: center;
     }
   }
 
@@ -92,13 +72,11 @@
   }
 
   &__button-close {
+    @include reset-button;
+
     display: none;
-    appearance: none;
-    border: none;
-    background: transparent;
-    user-select: none;
-    cursor: pointer;
     justify-self: end;
+    font-size: $font-copyright-icon;
 
     &:hover {
       color: $color-purple;
@@ -122,11 +100,7 @@
   }
 
   &__checkbox {
-    padding-bottom: 1.15rem;
-
-    .checkbox__header {
-      padding-bottom: 1.15rem;
-    }
+    padding-bottom: 1.3rem;
   }
 
   &__rich-checkbox {
@@ -146,7 +120,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 0.75rem;
-    row-gap: 1.1rem;
+    row-gap: 0.9rem;
 
     @include _1200 {
       grid-template-columns: 1fr 1fr;

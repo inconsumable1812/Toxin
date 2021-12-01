@@ -10,10 +10,12 @@ mixin date-dropdown(options)
       ? ' date-dropdown__calendar_content_expanded js-date-dropdown__calendar_content_expanded' 
       : '';
     calendarClass += hidden ? ' disabled' : '';
+    let doubleClass = 'date-dropdown__group_double'
+    doubleClass += hidden ? ' date-dropdown__group_double_hidden': ''
 
   .date-dropdown(class=mainClass + JSMainClass)
     if (type === "double")
-      .date-dropdown__group_double
+      div(class=doubleClass)
         .date-dropdown__item
           span.date-dropdown__title= titleStart
           .date-dropdown__dropdown-box.js-date-dropdown__dropdown-box

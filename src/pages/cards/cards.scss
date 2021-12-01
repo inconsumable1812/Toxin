@@ -5,8 +5,11 @@
 @import '../../components/booking-form/booking-form';
 @import '../../components/login-form/login-form';
 @import '../../components/room-sketch/room-sketch';
+@import '../../components/date-dropdown/date-dropdown';
 
 .cards {
+  $r: &;
+
   overflow: hidden;
 
   &__logo {
@@ -30,31 +33,17 @@
 
   &__grid-column_first {
     max-width: 23.75rem;
-
-    .button_theme_white {
-      padding: 0 1.45em 0 1.5rem;
-    }
   }
 
   &__card {
     margin-bottom: 2.5rem;
   }
 
-  &__grid-column_second {
-    .button_theme_white {
-      padding: 0 1.1rem 0 1rem;
-    }
-  }
-
   &__grid-column_third {
-    .date-dropdown__group_double {
-      display: none;
-    }
-
-    .cards__card {
+    #{$r}__card {
       &:nth-child(2) {
         max-width: 16.875rem;
-        margin-bottom: 2.3rem;
+        margin-bottom: 2.1rem;
       }
 
       &:nth-child(3) {

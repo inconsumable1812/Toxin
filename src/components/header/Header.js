@@ -1,3 +1,4 @@
+/* eslint-disable lines-between-class-members */
 import { boundMethod } from 'autobind-decorator';
 
 const BURGER_CLASS = 'js-header__burger';
@@ -9,19 +10,26 @@ const CSS_SUB_MENU_EXPANDED = 'header__sub-menu_expanded';
 const DROPDOWN_CLASS = 'js-header__dropdown';
 const MENU_GROUP_EXPANDED = 'js-header__menu-group_expanded';
 const CSS_MENU_GROUP_EXPANDED = 'header__menu-group_expanded';
+const BURGER_ICON_CLASS = 'js-icon__material';
 
 export default class Header {
+  burger = null;
+  menuGroup = null;
+  subMenus = null;
+  icon = null;
+
   constructor(header) {
     this.header = header;
-    this.burger = null;
-    this.menuGroup = null;
-    this.subMenus = null;
 
     this.init();
   }
 
   findBurger() {
     this.burger = this.header.querySelector(`.${BURGER_CLASS}`);
+  }
+
+  findIcon() {
+    this.icon = this.burger.querySelector(`.${BURGER_ICON_CLASS}`);
   }
 
   findMenuGroup() {
@@ -36,6 +44,7 @@ export default class Header {
     this.findBurger();
     this.findMenuGroup();
     this.findSubMenus();
+    this.findIcon();
 
     this.bindEventListeners();
   }
@@ -57,13 +66,13 @@ export default class Header {
         MENU_GROUP_EXPANDED,
         CSS_MENU_GROUP_EXPANDED
       );
-      this.burger.textContent = 'menu';
+      this.icon.textContent = 'menu';
     } else {
       this.menuGroup.classList.add(
         MENU_GROUP_EXPANDED,
         CSS_MENU_GROUP_EXPANDED
       );
-      this.burger.textContent = 'close';
+      this.icon.textContent = 'close';
     }
   }
 
