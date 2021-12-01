@@ -77,9 +77,13 @@ export default class ImageSlider {
     this.next.addEventListener('click', this.nextButtonCallback);
     this.prev.addEventListener('click', this.prevButtonCallback);
     this.dots.forEach((dot, index) =>
-      dot.addEventListener('click', this.dotCallback.bind(null, index))
+      dot.addEventListener('click', this.makeDotCallback(index))
     );
   }
+
+  makeDotCallback = (index) => () => {
+    this.dotCallback(index);
+  };
 
   @boundMethod
   nextButtonCallback() {

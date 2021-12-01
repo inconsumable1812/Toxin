@@ -9,7 +9,7 @@ export default class ChartElement {
   gradientGood = null;
   gradientAcceptable = null;
   gradientDisappoint = null;
-  AllNumberSumHTMLs = null;
+  allNumberSumHTMLs = null;
   dataSum = 0;
 
   constructor(chartContainer) {
@@ -42,7 +42,7 @@ export default class ChartElement {
   }
 
   findSumHTMLContainer() {
-    this.AllNumberSumHTMLs = document.querySelectorAll('.js-chart__number');
+    this.allNumberSumHTMLs = document.querySelectorAll('.js-chart__number');
   }
 
   sendDataToHTML() {
@@ -52,7 +52,7 @@ export default class ChartElement {
       this.dataSum += number;
     });
 
-    this.AllNumberSumHTMLs.forEach((AllNumberSumHTML) => {
+    this.allNumberSumHTMLs.forEach((AllNumberSumHTML) => {
       // eslint-disable-next-line no-param-reassign
       AllNumberSumHTML.textContent = this.dataSum;
     });
