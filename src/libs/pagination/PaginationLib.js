@@ -1,5 +1,7 @@
 import 'paginationjs';
 
+const ALL_ITEMS = 180;
+
 export default class PaginationLib {
   constructor($container, CURRENT_PAGE) {
     this.$container = $container;
@@ -11,11 +13,8 @@ export default class PaginationLib {
   createPagination() {
     this.$container.pagination({
       dataSource: (done) => {
-        var result = [];
-        for (let i = 1; i < 180; i += 1) {
-          result.push(i);
-        }
-        done(result);
+        const arrayOfItems = new Array(ALL_ITEMS).fill('').map((_, i) => i + 1);
+        done(arrayOfItems);
       },
       pageSize: 12,
       pageRange: 1,
