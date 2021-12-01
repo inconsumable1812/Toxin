@@ -59,20 +59,15 @@
       }
 
       .datepicker--cells-days {
-        margin: 0 0 0.25rem 1.05rem;
+        margin-left: 1.05rem;
 
         .datepicker--cell-day {
           padding: 0 0.5rem;
           color: $color-dark-50;
           height: 2.5rem;
-          width: 2.5rem;
+          width: 13.6%;
           font-size: 0.75rem;
           font-family: Montserrat, Arial, sans-serif;
-
-          @include _480 {
-            height: 1.8rem;
-            width: 1.8rem;
-          }
 
           &:hover {
             border-radius: 50%;
@@ -103,7 +98,7 @@
             z-index: -1;
             width: 50%;
             content: '';
-            right: -0.5;
+            right: -0.5px;
             height: 100%;
           }
         }
@@ -141,6 +136,7 @@
       display: flex;
       border: none;
       margin-bottom: 0.35rem;
+      padding-top: 0.5rem;
 
       .datepicker--button_apply {
         margin-right: 0.3rem;
@@ -242,11 +238,14 @@
       }
 
       .datepicker--cells-days {
+        // display: grid;
+        // grid-template-columns: repeat(7, 1fr);
+        // justify-items: center;
         /* stylelint-disable-next-line no-descending-specificity */
         .datepicker--cell-day {
           color: $color-dark-50;
-          height: 2.24rem;
-          width: 2.285rem;
+          height: 2.29rem;
+          width: 2.29rem;
           font-size: 0.75rem;
           font-family: Montserrat, Arial, sans-serif;
 
@@ -279,7 +278,7 @@
             z-index: -1;
             width: 50%;
             content: '';
-            right: -0.5;
+            right: -0.5px;
             height: 100%;
           }
         }

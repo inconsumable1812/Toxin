@@ -7,7 +7,7 @@
 
   &__group_double {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+    grid-template-columns: 1fr 1fr;
     column-gap: 1.25rem;
     row-gap: 0.6rem;
 
@@ -37,10 +37,6 @@
   max-width: 20rem;
   width: 100%;
 
-  @include _1200 {
-    max-width: none;
-  }
-
   .disabled {
     position: relative;
   }
@@ -48,8 +44,4 @@
 
 .date-dropdown_single {
   max-width: 16.625rem;
-
-  @include _1200 {
-    max-width: none;
-  }
 }
