@@ -23,6 +23,10 @@
     margin: 0 auto;
     padding-left: 1.7rem;
     padding-right: 1.3rem;
+
+    @include _400 {
+      padding: 0;
+    }
   }
 
   &__room-search {

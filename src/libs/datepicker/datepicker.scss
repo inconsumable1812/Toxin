@@ -69,6 +69,10 @@
           font-size: 0.75rem;
           font-family: Montserrat, Arial, sans-serif;
 
+          @include _400 {
+            height: 2rem;
+          }
+
           &:hover {
             border-radius: 50%;
           }
@@ -238,9 +242,6 @@
       }
 
       .datepicker--cells-days {
-        // display: grid;
-        // grid-template-columns: repeat(7, 1fr);
-        // justify-items: center;
         /* stylelint-disable-next-line no-descending-specificity */
         .datepicker--cell-day {
           color: $color-dark-50;
