@@ -5,20 +5,20 @@ include ../../components/button/button.pug
 mixin booking-form(options)
   -
     let { 
-     numberValue = "888", 
-     numberFeature = "люкс", 
-     cost = "9 990₽",
-     dateUnit = "в сутки",
-     amountForDaysName = "9 990₽ х 4 суток",
-     amountForDaysCurrency = "39 960₽",
-     discountName = "Сбор за услуги: скидка 2 179₽",
-     discountTooltip = "change me",
-     discountCurrency = "0₽",
-     priceOfServicesName = "Сбор за дополнительные услуги",
-     priceOfServicesTooltip = "change me",
-     priceOfServicesCurrency = "300₽",
-     totalValue = "38 081₽",
-      } = options || {}
+      numberValue = "888", 
+      numberFeature = "люкс", 
+      cost = "9 990₽",
+      dateUnit = "в сутки",
+      amountForDaysName = "9 990₽ х 4 суток",
+      amountForDaysCurrency = "39 960₽",
+      discountName = "Сбор за услуги: скидка 2 179₽",
+      discountTooltip = "change me",
+      discountCurrency = "0₽",
+      priceOfServicesName = "Сбор за дополнительные услуги",
+      priceOfServicesTooltip = "change me",
+      priceOfServicesCurrency = "300₽",
+      totalValue = "38 081₽",
+    } = options || {}
 
 
   form.booking-form.js-booking-form(action="./error-page.html")
@@ -32,11 +32,18 @@ mixin booking-form(options)
         span.booking-form__date-unit= dateUnit
     .booking-form__calendar
       //- prettier-ignore  
-      +date-dropdown({ titleStart: "Прибытие", titleEnd: "Выезд", 
-        type: "double", isExpanded: false })
+      +date-dropdown({ 
+        titleStart: "Прибытие", 
+        titleEnd: "Выезд", 
+        type: "double", 
+        isExpanded: false 
+      })
     .booking-form__dropdown_type_guests
       //- prettier-ignore  
-      +dropdown({title: "Гости", name: "guestNumber", placeholder: "Сколько гостей", 
+      +dropdown({
+        title: "Гости", 
+        name: "guestNumber", 
+        placeholder: "Сколько гостей", 
         type: "guest", 
         rows: [ 
           {
@@ -73,4 +80,11 @@ mixin booking-form(options)
         span.booking-form__total-line
         span.booking-form__total-value= totalValue
     .booking-form__button 
-      +button({ theme: "purple", textTheme: "white", text: "забронировать", isLarge: true, isArrow:true })
+      //- prettier-ignore
+      +button({ 
+        theme: "purple", 
+        textTheme: "white", 
+        text: "забронировать", 
+        isLarge: true, 
+        isArrow:true 
+      })

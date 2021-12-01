@@ -2,7 +2,14 @@ include ../icon/icon.pug
 
 mixin image-slider(options)
   -
-    const { isHovered, isInterval, rows = [], isLandingPage, isRegistrationPage, isSignInPage } = options || {};
+    const { 
+      isHovered, 
+      isInterval,
+      rows = [], 
+      isLandingPage, 
+      isRegistrationPage, 
+      isSignInPage 
+    } = options || {};
     let sliderClass = 'image-slider js-image-slider';
     sliderClass += isHovered ? ' image-slider__hovered' : '';
     sliderClass += isInterval 

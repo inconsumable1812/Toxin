@@ -1,7 +1,15 @@
 include ../like-button/like-button.pug
 
 mixin feedback(options)
-  - const { src, name, date, text, count = '12', isPressed = true } = options || {};
+  -
+    const { 
+      src, 
+      name, 
+      date,
+      text, 
+      count = '12', 
+      isPressed = true 
+    } = options || {};
 
   .feedback 
     img.feedback__img(src=src, alt="фото автара")

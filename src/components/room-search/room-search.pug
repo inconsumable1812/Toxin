@@ -8,11 +8,18 @@ mixin room-search
       h1.room-search__title= 'Найдём номера под ваши пожелания'
     .room-search__calendar 
       //- prettier-ignore 
-      +date-dropdown({ titleStart: "Прибытие", titleEnd: "Выезд", type: "double",
-        isExpanded: false })
+      +date-dropdown({ 
+        titleStart: "Прибытие", 
+        titleEnd: "Выезд", 
+        type: "double",
+        isExpanded: false 
+      })
     .room-search__dropdown_guests
       //- prettier-ignore
-      +dropdown({ title: "Гости", name: "guestNumber", placeholder: "Сколько гостей",
+      +dropdown({ 
+        title: "Гости", 
+        name: "guestNumber", 
+        placeholder: "Сколько гостей",
         type: "guest", 
         rows: [ 
           {
@@ -28,5 +35,10 @@ mixin room-search
       })
     .room-search__button 
       //- prettier-ignore 
-      +button({ theme: "purple", textTheme: "white", text: "Подобрать номер",
-        isLarge: true, href: "./search-room.html" })
+      +button({ 
+        theme: "purple", 
+        textTheme: "white", 
+        text: "Подобрать номер",
+        isLarge: true, 
+        href: "./search-room.html" 
+      })

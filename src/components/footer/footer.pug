@@ -34,8 +34,14 @@ mixin footer(options = {})
           form.footer__subscribe-form(action="./error-page.html")
             h3.footer__subscribe-title= subscribeTitle
             p.footer__subscribe-txt= subscribeText
-            .footer__input 
-              +input({ type: "email", name: "email", placeholder: "Email", withButton: true })
+            .footer__input
+              //- prettier-ignore 
+              +input({ 
+                type: "email", 
+                name: "email", 
+                placeholder: "Email",
+                withButton: true 
+              })
     .footer__container
       .footer__copyright-area
         p.footer__copyright-text= copyrightText

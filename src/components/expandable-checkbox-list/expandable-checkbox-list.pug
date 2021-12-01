@@ -4,7 +4,9 @@ mixin expandable-checkbox-list(options)
   -
     const { isExpanded, title, rows = [] } = options || {};
     let mainClass = 'expandable-checkbox-list js-expandable-checkbox-list';
-    mainClass += isExpanded ? ' expandable-checkbox-list_expanded js-expandable-checkbox-list_expanded' : '';
+    mainClass += isExpanded 
+      ? ' expandable-checkbox-list_expanded js-expandable-checkbox-list_expanded' 
+      : '';
     const listClass = 'expandable-checkbox-list__list';
     const buttonClass = 'expandable-checkbox-list__toggle-button';
 

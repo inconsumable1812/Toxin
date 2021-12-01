@@ -12,24 +12,54 @@ block content
     nav.colors-and-types__nav
       +logo
     .colors-and-types__main
+      //- prettier-ignore
       .colors-and-types__colors
-        +color({ title: "Dark Shade 100%", color: 'color_dark100', subtitle:'#1F2041' })
-        +color({ title: "Dark Shade 75%", color: 'color_dark75', subtitle:'#1F2041' })
-        +color({ title: "Dark Shade 50%", color: 'color_dark50', subtitle:'#1F2041' })
-        +color({ title: "Dark Shade 25%", color: 'color_dark25', subtitle:'#1F2041' })
-        +color({ title: "Dark Shade 5%", color: 'color_dark5', subtitle:'#1F2041' })
+        +color({ 
+          title: "Dark Shade 100%", 
+          color: 'color_dark100', 
+          subtitle:'#1F2041' 
+        })
+        +color({ 
+          title: "Dark Shade 75%", 
+          color: 'color_dark75', 
+          subtitle:'#1F2041' 
+        })
+        +color({ 
+          title: "Dark Shade 50%",
+          color: 'color_dark50', 
+          subtitle:'#1F2041' 
+        })
+        +color({ 
+          title: "Dark Shade 25%", 
+          color: 'color_dark25', 
+          subtitle:'#1F2041' 
+        })
+        +color({ 
+          title: "Dark Shade 5%",
+          color: 'color_dark5', 
+          subtitle:'#1F2041' 
+        })
         +color({ title: "Purple", color: 'color_purple', subtitle:'#BC9CFF' })
         +color({ title: "Green", color: 'color_green', subtitle:'#6FCF97' })
+      //- prettier-ignore
       .colors-and-types__types
-        //- prettier-ignore
-        +tag-example({ tag: "h1", title: "H1",
-          subtitle: 'This one is the sub-section or widget title' })
-        //- prettier-ignore
-        +tag-example({ tag: "h2", title: "H2",
-          subtitle: 'Next one is the item title inside widgets' })
-        //- prettier-ignore
-        +tag-example({ tag: "h3", title: "H3",
-          subtitle: 'This is a label or CTA text' })
-        //- prettier-ignore
-        +tag-example({ tag: "p", title:'Body',
-          subtitle: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.' })
+        +tag-example({ 
+          tag: "h1",
+          title: "H1",
+          subtitle: 'This one is the sub-section or widget title' 
+        })
+        +tag-example({ 
+          tag: "h2", 
+          title: "H2",
+          subtitle: 'Next one is the item title inside widgets' 
+        })
+        +tag-example({ 
+          tag: "h3", 
+          title: "H3",
+          subtitle: 'This is a label or CTA text' 
+        })      
+        +tag-example({ 
+          tag: "p", 
+          title:'Body',
+          subtitle: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.' 
+        })

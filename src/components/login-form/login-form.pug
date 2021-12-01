@@ -11,9 +11,20 @@ mixin login-form
       .login-form__password
         +input({ type: 'text', name: 'password', placeholder: 'Пароль' })
       .login-form__button
-        +button({ theme: 'purple', textTheme: 'white', text: 'Войти', isLarge: true, isArrow:true})
+        //- prettier-ignore
+        +button({ 
+          theme: 'purple',
+          textTheme: 'white',
+          text: 'Войти', 
+          isLarge: true, 
+          isArrow:true
+        })
     .login-form__group
       p.login-form__hint= 'Нет аккаунта на Toxin?'
       //- prettier-ignore 
-      +button({ theme: 'white', textTheme: 'purple', text: 'Создать',
-        href: './registration.html' }) 
+      +button({ 
+        theme: 'white', 
+        textTheme: 'purple', 
+        text: 'Создать',
+        href: './registration.html' 
+      }) 

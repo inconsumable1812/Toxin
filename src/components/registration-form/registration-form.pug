@@ -14,7 +14,8 @@ mixin registration-form
         +input({ type: 'text', name: 'surname', placeholder: 'Фамилия' })
       .registration-form__gender
         //- prettier-ignore 
-        +radio-button({ rows:[ 
+        +radio-button({ 
+          rows: [ 
             {
               caption: "Мужчина", id: 'Men'
             }, 
@@ -24,23 +25,47 @@ mixin registration-form
           ]
         })
       .registration-form__birth-date
-        +input({ title: "дата рождения",type:'text', name:'birthDate', isData:true })
+        //- prettier-ignore
+        +input({ 
+          title: "дата рождения",
+          type:'text', 
+          name:'birthDate', 
+          isData:true 
+        })
       .registration-form__email
         //- prettier-ignore 
-        +input({ title: "данные для входа в сервис", type: 'email', name: 'email',
-          placeholder: 'Email' })
+        +input({ 
+          title: "данные для входа в сервис", 
+          type: 'email', 
+          name: 'email',
+          placeholder: 'Email' 
+        })
       .registration-form__password
         +input({ type: 'text', name: 'password', placeholder:'Пароль' })
       .registration-form__toggle
         //- prettier-ignore 
-        +toggle({ rows:[ 
+        +toggle({ 
+          rows: [ 
             {
               caption: 'Получать спецпредложения', name: 'special offers'
             }
           ]
         })
       .registration-form__button
-        +button({ theme: 'purple', textTheme: 'white', text: 'зарегистрироваться', isLarge: true, isArrow:true })
+        //- prettier-ignore
+        +button({ 
+          theme: 'purple', 
+          textTheme: 'white', 
+          text: 'зарегистрироваться', 
+          isLarge: true, 
+          isArrow:true 
+        })
     .registration-form__group
       p.registration-form__hint= 'Уже есть аккаунт на Toxin'
-      +button({ theme: 'white', textTheme: 'purple', text: 'Войти', href: './sign-in-page.html' }) 
+      //- prettier-ignore
+      +button({ 
+        theme: 'white', 
+        textTheme: 'purple',
+        text: 'Войти', 
+        href: './sign-in-page.html' 
+      }) 

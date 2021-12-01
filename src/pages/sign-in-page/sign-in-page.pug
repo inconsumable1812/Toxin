@@ -9,12 +9,17 @@ block variables
 block main
   .sign-in__slider
     //- prettier-ignore
-    +image-slider({ isInterval:true, isSignInPage:true, rows:[
+    +image-slider({ 
+      isInterval:true, 
+      isSignInPage:true, 
+      rows: [
         {
-          src: require('../registration/img/registration_1.png').default, alt: '1'
+          src: require('../registration/img/registration_1.png').default, 
+          alt: '1'
         },
         {
-          src: require('../registration/img/registration_2.png').default, alt: '2'
+          src: require('../registration/img/registration_2.png').default, 
+          alt: '2'
         },
       ]
     })

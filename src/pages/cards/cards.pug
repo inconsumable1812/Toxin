@@ -37,21 +37,27 @@ block content
           - const currentRoom = rooms[index][currentRoomName];
           //- prettier-ignore
           .cards__card
-            +room-sketch({ isVip: currentRoom.isVip, roomNumber: currentRoom.roomNumber, 
-              cost: currentRoom.cost,isHovered: currentRoom.isHovered, base: currentRoom.base,
-              rate: currentRoom.rate,feedbackNumber: currentRoom.feedbackNumber, 
-              feedbackText: currentRoom.feedbackText, rows:[ 
-                  {
-                    src: currentRoom.rows[0].src, alt: '1'
-                  }, 
-                  {
-                    src: currentRoom.rows[1].src, alt: '2'
-                  }, 
-                  {
-                    src: currentRoom.rows[2].src, alt: '3'
-                  }, 
-                  {
-                    src: currentRoom.rows[3].src, alt: '4'
-                  }, 
-                ]
-              })
+            +room-sketch({ 
+              isVip: currentRoom.isVip, 
+              roomNumber: currentRoom.roomNumber, 
+              cost: currentRoom.cost,
+              isHovered: currentRoom.isHovered, 
+              base: currentRoom.base,
+              rate: currentRoom.rate,
+              feedbackNumber: currentRoom.feedbackNumber, 
+              feedbackText: currentRoom.feedbackText, 
+              rows: [ 
+                {
+                  src: currentRoom.rows[0].src, alt: '1'
+                }, 
+                {
+                  src: currentRoom.rows[1].src, alt: '2'
+                }, 
+                {
+                  src: currentRoom.rows[2].src, alt: '3'
+                }, 
+                {
+                  src: currentRoom.rows[3].src, alt: '4'
+                }, 
+              ]
+            })

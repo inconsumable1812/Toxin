@@ -2,7 +2,14 @@ include ../dropdown/dropdown.pug
 
 mixin date-dropdown(options)
   -
-    const {isExpanded, hidden, type, titleStart, titleEnd, title} = options || {}
+    const { 
+      isExpanded, 
+      hidden, 
+      type, 
+      titleStart, 
+      titleEnd, 
+      title 
+    } = options || {}
     const mainClass = 'date-dropdown_' + type;
     const JSMainClass = ' js-date-dropdown js-' + mainClass;
     let calendarClass = 'js-date-dropdown__calendar_content date-dropdown__calendar_content';
@@ -20,20 +27,32 @@ mixin date-dropdown(options)
           span.date-dropdown__title= titleStart
           .date-dropdown__dropdown-box.js-date-dropdown__dropdown-box
             //- prettier-ignore
-            +dropdown({ name: "field-date-from", placeholder: "ДД.ММ.ГГГГ", 
-              type: "date", calendar: true })
+            +dropdown({ 
+              name: "field-date-from", 
+              placeholder: "ДД.ММ.ГГГГ", 
+              type: "date", 
+              calendar: true 
+            })
         .date-dropdown__item 
           span.date-dropdown__title= titleEnd
           .date-dropdown__dropdown-box.js-date-dropdown__dropdown-box
             //- prettier-ignore
-            +dropdown({ name: "field-date-to", placeholder: "ДД.ММ.ГГГГ", 
-              type: "date", calendar: true })
+            +dropdown({ 
+              name: "field-date-to", 
+              placeholder: "ДД.ММ.ГГГГ", 
+              type: "date", 
+              calendar: true 
+            })
     if (type === "single")
       .date-dropdown__group_single
         .date-dropdown__item
           span.date-dropdown__title= title
           .date-dropdown__dropdown-box.js-date-dropdown__dropdown-box
             //- prettier-ignore
-            +dropdown({ name: "date-filter", placeholder: "ДД.ММ.ГГГГ", 
-              type: "date", calendar: true })
+            +dropdown({ 
+              name: "date-filter", 
+              placeholder: "ДД.ММ.ГГГГ", 
+              type: "date", 
+              calendar: true 
+            })
     .date-dropdown__calendar_content(class=calendarClass)
