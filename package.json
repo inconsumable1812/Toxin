@@ -2,79 +2,79 @@
   "name": "toxin",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "dependencies": {
-    "air-datepicker": "^2.2.3",
-    "autobind-decorator": "^2.4.0",
-    "chart.js": "^3.5.1",
-    "imask": "^6.1.0",
-    "jquery": "^3.5.1",
-    "nouislider": "^15.4.0",
-    "paginationjs": "^2.1.5"
+  "keywords": [
+    "JS",
+    "javascript"
+  ],
+  "homepage": "https://github.com/inconsumable1812/Toxin#readme",
+  "bugs": {
+    "url": "https://github.com/inconsumable1812/Toxin/issues"
   },
-  "devDependencies": {
-    "@babel/core": "^7.15.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inconsumable1812/Toxin.git"
+  },
+  "license": "ISC",
+  "author": "Lanskikh",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx webpack --mode production",
+    "deploy": "gh-pages -d dist",
+    "dev": "npx webpack --mode development",
+    "lint": "eslint --ext .js ./src",
+    "start": "webpack-dev-server --mode development"
+  },
+  "dependencies": {
     "@babel/plugin-proposal-decorators": "^7.16.4",
     "@babel/preset-env": "^7.15.0",
     "@fortawesome/fontawesome-free": "^5.15.4",
-    "@prettier/plugin-pug": "^1.17.3",
+    "air-datepicker": "^2.2.3",
+    "autobind-decorator": "^2.4.0",
     "autoprefixer": "^9.0.0",
-    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
+    "chart.js": "^3.5.1",
     "clean-webpack-plugin": "^3.0.0",
-    "copy-webpack-plugin": "^6.3.0",
-    "cross-env": "^7.0.2",
     "css-loader": "^5.0.1",
     "cssnano": "^4.1.10",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^4.5.0",
+    "imask": "^6.1.0",
+    "jquery": "^3.5.1",
+    "material-design-icons": "^3.0.1",
+    "mini-css-extract-plugin": "^1.6.0",
+    "nouislider": "^15.4.0",
+    "paginationjs": "^2.1.5",
+    "postcss-loader": "^4.3.0",
+    "pug-loader": "^2.4.0",
+    "resolve-url-loader": "^4.0.0",
+    "sass-loader": "^10.1.0",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@prettier/plugin-pug": "^1.17.3",
+    "babel-eslint": "^10.1.0",
+    "copy-webpack-plugin": "^6.3.0",
+    "cross-env": "^7.0.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-loader": "^3.0.3",
     "eslint-plugin-fsd": "^1.0.1",
     "eslint-plugin-prettier": "^4.0.0",
-    "file-loader": "^6.2.0",
     "gh-pages": "^3.2.3",
-    "html-webpack-plugin": "^4.5.0",
-    "material-design-icons": "^3.0.1",
-    "mini-css-extract-plugin": "^1.6.0",
     "node-sass": "^6.0.1",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "postcss": "^8.3.6",
-    "postcss-loader": "^4.3.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.4.1",
     "pug": "^3.0.0",
-    "pug-loader": "^2.4.0",
-    "resolve-url-loader": "^4.0.0",
-    "sass-loader": "^10.1.0",
     "style-loader": "^2.0.0",
     "stylelint": "^14.0.1",
     "stylelint-config-standard": "^23.0.0",
     "stylelint-config-standard-scss": "^2.0.0",
     "terser-webpack-plugin": "^5.0.3",
-    "webpack": "^4.46.0",
-    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.2"
-  },
-  "scripts": {
-    "dev": "npx webpack --mode development",
-    "build": "npx webpack --mode production",
-    "start": "webpack-dev-server --mode development",
-    "deploy": "gh-pages -d dist",
-    "lint": "eslint --ext .js ./src"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/inconsumable1812/Toxin.git"
-  },
-  "keywords": [
-    "JS",
-    "javascript"
-  ],
-  "author": "Lanskikh",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/inconsumable1812/Toxin/issues"
-  },
-  "homepage": "https://github.com/inconsumable1812/Toxin#readme"
+  }
 }
