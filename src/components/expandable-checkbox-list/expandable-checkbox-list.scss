@@ -3,6 +3,8 @@
 @import '../icon/icon';
 
 .expandable-checkbox-list {
+  $r: &;
+
   width: 100%;
   max-width: 16.625rem;
   position: relative;
@@ -11,18 +13,18 @@
     cursor: pointer;
   }
 
-  .expandable-checkbox-list__header {
+  #{$r}__header {
     margin-bottom: 1.15rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
 
-    .expandable-checkbox-list__title {
+    #{$r}__title {
       @include font-button;
     }
 
-    .expandable-checkbox-list__toggle-button {
+    #{$r}__toggle-button {
       @include reset-button;
 
       position: absolute;
@@ -40,21 +42,21 @@
     }
   }
 
-  .expandable-checkbox-list__list {
+  &__list {
     list-style-type: none;
     position: relative;
     display: none;
     z-index: 1;
     background-color: white;
 
-    .expandable-checkbox-list__item {
+    #{$r}__item {
       @include font-hint-875;
 
       padding-bottom: 0.76rem;
       line-height: 1.125rem;
       color: $color-dark-50;
 
-      .expandable-checkbox-list__checkbox {
+      #{$r}__checkbox {
         $size: 1.25rem;
 
         position: absolute;
@@ -64,22 +66,22 @@
         border-radius: 0.25rem;
       }
 
-      .expandable-checkbox-list__input {
+      #{$r}__input {
         position: absolute;
         appearance: none;
 
-        &:checked + .expandable-checkbox-list__checkbox {
+        &:checked + #{$r}__checkbox {
           border: 0.0625rem solid $color-purple;
           background: url('./img/Vector.svg') no-repeat center center;
         }
 
-        &:focus + .expandable-checkbox-list__checkbox,
-        &:hover + .expandable-checkbox-list__checkbox {
+        &:focus + #{$r}__checkbox,
+        &:hover + #{$r}__checkbox {
           box-shadow: $checkbox-shadow;
         }
       }
 
-      .expandable-checkbox-list__title {
+      #{$r}__title {
         padding-left: 1.8rem;
       }
     }
@@ -87,12 +89,12 @@
 
   &_expanded {
     /* stylelint-disable-next-line */
-    .expandable-checkbox-list__toggle-button {
+    #{$r}__toggle-button {
       transform: rotate(180deg);
       transition: transform 0.2s ease-in-out;
     }
 
-    .expandable-checkbox-list__list {
+    #{$r}__list {
       display: block;
     }
   }

@@ -3,6 +3,8 @@
 @import '../../utils/mixins';
 
 .date-dropdown {
+  $r: &;
+
   position: relative;
 
   &__group_double {
@@ -20,11 +22,11 @@
     }
   }
 
-  .date-dropdown__title {
+  #{$r}__title {
     @include font-button;
   }
 
-  .date-dropdown__calendar_content {
+  #{$r}__calendar_content {
     position: absolute;
     left: 0;
     display: none;
@@ -35,17 +37,17 @@
       display: block;
     }
   }
-}
 
-.date-dropdown_double {
-  max-width: 20rem;
-  width: 100%;
+  &_double {
+    max-width: 20rem;
+    width: 100%;
 
-  .disabled {
-    position: relative;
+    #{$r}__calendar_disabled {
+      position: relative;
+    }
   }
-}
 
-.date-dropdown_single {
-  max-width: 16.625rem;
+  &_single {
+    max-width: 16.625rem;
+  }
 }

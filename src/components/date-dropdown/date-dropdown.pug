@@ -16,7 +16,7 @@ mixin date-dropdown(options)
     calendarClass += isExpanded 
       ? ' date-dropdown__calendar_content_expanded js-date-dropdown__calendar_content_expanded' 
       : '';
-    calendarClass += hidden ? ' disabled' : '';
+    calendarClass += hidden ? ' date-dropdown__calendar_disabled js-date-dropdown__calendar_disabled' : '';
     let doubleClass = 'date-dropdown__group date-dropdown__group_double'
     doubleClass += hidden ? ' date-dropdown__group_double_hidden': ''
 

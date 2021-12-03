@@ -177,31 +177,5 @@
   &__booking {
     grid-area: booking;
     margin-top: 1px;
-
-    @include _1200 {
-      .date-dropdown__group_double {
-        grid-template-columns: repeat(2, minmax(8rem, 1fr));
-      }
-    }
-
-    @include _992 {
-      .date-dropdown__group_double {
-        grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
-      }
-    }
-
-    @include _768 {
-      padding: 2rem 0;
-
-      .date-dropdown__group_double {
-        grid-template-columns: repeat(2, minmax(8rem, 1fr));
-      }
-    }
-
-    @include _480 {
-      .date-dropdown__group_double {
-        grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
-      }
-    }
   }
 }

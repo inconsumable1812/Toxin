@@ -48,21 +48,21 @@ mixin footer(options = {})
         p.footer__copyright-text= copyrightText
         ul.footer__copyright-list
           li.footer__copyright-list-item
-            a.footer__twitter(
+            a.footer__copyright-link.footer__twitter(
               href="https://twitter.com/",
               target="_blank",
               rel="noopener noreferrer"
             )
               +awesome-icon({ icon: 'fab fa-twitter' })
           li.footer__copyright-list-item
-            a.footer__facebook(
+            a.footer__copyright-link.footer__facebook(
               href="https://facebook.com/",
               target="_blank",
               rel="noopener noreferrer"
             )
               +awesome-icon({ icon: 'fab fa-facebook-square' })
           li.footer__copyright-list-item
-            a.footer__instagram(
+            a.footer__copyright-link.footer__instagram(
               href="https://instagram.com/",
               target="_blank",
               rel="noopener noreferrer"

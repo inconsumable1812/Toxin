@@ -12,6 +12,7 @@ const DATE_DROPDOWN_CLASS = 'js-date-dropdown';
 const CELL_CLASS = 'datepicker--cell';
 const NAV_ACTION_CLASS = 'datepicker--nav-action';
 const NAV_TITLE_CLASS = 'datepicker--nav-title';
+const DISABLED_CLASS = 'js-date-dropdown__calendar_disabled';
 
 export default class DateDropdown {
   constructor(dropdown) {
@@ -89,7 +90,9 @@ export default class DateDropdown {
   toggleCallback() {
     const listIsExpanded = this.$datePicker.hasClass(EXPANDED_CLASS);
     const lists = document.querySelectorAll(`.${CONTENT_CLASS}`);
-    const array = [...lists].filter((list) => !$(list).hasClass('disabled'));
+    const array = [...lists].filter(
+      (list) => !$(list).hasClass(DISABLED_CLASS)
+    );
     array.forEach((list) => list.classList.remove(EXPANDED_CLASS));
     if (listIsExpanded) {
       this.$datePicker[0].classList.remove(EXPANDED_CLASS, CSS_EXPANDED_CLASS);
@@ -113,7 +116,7 @@ export default class DateDropdown {
   @boundMethod
   callbackOnDocument(event) {
     const listIsExpanded = this.$datePicker.hasClass(EXPANDED_CLASS);
-    const isDisabled = this.$datePicker.hasClass('disabled');
+    const isDisabled = this.$datePicker.hasClass(DISABLED_CLASS);
 
     if (this.isClickBeyondBorderCalendar(event, listIsExpanded, isDisabled)) {
       this.$datePicker[0].classList.remove(EXPANDED_CLASS, CSS_EXPANDED_CLASS);

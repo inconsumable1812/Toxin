@@ -79,8 +79,4 @@
     height: $size;
     background: url('./img/arrow-forward.svg') no-repeat center center;
   }
-
-  :focus::placeholder {
-    color: transparent;
-  }
 }
