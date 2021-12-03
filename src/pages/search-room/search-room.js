@@ -13,6 +13,10 @@ const BUTTON_CLOSE = 'js-search-room__button-close';
 const FILTER = 'js-search-room__filter';
 const FILTER_EXPANDED = 'js-search-room__filter_expanded';
 const CSS_FILTER_EXPANDED = 'search-room__filter_expanded';
+const DATE_DROPDOWN_CLASS = 'js-date-dropdown';
+const CELL_CLASS = 'datepicker--cell';
+const NAV_ACTION_CLASS = 'datepicker--nav-action';
+const NAV_TITLE_CLASS = 'datepicker--nav-title';
 
 const openButton = document
   .querySelector(`.${BUTTON_OPEN}`)
@@ -38,10 +42,10 @@ function isClickOnDocument(e, clickOnFilter, clickOnOpenButton) {
   return (
     !clickOnFilter &&
     clickOnOpenButton !== openButton &&
-    e.target.closest('.js-date-dropdown') === null &&
-    e.target.closest('.datepicker--cell') === null &&
-    e.target.closest('.datepicker--nav-action') === null &&
-    e.target.closest('.datepicker--nav-title') === null
+    e.target.closest(`.${DATE_DROPDOWN_CLASS}`) === null &&
+    e.target.closest(`.${CELL_CLASS}`) === null &&
+    e.target.closest(`.${NAV_ACTION_CLASS}`) === null &&
+    e.target.closest(`.${NAV_TITLE_CLASS}`) === null
   );
 }
 
