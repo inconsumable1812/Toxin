@@ -1,5 +1,6 @@
 include ../../components/logo/logo.pug
 include ../../components/input/input.pug
+include ../../components/awesome-icon/awesome-icon.pug
 
 mixin footer(options = {})
   -
@@ -47,20 +48,23 @@ mixin footer(options = {})
         p.footer__copyright-text= copyrightText
         ul.footer__copyright-list
           li.footer__copyright-list-item
-            a.footer__twitter.fab.fa-twitter(
+            a.footer__twitter(
               href="https://twitter.com/",
               target="_blank",
               rel="noopener noreferrer"
             )
+              +awesome-icon({ icon: 'fab fa-twitter' })
           li.footer__copyright-list-item
-            a.footer__facebook.fab.fa-facebook-square(
+            a.footer__facebook(
               href="https://facebook.com/",
               target="_blank",
               rel="noopener noreferrer"
             )
+              +awesome-icon({ icon: 'fab fa-facebook-square' })
           li.footer__copyright-list-item
-            a.footer__instagram.fab.fa-instagram(
+            a.footer__instagram(
               href="https://instagram.com/",
               target="_blank",
               rel="noopener noreferrer"
             )
+              +awesome-icon({ icon: 'fab fa-instagram' })

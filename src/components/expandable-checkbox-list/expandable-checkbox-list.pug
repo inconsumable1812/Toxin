@@ -14,7 +14,7 @@ mixin expandable-checkbox-list(options)
     .expandable-checkbox-list__header.js-expandable-checkbox-list__header
       span.expandable-checkbox-list__title= title
       button.material-icons(class=buttonClass, type="button")
-        +icon({ icon:'expand_more' })
+        +icon({ icon: 'expand_more' })
     ul(class=listClass)
       if rows
         each row in rows

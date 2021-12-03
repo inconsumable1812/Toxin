@@ -316,6 +316,6 @@ export default class Dropdown {
     // eslint-disable-next-line
     itemCounts.forEach((itemCount) => (itemCount.textContent = '0'));
     this.input.placeholder = 'Сколько гостей';
-    this.clearButton.classList.add('dropdown__clear-buttons_hidden');
+    this.clearButton.classList.add('dropdown__clear-button_hidden');
   }
 }

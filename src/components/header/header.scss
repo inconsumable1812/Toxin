@@ -107,6 +107,8 @@
     color: $color-dark-50;
     user-select: none;
     transition: transform 0.25s ease;
+    font-size: $font-copyright-icon;
+    height: 22px;
 
     &:hover {
       color: $color-purple;
@@ -177,26 +179,14 @@
     align-items: center;
 
     @include _992 {
-      display: block;
-    }
-
-    .button {
-      height: 2.125rem;
-
-      @include _992 {
-        display: block;
-        margin: 0 auto 5px;
-      }
-    }
-
-    .button__group-href {
-      height: 30px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 0.625rem;
     }
   }
 
   &__user-menu_auth {
     padding-left: 1.25rem;
-    height: 30px;
     border-left: 1px solid $color-dark-10;
 
     @include _992 {

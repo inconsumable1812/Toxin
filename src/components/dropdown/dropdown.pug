@@ -35,7 +35,7 @@ mixin dropdown(options)
         class='js-dropdown__input dropdown__input_' + type
       )
       button.dropdown__button-icon(type="button")
-        +icon({ icon:'expand_more' })
+        +icon({ icon: 'expand_more' })
       if !calendar
         ul(class=listClass)
           if rows
@@ -48,24 +48,24 @@ mixin dropdown(options)
                 .dropdown__item-name= row.text
                 .dropdown__counter-buttons
                   -
-                    let minusButtonClass = 'dropdown__counter-buttons_type_minus js-dropdown__counter-buttons_type_minus';
+                    let minusButtonClass = 'dropdown__counter-button-minus js-dropdown__counter-button-minus';
                     minusButtonClass += row.count < 1 
-                      ? ' dropdown__counter-buttons_type_minus_disabled' 
+                      ? ' dropdown__counter-button-minus_disabled' 
                       : '';
-                    let clearButtonClass = 'dropdown__clear-buttons js-dropdown__clear-buttons';
+                    let clearButtonClass = 'dropdown__clear-button js-dropdown__clear-button';
                     clearButtonClass += row.count < 1 
-                      ? ' dropdown__clear-buttons_hidden' 
+                      ? ' dropdown__clear-button_hidden' 
                       : '';
                   button(class=minusButtonClass, type="button")= '-'
                   span.dropdown__counter(
                     class=' js-dropdown__counter js-dropdown__counter_' + row.typeOfCount
                   )= row.count
-                  button.dropdown__counter-buttons_type_plus.js-dropdown__counter-buttons_type_plus(
+                  button.dropdown__counter-button-plus.js-dropdown__counter-button-plus(
                     type="button"
                   )= '+'
           if type === "guest"
             li.dropdown__footer-buttons 
-              span.dropdown__clear-buttons.js-dropdown__clear-buttons
+              span.dropdown__clear-button.js-dropdown__clear-button
                 button.dropdown__button_theme_textual.dropdown__button_theme_textual_hovered(
                   type="button"
                 )

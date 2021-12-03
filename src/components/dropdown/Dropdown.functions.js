@@ -43,18 +43,14 @@ function toggle(isExpanded, list) {
 
 function disabledMinusButtonIfLessUnit(count, button) {
   if (count < 1) {
-    return button.classList.add(
-      'dropdown__counter-buttons_type_minus_disabled'
-    );
+    return button.classList.add('dropdown__counter-button-minus_disabled');
   }
   return null;
 }
 
 function enabledMinusButtonIfBiggerZero(count, button) {
   if (count > 0) {
-    return button.classList.remove(
-      'dropdown__counter-buttons_type_minus_disabled'
-    );
+    return button.classList.remove('dropdown__counter-button-minus_disabled');
   }
   return null;
 }
@@ -65,7 +61,7 @@ function isGuestsAreNot(adult, children, baby) {
 
 function hideClearButton(adult, children, baby, button) {
   if (isGuestsAreNot(adult, children, baby)) {
-    button.classList.add('dropdown__clear-buttons_hidden');
+    button.classList.add('dropdown__clear-button_hidden');
   }
 }
 
@@ -75,7 +71,7 @@ function isGuestsAre(adult, children, baby) {
 
 function showClearButton(adult, children, baby, button) {
   if (isGuestsAre(adult, children, baby)) {
-    button.classList.remove('dropdown__clear-buttons_hidden');
+    button.classList.remove('dropdown__clear-button_hidden');
   }
 }
 

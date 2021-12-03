@@ -122,8 +122,8 @@
     color: $color-dark-100;
   }
 
-  &__counter-buttons_type_minus,
-  &__counter-buttons_type_plus {
+  &__counter-button-minus,
+  &__counter-button-plus {
     @include reset-button;
 
     $diam: 1.875rem;
@@ -138,7 +138,7 @@
     border: 0.0625rem solid $color-dark-25;
   }
 
-  &__counter-buttons_type_minus_disabled {
+  &__counter-button-minus_disabled {
     opacity: 0.5;
     cursor: default;
     pointer-events: none;
@@ -151,7 +151,7 @@
     justify-content: space-between;
   }
 
-  &__clear-buttons {
+  &__clear-button {
     &_hidden {
       visibility: hidden;
     }

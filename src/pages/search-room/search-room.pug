@@ -61,17 +61,17 @@ block main
   .search-room__container
     .search-room__filter.js-search-room__filter
       button.search-room__button-close.js-search-room__button-close
-        +icon({ icon:'close' })
+        +icon({ icon: 'close' })
       form.search-room__filter-form
         .search-room__calendar
           +date-dropdown({ title: "даты пребывания в отеле", type: 'single' })
         .search-room__dropdown-guest
           //- prettier-ignore
           +dropdown({ 
-            title: "Гости", 
-            name: "guestNumber", 
-            placeholder: "Сколько гостей", 
-            type: "guest",
+            title: 'Гости', 
+            name: 'guest-number', 
+            placeholder: 'Сколько гостей', 
+            type: 'guest',
             rows: [
               {
                 count: 0, text: 'взрослые', typeOfCount: 'adult'
@@ -87,9 +87,9 @@ block main
         .search-room__range-slider
           //- prettier-ignore
           +range-slider({ 
-            title: "диапазон цены",
-            min: "0", 
-            max: "16000", 
+            title: 'диапазон цены',
+            min: '0', 
+            max: '16000', 
             description: 'Стоимость за сутки пребывания в номере' 
           })
         .search-room__checkbox
@@ -98,13 +98,13 @@ block main
             header: 'правила дома', 
             rows: [
               {
-                title: "Можно курить", name: 'smoke'
+                title: 'Можно курить', name: 'smoke'
               },
               {
-                title: "Можно с питомцами", name: 'pet'
+                title: 'Можно с питомцами', name: 'pet'
               },
               {
-                title: "Можно пригласить гостей (до 10 человек)", 
+                title: 'Можно пригласить гостей (до 10 человек)', 
                 name: 'more guests'
               },
             ]
@@ -129,15 +129,15 @@ block main
         .search-room__dropdown-room
           //- prettier-ignore
           +dropdown({ 
-            title: "удобства номера", 
-            name: "Number", 
-            placeholder: "Количество комнат",
+            title: 'удобства номера', 
+            name: 'room-number', 
+            placeholder: 'Количество комнат',
             rows: [
               {
-                count: 0, text: 'спальни', typeOfCount:'bedroom'
+                count: 0, text: 'спальни', typeOfCount: 'bedroom'
               },
               {
-                count: 0, text: 'кровати', typeOfCount:'bed'
+                count: 0, text: 'кровати', typeOfCount: 'bed'
               },
               {
                 count: 0, text: 'ванные комнаты', typeOfCount: 'bathroom'
@@ -152,28 +152,28 @@ block main
             isExpanded: false,
             rows: [
               {
-                title: "Завтрак", name: 'Breakfast'
+                title: 'Завтрак', name: 'Breakfast'
               },
               {
-                title: "Письменный стол", name: 'Desk'
+                title: 'Письменный стол', name: 'Desk'
               },
               {
-                title: "Стул для кормления", name: 'Feeding chair'
+                title: 'Стул для кормления', name: 'Feeding chair'
               },
               {
-                title: "Кроватка", name: 'Crib'
+                title: 'Кроватка', name: 'Crib'
               },
               {
-                title: "Телевизор", name: 'TV'
+                title: 'Телевизор', name: 'TV'
               },
               {
-                title: "Шампунь", name: 'Shampoo'
+                title: 'Шампунь', name: 'Shampoo'
               },
               {
-                title: "Телевизор", name: 'TV1'
+                title: 'Телевизор', name: 'TV1'
               },
               {
-                title: "Шампунь", name: 'Shampoo1'
+                title: 'Шампунь', name: 'Shampoo1'
               },
             ]
           })
@@ -195,7 +195,7 @@ block main
           src1: 2,
           src2: 1, 
           rate: 4,
-          feedbackNumber: '65 '
+          feedbackNumber: '65'
         }) 
         +search-room__room-sketch({ 
           isVip: true, 

@@ -17,7 +17,7 @@ mixin header(options)
         .header__logo
           +logo(true)
         button.header__burger.js-header__burger
-          +icon({ icon:'menu' })
+          +icon({ icon: 'menu' })
         .header__menu-group.js-header__menu-group
           ul.header__menu
             each link in menuLink
@@ -38,7 +38,8 @@ mixin header(options)
                     .header__dropdown.js-header__dropdown
                       each subLink in link.subMenu
                         a(class=classSubLink, href=subLink.href)= subLink.name
-                    span.header__sub-menu-icon.js-header__sub-menu-icon.material-icons= 'expand_more'
+                    span.header__sub-menu-icon.js-header__sub-menu-icon
+                      +icon({ icon: 'expand_more' })
           if !auth
             - classUser += ' header__user-menu_not-auth';
             div(class=classUser)
@@ -47,7 +48,7 @@ mixin header(options)
                 theme: 'white', 
                 textTheme: 'purple', 
                 text: 'войти', 
-                isLogInButton:true,
+                isLogInButton: true,
                 href: './sign-in-page.html' 
               })
               //- prettier-ignore 
@@ -55,7 +56,7 @@ mixin header(options)
                 theme: 'purple', 
                 textTheme: 'white', 
                 text: 'зарегистрироваться', 
-                isRegistrationButton:true,
+                isRegistrationButton: true,
                 href: './registration.html' 
               }) 
           if auth

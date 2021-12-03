@@ -3,6 +3,7 @@
 @import '../../components/dropdown/dropdown';
 @import '../../components/date-dropdown/date-dropdown';
 @import '../../components/button/button';
+@import '../../components/icon/icon';
 
 .booking-form {
   background: white;
@@ -61,16 +62,16 @@
     margin-bottom: 1.05rem;
   }
 
-  &__dropdown_type_guests {
+  &__dropdown {
     margin-bottom: 1.3rem;
   }
 
-  &__result_type_currency {
+  &__result-currency {
     text-align: right;
   }
 
-  &__result_type_name-service,
-  &__result_type_currency {
+  &__result-name-service,
+  &__result-currency {
     @include font-hint-875;
 
     color: $color-dark-75;
@@ -81,7 +82,7 @@
     grid-template-columns: 67.19% 14.06% 18.75%;
     margin-bottom: 0.75rem;
 
-    .booking-form__result_type_currency {
+    .booking-form__result-currency {
       grid-column: span 2;
     }
   }
@@ -90,17 +91,22 @@
     display: grid;
     grid-template-columns: 67.19% 14.06% 18.75%;
     align-items: center;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.6rem;
   }
 
   &__info-icon {
     cursor: help;
     color: $color-dark-25;
     margin-left: 0.24rem;
+    position: relative;
+    font-size: $font-copyright-icon;
+    display: inline-block;
 
     &::after {
       @include font-hint-875;
 
+      top: 0;
+      left: 1.5625rem;
       background: gray;
       border-radius: 8px 8px 8px 0;
       color: white;

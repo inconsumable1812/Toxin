@@ -32,7 +32,7 @@
     line-height: 0.9375rem;
   }
 
-  &__input-min {
+  &__input_min {
     @include font-hint;
 
     width: 3.3rem;
@@ -43,7 +43,7 @@
     line-height: 0.9375rem;
   }
 
-  &__input-max {
+  &__input_max {
     @include font-hint;
 
     width: 3rem;

@@ -12,5 +12,5 @@ mixin like-button(options)
     button.like-button__button(type="button")
       span.like-button__icon
         - const iconName = isPressed ? 'favorite' : 'favorite_border';
-        +icon({ icon:iconName })
+        +icon({ icon: iconName })
       span.like-button__count.js-like-button__count= count

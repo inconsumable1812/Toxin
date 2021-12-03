@@ -1,6 +1,7 @@
 include ../../components/dropdown/dropdown.pug
 include ../../components/date-dropdown/date-dropdown.pug
 include ../../components/button/button.pug
+include ../../components/icon/icon.pug
 
 mixin booking-form(options)
   -
@@ -38,7 +39,7 @@ mixin booking-form(options)
         type: "double", 
         isExpanded: false 
       })
-    .booking-form__dropdown_type_guests
+    .booking-form__dropdown
       //- prettier-ignore  
       +dropdown({
         title: "Гости", 
@@ -59,22 +60,24 @@ mixin booking-form(options)
       })
     .booking-form__result
       .booking-form__amount-for-days
-        .booking-form__result_type_name-service= amountForDaysName
-        .booking-form__result_type_currency= amountForDaysCurrency
+        .booking-form__result-name-service= amountForDaysName
+        .booking-form__result-currency= amountForDaysCurrency
       .booking-form__discount
-        .booking-form__result_type_name-service= discountName
-        .booking-form__result_type_info
-          span.booking-form__info-icon.material-icons(
+        .booking-form__result-name-service= discountName
+        .booking-form__result-info
+          span.booking-form__info-icon(
             data-tooltip=discountTooltip
-          )= 'info_outline'
-        .booking-form__result_type_currency= discountCurrency
+          )
+            +icon({ icon: 'info_outline' })
+        .booking-form__result-currency= discountCurrency
       .booking-form__price-of-services
-        .booking-form__result_type_name-service= priceOfServicesName
-        .booking-form__result_type_info
-          span.booking-form__info-icon.material-icons(
+        .booking-form__result-name-service= priceOfServicesName
+        .booking-form__result-info
+          span.booking-form__info-icon(
             data-tooltip=priceOfServicesTooltip
-          )= 'info_outline'
-        .booking-form__result_type_currency= priceOfServicesCurrency
+          )
+            +icon({ icon: 'info_outline' })
+        .booking-form__result-currency= priceOfServicesCurrency
       .booking-form__total 
         span.booking-form__total-title= 'Итого'
         span.booking-form__total-line
@@ -86,5 +89,5 @@ mixin booking-form(options)
         textTheme: "white", 
         text: "забронировать", 
         isLarge: true, 
-        isArrow:true 
+        isArrow: true 
       })

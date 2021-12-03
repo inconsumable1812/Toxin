@@ -10,22 +10,30 @@
   width: 6.1875rem;
   border-radius: 1.375rem;
 
-  &__log-in-button {
-    height: 34px;
-    width: 87px;
-  }
-
-  &__registration-button {
-    height: 34px;
-    width: 196px;
-  }
-
-  &__group-href {
+  &__group_href {
     display: flex;
     align-items: center;
     justify-content: center;
     width: inherit;
     height: 2.5rem;
+  }
+
+  &__log-in-button {
+    height: 34px;
+    width: 87px;
+
+    .button__group_href {
+      height: 1.9rem;
+    }
+  }
+
+  &__registration-button {
+    height: 34px;
+    width: 196px;
+
+    .button__group_href {
+      height: 2.2rem;
+    }
   }
 
   &__text {
@@ -78,7 +86,7 @@
     width: 100%;
     padding: 0;
 
-    .button__group-href {
+    .button__group_href {
       height: inherit;
     }
 

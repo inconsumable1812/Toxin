@@ -31,33 +31,45 @@ block content
           +login-form
       .cards__grid-column_third 
         .cards__card
-          +date-dropdown({ hidden: true, type: 'double', isExpanded :true })
+          +date-dropdown({ hidden: true, type: 'double', isExpanded: true })
         each val, index in rooms
-          - const currentRoomName = `room${index + 1}`;
-          - const currentRoom = rooms[index][currentRoomName];
+          -
+            const currentRoomName = `room${index + 1}`;
+            const currentRoom = rooms[index][currentRoomName];
+            const { 
+              isVip, 
+              roomNumber, 
+              cost,
+              isHovered, 
+              base, 
+              rate, 
+              feedbackNumber, 
+              feedbackText, 
+              rows 
+            } = currentRoom;
           //- prettier-ignore
           .cards__card
             +room-sketch({ 
-              isVip: currentRoom.isVip, 
-              roomNumber: currentRoom.roomNumber, 
-              cost: currentRoom.cost,
-              isHovered: currentRoom.isHovered, 
-              base: currentRoom.base,
-              rate: currentRoom.rate,
-              feedbackNumber: currentRoom.feedbackNumber, 
-              feedbackText: currentRoom.feedbackText, 
+              isVip: isVip, 
+              roomNumber: roomNumber, 
+              cost: cost,
+              isHovered: isHovered, 
+              base: base,
+              rate: rate,
+              feedbackNumber: feedbackNumber, 
+              feedbackText: feedbackText, 
               rows: [ 
                 {
-                  src: currentRoom.rows[0].src, alt: '1'
+                  src: rows[0].src, alt: '1'
                 }, 
                 {
-                  src: currentRoom.rows[1].src, alt: '2'
+                  src: rows[1].src, alt: '2'
                 }, 
                 {
-                  src: currentRoom.rows[2].src, alt: '3'
+                  src: rows[2].src, alt: '3'
                 }, 
                 {
-                  src: currentRoom.rows[3].src, alt: '4'
+                  src: rows[3].src, alt: '4'
                 }, 
               ]
             })

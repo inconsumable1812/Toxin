@@ -17,31 +17,31 @@ mixin registration-form
         +radio-button({ 
           rows: [ 
             {
-              caption: "Мужчина", id: 'Men'
+              caption: 'Мужчина', id: 'Men'
             }, 
             {
-              caption: "Женщина", id: 'Women'
+              caption: 'Женщина', id: 'Women'
             }, 
           ]
         })
       .registration-form__birth-date
         //- prettier-ignore
         +input({ 
-          title: "дата рождения",
-          type:'text', 
-          name:'birthDate', 
-          isData:true 
+          title: 'дата рождения',
+          type: 'text', 
+          name: 'birthDate', 
+          isData: true 
         })
       .registration-form__email
         //- prettier-ignore 
         +input({ 
-          title: "данные для входа в сервис", 
+          title: 'данные для входа в сервис', 
           type: 'email', 
           name: 'email',
           placeholder: 'Email' 
         })
       .registration-form__password
-        +input({ type: 'text', name: 'password', placeholder:'Пароль' })
+        +input({ type: 'text', name: 'password', placeholder: 'Пароль' })
       .registration-form__toggle
         //- prettier-ignore 
         +toggle({ 
@@ -58,7 +58,7 @@ mixin registration-form
           textTheme: 'white', 
           text: 'зарегистрироваться', 
           isLarge: true, 
-          isArrow:true 
+          isArrow: true 
         })
     .registration-form__group
       p.registration-form__hint= 'Уже есть аккаунт на Toxin'

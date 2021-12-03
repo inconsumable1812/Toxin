@@ -1,7 +1,7 @@
 import { boundMethod } from 'autobind-decorator';
 
-const PREV_BUTTON_CLASS = 'js-image-slider__btn-prev';
-const NEXT_BUTTON_CLASS = 'js-image-slider__btn-next';
+const PREV_BUTTON_CLASS = 'js-image-slider__btn_prev';
+const NEXT_BUTTON_CLASS = 'js-image-slider__btn_next';
 const SLIDE_CLASS = 'js-image-slider__slide';
 const DOT_CLASS = 'js-image-slider__dot';
 const ACTIVE_SLIDE_CLASS = 'image-slider__slide_active';
