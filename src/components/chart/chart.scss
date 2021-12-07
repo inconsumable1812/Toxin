@@ -9,18 +9,19 @@
     top: 36px;
     left: 54px;
     z-index: -1;
+    user-select: none;
+    color: $color-purple;
+    background-image: none;
+    background-clip: text;
   }
 
   &__number {
     @include font-like-h1;
 
-    color: $color-purple;
     text-align: center;
   }
 
   &__text {
     @include font-button;
-
-    color: $color-purple;
   }
 }
