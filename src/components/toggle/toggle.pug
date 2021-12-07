@@ -5,9 +5,10 @@ mixin toggle(options)
     if header
       .toggle__header= header
     ul.toggle__list
-      each row in rows 
+      each row in rows
+        - const { name, caption } = row;
         li.toggle__items
           label.toggle__label
-            input.toggle__input(type="checkbox", name=row.name)
+            input.toggle__input(type="checkbox", name=name)
             span.toggle__checkbox 
-            span.toggle__caption= row.caption
+            span.toggle__caption= caption

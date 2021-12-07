@@ -40,26 +40,27 @@ mixin dropdown(options)
         ul(class=listClass)
           if rows
             each row in rows
-              - const listItemClass = 'dropdown__list-item_' + row.typeOfCount;
+              - const { typeOfCount, text, count } = row;
+              - const listItemClass = 'dropdown__list-item_' + typeOfCount;
               - const JSListItemClass = ' js-' + listItemClass;
               li.dropdown__list-item(
                 class=listItemClass + JSListItemClass + ' js-dropdown__list-item'
               )
-                .dropdown__item-name= row.text
+                .dropdown__item-name= text
                 .dropdown__counter-buttons
                   -
                     let minusButtonClass = 'dropdown__counter-button-minus js-dropdown__counter-button-minus';
-                    minusButtonClass += row.count < 1 
+                    minusButtonClass += count < 1 
                       ? ' dropdown__counter-button-minus_disabled' 
                       : '';
                     let clearButtonClass = 'dropdown__clear-button js-dropdown__clear-button';
-                    clearButtonClass += row.count < 1 
+                    clearButtonClass += count < 1 
                       ? ' dropdown__clear-button_hidden' 
                       : '';
                   button(class=minusButtonClass, type="button")= '-'
                   span.dropdown__counter(
-                    class=' js-dropdown__counter js-dropdown__counter_' + row.typeOfCount
-                  )= row.count
+                    class=' js-dropdown__counter js-dropdown__counter_' + typeOfCount
+                  )= count
                   button.dropdown__counter-button-plus.js-dropdown__counter-button-plus(
                     type="button"
                   )= '+'

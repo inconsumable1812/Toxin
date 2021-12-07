@@ -3,5 +3,6 @@ mixin index-menu(options)
 
   ul.index-menu(class=`index-menu_theme_${theme}`)
     each link in items
+      - const { href, text } = link;
       li.index-menu__item
-        a.index-menu__link(href=link.href)= link.text
+        a.index-menu__link(href=href)= text

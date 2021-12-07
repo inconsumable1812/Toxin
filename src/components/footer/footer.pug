@@ -26,12 +26,14 @@ mixin footer(options = {})
             p.footer__about-us-text= aboutUs
           .footer__navigation
             each item in menuLink
+              - const { title } = item;
               .footer__navigation-row
-                h3.footer__navigation-title= item.title
+                h3.footer__navigation-title= title
                 ul.footer__navigation-list
                   each link in item.links
+                    - const { href, name } = link;
                     li.footer__navigation-item
-                      a.footer__navigation-link(href=link.href)= link.name
+                      a.footer__navigation-link(href=href)= name
           form.footer__subscribe-form(action="./error-page.html")
             h3.footer__subscribe-title= subscribeTitle
             p.footer__subscribe-txt= subscribeText

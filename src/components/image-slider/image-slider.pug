@@ -22,8 +22,9 @@ mixin image-slider(options)
   div(class=sliderClass)
     .image-slider__slider-wrapper 
       each row in rows
+        - const { src, alt } = row;
         .image-slider__slide.js-image-slider__slide
-          img.image-slider__img(src=row.src, alt=row.alt)
+          img.image-slider__img(src=src, alt=alt)
       .image-slider__btn.image-slider__btn_prev.js-image-slider__btn_prev
         span.image-slider__icon
           +icon({ icon: 'expand_more' })

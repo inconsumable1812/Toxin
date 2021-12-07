@@ -22,22 +22,24 @@ mixin header(options)
           ul.header__menu
             each link in menuLink
               -
-                const classLink = link.bold 
+                const { bold, subMenu, href, name } = link;
+                const classLink = bold 
                   ? 'header__link header_bold' 
                   : 'header__link';
-                const classSubMenu = link.bold 
+                const classSubMenu = bold 
                   ? 'header__sub-menu js-header__sub-menu header_bold' 
                   : 'header__sub-menu js-header__sub-menu';
-              if !link.subMenu
+              if !subMenu
                 li.header__link-li
-                  a(class=classLink, href=link.href)= link.name
-              if link.subMenu
+                  a(class=classLink, href=href)= name
+              if subMenu
                 li.header__link-li
                   div(class=classSubMenu) 
-                    a(class=classLink, href=link.href)= link.name
+                    a(class=classLink, href=href)= name
                     .header__dropdown.js-header__dropdown
-                      each subLink in link.subMenu
-                        a(class=classSubLink, href=subLink.href)= subLink.name
+                      each subLink in subMenu
+                        - const { href, name } = subLink;
+                        a(class=classSubLink, href=href)= name
                     span.header__sub-menu-icon.js-header__sub-menu-icon
                       +icon({ icon: 'expand_more' })
           if !auth
@@ -61,6 +63,6 @@ mixin header(options)
               }) 
           if auth
             - classUser += ' header__user-menu_auth';
-            - const {name, surname} = auth
+            - const { name, surname } = auth;
             div(class=classUser)
               a.header__user-name(href="./error-page.html")= `${name} ${surname}`

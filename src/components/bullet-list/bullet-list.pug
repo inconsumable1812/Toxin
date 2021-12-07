@@ -5,7 +5,8 @@ mixin bullet-list(options)
     if header
       .bullet-list__header= header
     ul.bullet-list__list 
-      each row in rows 
+      each row in rows
+        - const { text } = row;
         li.bullet-list__item
           span.bullet-list__icon 
-          span.bullet-list__text= row.text
+          span.bullet-list__text= text
