@@ -27,6 +27,8 @@ const CHILDREN_ITEM_CLASS = 'js-dropdown__list-item_children';
 const BABY_ITEM_CLASS = 'js-dropdown__list-item_baby';
 const BEDROOM_ITEM_CLASS = 'js-dropdown__list-item_bedroom';
 const BED_ITEM_CLASS = 'js-dropdown__list-item_bed';
+const CLEAR_BUTTON_HIDE = 'dropdown__clear-button_hidden';
+const MINUS_BUTTON_DISABLED = 'dropdown__counter-button-minus_disabled';
 
 export {
   BEDROOMS,
@@ -58,4 +60,6 @@ export {
   BABY_ITEM_CLASS,
   BEDROOM_ITEM_CLASS,
   BED_ITEM_CLASS,
+  CLEAR_BUTTON_HIDE,
+  MINUS_BUTTON_DISABLED,
 };

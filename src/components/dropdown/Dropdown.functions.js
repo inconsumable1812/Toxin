@@ -1,4 +1,9 @@
-import { CSS_EXPANDED_CLASS, EXPANDED_CLASS } from './Dropdown-const';
+import {
+  CSS_EXPANDED_CLASS,
+  EXPANDED_CLASS,
+  CLEAR_BUTTON_HIDE,
+  MINUS_BUTTON_DISABLED,
+} from './Dropdown-const';
 
 function index(number) {
   if (number === 1) {
@@ -43,14 +48,14 @@ function toggle(isExpanded, list) {
 
 function disabledMinusButtonIfLessUnit(count, button) {
   if (count < 1) {
-    return button.classList.add('dropdown__counter-button-minus_disabled');
+    return button.classList.add(MINUS_BUTTON_DISABLED);
   }
   return null;
 }
 
 function enabledMinusButtonIfBiggerZero(count, button) {
   if (count > 0) {
-    return button.classList.remove('dropdown__counter-button-minus_disabled');
+    return button.classList.remove(MINUS_BUTTON_DISABLED);
   }
   return null;
 }
@@ -61,7 +66,7 @@ function isGuestsAreNot(adult, children, baby) {
 
 function hideClearButton(adult, children, baby, button) {
   if (isGuestsAreNot(adult, children, baby)) {
-    button.classList.add('dropdown__clear-button_hidden');
+    button.classList.add(CLEAR_BUTTON_HIDE);
   }
 }
 
@@ -71,7 +76,7 @@ function isGuestsAre(adult, children, baby) {
 
 function showClearButton(adult, children, baby, button) {
   if (isGuestsAre(adult, children, baby)) {
-    button.classList.remove('dropdown__clear-button_hidden');
+    button.classList.remove(CLEAR_BUTTON_HIDE);
   }
 }
 

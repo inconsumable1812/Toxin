@@ -66,10 +66,12 @@ mixin dropdown(options)
           if type === "guest"
             li.dropdown__footer-buttons 
               span.dropdown__clear-button.js-dropdown__clear-button
-                button.dropdown__button_theme_textual.dropdown__button_theme_textual_hovered(
+                button.dropdown__button.dropdown__button_theme_textual(
                   type="button"
                 )
-                  span.dropdown__button-caption_color_dark= 'ОЧИСТИТЬ'
+                  span.dropdown__button-caption.dropdown__button-caption_color_dark= 'ОЧИСТИТЬ'
               span.dropdown__apply-buttons.js-dropdown__apply-buttons
-                button.dropdown__button_theme_textual(type="button")
-                  span.dropdown__button-caption_color_purple= 'ПРИМЕНИТЬ'
+                button.dropdown__button.dropdown__button_theme_textual(
+                  type="button"
+                )
+                  span.dropdown__button-caption.dropdown__button-caption_color_purple= 'ПРИМЕНИТЬ'

@@ -42,6 +42,7 @@ import {
   BATHROOMS,
   ADULT,
   BABY,
+  CLEAR_BUTTON_HIDE,
 } from './Dropdown-const';
 
 export default class Dropdown {
@@ -316,6 +317,6 @@ export default class Dropdown {
     // eslint-disable-next-line
     itemCounts.forEach((itemCount) => (itemCount.textContent = '0'));
     this.input.placeholder = 'Сколько гостей';
-    this.clearButton.classList.add('dropdown__clear-button_hidden');
+    this.clearButton.classList.add(CLEAR_BUTTON_HIDE);
   }
 }
