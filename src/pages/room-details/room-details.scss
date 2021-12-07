@@ -98,7 +98,7 @@
   }
 
   &__about-room {
-    padding-bottom: 0.88rem;
+    padding-bottom: 0.8rem;
     grid-area: about;
     display: grid;
     grid-template-columns: 1fr 1.116fr;
@@ -122,7 +122,7 @@
   &__chart-title {
     padding-left: 1.59rem;
     padding-top: 0.0625rem;
-    padding-bottom: 1.3rem;
+    padding-bottom: 0.95rem;
   }
 
   &__reviews-header {
@@ -143,6 +143,7 @@
 
   &__reviews {
     grid-area: reviews;
+    padding-bottom: 1px;
   }
 
   &__rules {
@@ -150,7 +151,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding-top: 0.4rem;
-    column-gap: 0.75rem;
+    column-gap: 0.8rem;
     padding-bottom: 3.7rem;
 
     @include _680 {
@@ -169,9 +170,14 @@
   }
 
   &__cancel-description {
+    max-width: 345px;
     font-size: 0.875rem;
     line-height: 1.5rem;
     color: $color-dark-75;
+
+    @include _680 {
+      max-width: none;
+    }
   }
 
   &__booking {

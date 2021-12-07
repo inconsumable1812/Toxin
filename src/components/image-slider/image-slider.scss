@@ -112,9 +112,13 @@
     border: 0.0625rem solid white;
     margin-right: 0.25rem;
     cursor: pointer;
+    box-shadow: none;
+    filter: drop-shadow($slider-dots-shadow);
 
     &_active {
       background-color: white;
+      box-shadow: $slider-dots-shadow-active;
+      filter: none;
     }
   }
 

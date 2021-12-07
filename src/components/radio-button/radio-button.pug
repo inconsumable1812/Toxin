@@ -5,10 +5,16 @@ mixin radio-button(options)
     if header
       .radio-button__header= header
     .radio-button__group
-      each row in rows
+      each row, i in rows
         - const { caption } = row;
+        - const isChecked = i === 0 ? true : false;
         .radio-button__item 
           label.radio-button__label
-            input.radio-button__input(type="radio", name="gender")
+            input&attributes({
+              class: "radio-button__input",
+              type: "radio",
+              name: "gender",
+              checked: isChecked,
+            })
             span.radio-button__radio 
             span.radio-button__caption= caption

@@ -12,7 +12,7 @@
   &__header {
     @include font-button;
 
-    padding-bottom: 1.0375rem;
+    padding-bottom: 0.85rem;
   }
 
   &__label {
@@ -45,7 +45,7 @@
 
         &:checked + .checkbox__checkbox {
           border: 0.0625rem solid $color-purple;
-          background: url('./img/Vector.svg') no-repeat center center;
+          background: url('./img/Vector.svg') no-repeat 50% 38%;
         }
 
         &:focus + .checkbox__checkbox,

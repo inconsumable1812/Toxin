@@ -14,7 +14,7 @@
   }
 
   &__main {
-    padding: 1.1rem 1.0625rem 1.1875rem 1.25rem;
+    padding: 1.1rem 1.0625rem 0.89rem 1.25rem;
   }
 
   &__header {
@@ -70,7 +70,6 @@
   &__footer {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     margin-top: 0.475rem;
   }
 
@@ -87,6 +86,10 @@
 
     color: $color-dark-50;
     margin-right: 0.1rem;
+  }
+
+  &__feedback-counter {
+    padding-top: 0.125rem;
   }
 
   &__link {

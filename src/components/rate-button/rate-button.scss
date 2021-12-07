@@ -8,6 +8,8 @@
     $size: 1.5rem;
 
     font-size: $size;
-    color: $color-purple;
+    color: transparent;
+    background-image: $grad-purple;
+    background-clip: text;
   }
 }

@@ -29,9 +29,9 @@
     padding: 0 1.5rem;
     display: grid;
     grid-template-columns: 16.625rem 1fr;
-    column-gap: 3.75rem;
+    column-gap: 3.8rem;
     padding-top: 1.58rem;
-    padding-bottom: 4.45rem;
+    padding-bottom: 4.3rem;
     border-bottom: 1px solid $color-dark-25;
 
     @include _992 {
@@ -116,11 +116,11 @@
   }
 
   &__room-sketch-list {
-    margin-top: 1.3rem;
+    margin-top: 1.33rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 0.75rem;
-    row-gap: 0.9rem;
+    row-gap: 1.22rem;
 
     @include _1200 {
       grid-template-columns: 1fr 1fr;

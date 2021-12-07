@@ -1,6 +1,7 @@
 @import '../../utils/vars';
 @import '../../utils/mixins';
 @import '../../components/input/input';
+@import '../../components/awesome-icon/awesome-icon';
 
 .footer {
   $r: &;
@@ -16,11 +17,11 @@
 
   &__main-area {
     display: grid;
-    padding-top: 6.25rem;
+    padding-top: 6.28rem;
     grid-template-columns: 1fr 2.153fr 1fr;
     column-gap: 2.5rem;
     grid-template-areas: 'logo link subscribe';
-    padding-bottom: 5.59rem;
+    padding-bottom: 5.62rem;
 
     @include _992 {
       column-gap: 1.2rem;
@@ -61,7 +62,7 @@
   &__about-us-text {
     @include font-hint-875;
 
-    padding-top: 0.75rem;
+    padding-top: 0.84rem;
     color: $color-dark-75;
     line-height: 1.5rem;
 
@@ -128,7 +129,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 1.4rem;
+    padding-top: 1.5rem;
     padding-bottom: 1.45rem;
 
     @include _768 {
@@ -187,7 +188,9 @@
     /* stylelint-disable-next-line */
     #{$r}__copyright-link {
       font-size: $font-copyright-icon;
-      color: $color-purple;
+      color: transparent;
+      background-image: $grad-purple;
+      background-clip: text;
       appearance: none;
       text-decoration: none;
       line-height: 1.4375rem;

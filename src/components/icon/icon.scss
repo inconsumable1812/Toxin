@@ -2,8 +2,14 @@
 
 .icon {
   font-size: inherit;
+  background-image: inherit;
+  color: inherit;
+  background-clip: inherit;
 
   &__material {
     font-size: inherit;
+    background-image: inherit;
+    background-clip: inherit;
+    color: inherit;
   }
 }

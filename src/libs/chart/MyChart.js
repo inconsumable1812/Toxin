@@ -75,7 +75,7 @@ export default class MyChart {
             left: -11,
             right: 0,
             top: 0,
-            bottom: -8,
+            bottom: -1,
           },
         },
 

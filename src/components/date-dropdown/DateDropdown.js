@@ -89,11 +89,13 @@ export default class DateDropdown {
   @boundMethod
   toggleCallback() {
     const listIsExpanded = this.$datePicker.hasClass(EXPANDED_CLASS);
-    const lists = document.querySelectorAll(`.${CONTENT_CLASS}`);
+    const lists = document.querySelectorAll(`.${EXPANDED_CLASS}`);
     const array = [...lists].filter(
       (list) => !$(list).hasClass(DISABLED_CLASS)
     );
-    array.forEach((list) => list.classList.remove(EXPANDED_CLASS));
+    array.forEach((list) =>
+      list.classList.remove(EXPANDED_CLASS, CSS_EXPANDED_CLASS)
+    );
     if (listIsExpanded) {
       this.$datePicker[0].classList.remove(EXPANDED_CLASS, CSS_EXPANDED_CLASS);
     } else {
