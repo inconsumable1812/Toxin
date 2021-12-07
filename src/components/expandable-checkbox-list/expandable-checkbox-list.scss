@@ -72,7 +72,7 @@
 
         &:checked + #{$r}__checkbox {
           border: 0.0625rem solid $color-purple;
-          background: url('./img/Vector.svg') no-repeat center center;
+          background: url('./img/Vector.svg') no-repeat 50% 38%;
         }
 
         &:focus + #{$r}__checkbox,
