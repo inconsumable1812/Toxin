@@ -163,4 +163,9 @@
     margin-bottom: 0.3rem;
     margin-right: 0.5rem;
   }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+  }
 }
