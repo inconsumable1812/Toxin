@@ -1,4 +1,5 @@
 @import '../../utils/main';
+@import '../../utils/mixins';
 
 .error-page {
   display: flex;
@@ -7,4 +8,8 @@
   height: 100%;
   background: $color-dark-10;
   text-align: center;
+
+  &__title {
+    @include font-h1;
+  }
 }

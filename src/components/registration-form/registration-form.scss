@@ -12,6 +12,10 @@
   padding: $form-padding;
   border-radius: 0.25rem;
 
+  &__title {
+    @include font-h1;
+  }
+
   &__header {
     padding-bottom: 0.82rem;
   }

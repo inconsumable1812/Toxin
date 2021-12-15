@@ -2,14 +2,14 @@
 @import '../../utils/vars';
 
 .tag-example {
+  $r: &;
+
   display: grid;
   grid-template-columns: 2.5rem 1fr;
   column-gap: 1.9rem;
 
   &__title {
     text-align: right;
-    font-weight: normal;
-    color: $color-dark-25;
   }
 
   &__subtitle_p {
@@ -20,14 +20,41 @@
 
   &_h1 {
     margin-bottom: 0.3125rem;
+
+    #{$r}__title {
+      @include font-h1($color-dark-25, normal);
+    }
+
+    #{$r}__subtitle {
+      @include font-h1;
+    }
   }
 
   &_h2 {
     margin-bottom: 0.0625rem;
+
+    #{$r}__title {
+      @include font-h2($color-dark-25, normal);
+    }
+
+    #{$r}__subtitle {
+      @include font-h2;
+    }
+  }
+
+  &_h3 {
+    #{$r}__title {
+      @include font-h3($color-dark-25, normal);
+    }
+
+    #{$r}__subtitle {
+      @include font-h3;
+    }
   }
 
   &_p {
     max-width: 23.75rem;
+    color: $color-dark-75;
 
     .tag-example__title {
       @include font-hint-875;

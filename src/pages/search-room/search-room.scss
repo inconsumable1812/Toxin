@@ -115,6 +115,10 @@
     margin-top: 0.25rem;
   }
 
+  &__result-title {
+    @include font-h1;
+  }
+
   &__room-sketch-list {
     margin-top: 1.33rem;
     display: grid;

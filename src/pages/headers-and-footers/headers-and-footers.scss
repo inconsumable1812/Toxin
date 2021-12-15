@@ -4,6 +4,9 @@
 @import '../../components/header/header';
 
 .headers-and-footers {
+  background: $gray-background;
+  overflow: hidden;
+
   &__logo {
     margin: 1.875rem auto 3.6rem;
     width: 80%;

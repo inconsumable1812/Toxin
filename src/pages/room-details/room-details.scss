@@ -97,6 +97,10 @@
     margin-left: 2px;
   }
 
+  &__info-title {
+    @include font-h2;
+  }
+
   &__about-room {
     padding-bottom: 0.8rem;
     grid-area: about;
@@ -123,6 +127,12 @@
     padding-left: 1.59rem;
     padding-top: 0.0625rem;
     padding-bottom: 0.95rem;
+
+    @include font-h2;
+  }
+
+  &__reviews-title {
+    @include font-h2;
   }
 
   &__reviews-header {
@@ -163,10 +173,14 @@
   &__bullet-list-title {
     padding-left: 1.25rem;
     padding-bottom: 1.14rem;
+
+    @include font-h2;
   }
 
   &__cancel-title {
     padding-bottom: 1.15rem;
+
+    @include font-h2;
   }
 
   &__cancel-description {

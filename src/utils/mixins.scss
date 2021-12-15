@@ -83,3 +83,28 @@
   background: transparent;
   cursor: pointer;
 }
+
+@mixin font-h1($color: $color-dark-100, $weight: bold) {
+  color: $color;
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: $weight;
+  font-size: 1.5rem;
+  line-height: 1.8125rem;
+}
+
+@mixin font-h2($color: $color-dark-100, $weight: bold) {
+  color: $color;
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: $weight;
+  font-size: 1.1875rem;
+  line-height: 1.5rem;
+}
+
+@mixin font-h3($color: $color-dark-100, $weight: bold) {
+  color: $color;
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: $weight;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  line-height: 0.9375rem;
+}

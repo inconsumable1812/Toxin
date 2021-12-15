@@ -6,7 +6,6 @@ include ../../components/footer/footer.pug
 
 block variables
   - title = 'Headers & Footers';
-  - theme = 'body_theme_gray';
 
 block content
   - const bottomClass = 'headers-and-footers__margin-bottom';
@@ -15,11 +14,11 @@ block content
   .headers-and-footers
     nav.headers-and-footers__logo
       +logo
-  .headers-and-footers__header(class=bottomClass)
-    +header({ menuLink })
-  .headers-and-footers__header_login(class=bottomClass)
-    +header({ menuLink, auth })
-  .headers-and-footers__footer(class=bottomClass)
-    +footer
-  .headers-and-footers__footer.headers-and-footers__footer_size_small
-    +footer({ isSmall: true })
+    .headers-and-footers__header(class=bottomClass)
+      +header({ menuLink })
+    .headers-and-footers__header_login(class=bottomClass)
+      +header({ menuLink, auth })
+    .headers-and-footers__footer(class=bottomClass)
+      +footer
+    .headers-and-footers__footer.headers-and-footers__footer_size_small
+      +footer({ isSmall: true })

@@ -87,6 +87,8 @@
 
   &__navigation-title {
     padding-bottom: 0.58rem;
+
+    @include font-h3;
   }
 
   &__navigation-row {
@@ -116,7 +118,11 @@
     }
   }
 
-  &__subscribe-txt {
+  &__subscribe-title {
+    @include font-h3;
+  }
+
+  &__subscribe-text {
     @include font-hint-875;
 
     padding-top: 1.2rem;
