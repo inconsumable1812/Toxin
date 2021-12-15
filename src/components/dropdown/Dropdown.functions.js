@@ -3,6 +3,7 @@ import {
   EXPANDED_CLASS,
   CLEAR_BUTTON_HIDE,
   MINUS_BUTTON_DISABLED,
+  PLUS_BUTTON_DISABLED,
 } from './Dropdown-const';
 
 function index(number) {
@@ -53,6 +54,20 @@ function disabledMinusButtonIfLessUnit(count, button) {
   return null;
 }
 
+function disabledPlusButtonIfBiggerUnit(count, button) {
+  if (count >= 20) {
+    return button.classList.add(PLUS_BUTTON_DISABLED);
+  }
+  return null;
+}
+
+function enabledPlusButtonIfLessUnit(count, button) {
+  if (count < 20) {
+    return button.classList.remove(PLUS_BUTTON_DISABLED);
+  }
+  return null;
+}
+
 function enabledMinusButtonIfBiggerZero(count, button) {
   if (count > 0) {
     return button.classList.remove(MINUS_BUTTON_DISABLED);
@@ -97,4 +112,6 @@ export {
   enabledMinusButtonIfBiggerZero,
   hideClearButton,
   createNameOfRooms,
+  disabledPlusButtonIfBiggerUnit,
+  enabledPlusButtonIfLessUnit,
 };

@@ -138,7 +138,8 @@
     border: 0.0625rem solid $color-font-25;
   }
 
-  &__counter-button-minus_disabled {
+  &__counter-button-minus_disabled,
+  &__counter-button-plus_disabled {
     opacity: 0.5;
     cursor: default;
     pointer-events: none;

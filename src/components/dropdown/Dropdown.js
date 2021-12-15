@@ -11,6 +11,8 @@ import {
   enabledMinusButtonIfBiggerZero,
   showClearButton,
   createNameOfRooms,
+  disabledPlusButtonIfBiggerUnit,
+  enabledPlusButtonIfLessUnit,
 } from './Dropdown.functions';
 import {
   GUEST_CLASS,
@@ -187,20 +189,24 @@ export default class Dropdown {
     const itemNameNode = event.target.closest(`.${LIST_ITEM_CLASS}`);
     const button = itemNameNode.querySelector(`.${MINUS_BUTTON_CLASS}`);
     const itemCount = itemNameNode.querySelector(`.${COUNTER_CLASS}`);
+    const plusButton = itemNameNode.querySelector(`.${PLUS_BUTTON_CLASS}`);
 
     if (this.isTypeGuest) {
       if (itemNameNode.classList.contains(ADULT_ITEM_CLASS)) {
         this.countOfAdult -= 1;
         itemCount.textContent = this.countOfAdult;
         disabledMinusButtonIfLessUnit(this.countOfAdult, button);
+        enabledPlusButtonIfLessUnit(this.countOfAdult, plusButton);
       } else if (itemNameNode.classList.contains(CHILDREN_ITEM_CLASS)) {
         this.countOfChildren -= 1;
         itemCount.textContent = this.countOfChildren;
         disabledMinusButtonIfLessUnit(this.countOfChildren, button);
+        enabledPlusButtonIfLessUnit(this.countOfChildren, plusButton);
       } else if (itemNameNode.classList.contains(BABY_ITEM_CLASS)) {
         this.countOfBaby -= 1;
         itemCount.textContent = this.countOfBaby;
         disabledMinusButtonIfLessUnit(this.countOfBaby, button);
+        enabledPlusButtonIfLessUnit(this.countOfBaby, plusButton);
       }
       hideClearButton(
         this.countOfAdult,
@@ -215,14 +221,17 @@ export default class Dropdown {
         this.countOfBedrooms -= 1;
         itemCount.textContent = this.countOfBedrooms;
         disabledMinusButtonIfLessUnit(this.countOfBedrooms, button);
+        enabledPlusButtonIfLessUnit(this.countOfBedrooms, plusButton);
       } else if (itemNameNode.classList.contains(BED_ITEM_CLASS)) {
         this.countOfBeds -= 1;
         itemCount.textContent = this.countOfBeds;
         disabledMinusButtonIfLessUnit(this.countOfBeds, button);
+        enabledPlusButtonIfLessUnit(this.countOfBeds, plusButton);
       } else {
         this.countOfBathrooms -= 1;
         itemCount.textContent = this.countOfBathrooms;
         disabledMinusButtonIfLessUnit(this.countOfBathrooms, button);
+        enabledPlusButtonIfLessUnit(this.countOfBathrooms, plusButton);
       }
       this.input.placeholder = this.sendingRoomsToInput();
     }
@@ -233,20 +242,24 @@ export default class Dropdown {
     const itemNameNode = event.target.closest(`.${LIST_ITEM_CLASS}`);
     const minusButton = itemNameNode.querySelector(`.${MINUS_BUTTON_CLASS}`);
     const itemCount = itemNameNode.querySelector(`.${COUNTER_CLASS}`);
+    const plusButton = itemNameNode.querySelector(`.${PLUS_BUTTON_CLASS}`);
 
     if (this.isTypeGuest) {
       if (itemNameNode.classList.contains(ADULT_ITEM_CLASS)) {
         this.countOfAdult += 1;
         itemCount.textContent = this.countOfAdult;
         enabledMinusButtonIfBiggerZero(this.countOfAdult, minusButton);
+        disabledPlusButtonIfBiggerUnit(this.countOfAdult, plusButton);
       } else if (itemNameNode.classList.contains(CHILDREN_ITEM_CLASS)) {
         this.countOfChildren += 1;
         itemCount.textContent = this.countOfChildren;
         enabledMinusButtonIfBiggerZero(this.countOfChildren, minusButton);
+        disabledPlusButtonIfBiggerUnit(this.countOfChildren, plusButton);
       } else if (itemNameNode.classList.contains(BABY_ITEM_CLASS)) {
         this.countOfBaby += 1;
         itemCount.textContent = this.countOfBaby;
         enabledMinusButtonIfBiggerZero(this.countOfBaby, minusButton);
+        disabledPlusButtonIfBiggerUnit(this.countOfBaby, plusButton);
       }
       showClearButton(
         this.countOfAdult,
@@ -261,14 +274,17 @@ export default class Dropdown {
         this.countOfBedrooms += 1;
         itemCount.textContent = this.countOfBedrooms;
         enabledMinusButtonIfBiggerZero(this.countOfBedrooms, minusButton);
+        disabledPlusButtonIfBiggerUnit(this.countOfBedrooms, plusButton);
       } else if (itemNameNode.classList.contains(BED_ITEM_CLASS)) {
         this.countOfBeds += 1;
         itemCount.textContent = this.countOfBeds;
         enabledMinusButtonIfBiggerZero(this.countOfBeds, minusButton);
+        disabledPlusButtonIfBiggerUnit(this.countOfBeds, plusButton);
       } else {
         this.countOfBathrooms += 1;
         itemCount.textContent = this.countOfBathrooms;
         enabledMinusButtonIfBiggerZero(this.countOfBathrooms, minusButton);
+        disabledPlusButtonIfBiggerUnit(this.countOfBathrooms, plusButton);
       }
       this.input.placeholder = this.sendingRoomsToInput();
     }
