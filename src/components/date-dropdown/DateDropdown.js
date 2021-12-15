@@ -31,21 +31,21 @@ export default class DateDropdown {
   init() {
     if (this.isTypeAreSingle()) {
       const $date = this.$dropdown.find('[name=date-filter]');
-      this.datepickerInstance = new Datepicker(
-        CONTENT_CLASS,
-        this.$dropdown,
-        $date
-      );
+      this.datepickerInstance = new Datepicker({
+        containerClass: CONTENT_CLASS,
+        $dropdown: this.$dropdown,
+        $dateFrom: $date,
+      });
     } else {
       const $dateFrom = this.$dropdown.find('[name=field-date-from]');
       const $dateTo = this.$dropdown.find('[name=field-date-to]');
 
-      this.datepickerInstance = new Datepicker(
-        CONTENT_CLASS,
-        this.$dropdown,
+      this.datepickerInstance = new Datepicker({
+        containerClass: CONTENT_CLASS,
+        $dropdown: this.$dropdown,
         $dateFrom,
-        $dateTo
-      );
+        $dateTo,
+      });
     }
 
     this.$datePicker = this.$dropdown.find(`.${CONTENT_CLASS}`);

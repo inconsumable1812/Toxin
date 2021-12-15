@@ -16,20 +16,13 @@ function setBackgroundColor(currentIndex) {
 }
 
 export default class MyChart {
-  constructor(
-    ctx,
-    dataNumbers,
-    gradientDisappoint,
-    gradientAcceptable,
-    gradientGood,
-    gradientGreat
-  ) {
-    this.ctx = ctx;
-    this.dataNumbers = dataNumbers;
-    this.gradientDisappoint = gradientDisappoint;
-    this.gradientAcceptable = gradientAcceptable;
-    this.gradientGood = gradientGood;
-    this.gradientGreat = gradientGreat;
+  constructor({ canvasContext, numbers, disappoint, acceptable, good, great }) {
+    this.ctx = canvasContext;
+    this.dataNumbers = numbers;
+    this.gradientDisappoint = disappoint;
+    this.gradientAcceptable = acceptable;
+    this.gradientGood = good;
+    this.gradientGreat = great;
 
     this.createChart();
   }

@@ -2,7 +2,7 @@ import noUiSlider from 'nouislider';
 import { boundMethod } from 'autobind-decorator';
 
 export default class Slider {
-  constructor(sliderContainer, minInput, maxInput) {
+  constructor({ sliderContainer, minInput, maxInput }) {
     this.sliderContainer = sliderContainer;
     this.minInput = minInput;
     this.maxInput = maxInput;

@@ -9,12 +9,16 @@ const ACTIVE_DOT_CLASS = 'image-slider__dot_active';
 const INTERVAL_CLASS = 'js-image-slider__interval';
 
 export default class ImageSlider {
+  prev = null;
+
+  next = null;
+
+  slides = null;
+
+  dots = null;
+
   constructor(slider) {
     this.slider = slider;
-    this.prev = null;
-    this.next = null;
-    this.slides = null;
-    this.dots = null;
     this.index = 0;
 
     this.init();

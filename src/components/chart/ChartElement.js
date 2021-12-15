@@ -59,13 +59,13 @@ export default class ChartElement {
   }
 
   createChart() {
-    this.myChart = new MyChart(
-      this.ctx,
-      dataNumbers,
-      this.gradientDisappoint,
-      this.gradientAcceptable,
-      this.gradientGood,
-      this.gradientGreat
-    );
+    this.myChart = new MyChart({
+      canvasContext: this.ctx,
+      numbers: dataNumbers,
+      disappoint: this.gradientDisappoint,
+      acceptable: this.gradientAcceptable,
+      good: this.gradientGood,
+      great: this.gradientGreat,
+    });
   }
 }

@@ -7,12 +7,16 @@ const MIN_INPUT = 'js-range-slider__input_min';
 const MAX_INPUT = 'js-range-slider__input_max';
 
 export default class RangeSlider {
+  sliderContainer = null;
+
+  minInput = null;
+
+  maxInput = null;
+
+  slider = null;
+
   constructor(root) {
     this.root = root;
-    this.sliderContainer = null;
-    this.minInput = null;
-    this.maxInput = null;
-    this.slider = null;
 
     this.init();
   }
@@ -39,11 +43,11 @@ export default class RangeSlider {
   }
 
   creatSlider() {
-    this.sliderInstance = new Slider(
-      this.sliderContainer,
-      this.minInput,
-      this.maxInput
-    );
+    this.sliderInstance = new Slider({
+      sliderContainer: this.sliderContainer,
+      minInput: this.minInput,
+      maxInput: this.maxInput,
+    });
   }
 
   bindEventListeners() {

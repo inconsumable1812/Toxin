@@ -3,7 +3,7 @@ import 'air-datepicker';
 export default class Datepicker {
   $buttonContainers = null;
 
-  constructor(containerClass, $dropdown, $dateFrom, $dateTo = null) {
+  constructor({ containerClass, $dropdown, $dateFrom, $dateTo = null }) {
     this.containerClass = containerClass;
     this.$dropdown = $dropdown;
     this.$dateFrom = $dateFrom;
