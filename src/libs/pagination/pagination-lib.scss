@@ -13,7 +13,7 @@
     margin-top: 0.1rem;
     margin-left: 0.35rem;
     font-size: 0.875rem;
-    color: $color-dark-75;
+    color: $color-font-75;
   }
 
   .paginationjs-pages {
@@ -38,12 +38,12 @@
 
     a {
       font-size: 0.75rem;
-      color: $color-dark-50;
+      color: $color-font-50;
     }
   }
 
   .active {
-    background: $grad-purple;
+    background: $grad-main;
     border-radius: 50%;
     cursor: pointer;
   }
@@ -55,7 +55,7 @@
 
   .paginationjs-pages li.active > a {
     color: white;
-    background: $grad-purple;
+    background: $grad-main;
     border-radius: 50%;
   }
 
@@ -82,7 +82,7 @@
 
   .paginationjs-next,
   .paginationjs-prev {
-    background: $grad-green;
+    background: $grad-secondary;
     border: none;
 
     &:hover {

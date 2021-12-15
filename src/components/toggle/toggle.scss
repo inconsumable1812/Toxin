@@ -28,7 +28,7 @@
     @include font-hint-875;
 
     line-height: 1.5rem;
-    color: $color-dark-75;
+    color: $color-font-75;
     padding-bottom: 0.6rem;
   }
 
@@ -36,7 +36,7 @@
     position: absolute;
     height: 1.25rem;
     width: 2.5rem;
-    border: 0.0625rem solid $color-dark-25;
+    border: 0.0625rem solid $color-font-25;
     border-radius: 0.625rem;
     margin-top: 0.125rem;
 
@@ -50,7 +50,7 @@
       width: $size;
       height: $size;
       border-radius: 0.375rem;
-      background: $color-dark-25;
+      background: $color-font-25;
     }
   }
 
@@ -60,7 +60,7 @@
 
     &:checked + .toggle__checkbox::before {
       transform: translateX(20px);
-      background: $grad-purple;
+      background: $grad-main;
       transition: transform 0.25s ease-in-out;
     }
 

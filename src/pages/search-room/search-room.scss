@@ -32,7 +32,7 @@
     column-gap: 3.8rem;
     padding-top: 1.58rem;
     padding-bottom: 4.3rem;
-    border-bottom: 1px solid $color-dark-25;
+    border-bottom: 1px solid $color-font-25;
 
     @include _992 {
       display: block;
@@ -62,7 +62,7 @@
       overflow-y: auto;
       display: grid;
       grid-template-rows: 24px auto;
-      box-shadow: 0 0 0.75rem 0.75rem $color-dark-25;
+      box-shadow: 0 0 0.75rem 0.75rem $color-font-25;
 
       &_expanded {
         left: 0;
@@ -79,7 +79,7 @@
     font-size: $font-copyright-icon;
 
     &:hover {
-      color: $color-purple;
+      color: $color-main;
     }
 
     @include _992 {

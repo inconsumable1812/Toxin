@@ -121,7 +121,7 @@
           #{$r}__like-buttons_title {
             @include font-button;
 
-            color: $color-dark-100;
+            color: $color-font-100;
             margin-bottom: 1rem;
           }
 
@@ -135,7 +135,7 @@
           #{$r}__rate-buttons_title {
             @include font-button;
 
-            color: $color-dark-100;
+            color: $color-font-100;
             margin-bottom: 1.1rem;
           }
 
@@ -160,7 +160,7 @@
           #{$r}__buttons-title {
             @include font-button;
 
-            color: $color-dark-100;
+            color: $color-font-100;
             margin-bottom: 1.1rem;
           }
 
@@ -196,7 +196,7 @@
           #{$r}__pagination-title {
             @include font-button;
 
-            color: $color-dark-100;
+            color: $color-font-100;
             margin-bottom: 1.05rem;
           }
         }

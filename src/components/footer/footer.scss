@@ -63,7 +63,7 @@
     @include font-hint-875;
 
     padding-top: 0.84rem;
-    color: $color-dark-75;
+    color: $color-font-75;
     line-height: 1.5rem;
 
     @include _768 {
@@ -126,7 +126,7 @@
     @include font-hint-875;
 
     padding-top: 1.2rem;
-    color: $color-dark-75;
+    color: $color-font-75;
     line-height: 1.5rem;
     padding-bottom: 0.9rem;
   }
@@ -151,7 +151,7 @@
     @include font-hint-875;
 
     line-height: 1.0625rem;
-    color: $color-dark-75;
+    color: $color-font-75;
 
     @include _768 {
       justify-self: center;
@@ -175,13 +175,13 @@
     #{$r}__navigation-link {
       @include font-hint-875;
 
-      color: $color-dark-50;
+      color: $color-font-50;
       appearance: none;
       text-decoration: none;
       line-height: 1.0625rem;
 
       &:hover {
-        color: $color-purple;
+        color: $color-main;
       }
     }
   }
@@ -195,14 +195,14 @@
     #{$r}__copyright-link {
       font-size: $font-copyright-icon;
       color: transparent;
-      background-image: $grad-purple;
+      background-image: $grad-main;
       background-clip: text;
       appearance: none;
       text-decoration: none;
       line-height: 1.4375rem;
 
       &:hover {
-        color: $color-dark-50;
+        color: $color-font-50;
       }
     }
   }

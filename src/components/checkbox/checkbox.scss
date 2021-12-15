@@ -27,7 +27,7 @@
 
       padding-bottom: 0.75rem;
       line-height: 1.125rem;
-      color: $color-dark-50;
+      color: $color-font-50;
 
       .checkbox__checkbox {
         $size: 1.25rem;
@@ -35,7 +35,7 @@
         position: absolute;
         width: $size;
         height: $size;
-        border: 0.0625rem solid $color-dark-25;
+        border: 0.0625rem solid $color-font-25;
         border-radius: 0.25rem;
       }
 
@@ -44,7 +44,7 @@
         appearance: none;
 
         &:checked + .checkbox__checkbox {
-          border: 0.0625rem solid $color-purple;
+          border: 0.0625rem solid $color-main;
           background: url('./img/Vector.svg') no-repeat 50% 38%;
         }
 

@@ -12,7 +12,7 @@
         position: relative;
 
         .arrow_forward {
-          color: $color-purple;
+          color: $color-main;
         }
 
         svg {
@@ -22,7 +22,7 @@
 
       [data-action='prev'] {
         .arrow_back {
-          color: $color-purple;
+          color: $color-main;
         }
 
         svg {
@@ -51,7 +51,7 @@
         margin: 0.5rem 0.9rem 0.8rem 1.05rem;
 
         .datepicker--day-name {
-          color: $color-purple;
+          color: $color-main;
           font-size: 0.75rem;
           font-family: Montserrat, Arial, sans-serif;
           font-weight: bold;
@@ -63,7 +63,7 @@
 
         .datepicker--cell-day {
           padding: 0 0.5rem;
-          color: $color-dark-50;
+          color: $color-font-50;
           height: 2.5rem;
           width: 13.6%;
           font-size: 0.75rem;
@@ -80,25 +80,25 @@
 
         .-other-month-,
         .-disabled- {
-          color: $color-dark-25;
+          color: $color-font-25;
         }
 
         .-current- {
           color: white;
-          background: $grad-green;
+          background: $grad-secondary;
           border-radius: 50%;
           font-weight: bold;
         }
 
         .-range-from- {
-          background: $grad-purple;
+          background: $grad-main;
           color: white;
           border-radius: 50%;
           font-weight: bold;
 
           &::after {
             position: absolute;
-            background: $grad-purple-25;
+            background: $grad-main-25;
             z-index: -1;
             width: 50%;
             content: '';
@@ -108,14 +108,14 @@
         }
 
         .-range-to- {
-          background: $grad-purple;
+          background: $grad-main;
           color: white;
           border-radius: 50%;
           font-weight: bold;
 
           &::before {
             position: absolute;
-            background: $grad-purple-25;
+            background: $grad-main-25;
             z-index: -1;
             width: 50%;
             content: '';
@@ -125,10 +125,10 @@
         }
 
         .-in-range- {
-          background: $grad-purple-25;
+          background: $grad-main-25;
 
           &:hover {
-            background: $grad-purple-25;
+            background: $grad-main-25;
             border-radius: 0;
             color: white;
           }
@@ -148,7 +148,7 @@
 
       .datepicker--button,
       .datepicker--button_apply {
-        color: $color-purple;
+        color: $color-main;
         font-family: Montserrat, Arial, sans-serif;
         font-size: 0.75rem;
         font-weight: bold;
@@ -161,7 +161,7 @@
         flex: 1;
 
         &:hover {
-          color: $color-dark-50;
+          color: $color-font-50;
           background: none;
         }
       }
@@ -177,10 +177,10 @@
   }
 
   .datepicker-inline .datepicker {
-    border: 0.0625rem solid $color-dark-25;
+    border: 0.0625rem solid $color-font-25;
     width: inherit;
     border-radius: 0.25rem;
-    box-shadow: 0 0.625rem 1.25rem $color-dark-5;
+    box-shadow: 0 0.625rem 1.25rem $color-font-5;
 
     .datepicker--content {
       background: white;
@@ -197,7 +197,7 @@
 
       [data-action='next'] {
         .arrow_forward {
-          color: $color-purple;
+          color: $color-main;
         }
 
         svg {
@@ -207,7 +207,7 @@
 
       [data-action='prev'] {
         .arrow_back {
-          color: $color-purple;
+          color: $color-main;
         }
 
         svg {
@@ -235,7 +235,7 @@
     .datepicker--content {
       .datepicker--days-names {
         .datepicker--day-name {
-          color: $color-purple;
+          color: $color-main;
           font-size: 0.75rem;
           font-family: Montserrat, Arial, sans-serif;
           font-weight: bold;
@@ -245,7 +245,7 @@
       .datepicker--cells-days {
         /* stylelint-disable-next-line no-descending-specificity */
         .datepicker--cell-day {
-          color: $color-dark-50;
+          color: $color-font-50;
           height: 2.28rem;
           width: 2.28rem;
           font-size: 0.75rem;
@@ -258,25 +258,25 @@
 
         .-other-month-,
         .-disabled- {
-          color: $color-dark-25;
+          color: $color-font-25;
         }
 
         .-current- {
           color: white;
-          background: $grad-green;
+          background: $grad-secondary;
           border-radius: 50%;
           font-weight: bold;
         }
 
         .-range-from- {
-          background: $grad-purple;
+          background: $grad-main;
           color: white;
           border-radius: 50%;
           font-weight: bold;
 
           &::after {
             position: absolute;
-            background: $grad-purple-25;
+            background: $grad-main-25;
             z-index: -1;
             width: 50%;
             content: '';
@@ -286,14 +286,14 @@
         }
 
         .-range-to- {
-          background: $grad-purple;
+          background: $grad-main;
           color: white;
           border-radius: 50%;
           font-weight: bold;
 
           &::before {
             position: absolute;
-            background: $grad-purple-25;
+            background: $grad-main-25;
             z-index: -1;
             width: 50%;
             content: '';
@@ -304,10 +304,10 @@
 
         /* stylelint-disable-next-line no-descending-specificity */
         .-in-range- {
-          background: $grad-purple-25;
+          background: $grad-main-25;
 
           &:hover {
-            background: $grad-purple-25;
+            background: $grad-main-25;
             border-radius: 0;
             color: white;
           }
@@ -321,7 +321,7 @@
 
       .datepicker--button,
       .datepicker--button_apply {
-        color: $color-purple;
+        color: $color-main;
         font: Montserrat, Arial, sans-serif;
         font-size: 0.75rem;
         font-weight: bold;
@@ -334,7 +334,7 @@
         flex: 1;
 
         &:hover {
-          color: $color-dark-50;
+          color: $color-font-50;
           background: none;
         }
       }

@@ -10,15 +10,15 @@
   padding: 1.5rem 3rem;
 
   &_theme {
-    &_purple {
+    &_main {
       #{$block-class}__link {
-        color: $color-purple;
+        color: $color-main;
       }
     }
 
     &_green {
       #{$block-class}__link {
-        color: $color-green;
+        color: $color-secondary;
       }
     }
   }
@@ -27,7 +27,7 @@
     @include font-like-h1;
 
     &:hover {
-      color: $color-dark-75;
+      color: $color-font-75;
     }
   }
 }

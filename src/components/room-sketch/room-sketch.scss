@@ -22,7 +22,7 @@
     justify-content: space-between;
     align-items: center;
     padding-bottom: 0.7rem;
-    border-bottom: 1px solid $color-dark-10;
+    border-bottom: 1px solid $color-font-10;
     padding-top: 0.08rem;
     margin-top: 1px;
   }
@@ -31,7 +31,7 @@
     @include font-hint-875;
 
     font-weight: bold;
-    color: $color-dark-100;
+    color: $color-font-100;
   }
 
   &__number-value {
@@ -40,13 +40,13 @@
     margin-left: 0.25rem;
     margin-right: 0.6rem;
     font-weight: bold;
-    color: $color-dark-100;
+    color: $color-font-100;
   }
 
   &__number-feature {
     @include font-button;
 
-    color: $color-purple;
+    color: $color-main;
   }
 
   &__price-per-day {
@@ -56,7 +56,7 @@
   &__cost {
     @include font-hint-875;
 
-    color: $color-dark-50;
+    color: $color-font-50;
     margin-right: 0.25rem;
     font-weight: bold;
   }
@@ -64,7 +64,7 @@
   &__date-unit {
     @include font-hint;
 
-    color: $color-dark-50;
+    color: $color-font-50;
   }
 
   &__footer {
@@ -77,14 +77,14 @@
     @include font-hint-875;
 
     font-weight: bold;
-    color: $color-dark-50;
+    color: $color-font-50;
     margin-right: 0.35rem;
   }
 
   &__feedback-text {
     @include font-hint-875;
 
-    color: $color-dark-50;
+    color: $color-font-50;
     margin-right: 0.1rem;
   }
 

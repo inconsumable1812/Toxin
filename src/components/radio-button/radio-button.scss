@@ -29,7 +29,7 @@
   &__item {
     @include font-hint-875;
 
-    color: $color-dark-50;
+    color: $color-font-50;
 
     @include _1200 {
       display: inline-block;
@@ -44,7 +44,7 @@
     height: $size;
     width: $size;
     border-radius: 50%;
-    border: 0.0625rem solid $color-dark-25;
+    border: 0.0625rem solid $color-font-25;
 
     &::before {
       $size: 0.75rem;
@@ -57,7 +57,7 @@
       height: $size;
       border-radius: 0.375rem;
       opacity: 0;
-      background: $grad-purple;
+      background: $grad-main;
     }
   }
 
@@ -71,11 +71,11 @@
 
     &:checked + .radio-button__radio + .radio-button__caption {
       transition: color 0.25s ease-in-out;
-      color: $color-dark-75;
+      color: $color-font-75;
     }
 
     &:checked + .radio-button__radio {
-      border: 0.0625rem solid $color-purple;
+      border: 0.0625rem solid $color-main;
 
       &::before {
         transition: opacity 0.25s ease-in-out;

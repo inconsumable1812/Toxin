@@ -1,29 +1,19 @@
-// Screen sizes
-$screen-xs-max: 767px;
-$screen-sm-min: 768px;
-$screen-filter-xs-max: 893px;
-$screen-filter-sm-min: 894px;
-$screen-sm-max: 991px;
-$screen-md-min: 992px;
-$screen-md-max: 1199px;
-$screen-lg-min: 1200px;
-
 // Colors and gradients
-$color-purple: #bc9cff;
-$color-green: #6fcf97;
-$color-dark-5: #1f20410d;
-$color-dark-10: #1f20411a;
-$color-dark-25: #1f204140;
-$color-dark-50: #1f204180;
-$color-dark-75: #1f2041bf;
-$color-dark-100: #1f2041;
-$grad-purple: linear-gradient(180deg, $color-purple, #8ba4f9);
-$grad-purple-25: linear-gradient(
+$color-main: #bc9cff;
+$color-secondary: #6fcf97;
+$color-font-5: #1f20410d;
+$color-font-10: #1f20411a;
+$color-font-25: #1f204140;
+$color-font-50: #1f204180;
+$color-font-75: #1f2041bf;
+$color-font-100: #1f2041;
+$grad-main: linear-gradient(180deg, $color-main, #8ba4f9);
+$grad-main-25: linear-gradient(
   180deg,
   rgba(188, 156, 255, 0.25) 0%,
   rgba(139, 164, 249, 0.25) 100%
 );
-$grad-green: linear-gradient(180deg, $color-green, #66d2ea);
+$grad-secondary: linear-gradient(180deg, $color-secondary, #66d2ea);
 
 // font
 $font-like-button: 0.625rem;
@@ -33,8 +23,8 @@ $font-copyright-icon: 1.5rem;
 
 // box-shadow
 $form-shadow: 0 0 1.5625rem rgba(0, 0, 0, 0.2);
-$checkbox-shadow: 0 0.125rem 0.3125rem $color-dark-25;
-$header-shadow: 0 0.625rem 1.25rem $color-dark-5;
+$checkbox-shadow: 0 0.125rem 0.3125rem $color-font-25;
+$header-shadow: 0 0.625rem 1.25rem $color-font-5;
 $slider-dots-shadow-active: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
 $slider-dots-shadow: 0 0.3125rem 0.3125rem rgba(31, 32, 65, 0.3);
 

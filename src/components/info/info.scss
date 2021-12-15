@@ -13,14 +13,14 @@
   column-gap: 0.55rem;
   padding-top: 1.3rem;
   padding-bottom: 1.15rem;
-  border-bottom: 1px solid $color-dark-10;
+  border-bottom: 1px solid $color-font-10;
 
   &__title {
     @include font-hint-875;
 
     grid-area: title;
     font-weight: bold;
-    color: $color-dark-75;
+    color: $color-font-75;
     line-height: 1.5rem;
   }
 
@@ -28,13 +28,13 @@
     @include font-hint-875;
 
     grid-area: subtitle;
-    color: $color-dark-75;
+    color: $color-font-75;
     line-height: 1.5rem;
   }
 
   &__icon {
     grid-area: icon;
-    color: $color-purple;
+    color: $color-main;
     font-size: $font-icon;
   }
 }

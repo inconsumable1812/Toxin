@@ -47,13 +47,13 @@
       color: white;
     }
 
-    &_theme_purple {
-      color: $color-purple;
+    &_theme_main {
+      color: $color-main;
     }
   }
 
-  &_theme_purple {
-    background: $grad-purple;
+  &_theme_main {
+    background: $grad-main;
 
     &:hover,
     &:focus {
@@ -63,7 +63,7 @@
 
   &_theme_white {
     background: white;
-    border: 0.125rem solid $color-purple;
+    border: 0.125rem solid $color-main;
 
     &:hover,
     &:focus {
@@ -80,7 +80,7 @@
     .button__text {
       &:hover,
       &:focus {
-        color: $color-dark-50;
+        color: $color-font-50;
       }
     }
   }
@@ -127,7 +127,7 @@
 
   &_transparent_disabled {
     .button__text {
-      color: $color-dark-50;
+      color: $color-font-50;
     }
 
     &:hover,

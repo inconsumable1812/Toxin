@@ -143,7 +143,7 @@
 
   &__reviews-number {
     font-size: 0.875rem;
-    color: $color-dark-50;
+    color: $color-font-50;
     padding-top: 0.35rem;
   }
 
@@ -187,7 +187,7 @@
     max-width: 345px;
     font-size: 0.875rem;
     line-height: 1.5rem;
-    color: $color-dark-75;
+    color: $color-font-75;
 
     @include _680 {
       max-width: none;

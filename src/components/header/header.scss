@@ -69,19 +69,19 @@
       display: block;
       margin-bottom: 1rem;
       padding-right: 0;
-      border-bottom: 0.0625rem solid $color-dark-10;
+      border-bottom: 0.0625rem solid $color-font-10;
     }
   }
 
   &__link {
     @include font-hint-875;
 
-    color: $color-dark-50;
+    color: $color-font-50;
     line-height: 1.0625rem;
     text-decoration: none;
 
     &:hover {
-      color: $color-purple;
+      color: $color-main;
     }
 
     @include _992 {
@@ -98,20 +98,20 @@
     top: 1.5625rem;
     background: white;
     z-index: 5;
-    border: 0.0625rem solid $color-dark-10;
+    border: 0.0625rem solid $color-font-10;
     box-shadow: $header-shadow;
   }
 
   &__sub-menu-icon {
     cursor: pointer;
-    color: $color-dark-50;
+    color: $color-font-50;
     user-select: none;
     transition: transform 0.25s ease;
     font-size: $font-copyright-icon;
     height: 22px;
 
     &:hover {
-      color: $color-purple;
+      color: $color-main;
     }
   }
 
@@ -140,10 +140,10 @@
   &__sub-link {
     padding: 0.5rem 1rem;
     line-height: 2rem;
-    border-bottom: 0.0625rem solid $color-dark-10;
+    border-bottom: 0.0625rem solid $color-font-10;
 
     &:hover {
-      color: $color-purple;
+      color: $color-main;
     }
   }
 
@@ -160,11 +160,11 @@
     appearance: none;
     background: transparent;
     border: none;
-    color: $color-dark-50;
+    color: $color-font-50;
     user-select: none;
 
     &:hover {
-      color: $color-purple;
+      color: $color-main;
     }
 
     @include _992 {
@@ -187,7 +187,7 @@
 
   &__user-menu_auth {
     padding-left: 1.25rem;
-    border-left: 1px solid $color-dark-10;
+    border-left: 1px solid $color-font-10;
 
     @include _992 {
       height: inherit;
@@ -199,12 +199,12 @@
   &__user-name {
     @include font-hint-875;
 
-    color: $color-dark-50;
+    color: $color-font-50;
     line-height: 1.0625rem;
     text-decoration: none;
 
     &:hover {
-      color: $color-purple;
+      color: $color-main;
     }
   }
 }

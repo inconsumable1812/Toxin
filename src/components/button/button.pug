@@ -17,7 +17,7 @@ mixin button(options)
 
     let buttonClass = 'button js-button';
     let textClass = 'button__text';
-    buttonClass += theme === 'purple' ? ' button_theme_purple' : '';
+    buttonClass += theme === 'main' ? ' button_theme_main' : '';
     buttonClass += theme === 'white' ? ' button_theme_white' : '';
     buttonClass += theme === 'transparent' ? ' button_theme_transparent' : '';
     buttonClass += isLarge ? ' button_size_large' : '';
@@ -25,7 +25,7 @@ mixin button(options)
     buttonClass += isTransparentDisabled ? ' button_transparent_disabled' : '';
     buttonClass += isLogInButton ? ' button__log-in-button' : ''
     buttonClass += isRegistrationButton ? ' button__registration-button' : ''
-    textClass += textTheme === 'purple' ? ' button__text_theme_purple' : '';
+    textClass += textTheme === 'main' ? ' button__text_theme_main' : '';
     textClass += textTheme === 'white' ? ' button__text_theme_white' : '';
 
   if href

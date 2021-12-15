@@ -11,7 +11,7 @@
     position: relative;
     width: 2.5rem;
     height: $size;
-    border: 0.0625rem solid $color-dark-25;
+    border: 0.0625rem solid $color-font-25;
     border-radius: 0.625rem;
     display: inline-flex;
     align-items: center;
@@ -21,7 +21,7 @@
 
     &:focus,
     &:hover {
-      outline: 0.125rem solid $color-purple;
+      outline: 0.125rem solid $color-main;
     }
   }
 
@@ -30,7 +30,7 @@
     top: 4px;
     left: 4px;
     font-size: $font-like-button;
-    color: $color-dark-25;
+    color: $color-font-25;
   }
 
   &__count {
@@ -38,21 +38,21 @@
     top: 3px;
     left: 19px;
     font-size: $font-like-button;
-    color: $color-dark-25;
+    color: $color-font-25;
   }
 
   &_pressed {
     .like-button__button {
-      border: 0.0625rem solid $color-purple;
+      border: 0.0625rem solid $color-main;
     }
 
     .like-button__icon {
-      color: $color-purple;
+      color: $color-main;
     }
 
     .like-button__count {
       &_pressed {
-        color: $color-purple;
+        color: $color-main;
       }
     }
   }

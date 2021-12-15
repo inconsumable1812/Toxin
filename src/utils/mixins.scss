@@ -84,7 +84,7 @@
   cursor: pointer;
 }
 
-@mixin font-h1($color: $color-dark-100, $weight: bold) {
+@mixin font-h1($color: $color-font-100, $weight: bold) {
   color: $color;
   font-family: Montserrat, Arial, sans-serif;
   font-weight: $weight;
@@ -92,7 +92,7 @@
   line-height: 1.8125rem;
 }
 
-@mixin font-h2($color: $color-dark-100, $weight: bold) {
+@mixin font-h2($color: $color-font-100, $weight: bold) {
   color: $color;
   font-family: Montserrat, Arial, sans-serif;
   font-weight: $weight;
@@ -100,7 +100,7 @@
   line-height: 1.5rem;
 }
 
-@mixin font-h3($color: $color-dark-100, $weight: bold) {
+@mixin font-h3($color: $color-font-100, $weight: bold) {
   color: $color;
   font-family: Montserrat, Arial, sans-serif;
   font-weight: $weight;

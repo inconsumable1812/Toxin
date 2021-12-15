@@ -31,12 +31,12 @@
       top: -4px;
       right: 11px;
       font-size: $font-copyright-icon;
-      color: $color-dark-50;
+      color: $color-font-50;
       transition: transform 0.2s ease-in-out;
 
       &:focus {
         &::before {
-          outline: 2px solid $color-dark-75;
+          outline: 2px solid $color-font-75;
         }
       }
     }
@@ -54,7 +54,7 @@
 
       padding-bottom: 0.76rem;
       line-height: 1.125rem;
-      color: $color-dark-50;
+      color: $color-font-50;
 
       #{$r}__checkbox {
         $size: 1.25rem;
@@ -62,7 +62,7 @@
         position: absolute;
         width: $size;
         height: $size;
-        border: 0.0625rem solid $color-dark-25;
+        border: 0.0625rem solid $color-font-25;
         border-radius: 0.25rem;
       }
 
@@ -71,7 +71,7 @@
         appearance: none;
 
         &:checked + #{$r}__checkbox {
-          border: 0.0625rem solid $color-purple;
+          border: 0.0625rem solid $color-main;
           background: url('./img/Vector.svg') no-repeat 50% 38%;
         }
 

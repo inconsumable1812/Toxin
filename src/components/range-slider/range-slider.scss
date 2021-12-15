@@ -36,7 +36,7 @@
     @include font-hint;
 
     width: 3.3rem;
-    color: $color-dark-50;
+    color: $color-font-50;
     border: none;
     text-align: end;
     outline: 0;
@@ -47,7 +47,7 @@
     @include font-hint;
 
     width: 3rem;
-    color: $color-dark-50;
+    color: $color-font-50;
     border: none;
     outline: none;
     line-height: 0.9375rem;
@@ -58,6 +58,6 @@
 
     padding-top: 0.85rem;
     line-height: 0.875rem;
-    color: $color-dark-50;
+    color: $color-font-50;
   }
 }
