@@ -5,20 +5,20 @@ include ../../components/icon/icon.pug
 
 mixin booking-form(options)
   -
-    let { 
+    const { 
       numberValue = "888", 
       numberFeature = "люкс", 
       cost = "9 990₽",
       dateUnit = "в сутки",
-      amountForDaysName = "9 990₽ х 4 суток",
-      amountForDaysCurrency = "39 960₽",
-      discountName = "Сбор за услуги: скидка 2 179₽",
+      amountForDaysName = "9 990₽ х 4 суток",
+      amountForDaysCurrency = "39 960₽",
+      discountName = "Сбор за услуги: скидка 2 179₽",
       discountTooltip = "change me",
       discountCurrency = "0₽",
       priceOfServicesName = "Сбор за дополнительные услуги",
       priceOfServicesTooltip = "change me",
       priceOfServicesCurrency = "300₽",
-      totalValue = "38 081₽",
+      totalValue = "38 081₽",
     } = options || {}
 
 
@@ -65,17 +65,13 @@ mixin booking-form(options)
       .booking-form__discount
         .booking-form__result-name-service= discountName
         .booking-form__result-info
-          span.booking-form__info-icon(
-            data-tooltip=discountTooltip
-          )
+          span.booking-form__info-icon(data-tooltip=discountTooltip)
             +icon({ icon: 'info_outline' })
         .booking-form__result-currency= discountCurrency
       .booking-form__price-of-services
         .booking-form__result-name-service= priceOfServicesName
         .booking-form__result-info
-          span.booking-form__info-icon(
-            data-tooltip=priceOfServicesTooltip
-          )
+          span.booking-form__info-icon(data-tooltip=priceOfServicesTooltip)
             +icon({ icon: 'info_outline' })
         .booking-form__result-currency= priceOfServicesCurrency
       .booking-form__total 

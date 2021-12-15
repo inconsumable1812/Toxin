@@ -6,9 +6,7 @@ mixin header(options)
   -
     const { menuLinkDefault } = require('../../components/header/default-link.json');
     const { menuLink = menuLinkDefault, auth = false } = options || {};
-    let classLink = 'header__link';
-    let classSubMenu = 'header__sub-menu';
-    let classSubLink = 'header__link header__sub-link';
+    const classSubLink = 'header__link header__sub-link';
     let classUser = 'header__user-menu';
 
   .header.js-header
