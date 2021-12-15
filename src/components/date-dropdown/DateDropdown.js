@@ -13,14 +13,17 @@ const CELL_CLASS = 'datepicker--cell';
 const NAV_ACTION_CLASS = 'datepicker--nav-action';
 const NAV_TITLE_CLASS = 'datepicker--nav-title';
 const DISABLED_CLASS = 'js-date-dropdown__calendar_disabled';
+const APPLY_BUTTON_CLASS = 'js-datepicker--button_apply';
 
 export default class DateDropdown {
+  $applyButton = null;
+
+  $dropdownBoxes = null;
+
+  $datePicker = null;
+
   constructor(dropdown) {
     this.$dropdown = $(dropdown);
-    this.$buttonContainers = null;
-    this.$applyButton = null;
-    this.$dropdownBoxes = null;
-    this.$datePicker = null;
 
     this.init();
   }
@@ -47,7 +50,6 @@ export default class DateDropdown {
 
     this.$datePicker = this.$dropdown.find(`.${CONTENT_CLASS}`);
 
-    this.createApplyButton();
     this.bindEventListeners();
   }
 
@@ -55,24 +57,12 @@ export default class DateDropdown {
     return this.$dropdown.hasClass(SINGLE_CLASS);
   }
 
-  findButtonContainer() {
-    this.$buttonContainers = this.$dropdown.find('.datepicker--buttons');
-  }
-
   findDropdownBoxes() {
     this.$dropdownBoxes = this.$dropdown.find(`.${BOX_CLASS}`);
   }
 
-  createApplyButton() {
-    this.findButtonContainer();
-    const applyButton = `<span class="datepicker--button_apply" data-action="apply">Применить</span>`;
-    this.$buttonContainers.append(applyButton);
-    this.$applyButton = this.$buttonContainers.find(
-      '.datepicker--button_apply'
-    );
-  }
-
   bindEventListeners() {
+    this.$applyButton = this.$dropdown.find(`.${APPLY_BUTTON_CLASS}`);
     this.$applyButton.on('click', this.applyButtonCallback);
     this.findDropdownBoxes();
     this.$dropdownBoxes.each((_, dropdownBox) =>

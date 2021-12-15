@@ -1,6 +1,8 @@
 import 'air-datepicker';
 
 export default class Datepicker {
+  $buttonContainers = null;
+
   constructor(containerClass, $dropdown, $dateFrom, $dateTo = null) {
     this.containerClass = containerClass;
     this.$dropdown = $dropdown;
@@ -8,6 +10,7 @@ export default class Datepicker {
     this.$dateTo = $dateTo;
 
     this.createDatepicker();
+    this.createApplyButton();
   }
 
   createDatepicker() {
@@ -36,5 +39,15 @@ export default class Datepicker {
     });
 
     return this.$dt;
+  }
+
+  findButtonContainer() {
+    this.$buttonContainers = this.$dropdown.find('.datepicker--buttons');
+  }
+
+  createApplyButton() {
+    this.findButtonContainer();
+    const applyButton = `<span class="datepicker--button_apply js-datepicker--button_apply" data-action="apply">Применить</span>`;
+    this.$buttonContainers.append(applyButton);
   }
 }
