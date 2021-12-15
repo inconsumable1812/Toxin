@@ -34,7 +34,9 @@
 
   &__icon {
     grid-area: icon;
-    color: $color-main;
+    color: transparent;
+    background-image: $grad-main;
+    background-clip: text;
     font-size: $font-icon;
   }
 }
