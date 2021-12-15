@@ -5,9 +5,14 @@ mixin checkbox(options)
     .checkbox__header= header
     ul.checkbox__list 
       each row in rows
-        - const { name, title } = row;
+        - const { name, title, isChecked = false } = row;
         li.checkbox__item
           label.checkbox__label 
-            input.checkbox__input(type="checkbox", name=name)
+            input&attributes({
+              class: "checkbox__input",
+              type: "checkbox",
+              name: name,
+              checked: isChecked,
+            })
             span.checkbox__checkbox
             span.checkbox__title= title

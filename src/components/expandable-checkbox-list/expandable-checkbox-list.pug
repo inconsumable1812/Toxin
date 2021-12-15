@@ -18,9 +18,14 @@ mixin expandable-checkbox-list(options)
     ul(class=listClass)
       if rows
         each row in rows
-          - const { name, title } = row;
+          - const { name, title, isChecked = false } = row;
           li.expandable-checkbox-list__item
             label.expandable-checkbox-list__label
-              input.expandable-checkbox-list__input(type="checkbox", name=name)
+              input&attributes({
+                class: "expandable-checkbox-list__input",
+                type: "checkbox",
+                name: name,
+                checked: isChecked,
+              })
               span.expandable-checkbox-list__checkbox
               span.expandable-checkbox-list__title= title
