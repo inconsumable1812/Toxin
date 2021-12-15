@@ -13,10 +13,10 @@ mixin dropdown(options)
       rows =[] 
     } = options || {}
 
-    const dropdownClass = 'dropdown dropdown__type_' + type;
+    const dropdownClass = `dropdown dropdown__type_${type}`;
     const JSClass = type === 'date' 
-      ? ' js-dropdown__type_' + type 
-      : ' js-dropdown js-dropdown__type_' + type;
+      ? ` js-dropdown__type_${type}` 
+      : ` js-dropdown js-dropdown__type_${type}`;
     let listClass = 'dropdown__list js-dropdown__list';
     listClass += isExpanded ? 
       ' dropdown__list_expanded js-dropdown__list_expanded' 
@@ -27,12 +27,12 @@ mixin dropdown(options)
       span.dropdown__title= title
     if hint
       span.dropdown__hint= hint
-    .dropdown__box(class='js-dropdown__box dropdown__box_' + type)
+    .dropdown__box(class=`js-dropdown__box dropdown__box_${type}`)
       input.dropdown__input(
         name=name,
         placeholder=placeholder,
         readonly="readonly",
-        class='js-dropdown__input dropdown__input_' + type
+        class=`js-dropdown__input dropdown__input_${type}`
       )
       button.dropdown__button-icon(type="button")
         +icon({ icon: 'expand_more' })
@@ -41,10 +41,10 @@ mixin dropdown(options)
           if rows
             each row in rows
               - const { typeOfCount, text, count } = row;
-              - const listItemClass = 'dropdown__list-item_' + typeOfCount;
-              - const JSListItemClass = ' js-' + listItemClass;
+              - const listItemClass = `dropdown__list-item_${typeOfCount}`;
+              - const JSListItemClass = ` js-${listItemClass}`;
               li.dropdown__list-item(
-                class=listItemClass + JSListItemClass + ' js-dropdown__list-item'
+                class=`${listItemClass}${JSListItemClass} js-dropdown__list-item`
               )
                 .dropdown__item-name= text
                 .dropdown__counter-buttons
@@ -59,7 +59,7 @@ mixin dropdown(options)
                       : '';
                   button(class=minusButtonClass, type="button")= '-'
                   span.dropdown__counter(
-                    class=' js-dropdown__counter js-dropdown__counter_' + typeOfCount
+                    class=` js-dropdown__counter js-dropdown__counter_${typeOfCount}`
                   )= count
                   button.dropdown__counter-button-plus.js-dropdown__counter-button-plus(
                     type="button"
