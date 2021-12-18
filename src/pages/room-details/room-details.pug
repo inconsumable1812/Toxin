@@ -14,19 +14,19 @@ block main
     .room-details__box-image 
       //- prettier-ignore
       img.room-details__image(
-        src=require('./img/room-details_1.png').default,
+        src=require('../../assets/img/rooms/for-room-details/room-1-for-room-details.png').default,
         alt= "1 фото номера",
       )
     .room-details__box-image 
       //- prettier-ignore 
       img.room-details__image(
-        src=require('./img/room-details_2.png').default,
+        src=require('../../assets/img/rooms/for-room-details/room-2-for-room-details.png').default,
         alt= "2 фото номера",
       )
     .room-details__box-image
       //- prettier-ignore 
       img.room-details__image(
-        src=require('./img/room-details_3.png').default,
+        src=require('../../assets/img/rooms/for-room-details/room-3-for-room-details.png').default,
         alt= "3 фото номера"
       )
   .room-details__container 
@@ -62,7 +62,7 @@ block main
           .room-details__reviews-item
             //- prettier-ignore
             +feedback({ 
-              src: require('../../assets/img/murad.png').default, 
+              src: require('../../assets/img/reviews/murad.jpg').default, 
               name: 'Мурад Сарафанов', 
               date: '5 дней назад',
               text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.' 
@@ -70,7 +70,7 @@ block main
           .room-details__reviews-item
             //- prettier-ignore
             +feedback({ 
-              src: require('../../assets/img/patricia.png').default, 
+              src: require('../../assets/img/reviews/patricia.jpg').default, 
               name: 'Патрисия Стёклышкова', date: 'Неделю назад', 
               count:'2', 
               isPressed: false, 
