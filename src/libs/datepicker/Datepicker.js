@@ -1,5 +1,10 @@
 import 'air-datepicker';
 
+const CELL_CLASS = 'datepicker--cell';
+const BUTTONS_CLASS = 'datepicker--buttons';
+const NAV_ACTION_CLASS = 'datepicker--nav-action';
+const NAV_TITLE_CLASS = 'datepicker--nav-title';
+
 export default class Datepicker {
   $buttonContainers = null;
 
@@ -11,6 +16,14 @@ export default class Datepicker {
 
     this.createDatepicker();
     this.createApplyButton();
+  }
+
+  static isShouldCloseWhenClick(event) {
+    return (
+      event.target.closest(`.${CELL_CLASS}`) === null &&
+      event.target.closest(`.${NAV_ACTION_CLASS}`) === null &&
+      event.target.closest(`.${NAV_TITLE_CLASS}`) === null
+    );
   }
 
   createDatepicker() {
@@ -42,7 +55,7 @@ export default class Datepicker {
   }
 
   findButtonContainer() {
-    this.$buttonContainers = this.$dropdown.find('.datepicker--buttons');
+    this.$buttonContainers = this.$dropdown.find(`.${BUTTONS_CLASS}`);
   }
 
   createApplyButton() {

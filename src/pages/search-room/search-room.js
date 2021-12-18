@@ -6,6 +6,7 @@ import '../../components/header/Header-init';
 import '../../components/date-dropdown/DateDropdown-init';
 import '../../components/dropdown/Dropdown-init';
 import './search-room.scss';
+import Datepicker from '../../libs/datepicker/Datepicker';
 
 const BUTTON_OPEN = 'js-search-room__button-open';
 const BUTTON = 'js-button';
@@ -14,9 +15,6 @@ const FILTER = 'js-search-room__filter';
 const FILTER_EXPANDED = 'js-search-room__filter_expanded';
 const CSS_FILTER_EXPANDED = 'search-room__filter_expanded';
 const DATE_DROPDOWN_CLASS = 'js-date-dropdown';
-const CELL_CLASS = 'datepicker--cell';
-const NAV_ACTION_CLASS = 'datepicker--nav-action';
-const NAV_TITLE_CLASS = 'datepicker--nav-title';
 
 const openButton = document
   .querySelector(`.${BUTTON_OPEN}`)
@@ -43,9 +41,7 @@ function isClickOnDocument(e, clickOnFilter, clickOnOpenButton) {
     !clickOnFilter &&
     clickOnOpenButton !== openButton &&
     e.target.closest(`.${DATE_DROPDOWN_CLASS}`) === null &&
-    e.target.closest(`.${CELL_CLASS}`) === null &&
-    e.target.closest(`.${NAV_ACTION_CLASS}`) === null &&
-    e.target.closest(`.${NAV_TITLE_CLASS}`) === null
+    Datepicker.isShouldCloseWhenClick(e)
   );
 }
 

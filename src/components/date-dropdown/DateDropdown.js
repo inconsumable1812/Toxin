@@ -9,9 +9,6 @@ const BOX_CLASS = 'js-date-dropdown__dropdown-box';
 const EXPANDED_CLASS = 'js-date-dropdown__calendar_content_expanded';
 const CSS_EXPANDED_CLASS = 'date-dropdown__calendar_content_expanded';
 const DATE_DROPDOWN_CLASS = 'js-date-dropdown';
-const CELL_CLASS = 'datepicker--cell';
-const NAV_ACTION_CLASS = 'datepicker--nav-action';
-const NAV_TITLE_CLASS = 'datepicker--nav-title';
 const DISABLED_CLASS = 'js-date-dropdown__calendar_disabled';
 const APPLY_BUTTON_CLASS = 'js-datepicker--button_apply';
 
@@ -97,9 +94,7 @@ export default class DateDropdown {
   isClickBeyondBorderCalendar(event, listIsExpanded, isDisabled) {
     return (
       event.target.closest(`.${DATE_DROPDOWN_CLASS}`) === null &&
-      event.target.closest(`.${CELL_CLASS}`) === null &&
-      event.target.closest(`.${NAV_ACTION_CLASS}`) === null &&
-      event.target.closest(`.${NAV_TITLE_CLASS}`) === null &&
+      Datepicker.isShouldCloseWhenClick(event) &&
       listIsExpanded &&
       !isDisabled
     );
