@@ -24,7 +24,7 @@ function checkForZero(number, arrayName) {
   return '';
 }
 
-function checkEndingInRoomToInputs(bedrooms, beds, bathrooms) {
+function checkEndingInRoomToInputs({ bedrooms, beds, bathrooms }) {
   const value = `${bedrooms}${beds}${bathrooms}`;
   if (value.slice(-2, -1) === ',') {
     return value.slice(0, -2);
@@ -75,22 +75,22 @@ function enabledMinusButtonIfBiggerZero(count, button) {
   return null;
 }
 
-function isGuestsAreNot(adult, children, baby) {
+function isGuestsAreNot({ adult, children, baby }) {
   return adult === 0 && children === 0 && baby === 0;
 }
 
-function hideClearButton(adult, children, baby, button) {
-  if (isGuestsAreNot(adult, children, baby)) {
+function hideClearButton({ adult, children, baby, button }) {
+  if (isGuestsAreNot({ adult, children, baby })) {
     button.classList.add(CLEAR_BUTTON_HIDE);
   }
 }
 
-function isGuestsAre(adult, children, baby) {
+function isGuestsAre({ adult, children, baby }) {
   return adult > 0 || children > 0 || baby > 0;
 }
 
-function showClearButton(adult, children, baby, button) {
-  if (isGuestsAre(adult, children, baby)) {
+function showClearButton({ adult, children, baby, button }) {
+  if (isGuestsAre({ adult, children, baby })) {
     button.classList.remove(CLEAR_BUTTON_HIDE);
   }
 }

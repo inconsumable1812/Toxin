@@ -115,12 +115,12 @@ export default class Dropdown {
       this.initCountOfChildren();
       this.initCountOfBaby();
       this.input.placeholder = this.sendingGuestsToInput();
-      hideClearButton(
-        this.countOfAdult,
-        this.countOfChildren,
-        this.countOfBaby,
-        this.clearButton
-      );
+      hideClearButton({
+        adult: this.countOfAdult,
+        children: this.countOfChildren,
+        baby: this.countOfBaby,
+        button: this.clearButton,
+      });
     } else {
       this.initCountOfBedrooms();
       this.initCountOfBeds();
@@ -208,12 +208,12 @@ export default class Dropdown {
         disabledMinusButtonIfLessUnit(this.countOfBaby, button);
         enabledPlusButtonIfLessUnit(this.countOfBaby, plusButton);
       }
-      hideClearButton(
-        this.countOfAdult,
-        this.countOfChildren,
-        this.countOfBaby,
-        this.clearButton
-      );
+      hideClearButton({
+        adult: this.countOfAdult,
+        children: this.countOfChildren,
+        baby: this.countOfBaby,
+        button: this.clearButton,
+      });
 
       this.input.placeholder = this.sendingGuestsToInput();
     } else {
@@ -261,12 +261,12 @@ export default class Dropdown {
         enabledMinusButtonIfBiggerZero(this.countOfBaby, minusButton);
         disabledPlusButtonIfBiggerUnit(this.countOfBaby, plusButton);
       }
-      showClearButton(
-        this.countOfAdult,
-        this.countOfChildren,
-        this.countOfBaby,
-        this.clearButton
-      );
+      showClearButton({
+        adult: this.countOfAdult,
+        children: this.countOfChildren,
+        baby: this.countOfBaby,
+        button: this.clearButton,
+      });
 
       this.input.placeholder = this.sendingGuestsToInput();
     } else {
@@ -294,11 +294,11 @@ export default class Dropdown {
     const nameOfBedrooms = createNameOfRooms(this.countOfBedrooms, BEDROOMS);
     const nameOfBeds = createNameOfRooms(this.countOfBeds, BEDS);
     const nameOfBathrooms = createNameOfRooms(this.countOfBathrooms, BATHROOMS);
-    const nameOfRooms = checkEndingInRoomToInputs(
-      nameOfBedrooms,
-      nameOfBeds,
-      nameOfBathrooms
-    );
+    const nameOfRooms = checkEndingInRoomToInputs({
+      bedrooms: nameOfBedrooms,
+      beds: nameOfBeds,
+      bathrooms: nameOfBathrooms,
+    });
     if (nameOfRooms === '') {
       return 'Количество комнат';
     }

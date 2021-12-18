@@ -36,7 +36,7 @@ const closeButtonCallback = () => {
 };
 closeButton.addEventListener('click', closeButtonCallback);
 
-function isClickOnDocument(e, clickOnFilter, clickOnOpenButton) {
+function isClickOnDocument({ e, clickOnFilter, clickOnOpenButton }) {
   return (
     !clickOnFilter &&
     clickOnOpenButton !== openButton &&
@@ -49,7 +49,7 @@ const documentCallback = (e) => {
   const clickOnFilter = e.target.closest(`.${FILTER_EXPANDED}`);
   const clickOnOpenButton = e.target.closest(`.${BUTTON}`);
 
-  if (isClickOnDocument(e, clickOnFilter, clickOnOpenButton)) {
+  if (isClickOnDocument({ e, clickOnFilter, clickOnOpenButton })) {
     filter.classList.remove(CSS_FILTER_EXPANDED, FILTER_EXPANDED);
   }
 };

@@ -91,7 +91,7 @@ export default class DateDropdown {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  isClickBeyondBorderCalendar(event, listIsExpanded, isDisabled) {
+  isClickBeyondBorderCalendar({ event, listIsExpanded, isDisabled }) {
     return (
       event.target.closest(`.${DATE_DROPDOWN_CLASS}`) === null &&
       Datepicker.isShouldCloseWhenClick(event) &&
@@ -105,7 +105,9 @@ export default class DateDropdown {
     const listIsExpanded = this.$datePicker.hasClass(EXPANDED_CLASS);
     const isDisabled = this.$datePicker.hasClass(DISABLED_CLASS);
 
-    if (this.isClickBeyondBorderCalendar(event, listIsExpanded, isDisabled)) {
+    if (
+      this.isClickBeyondBorderCalendar({ event, listIsExpanded, isDisabled })
+    ) {
       this.$datePicker[0].classList.remove(EXPANDED_CLASS, CSS_EXPANDED_CLASS);
     }
   }
