@@ -5,8 +5,8 @@ import '../../components/image-slider/ImageSlider-init';
 import '../../components/header/Header-init';
 import '../../components/date-dropdown/DateDropdown-init';
 import '../../components/dropdown/Dropdown-init';
-import './search-room.scss';
 import Datepicker from '../../libs/datepicker/Datepicker';
+import './search-room.scss';
 
 const BUTTON_OPEN = 'js-search-room__button-open';
 const BUTTON = 'js-button';
