@@ -32,6 +32,11 @@
     max-width: 84%;
     margin: 0 auto;
     padding: 0 1.6rem;
+
+    @include _480 {
+      max-width: 94%;
+      padding: 0 1.1rem;
+    }
   }
 
   &__section {

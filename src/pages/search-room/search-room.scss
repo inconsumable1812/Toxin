@@ -35,6 +35,10 @@
     @include _992 {
       display: block;
     }
+
+    @include _480 {
+      max-width: 94%;
+    }
   }
 
   &__button-open {
@@ -150,8 +154,8 @@
 
     @include _600 {
       grid-column: span 1;
-      padding-left: 0;
-      justify-self: center;
+      justify-content: center;
+      display: flex;
     }
   }
 
