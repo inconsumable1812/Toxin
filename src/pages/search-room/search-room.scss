@@ -24,14 +24,12 @@
   }
 
   &__container {
-    max-width: 75.5rem;
+    max-width: 84%;
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 1.58rem 0.4rem 4.3rem;
     display: grid;
     grid-template-columns: 16.625rem 1fr;
     column-gap: 3.8rem;
-    padding-top: 1.58rem;
-    padding-bottom: 4.3rem;
     border-bottom: 1px solid $color-font-25;
 
     @include _992 {

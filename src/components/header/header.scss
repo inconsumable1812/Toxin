@@ -10,8 +10,13 @@
 
   &__container {
     max-width: 75.5rem;
+    max-width: 83.9%;
     margin: 0 auto;
     padding: $header-padding;
+
+    @include _1200 {
+      max-width: none;
+    }
   }
 
   &__link-li {

@@ -10,7 +10,7 @@
   box-shadow: $header-shadow;
 
   &__container {
-    max-width: 75.5rem;
+    max-width: 84%;
     margin: 0 auto;
     padding: $header-padding;
   }
@@ -135,7 +135,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 1.35rem;
+    padding-top: 1.5rem;
     padding-bottom: 1.45rem;
 
     @include _768 {

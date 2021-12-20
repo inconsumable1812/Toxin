@@ -11,6 +11,7 @@
   box-shadow: $form-shadow;
   padding: $form-padding;
   border-radius: 0.25rem;
+  max-width: 23.75rem;
 
   &__header {
     display: flex;

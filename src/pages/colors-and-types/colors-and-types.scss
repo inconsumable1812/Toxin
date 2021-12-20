@@ -6,8 +6,7 @@
 .colors-and-types {
   &__nav {
     margin: 0 auto;
-    width: 100%;
-    max-width: 88.3125rem;
+    max-width: 98%;
     display: flex;
     padding: 1.775rem 1rem;
     margin-bottom: 2.3rem;
@@ -16,6 +15,7 @@
   &__main {
     margin: 0 auto;
     max-width: 87.3125rem;
+    max-width: 97%;
     display: grid;
     grid-template-columns: 16.875rem 28rem;
     grid-column-gap: 39.5%;

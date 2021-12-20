@@ -9,6 +9,7 @@
   box-shadow: $form-shadow;
   padding: $login-padding;
   border-radius: 0.25rem;
+  max-width: 23.75rem;
 
   &__title {
     @include font-h1;
