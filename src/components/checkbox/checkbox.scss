@@ -45,7 +45,7 @@
 
         &:checked + .checkbox__checkbox {
           border: 0.0625rem solid $color-main;
-          background: url('./img/Vector.svg') no-repeat 50% 38%;
+          background: url('./img/vector.svg') no-repeat 50% 38%;
         }
 
         &:focus + .checkbox__checkbox,

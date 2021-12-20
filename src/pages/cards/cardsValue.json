@@ -12,19 +12,19 @@
         "feedbackText": "Отзывов",
         "rows": [
           {
-            "src": "img/room-1-for-search-room.png",
+            "src": "img/room-1-for-search-room.jpg",
             "alt": "1 фото номера"
           },
           {
-            "src": "img/room-2-for-search-room.png",
+            "src": "img/room-2-for-search-room.jpg",
             "alt": "2 фото номера"
           },
           {
-            "src": "img/room-3-for-search-room.png",
+            "src": "img/room-3-for-search-room.jpg",
             "alt": "3 фото номера"
           },
           {
-            "src": "img/room-4-for-search-room.png",
+            "src": "img/room-4-for-search-room.jpg",
             "alt": "4 фото номера"
           }
         ]
@@ -43,19 +43,19 @@
         "feedbackText": "Отзывов",
         "rows": [
           {
-            "src": "img/room-2-for-search-room.png",
+            "src": "img/room-2-for-search-room.jpg",
             "alt": "1 фото номера"
           },
           {
-            "src": "img/room-5-for-search-room.png",
+            "src": "img/room-5-for-search-room.jpg",
             "alt": "2 фото номера"
           },
           {
-            "src": "img/room-8-for-search-room.png",
+            "src": "img/room-8-for-search-room.jpg",
             "alt": "3 фото номера"
           },
           {
-            "src": "img/room-11-for-search-room.png",
+            "src": "img/room-11-for-search-room.jpg",
             "alt": "4 фото номера"
           }
         ]
