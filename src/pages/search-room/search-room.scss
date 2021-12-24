@@ -24,13 +24,17 @@
   }
 
   &__container {
-    max-width: 81.6%;
+    max-width: 81.5%;
     margin: 0 auto;
     padding: 1.58rem 0.4rem 4.3rem;
     display: grid;
-    grid-template-columns: 16.625rem 1fr;
-    column-gap: 3.8rem;
+    grid-template-columns: 22.8% 72%;
+    column-gap: 5.2%;
     border-bottom: 1px solid $color-font-25;
+
+    @include _1200 {
+      grid-template-columns: 13.75rem 1fr;
+    }
 
     @include _992 {
       display: block;
@@ -52,6 +56,8 @@
   }
 
   &__filter {
+    max-width: 265px;
+
     @include _992 {
       position: fixed;
       top: 0;
@@ -126,7 +132,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 0.75rem;
-    row-gap: 1.22rem;
+    row-gap: 1.2rem;
 
     @include _1200 {
       grid-template-columns: 1fr 1fr;
