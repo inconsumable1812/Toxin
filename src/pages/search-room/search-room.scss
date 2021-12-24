@@ -139,6 +139,10 @@
 
   &__room-sketch-item {
     list-style: none;
+
+    @include _600 {
+      margin-bottom: 1rem;
+    }
   }
 
   &__pagination {

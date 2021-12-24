@@ -79,6 +79,7 @@
     grid-area: link;
     grid-template-columns: repeat(3, auto);
     justify-content: space-between;
+    column-gap: 10px;
 
     @include _768 {
       display: none;

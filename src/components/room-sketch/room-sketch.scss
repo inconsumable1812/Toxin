@@ -25,6 +25,7 @@
     border-bottom: 1px solid $color-font-10;
     padding-top: 0.08rem;
     margin-top: 1px;
+    column-gap: 10px;
   }
 
   &__number-symbol {
@@ -71,6 +72,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 0.475rem;
+    column-gap: 10px;
   }
 
   &__feedback-number {

@@ -45,7 +45,8 @@
 
       position: absolute;
       content: '';
-      top: 0.1625rem;
+      top: 50%;
+      transform: translateY(-50%);
       left: 0.18rem;
       width: $size;
       height: $size;
@@ -59,13 +60,13 @@
     position: absolute;
 
     &:checked + .toggle__checkbox::before {
-      transform: translateX(20px);
+      transform: translateX(20px) translateY(-50%);
       background: $grad-main;
       transition: transform 0.25s ease-in-out;
     }
 
     &:not(:checked) + .toggle__checkbox::before {
-      transform: translateX(0);
+      transform: translateX(0) translateY(-50%);
       transition: transform 0.25s ease-in-out;
     }
 
