@@ -36,6 +36,10 @@
         font-weight: bold;
         color: black;
 
+        @include _400 {
+          font-size: 1rem;
+        }
+
         i {
           color: black;
         }
@@ -220,6 +224,10 @@
         font-family: Montserrat, Arial, sans-serif;
         font-weight: bold;
         color: black;
+
+        @include _400 {
+          font-size: 1rem;
+        }
 
         i {
           color: black;
