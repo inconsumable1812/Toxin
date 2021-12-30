@@ -77,6 +77,16 @@ export default class Header {
   }
 
   subMenuCallback = (event) => {
+    const anybodyIsExpanded = document.querySelectorAll(
+      `.${SUB_MENU_EXPANDED}`
+    );
+
+    const subMenus = this.subMenus;
+    if (anybodyIsExpanded) {
+      subMenus.forEach((subMenu) =>
+        subMenu.classList.remove(CSS_SUB_MENU_EXPANDED, SUB_MENU_EXPANDED)
+      );
+    }
     const subMenu = event.target.closest(`.${SUB_MENU_CLASS}`);
     if (subMenu.classList.contains(CSS_SUB_MENU_EXPANDED, SUB_MENU_EXPANDED)) {
       subMenu.classList.remove(CSS_SUB_MENU_EXPANDED, SUB_MENU_EXPANDED);
