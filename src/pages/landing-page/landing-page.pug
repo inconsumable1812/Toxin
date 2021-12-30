@@ -2,31 +2,30 @@ extends ../../layout/pages.pug
 include ../../components/room-search/room-search.pug
 include ../../components/image-slider/image-slider.pug
 
-block variables
-  - pageClass = 'landing';
-
 block main
-  //- prettier-ignore 
-  +image-slider({ 
-    isInterval: true,
-    isLandingPage: true, 
-    rows: [
-      {
-        src: require('../../assets/img/rooms/for-landing/room-1-for-landing-page.jpg').default, 
-        alt: '1 фото номера'
-      },
-      {
-        src: require('../../assets/img/rooms/for-landing/room-2-for-landing-page.jpg').default, 
-        alt: '2 фото номера'
-      },
-      {
-        src: require('../../assets/img/rooms/for-landing/room-3-for-landing-page.jpg').default, 
-        alt: '3 фото номера'
-      },
-    ]
-  })
-  .landing__container 
-    .landing__room-search
-      +room-search
-    .landing__slogan
-      span.landing__slogan-text= 'Лучшие номера для вашей работы, отдыха и просто вдохновения'
+  .landing
+    //- prettier-ignore 
+    .landing__slider
+      +image-slider({ 
+        isInterval: true,
+        isLandingPage: true, 
+        rows: [
+          {
+            src: require('../../assets/img/rooms/for-landing/room-1-for-landing-page.jpg').default, 
+            alt: '1 фото номера'
+          },
+          {
+            src: require('../../assets/img/rooms/for-landing/room-2-for-landing-page.jpg').default, 
+            alt: '2 фото номера'
+          },
+          {
+            src: require('../../assets/img/rooms/for-landing/room-3-for-landing-page.jpg').default, 
+            alt: '3 фото номера'
+          },
+        ]
+      })
+    .landing__container 
+      .landing__room-search
+        +room-search
+      .landing__slogan
+        span.landing__slogan-text= 'Лучшие номера для вашей работы, отдыха и просто вдохновения'

@@ -4,20 +4,9 @@
 @import '../../components/room-search/room-search';
 @import '../../components/image-slider/image-slider';
 @import '../../components/header/header';
+@import '../../layout/pages';
 
 .landing {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-
-  &__main {
-    flex: 1 0 auto;
-  }
-
-  &__footer {
-    flex: 0 0 auto;
-  }
-
   &__container {
     max-width: 75.875rem;
     margin: 0 auto;

@@ -3,25 +3,23 @@ extends ../../layout/pages.pug
 include ../../components/image-slider/image-slider.pug
 include ../../components/login-form/login-form.pug
 
-block variables
-  - pageClass = 'sign-in';
-
 block main
-  .sign-in__slider
-    //- prettier-ignore
-    +image-slider({ 
-      isInterval: true, 
-      isSignInPage: true, 
-      rows: [
-        {
-          src: require('../../assets/img/rooms/for-registration-or-sign-in/room-1-for-registration-or-sign-in.jpg').default, 
-          alt: '1 фото номера'
-        },
-        {
-          src: require('../../assets/img/rooms/for-registration-or-sign-in/room-2-for-registration-or-sign-in.jpg').default, 
-          alt: '2 фото номера'
-        },
-      ]
-    })
-  .sign-in__form 
-    +login-form
+  .sign-in
+    .sign-in__slider
+      //- prettier-ignore
+      +image-slider({ 
+        isInterval: true, 
+        isSignInPage: true, 
+        rows: [
+          {
+            src: require('../../assets/img/rooms/for-registration-or-sign-in/room-1-for-registration-or-sign-in.jpg').default, 
+            alt: '1 фото номера'
+          },
+          {
+            src: require('../../assets/img/rooms/for-registration-or-sign-in/room-2-for-registration-or-sign-in.jpg').default, 
+            alt: '2 фото номера'
+          },
+        ]
+      })
+    .sign-in__form 
+      +login-form

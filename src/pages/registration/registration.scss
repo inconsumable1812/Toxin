@@ -4,24 +4,13 @@
 @import '../../components/image-slider/image-slider';
 @import '../../components/registration-form/registration-form';
 @import '../../components/header/header';
+@import '../../layout/pages';
 
 .registration {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-
   &__slider {
     position: absolute;
     z-index: -1;
     width: 100%;
-  }
-
-  &__main {
-    flex: 1 0 auto;
-  }
-
-  &__footer {
-    flex: 0 0 auto;
   }
 
   &__form-element {

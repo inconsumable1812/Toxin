@@ -4,10 +4,10 @@ include ../components/header/header.pug
 include ../components/footer/footer.pug
 
 block content
-  div(class=pageClass)
-    header(class=headerClass)
+  .pages
+    header.pages__header
       +header
-    main(class=mainClass)
+    main.pages__main
       block main
-    footer(class=footerClass)
+    footer.pages__footer
       +footer

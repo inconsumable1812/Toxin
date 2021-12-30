@@ -12,16 +12,10 @@
 @import '../../components/button/button';
 @import '../../components/header/header';
 @import '../../components/icon/icon';
+@import '../../layout/pages';
 
 .search-room {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
   overflow: hidden;
-
-  &__main {
-    flex: 1 0 auto;
-  }
 
   &__container {
     max-width: 81.5%;
@@ -161,9 +155,5 @@
       justify-content: center;
       display: flex;
     }
-  }
-
-  &__footer {
-    flex: 0 0 auto;
   }
 }

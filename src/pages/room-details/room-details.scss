@@ -7,24 +7,10 @@
 @import '../../components/chart/chart';
 @import '../../components/booking-form/booking-form';
 @import '../../components/header/header';
+@import '../../layout/pages';
 
 .room-details {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
   overflow: hidden;
-
-  &__header {
-    margin-top: 0.2rem;
-  }
-
-  &__main {
-    flex: 1 0 auto;
-  }
-
-  &__footer {
-    flex: 0 0 auto;
-  }
 
   &__container {
     max-width: 84%;

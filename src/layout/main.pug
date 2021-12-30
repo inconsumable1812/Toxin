@@ -32,11 +32,7 @@ html(lang="ru")
     )
     meta(name="msapplication-TileColor", content="#da532c")
     meta(name="theme-color", content="#ffffff")
-    title= title ? `Официальный сайт отеля Toxin | ${title}` : 'Официальный сайт отеля Toxin'
+    title= title ? `${title}` : 'Официальный сайт отеля Toxin'
 
-  - pageClass = pageClass ? `${pageClass}` : '';
-  - headerClass = pageClass ? `${pageClass}__header` : '';
-  - mainClass = pageClass ? `${pageClass}__main` : '';
-  - footerClass = pageClass ? `${pageClass}__footer` : '';
   body
     block content
