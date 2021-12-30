@@ -9,10 +9,21 @@
 @import '../../components/header/header';
 
 .room-details {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   overflow: hidden;
 
   &__header {
     margin-top: 0.2rem;
+  }
+
+  &__main {
+    flex: 1 0 auto;
+  }
+
+  &__footer {
+    flex: 0 0 auto;
   }
 
   &__container {

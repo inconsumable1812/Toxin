@@ -6,6 +6,10 @@
 @import '../../components/header/header';
 
 .sign-in {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+
   &__slider {
     position: absolute;
     z-index: -1;
@@ -14,6 +18,7 @@
 
   &__main {
     margin-bottom: 2px;
+    flex: 1 0 auto;
   }
 
   &__form {
@@ -24,5 +29,9 @@
     @include _480 {
       padding: 10.125rem 0.5rem;
     }
+  }
+
+  &__footer {
+    flex: 0 0 auto;
   }
 }
