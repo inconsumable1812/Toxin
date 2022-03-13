@@ -3,7 +3,7 @@ mixin toggle(options)
 
   .toggle
     if header
-      .toggle__header= header
+      h3.toggle__header= header
     ul.toggle__list
       each row in rows
         - const { name, caption, isChecked = false } = row;

@@ -9,7 +9,7 @@ mixin header(options)
     const classSubLink = 'header__link header__sub-link';
     let classUser = 'header__user-menu';
 
-  .header.js-header
+  header.header.js-header
     .header__container
       nav.header__navigation 
         .header__logo
@@ -38,7 +38,7 @@ mixin header(options)
                       each subLink in subMenu
                         - const { href, name } = subLink;
                         a(class=classSubLink, href=href)= name
-                    span.header__sub-menu-icon.js-header__sub-menu-icon
+                    .header__sub-menu-icon.js-header__sub-menu-icon
                       +icon({ icon: 'expand_more' })
           if !auth
             - classUser += ' header__user-menu_not-auth';

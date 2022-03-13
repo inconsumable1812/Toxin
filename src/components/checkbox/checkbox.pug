@@ -2,7 +2,7 @@ mixin checkbox(options)
   - const { header, rows = [] } = options || {};
 
   .checkbox
-    .checkbox__header= header
+    h3.checkbox__header= header
     ul.checkbox__list 
       each row in rows
         - const { name, title, isChecked = false } = row;

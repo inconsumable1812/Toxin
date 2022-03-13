@@ -3,10 +3,10 @@ mixin bullet-list(options)
 
   .bullet-list
     if header
-      .bullet-list__header= header
+      h3.bullet-list__header= header
     ul.bullet-list__list 
       each row in rows
         - const { text } = row;
         li.bullet-list__item
-          span.bullet-list__icon 
-          span.bullet-list__text= text
+          .bullet-list__icon 
+          p.bullet-list__text= text

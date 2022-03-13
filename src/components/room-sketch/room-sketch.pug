@@ -25,10 +25,10 @@ mixin room-sketch(options)
       a.room-sketch__link(href="./room-details.html")
         .room-sketch__header
           .room-sketch__number
-            span.room-sketch__number-symbol= '№'
-            span.room-sketch__number-value= roomNumber
+            p.room-sketch__number-symbol= '№'
+            h2.room-sketch__number-value= roomNumber
             if isVip
-              span.room-sketch__number-feature= 'люкс'
+              p.room-sketch__number-feature= 'люкс'
           .room-sketch__price-per-day
             span.room-sketch__cost= cost
             span.room-sketch__date-unit= 'в сутки'

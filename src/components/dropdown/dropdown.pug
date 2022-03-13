@@ -24,9 +24,9 @@ mixin dropdown(options)
 
   div(class=dropdownClass + JSClass)
     if title
-      span.dropdown__title= title
+      h3.dropdown__title= title
     if hint
-      span.dropdown__hint= hint
+      p.dropdown__hint= hint
     .dropdown__box(class=`js-dropdown__box dropdown__box_${type}`)
       input.dropdown__input(
         name=name,
@@ -46,7 +46,7 @@ mixin dropdown(options)
               li.dropdown__list-item(
                 class=`${listItemClass}${JSListItemClass} js-dropdown__list-item`
               )
-                .dropdown__item-name= text
+                h3.dropdown__item-name= text
                 .dropdown__counter-buttons
                   -
                     let minusButtonClass = 'dropdown__counter-button-minus js-dropdown__counter-button-minus';
@@ -58,7 +58,7 @@ mixin dropdown(options)
                       ? ' dropdown__clear-button_hidden' 
                       : '';
                   button(class=minusButtonClass, type="button")= '-'
-                  span.dropdown__counter(
+                  h3.dropdown__counter(
                     class=` js-dropdown__counter js-dropdown__counter_${typeOfCount}`
                   )= count
                   button.dropdown__counter-button-plus.js-dropdown__counter-button-plus(

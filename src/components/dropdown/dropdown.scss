@@ -14,6 +14,7 @@
   &__title {
     @include font-button;
 
+    display: inline;
     color: $color-font-100;
   }
 

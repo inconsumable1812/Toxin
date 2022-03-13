@@ -2,7 +2,7 @@ mixin rich-checkbox(options)
   - const { header, rows = [] } = options || {};
 
   .rich-checkbox
-    .rich-checkbox__header= header
+    h3.rich-checkbox__header= header
     ul.rich-checkbox__list
       each row in rows
         - const { name, title, subtitle } = row;

@@ -11,11 +11,11 @@ mixin feedback(options)
       isPressed = true 
     } = options || {};
 
-  .feedback 
+  article.feedback 
     img.feedback__img(src=src, alt="фото автора")
     .feedback__header
-      .feedback__author-name= name
-      .feedback__date= date
+      h3.feedback__author-name= name
+      p.feedback__date= date
     .feedback__like-button
       +like-button({ count: count, isPressed: isPressed })
-    span.feedback__text= text
+    p.feedback__text= text

@@ -5,9 +5,20 @@
 @import '../../components/button/button';
 @import '../../components/icon/icon';
 
+@mixin result-container-grid {
+  display: grid;
+  grid-template-columns: 67.5% 10% 22.5%;
+  column-gap: 0.2rem;
+}
+
+@mixin result-container-grid-end {
+  justify-self: end;
+  margin-right: 5px;
+}
+
 .booking-form {
   background: white;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 0.0625rem solid rgba(0, 0, 0, 0.12);
   box-shadow: $form-shadow;
   padding: $form-padding;
   border-radius: 0.25rem;
@@ -17,8 +28,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.05rem;
+    margin-bottom: 1.3rem;
     column-gap: 0.9375rem;
+  }
+
+  &__number {
+    display: flex;
+    align-items: baseline;
   }
 
   &__number-symbol {
@@ -44,6 +60,8 @@
 
   &__price-per-day {
     margin-top: 0.5rem;
+    display: flex;
+    align-items: baseline;
   }
 
   &__cost {
@@ -69,7 +87,7 @@
   }
 
   &__result-currency {
-    text-align: right;
+    @include result-container-grid-end;
   }
 
   &__result-name-service,
@@ -80,10 +98,9 @@
   }
 
   &__amount-for-days {
-    display: grid;
-    grid-template-columns: 67.19% 14.06% 18.75%;
+    @include result-container-grid;
+
     margin-bottom: 0.75rem;
-    column-gap: 0.5rem;
 
     .booking-form__result-currency {
       grid-column: span 2;
@@ -91,17 +108,15 @@
   }
 
   &__discount {
-    display: grid;
-    grid-template-columns: 67.19% 14.06% 18.75%;
+    @include result-container-grid;
+
     align-items: center;
-    margin-bottom: 0.6rem;
-    column-gap: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 
   &__info-icon {
     cursor: help;
     color: $color-font-25;
-    margin-left: 0.24rem;
     position: relative;
     font-size: $font-copyright-icon;
     display: inline-block;
@@ -109,18 +124,17 @@
     &::after {
       @include font-hint-875;
 
-      top: 0;
+      bottom: 2.1875rem;
       left: 1.5625rem;
       background: gray;
-      border-radius: 8px 8px 8px 0;
+      border-radius: 0.5rem 0.5rem 0.5rem 0;
       color: white;
       content: attr(
         data-tooltip
       ); /* Главная часть кода, определяющая содержимое всплывающей подсказки */
 
-      margin-top: -24px;
       opacity: 0; /* Наш элемент прозрачен... */
-      padding: 3px 7px;
+      padding: 0.1875rem 0.4375rem;
       position: absolute;
       visibility: hidden; /* ...и скрыт. */
       transition: all 0.4s ease-in-out; /* Добавить плавности по вкусу */
@@ -133,11 +147,10 @@
   }
 
   &__price-of-services {
-    display: grid;
-    grid-template-columns: 67.19% 14.06% 18.75%;
+    @include result-container-grid;
+
     align-items: flex-start;
-    margin-bottom: 1.9rem;
-    column-gap: 0.5rem;
+    margin-bottom: 2rem;
   }
 
   &__total {

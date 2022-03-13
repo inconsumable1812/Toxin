@@ -3,7 +3,7 @@ mixin radio-button(options)
 
   .radio-button
     if header
-      .radio-button__header= header
+      h3.radio-button__header= header
     .radio-button__group
       each row, i in rows
         - const { caption } = row;

@@ -16,7 +16,7 @@ mixin footer(options = {})
     let footerClass = 'footer';
     footerClass += isSmall ? ' footer_size_small' : '';
 
-  div(class=footerClass)
+  footer(class=footerClass)
     .footer__main-border
       .footer__container
         .footer__main-area 
@@ -27,7 +27,7 @@ mixin footer(options = {})
           .footer__navigation
             each item in menuLink
               - const { title } = item;
-              .footer__navigation-row
+              section.footer__navigation-row
                 h3.footer__navigation-title= title
                 ul.footer__navigation-list
                   each link in item.links

@@ -147,12 +147,12 @@ block content
               ]
             })
           .form-elements__like-buttons
-            .form-elements__like-buttons_title= 'like button'
+            h3.form-elements__like-buttons_title= 'like button'
             .form-elements__like-buttons_items
               +like-button({ count: '2' })
               +like-button({ count: '12', isPressed: true })
           .form-elements__rate-buttons
-            .form-elements__rate-buttons_title= 'rate button'
+            h3.form-elements__rate-buttons_title= 'rate button'
             .form-elements__rate-buttons-group
               +rate-button({ base: 5, rate: 4, name: 'rating', id: 'rating' })
               //- prettier-ignore
@@ -167,7 +167,7 @@ block content
           .form-elements__range-slider
             +range-slider({ title: 'Range Slider', min: '0', max: '16000' })
           .form-elements__buttons 
-            .form-elements__buttons-title= 'buttons'
+            h3.form-elements__buttons-title= 'buttons'
             .form-elements__buttons-group
               //- prettier-ignore
               .form-elements__buttons_row_first
@@ -218,7 +218,7 @@ block content
                   isArrow: true 
                 })
           .form-elements__pagination
-            .form-elements__pagination-title= 'pagination'
+            h3.form-elements__pagination-title= 'pagination'
             .form-elements__pagination-element
               +pagination
       .form-elements__section

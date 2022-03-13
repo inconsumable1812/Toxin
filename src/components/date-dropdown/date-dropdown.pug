@@ -24,7 +24,7 @@ mixin date-dropdown(options)
     if (type === "double")
       div(class=doubleClass)
         .date-dropdown__item
-          span.date-dropdown__title= titleStart
+          h3.date-dropdown__title= titleStart
           .date-dropdown__dropdown-box.js-date-dropdown__dropdown-box
             //- prettier-ignore
             +dropdown({ 
@@ -34,7 +34,7 @@ mixin date-dropdown(options)
               calendar: true 
             })
         .date-dropdown__item 
-          span.date-dropdown__title= titleEnd
+          h3.date-dropdown__title= titleEnd
           .date-dropdown__dropdown-box.js-date-dropdown__dropdown-box
             //- prettier-ignore
             +dropdown({ 
@@ -46,7 +46,7 @@ mixin date-dropdown(options)
     if (type === "single")
       .date-dropdown__group.date-dropdown__group_single
         .date-dropdown__item
-          span.date-dropdown__title= title
+          h3.date-dropdown__title= title
           .date-dropdown__dropdown-box.js-date-dropdown__dropdown-box
             //- prettier-ignore
             +dropdown({ 
